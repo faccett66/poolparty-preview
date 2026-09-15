@@ -59,17 +59,24 @@
     <span>No CATCH · No invented ticket prices</span>
   </div>
 </footer>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=26"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
-  const cities = (await PP.loadJSON('cities')).cities||[];
-  document.getElementById('grid').innerHTML = cities.map(c => `
-    <a class="city-tile" href="events.html?city=${encodeURIComponent(c.slug)}" style="display:block;color:inherit">
+  const [citiesPack, ev, vn] = await Promise.all([PP.loadJSON('cities'), PP.loadJSON('events'), PP.loadJSON('venues')]);
+  const cities = citiesPack.cities||[];
+  const eventSlugs = new Set((ev.events||[]).map(e => e.city));
+  const venueSlugs = new Set((vn.venues||[]).map(v => v.city));
+  document.getElementById('grid').innerHTML = cities.map(c => {
+    const meta = PP.cityTileMeta(c, { eventSlugs, venueSlugs });
+    const hint = c.count_hint != null ? `${c.count_hint} live · ${meta.blurb}` : meta.blurb;
+    return `
+    <a class="city-tile" href="${meta.href}" style="display:block;color:inherit" data-city="${PP.esc(c.slug)}">
       <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
-      <small>${c.count_hint!=null? c.count_hint+' live listings signal': 'Live city'}</small>
-    </a>`).join('');
+      <small>${PP.esc(hint)}</small>
+    </a>`;
+  }).join('');
 });
 </script>
 </body></html>

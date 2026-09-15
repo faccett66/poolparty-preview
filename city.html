@@ -58,7 +58,7 @@
     <span>No CATCH · No invented ticket prices</span>
   </div>
 </footer>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=26"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     : `<div class="empty-state">No sampled events for ${PP.esc(c.name)} in the prototype JSON — <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">browse live</a>.</div>`;
   document.getElementById('venues').innerHTML = venues.length
     ? venues.map(v=>PP.venueCard(v,{cities:cities.cities})).join('')
-    : `<div class="empty-state">No sampled venues — <a href="venues.html">venue directory</a>.</div>`;
+    : `<div class="empty-state">No sampled venues — <a href="venues.html?city=${encodeURIComponent(c.slug)}">venue directory</a> · <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">live city</a>.</div>`;
 });
 </script>
 </body></html>

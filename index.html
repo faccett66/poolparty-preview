@@ -64,7 +64,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">City picker</p>
       <h2>Where’s the weekend?</h2>
-      <p>Vegas, Miami, Dubai, Ibiza, LA — tap a city to jump into its events. Calendar below stays the full weekend feed.</p>
+      <p>Vegas, Miami, Dubai, Ibiza, LA — tap a city for its hub (events, venues, live handoff). Calendar below is the weekend feed.</p>
     </div>
     <div class="city-grid" id="home-cities"></div>
     <p class="example-note" style="margin-top:1rem;font-size:.78rem;color:var(--muted)"><button type="button" class="chip" id="clear-city">Clear city filter</button> <span id="city-status"></span></p>
@@ -164,20 +164,33 @@
     <span>No CATCH branding · SEC music tease on home only · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=26"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   const [ev, cities] = await Promise.all([PP.loadJSON('events'), PP.loadJSON('cities')]);
   const events = ev.events || [];
   const cityList = cities.cities || [];
+  const eventSlugs = new Set(events.map(e => e.city));
+  const venuesData = await PP.loadJSON('venues');
+  const venueList = venuesData.venues || [];
+  const venueSlugs = new Set(venueList.map(v => v.city));
+  // Front-load functional destinations (have preview data or are flagship)
+  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california'];
+  const ordered = [
+    ...featured.map(s => cityList.find(c => c.slug === s)).filter(Boolean),
+    ...cityList.filter(c => !featured.includes(c.slug))
+  ];
   const grid = document.getElementById('home-cities');
-  grid.innerHTML = cityList.map(c => `
-    <a class="city-tile" href="events.html?city=${encodeURIComponent(c.slug)}" data-city="${PP.esc(c.slug)}">
+  grid.innerHTML = ordered.map(c => {
+    const meta = PP.cityTileMeta(c, { eventSlugs, venueSlugs });
+    return `
+    <a class="city-tile" href="${meta.href}" data-city="${PP.esc(c.slug)}">
       <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
-      <small>View events</small>
-    </a>`).join('');
+      <small>${PP.esc(meta.blurb)}</small>
+    </a>`;
+  }).join('');
 
   const status = document.getElementById('city-status');
   const eventsEl = document.getElementById('home-events');
@@ -191,20 +204,30 @@ document.addEventListener('DOMContentLoaded', async () => {
       : `${events.length} upcoming sampled events`;
     let list = events.slice();
     if (city) {
-      const filtered = list.filter(e => e.city === city);
-      list = filtered.length ? filtered : list;
+      list = list.filter(e => e.city === city);
     }
     list = list.slice(0, 12);
-    eventsEl.innerHTML = list.map(e => PP.eventCard(e, {cities: cityList})).join('');
+    if (!list.length && city) {
+      const c = cityList.find(x => x.slug === city);
+      const hasV = venueSlugs.has(city);
+      eventsEl.innerHTML = `<div class="empty-state">No sampled events for ${PP.esc(PP.cityName(cityList, city))} yet.
+        ${hasV ? ` <a href="venues.html?city=${encodeURIComponent(city)}">See venues</a> ·` : ''}
+        <a href="${PP.esc(PP.cityHubHref(city))}">City hub</a>
+        ${c && c.live_url ? ` · <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live listings</a>` : ''}
+      </div>`;
+    } else {
+      eventsEl.innerHTML = list.map(e => PP.eventCard(e, {cities: cityList})).join('');
+    }
     const count = document.querySelector('[data-result-count]');
     if (count) count.textContent = city
-      ? `Showing ${PP.cityName(cityList, city)}`
+      ? (list.length ? `Showing ${PP.cityName(cityList, city)}` : `${PP.cityName(cityList, city)} · open hub`)
       : `${events.length} upcoming · showing ${list.length}`;
   }
   grid.addEventListener('click', e => {
     const tile = e.target.closest('[data-city]');
     if (!tile) return;
     PP.setCity(tile.dataset.city);
+    // Let the <a> navigate to city hub — don't stay on home filter-only
   });
   const clear = document.getElementById('clear-city');
   if (clear) clear.addEventListener('click', () => { PP.setCity(''); renderHome(); });

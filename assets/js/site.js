@@ -70,6 +70,21 @@
       const c = (cities || []).find(x => x.slug === slug);
       return c ? c.name : (slug || '').replace(/-/g, ' ').replace(/\b\w/g, m => m.toUpperCase());
     },
+    /** Prefer in-preview city hub (events + venues + live handoff). */
+    cityHubHref(slug) {
+      return `city.html?id=${encodeURIComponent(slug || '')}`;
+    },
+    cityTileMeta(city, { eventSlugs, venueSlugs } = {}) {
+      const slug = city.slug;
+      const hasE = eventSlugs && eventSlugs.has(slug);
+      const hasV = venueSlugs && venueSlugs.has(slug);
+      let blurb = 'City hub';
+      if (hasE && hasV) blurb = 'Events + venues';
+      else if (hasE) blurb = 'View events';
+      else if (hasV) blurb = 'View venues';
+      else blurb = 'Open hub · live link';
+      return { href: this.cityHubHref(slug), blurb };
+    },
     esc(s) {
       return String(s ?? '').replace(/[&<>"']/g, c => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
