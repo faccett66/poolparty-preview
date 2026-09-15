@@ -1,30 +1,30 @@
 :root {
-  /* Summery daylight dayclub — champagne sun, pool splash, airy party */
+  /* Summery daylight dayclub — MORE COLOR: pool aqua, sunset orange, hot gold, coral */
   --ink: #142536;
   --ink-soft: #2a3f55;
-  --deep: #f6fbff;
-  --cream: #fff8ef;
+  --deep: #eef9ff;
+  --cream: #fff4e4;
   --foam: #ffffff;
-  --sky: #e8f6fb;
-  --navy: #1a3a52;
-  --navy-2: #24506e;
-  --teal: #0fbeb6;
-  --aqua: #2ad4cc;
-  --aqua-hot: #00e0d4;
-  --aqua-dim: rgba(42, 212, 204, 0.16);
-  --gold: #d4a84b;
-  --gold-hot: #f0c45c;
-  --champagne: #f3e0b5;
-  --champagne-deep: #c9a04a;
-  --sunset: #ff6b3d;
-  --sunset-hot: #ff8a4c;
-  --coral: #ff5c8a;
+  --sky: #d4f4ff;
+  --navy: #164866;
+  --navy-2: #1f6a8f;
+  --teal: #00c8be;
+  --aqua: #00e8de;
+  --aqua-hot: #2afff3;
+  --aqua-dim: rgba(0, 232, 222, 0.22);
+  --gold: #f0b429;
+  --gold-hot: #ffd24a;
+  --champagne: #ffe7a0;
+  --champagne-deep: #e8a820;
+  --sunset: #ff5a1f;
+  --sunset-hot: #ff7a3d;
+  --coral: #ff4d8d;
   --mist: rgba(20, 37, 54, 0.72);
   --muted: rgba(20, 37, 54, 0.48);
-  --glass: rgba(255, 255, 255, 0.72);
-  --glass-strong: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(20, 37, 54, 0.08);
-  --line: rgba(212, 168, 75, 0.45);
+  --glass: rgba(255, 255, 255, 0.78);
+  --glass-strong: rgba(255, 255, 255, 0.94);
+  --glass-border: rgba(0, 200, 190, 0.18);
+  --line: rgba(255, 90, 31, 0.35);
   --radius: 1.35rem;
   --radius-sm: 0.85rem;
   --shadow: 0 16px 36px rgba(26, 58, 82, 0.09);
@@ -44,9 +44,9 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse 90% 55% at 8% -8%, rgba(255,138,76,.16), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 92% 0%, rgba(42,212,204,.12), transparent 50%),
-    radial-gradient(ellipse 55% 35% at 50% 100%, rgba(243,224,181,.22), transparent 55%),
+    radial-gradient(ellipse 90% 55% at 8% -8%, rgba(255,90,31,.28), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 92% 0%, rgba(0,232,222,.22), transparent 50%),
+    radial-gradient(ellipse 55% 35% at 50% 100%, rgba(255,210,74,.28), transparent 55%),
     linear-gradient(180deg, var(--cream) 0%, var(--deep) 42%, var(--sky) 100%);
   background-attachment:fixed;
   min-height:100vh;
@@ -413,7 +413,7 @@ section{padding:5.25rem 0;position:relative}
 .city-tile small{position:relative;z-index:2;display:block;padding:0 1rem 1rem;font-size:.72rem;color:rgba(255,255,255,.7)}
 
 /* vibes */
-.vibes{background:linear-gradient(180deg, transparent, rgba(42,212,204,.06), transparent)}
+.vibes{background:linear-gradient(180deg, transparent, rgba(0,232,222,.12), rgba(255,90,31,.06), transparent)}
 .vibe-grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
 @media(min-width:640px){.vibe-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:980px){
@@ -565,12 +565,7 @@ section{padding:5.25rem 0;position:relative}
   display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
   font-size:.75rem;color:var(--muted);
 }
-.proto-banner{
-  background:rgba(255,252,247,.95);
-  border-bottom:1px solid rgba(20,37,54,.06);
-  padding:.45rem 1rem;text-align:center;font-size:.68rem;color:var(--muted);
-  position:relative;z-index:90;font-weight:500;
-}
+.proto-banner{background:linear-gradient(90deg,var(--sunset),var(--gold-hot) 45%,var(--aqua));color:#142536;font-weight:600;font-size:.78rem;text-align:center;padding:.55rem 1rem}
 .proto-banner a{text-decoration:underline;color:var(--teal);font-weight:600}
 
 .empty-state{
