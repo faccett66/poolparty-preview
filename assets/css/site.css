@@ -735,7 +735,11 @@ section{padding:5.5rem 0}
 
 /* === FINAL HERO TEXT LOCK (do not override) === */
 .hero h1{
-  color:#ffe#if !important;
+  color:#fff200 !important;
+  -webkit-text-fill-color:#fff200 !important;
+  -webkit-text-stroke:1px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:2px 2px 0 #000, 0 4px 14px rgba(0,0,0,.55) !important;
 }
 .hero h1 em,
 .hero h1 em *{
