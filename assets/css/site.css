@@ -290,7 +290,19 @@ button,input,select,textarea{font:inherit;color:inherit}
     2px 2px 0 rgba(0,0,0,.75),
     0 4px 16px rgba(0,0,0,.55);
 }
-.hero-lead{font-size:1.08rem;color:#fff;max-width:32rem;margin-bottom:1.6rem;font-weight:500;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero-lead{
+  font-size:1.08rem;
+  color:#ffffff;
+  max-width:34rem;
+  margin-bottom:1.6rem;
+  font-weight:600;
+  line-height:1.45;
+  text-shadow:
+    0 0 2px rgba(0,0,0,.95),
+    0 1px 2px rgba(0,0,0,.9),
+    0 2px 8px rgba(0,0,0,.75),
+    0 6px 20px rgba(0,0,0,.5);
+}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.35rem;margin-bottom:1.75rem}
 .hero .btn-ghost,.hero-cta-secondary{
   background:transparent;color:rgba(255,255,255,.88);border:none;
