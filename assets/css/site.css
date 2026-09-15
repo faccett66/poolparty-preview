@@ -319,8 +319,11 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 .hero-glass{display:flex;flex-wrap:wrap;gap:.55rem;opacity:.92}
 .hero-pill{
-  padding:.55rem .85rem;border-radius:.85rem;background:rgba(255,255,255,.14);
-  backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);
+  padding:.6rem .95rem;border-radius:.95rem;
+  background:linear-gradient(145deg, rgba(255,230,102,.28), rgba(255,106,0,.18));
+  backdrop-filter:blur(14px);
+  border:1.5px solid rgba(255,229,102,.55);
+  box-shadow:0 4px 18px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.25);
   font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;
   color:#ffe8a8;
   text-shadow:0 1px 4px rgba(0,0,0,.55);
@@ -758,10 +761,22 @@ section{padding:5.5rem 0}
   -webkit-text-fill-color:#ff5a00 !important;
   text-decoration-color:#ff5a00 !important;
 }
-/* Destinations / Book Now labels — soft lemon */
+/* Destinations / Book Now boxes — summery tinted glass */
 .hero-pill{
   color:#ffe8a8 !important;
   text-shadow:0 1px 4px rgba(0,0,0,.55) !important;
+  background:linear-gradient(145deg, rgba(255,230,102,.32), rgba(255,90,0,.22)) !important;
+  border:1.5px solid rgba(255,229,102,.65) !important;
+  box-shadow:0 4px 18px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.28) !important;
+}
+/* Destinations box slightly lemon-led; Book Now box slightly orange-led */
+.hero-glass .hero-pill:nth-child(1){
+  background:linear-gradient(145deg, rgba(255,230,102,.38), rgba(154,240,234,.18)) !important;
+  border-color:rgba(255,229,102,.75) !important;
+}
+.hero-glass .hero-pill:nth-child(2){
+  background:linear-gradient(145deg, rgba(255,90,0,.32), rgba(255,230,102,.2)) !important;
+  border-color:rgba(255,106,0,.7) !important;
 }
 /* 19 party cities / Goes live — hot orange punch */
 .hero-pill strong{
