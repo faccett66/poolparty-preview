@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — 2 demo tracks streamed from SEC until custom PP beds land. */
+/*! Pool Party soundtrack layer — 2 demo tracks streamed from SEC until custom PP beds land. cache-bust:v3 */
 (function (global) {
   'use strict';
 
