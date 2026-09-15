@@ -1,12 +1,10 @@
 # Pool Party — deep static feature-mirror (prototype)
 
-Luxury dayclub UX modernization of [poolparty.com](https://poolparty.com/) for **Frank Accettulli**.  
+Summery, light, dayclub **eye candy** modernization of [poolparty.com](https://poolparty.com/) for **Frank Accettulli** (21–35 party discovery — not dark club / not spa brochure).  
 **GitHub Pages:** https://faccett66.github.io/poolparty-preview/  
 **Local:** `/workspace/poolparty/index.html`
 
-This is a **static** multi-page prototype. It does **not** replace SquadUp, Booketing, WooCommerce, or live inventory.
-
----
+**Honest:** Book Now = live Booketing/SquadUp handoff. Demo cart has no real prices. No CATCH branding.
 
 ## Partnership note — POS / ticket cut
 
