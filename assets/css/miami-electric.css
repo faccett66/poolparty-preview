@@ -741,7 +741,7 @@ body::before{
 
 /* ========== MIAMI ELECTRIC HEADER ========== */
 .proto-banner{
-  background:linear-gradient(90deg,#ff2d6a 0%,#ffe600 50%,#0090e0 100%) !important;
+  background:linear-gradient(90deg,#ff6a9a 0%,#fff066 50%,#4db8f0 100%) !important;
   color:#0a1628 !important;
   font-weight:800 !important;
   letter-spacing:.02em !important;
@@ -749,10 +749,10 @@ body::before{
 .proto-banner a{color:#0a1628 !important;font-weight:800 !important}
 
 .nav{
-  background:linear-gradient(105deg, #ffe600 0%, #ff8a3d 28%, #ff2d6a 58%, #0090e0 100%) !important;
-  background-image:linear-gradient(105deg, #ffe600 0%, #ff8a3d 28%, #ff2d6a 58%, #0090e0 100%) !important;
+  background:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
+  background-image:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
   border-bottom:3px solid #0a1628 !important;
-  box-shadow:0 10px 30px rgba(255,45,106,.35) !important;
+  box-shadow:0 10px 30px rgba(255,106,154,.28) !important;
   backdrop-filter:none !important;
 }
 .nav::before{
@@ -760,8 +760,8 @@ body::before{
   background:transparent !important;
 }
 .nav.scrolled{
-  background:linear-gradient(105deg, #0090e0 0%, #ff2d6a 45%, #ffe600 100%) !important;
-  background-image:linear-gradient(105deg, #0090e0 0%, #ff2d6a 45%, #ffe600 100%) !important;
+  background:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
+  background-image:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
   border-bottom-color:#0a1628 !important;
 }
 .nav.scrolled::before{display:none !important}
@@ -773,7 +773,7 @@ body::before{
   font-weight:700 !important;
 }
 .logo-mark{
-  background:conic-gradient(from 180deg,#0a1628,#ffe600,#ff2d6a,#0090e0,#0a1628) !important;
+  background:conic-gradient(from 180deg,#0a1628,#fff066,#ff6a9a,#4db8f0,#0a1628) !important;
   box-shadow:0 0 0 3px #0a1628, 0 0 20px rgba(255,255,255,.5) !important;
 }
 .nav-links a{
@@ -796,42 +796,18 @@ body::before{
   border:2px solid #0a1628 !important;
 }
 .nav-cart .badge{
-  background:#ff2d6a !important;
+  background:#ff6a9a !important;
   color:#fff !important;
 }
 .nav-cta{
   background:#0a1628 !important;
   background-image:none !important;
-  color:#ffe600 !important;
+  color:#fff066 !important;
   border:2px solid #0a1628 !important;
   box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
 }
 .nav-toggle span{background:#0a1628 !important}
 .nav-drawer{
-  background:linear-gradient(180deg,#ffe600,#ff2d6a,#0090e0) !important;
+  background:linear-gradient(180deg,#fff066,#ff6a9a,#4db8f0) !important;
 }
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
-
-/* Bold hero eyebrow — It's a party · Pool · Beach · Yacht */
-.hero .eyebrow{
-  font-size:clamp(1.05rem, 2.4vw, 1.35rem) !important;
-  font-weight:800 !important;
-  letter-spacing:.14em !important;
-  text-transform:uppercase !important;
-  color:#ffe600 !important;
-  -webkit-text-fill-color:#ffe600 !important;
-  -webkit-text-stroke:0.8px #000 !important;
-  paint-order:stroke fill !important;
-  text-shadow:1px 1px 0 #000, 0 3px 12px rgba(0,0,0,.55) !important;
-  margin-bottom:1.1rem !important;
-  display:flex !important;
-  align-items:center !important;
-  gap:.65rem !important;
-}
-.hero .eyebrow::before{
-  width:2rem !important;
-  height:4px !important;
-  background:linear-gradient(90deg,#ff2d6a,#ffe600,#0090e0) !important;
-  border-radius:4px !important;
-  flex-shrink:0 !important;
-}
