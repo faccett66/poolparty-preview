@@ -1,34 +1,36 @@
 :root {
-  /* Summery daylight dayclub — MORE COLOR: pool aqua, sunset orange, hot gold, coral */
-  --ink: #142536;
-  --ink-soft: #2a3f55;
-  --deep: #eef9ff;
-  --cream: #fff4e4;
+  /* Bright summertime dayclub */
+  --ink: #0f2a3d;
+  --ink-soft: #1e4560;
+  --deep: #e8f8ff;
+  --cream: #fff7d6;
   --foam: #ffffff;
-  --sky: #d4f4ff;
-  --navy: #164866;
-  --navy-2: #1f6a8f;
-  --teal: #00c8be;
-  --aqua: #00e8de;
-  --aqua-hot: #2afff3;
-  --aqua-dim: rgba(0, 232, 222, 0.22);
-  --gold: #f0b429;
-  --gold-hot: #ffd24a;
-  --champagne: #ffe7a0;
-  --champagne-deep: #e8a820;
-  --sunset: #ff5a1f;
-  --sunset-hot: #ff7a3d;
-  --coral: #ff4d8d;
-  --mist: rgba(20, 37, 54, 0.72);
-  --muted: rgba(20, 37, 54, 0.48);
-  --glass: rgba(255, 255, 255, 0.78);
-  --glass-strong: rgba(255, 255, 255, 0.94);
-  --glass-border: rgba(0, 200, 190, 0.18);
-  --line: rgba(255, 90, 31, 0.35);
+  --sky: #b8ecff;
+  --navy: #0e5f8a;
+  --navy-2: #1780b5;
+  --teal: #00d4c8;
+  --aqua: #00f0e4;
+  --aqua-hot: #5cfffa;
+  --aqua-dim: rgba(0, 240, 228, 0.25);
+  --gold: #ffcc22;
+  --gold-hot: #ffe566;
+  --champagne: #fff0a8;
+  --champagne-deep: #f5b800;
+  --sunset: #ff6a00;
+  --sunset-hot: #ff9440;
+  --coral: #ff3d7a;
+  --lemon: #fff566;
+  --pool: #3dbbff;
+  --mist: rgba(15, 42, 61, 0.75);
+  --muted: rgba(15, 42, 61, 0.5);
+  --glass: rgba(255, 255, 255, 0.82);
+  --glass-strong: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 212, 200, 0.22);
+  --line: rgba(255, 106, 0, 0.4);
   --radius: 1.35rem;
   --radius-sm: 0.85rem;
-  --shadow: 0 16px 36px rgba(26, 58, 82, 0.09);
-  --shadow-glow: 0 0 28px rgba(42, 212, 204, 0.12);
+  --shadow: 0 16px 36px rgba(14, 95, 138, 0.12);
+  --shadow-glow: 0 0 32px rgba(0, 240, 228, 0.2);
   --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --nav-h: 4.25rem;
@@ -44,10 +46,10 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse 90% 55% at 8% -8%, rgba(255,90,31,.28), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 92% 0%, rgba(0,232,222,.22), transparent 50%),
-    radial-gradient(ellipse 55% 35% at 50% 100%, rgba(255,210,74,.28), transparent 55%),
-    linear-gradient(180deg, var(--cream) 0%, var(--deep) 42%, var(--sky) 100%);
+    radial-gradient(ellipse 90% 55% at 8% -8%, rgba(255,106,0,.32), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 92% 0%, rgba(61,187,255,.28), transparent 50%),
+    radial-gradient(ellipse 55% 35% at 50% 100%, rgba(255,204,34,.32), transparent 55%),
+    linear-gradient(180deg, #fff7d6 0%, #e8f8ff 45%, #b8ecff 100%);
   background-attachment:fixed;
   min-height:100vh;
 }
@@ -159,8 +161,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{
-  background:linear-gradient(135deg,var(--sunset-hot) 0%,var(--sunset) 45%,var(--coral) 100%);
-  color:#fff;box-shadow:0 10px 28px rgba(255,107,61,.32);
+  background:linear-gradient(135deg,#fff566 0%,#ffcc22 35%,#ff6a00 100%);
+  color:#0f2a3d;box-shadow:0 14px 40px rgba(255,106,0,.48);font-weight:700;
 }
 .btn-primary:hover{box-shadow:0 14px 34px rgba(255,107,61,.4)}
 .btn-ghost{
@@ -268,12 +270,20 @@ button,input,select,textarea{font:inherit;color:inherit}
   font-family:var(--font-display);font-size:clamp(2.9rem,8.5vw,5.4rem);
   font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:1.15rem;
   color:#fff;
-  text-shadow:0 2px 8px rgba(0,0,0,.65), 0 8px 32px rgba(0,0,0,.45);
+  text-shadow:0 2px 8px rgba(0,0,0,.85), 0 10px 30px rgba(0,0,0,.6);
 }
 .hero h1 em{
   font-style:italic;
-  background:linear-gradient(120deg,#ffe8a8,var(--aqua-hot) 70%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+  color:#fff566;
+  -webkit-text-fill-color:#fff566;
+  background:none;
+  -webkit-background-clip:border-box;
+  background-clip:border-box;
+  text-shadow:
+    0 0 3px rgba(0,0,0,.9),
+    0 2px 6px rgba(0,0,0,.8),
+    0 8px 28px rgba(0,0,0,.55),
+    0 0 32px rgba(255,106,0,.65);
 }
 .hero-lead{font-size:1.08rem;color:#fff;max-width:32rem;margin-bottom:1.6rem;font-weight:500;text-shadow:0 2px 10px rgba(0,0,0,.55)}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.35rem;margin-bottom:1.75rem}
