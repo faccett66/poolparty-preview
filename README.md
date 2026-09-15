@@ -1,6 +1,6 @@
 # Pool Party — deep static feature-mirror (prototype)
 
-Summery, light, dayclub **eye candy** modernization of [poolparty.com](https://poolparty.com/) for **Frank Accettulli** (21–35 party discovery — not dark club / not spa brochure).  
+Summery, light, dayclub **eye candy** (champagne daylight, decluttered whitespace) modernization of [poolparty.com](https://poolparty.com/) for **Frank Accettulli** (21–35 party discovery — not dark club / not spa brochure).  
 **GitHub Pages:** https://faccett66.github.io/poolparty-preview/  
 **Local:** `/workspace/poolparty/index.html`
 
@@ -21,7 +21,7 @@ Summery, light, dayclub **eye candy** modernization of [poolparty.com](https://p
 | Feature | Status | Notes |
 |--------|--------|--------|
 | Multi-page IA (home, events, venues, event detail, cities/city, advertise, FAQs, blog, blog-post, contact, cart, checkout, account, privacy, terms) | **Prototype** | Shared `assets/css/site.css` + `assets/js/site.js` |
-| Luxury dayclub visual system | **Prototype** | Cinematic hero, glass, Cormorant/Outfit, venue photography in `assets/site/` |
+| Luxury dayclub visual system | **Prototype** | Champagne daylight, quieter eye candy, Fraunces/Outfit, venue photography in `assets/site/` |
 | `data/events.json` 15+ events | **Live-sampled** | Real names/URLs/Booketing from poolparty.com scrape 2026-09-15 |
 | `data/venues.json` 12+ venues | **Live-sampled** | wp-json venues + LV venues from event cards |
 | `data/cities.json` 19 cities | **Live** | From pp-cities sitemap |
