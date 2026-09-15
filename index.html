@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pool Party — Luxury Dayclub Experiences Worldwide</title>
-  <meta name="description" content="Discover and book pool, beach, and yacht parties. Prototype UX mirror for Frank Accettulli." />
+  <title>Pool Party — Pool, Beach & Yacht Parties Worldwide</title>
+  <meta name="description" content="Find the hottest pool, beach, and yacht parties — Vegas, Miami, Dubai, Ibiza, LA & more. Book Now goes live." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Prototype for Frank Accettulli — luxury UX mirror of poolparty.com. Book Now = live handoff (Booketing/SquadUp). Demo cart has no real prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview for Frank Accettulli · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -19,7 +19,7 @@
     <nav class="nav-links" aria-label="Primary"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
     <div class="nav-actions">
       <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
-      <a class="nav-cta" href="events.html">Explore events</a>
+      <a class="nav-cta" href="events.html">Book Now</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -29,7 +29,7 @@
   <a href="cart.html">Demo cart</a>
 </div>
 
-<a class="sticky-book" href="events.html">Explore events</a>
+<a class="sticky-book" href="events.html">Book the party</a>
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
     <img src="assets/site/hero-ayu.jpg" alt="" />
@@ -39,17 +39,17 @@
   </div>
   <div class="hero-overlay"></div>
   <div class="wrap hero-content">
-    <p class="eyebrow">Global daylife · Pool · Beach · Yacht</p>
-    <h1>The hottest <em>pool parties</em> — search, book, show up.</h1>
-    <p class="hero-lead">A cinematic modernization of PoolParty.com: city-smart discovery, dense event grids, and honest Book Now handoffs to live Booketing / SquadUp fulfillment.</p>
+    <p class="eyebrow">It’s a party · Pool · Beach · Yacht</p>
+    <h1>Sun’s out. <em>Who’s in?</em></h1>
+    <p class="hero-lead">Dayclub heat, beach splash, yacht sunsets — pick your city, find the vibe, hit Book Now. Built for weekend travelers who’d rather be courtside at the pool than scrolling alone.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="events.html">View upcoming events</a>
+      <a class="btn btn-primary" href="events.html">See what’s popping</a>
       <a class="btn btn-ghost" href="#cities">Pick a city</a>
     </div>
     <div class="hero-glass">
-      <div class="hero-pill">Cities<strong>19 destinations</strong></div>
-      <div class="hero-pill">Book Now<strong>Live handoff</strong></div>
-      <div class="hero-pill">Prototype<strong>Frank Accettulli</strong></div>
+      <div class="hero-pill">Destinations<strong>19 party cities</strong></div>
+      <div class="hero-pill">Book Now<strong>Goes live</strong></div>
+      <div class="hero-pill">Vibes<strong>Dayclub → yacht</strong></div>
     </div>
   </div>
   <div class="scroll-hint">Scroll</div>
@@ -57,10 +57,10 @@
 
 <section class="wrap" style="padding-top:2.5rem;padding-bottom:0">
   <div class="trust reveal">
-    <div><strong>21+ events</strong><span>Legal drinking age unless noted</span></div>
-    <div><strong>Booketing / SquadUp</strong><span>Live ticket fulfillment</span></div>
-    <div><strong>Venue partners</strong><span>Dayclubs · beaches · yachts</span></div>
-    <div><strong>Prototype honesty</strong><span>No fake ticket prices</span></div>
+    <div><strong>21+ only</strong><span>Legal drinking age unless noted</span></div>
+    <div><strong>Book Now live</strong><span>Booketing / SquadUp handoff</span></div>
+    <div><strong>Dayclub energy</strong><span>Pools · beaches · yachts</span></div>
+    <div><strong>No fake prices</strong><span>Real inventory, honest cart</span></div>
   </div>
 </section>
 
@@ -68,8 +68,8 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">City picker</p>
-      <h2>Where are you partying?</h2>
-      <p>Filter the home feed by city — same control powers Events &amp; Venues. Selection sticks in your browser.</p>
+      <h2>Where’s the weekend?</h2>
+      <p>Vegas, Miami, Dubai, Ibiza, LA — tap a city and the feed locks in. Same filter powers Events &amp; Venues.</p>
     </div>
     <div class="city-grid" id="home-cities"></div>
     <p class="example-note" style="margin-top:1rem;font-size:.78rem;color:var(--muted)"><button type="button" class="chip" id="clear-city">Clear city filter</button> <span id="city-status"></span></p>
@@ -79,16 +79,16 @@
 <section class="vibes">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">The vibe</p>
-      <h2>Dayclub energy, yacht sunsets, night-pool heat.</h2>
-      <p>Photography from live PoolParty venue assets — Encore, Ayu, Garden of the Gods, yacht &amp; beach frames.</p>
+      <p class="eyebrow">Pick your energy</p>
+      <h2>Cabana days. Beach splash. Yacht gold hour.</h2>
+      <p>Encore-level decks, TAO Beach sand, Ayu heat, bay escapes — scroll the vibes, then Book Now.</p>
     </div>
     <div class="vibe-grid">
-      <a class="vibe-card reveal" href="events.html?vibe=dayclub"><img src="assets/site/vibe-encore-crowd.jpg" alt=""/><div class="vibe-body"><span class="tag">Dayclub</span><h3>Encore-level days</h3><p>Crowds, DJs, cabana rows.</p></div></a>
-      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=beach"><img src="assets/site/vibe-beach-terrace.jpg" alt=""/><div class="vibe-body"><span class="tag">Beach</span><h3>Sand &amp; terrace</h3><p>TAO Beach · Palm Tree · coast.</p></div></a>
-      <a class="vibe-card reveal reveal-delay-2" href="events.html?vibe=pool"><img src="assets/site/vibe-ayu-energy.jpg" alt=""/><div class="vibe-body"><span class="tag">Pool</span><h3>Liquid heat</h3><p>Pool decks &amp; midweek dips.</p></div></a>
-      <a class="vibe-card reveal" href="events.html?vibe=yacht"><img src="assets/site/vibe-yacht-bay.jpg" alt=""/><div class="vibe-body"><span class="tag">Yacht</span><h3>Bay escapes</h3><p>Waterfront &amp; yacht social.</p></div></a>
-      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=pass"><img src="assets/site/feat-encore-cabana.jpg" alt=""/><div class="vibe-body"><span class="tag">Pass</span><h3>Pool Party Pass</h3><p>Assigned dayclub access — live SquadUp path.</p></div></a>
+      <a class="vibe-card reveal" href="events.html?vibe=dayclub"><img src="assets/site/vibe-encore-crowd.jpg" alt=""/><div class="vibe-body"><span class="tag">Dayclub</span><h3>Dayclub main stage</h3><p>Crowds, DJs, cabana FOMO.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=beach"><img src="assets/site/vibe-beach-terrace.jpg" alt=""/><div class="vibe-body"><span class="tag">Beach</span><h3>Beach club days</h3><p>Sand, terrace, golden hour.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-2" href="events.html?vibe=pool"><img src="assets/site/vibe-ayu-energy.jpg" alt=""/><div class="vibe-body"><span class="tag">Pool</span><h3>Pool deck heat</h3><p>Splash, floats, midweek dips.</p></div></a>
+      <a class="vibe-card reveal" href="events.html?vibe=yacht"><img src="assets/site/vibe-yacht-bay.jpg" alt=""/><div class="vibe-body"><span class="tag">Yacht</span><h3>Yacht energy</h3><p>Waterfront flex, sunset sets.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=pass"><img src="assets/site/feat-encore-cabana.jpg" alt=""/><div class="vibe-body"><span class="tag">Pass</span><h3>Pool Party Pass</h3><p>Assigned dayclub access — live booking path.</p></div></a>
     </div>
   </div>
 </section>
@@ -97,9 +97,9 @@
   <div class="wrap">
     <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;max-width:none">
       <div>
-        <p class="eyebrow">Featured from live catalog</p>
+        <p class="eyebrow">On the calendar</p>
         <h2>This week’s heat</h2>
-        <p>Real event names &amp; Booketing URLs scraped from poolparty.com. <span data-result-count></span></p>
+        <p>Live event names from poolparty.com — Book Now opens the real ticket path. <span data-result-count></span></p>
       </div>
       <a class="btn btn-ghost" href="events.html">All events →</a>
     </div>
@@ -111,12 +111,12 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">How it works</p>
-      <h2>Search → Event → Honest checkout handoff</h2>
+      <h2>Find it. Feel it. Book it.</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="step-num">01</div><h3>Pick city &amp; vibe</h3><p>Filter 19 cities and dayclub / beach / pool / yacht / pass vibes.</p></div>
-      <div class="step reveal reveal-delay-1"><div class="step-num">02</div><h3>Open the event</h3><p>See venue, date, and clear Book Now labeling.</p></div>
-      <div class="step reveal reveal-delay-2"><div class="step-num">03</div><h3>Book on live stack</h3><p>Continues on Booketing or live PoolParty SquadUp — prototype does not replace ticketing.</p></div>
+      <div class="step reveal"><div class="step-num">01</div><h3>Pick city &amp; vibe</h3><p>Nineteen destinations. Dayclub, beach, pool, yacht, or pass — filter fast.</p></div>
+      <div class="step reveal reveal-delay-1"><div class="step-num">02</div><h3>Open the event</h3><p>Venue, date, and a clear Book Now — no mystery checkout.</p></div>
+      <div class="step reveal reveal-delay-2"><div class="step-num">03</div><h3>Book for real</h3><p>Continues on Booketing or PoolParty SquadUp. This preview doesn’t replace ticketing.</p></div>
     </div>
   </div>
 </section>
@@ -129,7 +129,7 @@
         <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <p class="eyebrow">Sonic Ear Candy · soft tease</p>
         <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.6rem">Soundtrack the party.</h2>
-        <p style="color:var(--mist);font-weight:300;margin-bottom:1rem">Optional SEC music layer for yacht / bach occasions — partnership concept only. No player shipped in this prototype.</p>
+        <p style="color:var(--mist);font-weight:300;margin-bottom:1rem">Optional SEC music layer for yacht &amp; bach weekends — partnership tease only. No player in this preview.</p>
         <a class="btn btn-ghost btn-sm" href="contact.html">Ask about SEC pilot</a>
       </div>
     </div>
@@ -140,7 +140,7 @@
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. This is a modernization prototype — ticketing fulfillment stays on the live PoolParty stack.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up.</p>
     </div>
     <div>
       <h4>Explore</h4>
@@ -165,7 +165,7 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Pool Party prototype · for Frank Accettulli</span>
+    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
     <span>No CATCH branding · SEC music tease on home only · Prices never invent as real</span>
   </div>
 </footer>
