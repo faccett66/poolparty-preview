@@ -372,7 +372,7 @@ section{padding:5.25rem 0;position:relative}
 }
 .card-media{position:relative;aspect-ratio:16/11;overflow:hidden}
 .card-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);filter:saturate(1.05)}
-.card:hover .card-media img{transform:scale(1.04)}
+.card:hover .card-media img{transform:scale(1.02)}
 .card-media .badge-row{position:absolute;top:.75rem;left:.75rem;display:flex;gap:.35rem;flex-wrap:wrap;z-index:2}
 .tag{
   display:inline-block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
@@ -436,7 +436,7 @@ section{padding:5.25rem 0;position:relative}
 }
 .vibe-card:hover{transform:translateY(-4px);border-color:rgba(212,168,75,.3);box-shadow:var(--shadow)}
 .vibe-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s;filter:saturate(1.08) brightness(1.03)}
-.vibe-card:hover img{transform:scale(1.04)}
+.vibe-card:hover img{transform:scale(1.02)}
 .vibe-card::after{
   content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg,transparent 18%,rgba(20,37,54,.9));
@@ -660,7 +660,7 @@ body::before{display:none}
 .vibe-body h3{font-size:clamp(1.35rem,2vw,1.6rem);text-shadow:0 1px 8px rgba(0,0,0,.25)}
 
 .city-tile img{filter:saturate(1.1) brightness(1.03)}
-.city-tile:hover img,.city-tile.active img{transform:scale(1.04);transition:transform .5s var(--ease)}
+.city-tile:hover img,.city-tile.active img{transform:scale(1.02);transition:transform .45s var(--ease)}
 
 .trust{
   background:rgba(255,255,255,.75);
