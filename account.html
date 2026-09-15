@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account — Pool Party</title>
+  <meta name="description" content="Mock account UI — no fake auth backend." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-data-root="data">
+<div class="proto-banner">Prototype for Frank Accettulli — Book Now = live handoff. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <nav class="nav-links"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+  <div class="nav-actions">
+    <a class="nav-cart" href="cart.html">🛒<span class="badge" data-cart-count hidden>0</span></a>
+    <a class="nav-cta" href="events.html">Explore events</a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="account.html">Account</a><a href="cart.html">Demo cart</a></div>
+
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">My account · mock UI</p>
+  <h1>Sign in <em>shell</em></h1>
+  <p class="lead">Mirrors WooCommerce My Account chrome. No authentication backend — credentials are never sent.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap" style="max-width:480px">
+  <div class="form-card" id="login-card">
+    <form id="login">
+      <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com" /></div>
+      <div class="field"><label>Password</label><input type="password" name="password" required placeholder="••••••••" /></div>
+      <button class="btn btn-primary btn-block" type="submit">Sign in (mock)</button>
+      <p class="form-note">Mock only — nothing is verified or stored as a session secret. Live account: poolparty.com/my-account/</p>
+    </form>
+  </div>
+  <div class="panel" id="dash" hidden style="margin-top:1rem">
+    <h3 style="font-family:var(--font-display);font-size:1.6rem">Welcome back</h3>
+    <p style="color:var(--mist);font-weight:300;margin:.5rem 0 1rem">Signed in as <strong id="who"></strong> (local mock). Order history would load from Woo/SquadUp on the live stack.</p>
+    <div class="card-actions">
+      <a class="btn btn-ghost btn-sm" href="cart.html">Demo cart</a>
+      <a class="btn btn-ghost btn-sm" href="https://poolparty.com/my-account/" target="_blank" rel="noopener">Live My Account</a>
+      <button type="button" class="btn btn-ghost btn-sm" id="out">Sign out mock</button>
+    </div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="wrap footer-grid">
+  <div><a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem">Prototype — live ticketing unchanged.</p></div>
+  <div><h4>Explore</h4><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
+  <div><h4>Partners</h4><a href="advertise.html">Advertise</a><a href="contact.html">Contact</a><a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
+  <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 Pool Party prototype</span><span>Frank Accettulli</span></div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const KEY='pp_mock_user';
+  const card=document.getElementById('login-card');
+  const dash=document.getElementById('dash');
+  const who=document.getElementById('who');
+  function show() {
+    const u = localStorage.getItem(KEY);
+    if (u) { card.hidden=true; dash.hidden=false; who.textContent=u; }
+    else { card.hidden=false; dash.hidden=true; }
+  }
+  document.getElementById('login').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = new FormData(e.target).get('email');
+    localStorage.setItem(KEY, email);
+    show();
+  });
+  document.getElementById('out').addEventListener('click', () => { localStorage.removeItem(KEY); show(); });
+  show();
+});
+</script>
+</body></html>

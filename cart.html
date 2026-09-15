@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Cart — Pool Party</title>
+  <meta name="description" content="Quantity-only demo cart. No prices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-data-root="data">
+<div class="proto-banner">Prototype for Frank Accettulli — Book Now = live handoff. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <nav class="nav-links"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+  <div class="nav-actions">
+    <a class="nav-cart" href="cart.html">🛒<span class="badge" data-cart-count hidden>0</span></a>
+    <a class="nav-cta" href="events.html">Explore events</a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="account.html">Account</a><a href="cart.html">Demo cart</a></div>
+
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">Demo cart · localStorage</p>
+  <h1>Your <em>demo</em> bag</h1>
+  <p class="lead">Quantity-only layout for a future POS. <strong>No ticket prices.</strong> Real purchases use Book Now → live Booketing/SquadUp.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <div class="demo-callout">This cart does not charge cards and does not replace SquadUp/Booketing.</div>
+  <div class="panel" id="cart-root"></div>
+  <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem">
+    <a class="btn btn-primary" href="checkout.html">Continue to checkout shell</a>
+    <a class="btn btn-ghost" href="events.html">Keep browsing</a>
+    <button type="button" class="btn btn-ghost" id="clear">Clear demo cart</button>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="wrap footer-grid">
+  <div><a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem">Prototype — live ticketing unchanged.</p></div>
+  <div><h4>Explore</h4><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
+  <div><h4>Partners</h4><a href="advertise.html">Advertise</a><a href="contact.html">Contact</a><a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
+  <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 Pool Party prototype</span><span>Frank Accettulli</span></div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script>
+function render() {
+  const cart = PP.getCart();
+  const root = document.getElementById('cart-root');
+  if (!cart.length) {
+    root.innerHTML = `<div class="empty-state">Cart is empty. Open an event and tap <strong>+ Demo cart</strong>, or <a href="events.html">browse events</a>.</div>`;
+    return;
+  }
+  root.innerHTML = cart.map(c => `
+    <div class="cart-line" data-key="${PP.esc(c.key)}">
+      <img src="${PP.esc(c.image||'assets/site/hero-ayu.jpg')}" alt="" />
+      <div style="flex:1">
+        <strong>${PP.esc(c.title)}</strong>
+        <div style="font-size:.8rem;color:var(--muted)">${PP.esc(c.tierLabel)} · DEMO</div>
+      </div>
+      <div class="qty">
+        <button type="button" data-delta="-1" aria-label="Decrease">−</button>
+        <span>${c.qty}</span>
+        <button type="button" data-delta="1" aria-label="Increase">+</button>
+      </div>
+    </div>`).join('') + `<p style="margin-top:1rem;font-size:.8rem;color:var(--muted)">No subtotal — prices intentionally omitted.</p>`;
+  root.querySelectorAll('.cart-line').forEach(line => {
+    line.querySelectorAll('[data-delta]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = PP.getCart().find(x => x.key === line.dataset.key);
+        if (!item) return;
+        PP.setQty(line.dataset.key, item.qty + Number(btn.dataset.delta));
+        render();
+      });
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  render();
+  document.getElementById('clear').addEventListener('click', () => { PP.clearCart(); render(); });
+  window.addEventListener('pp:cart', render);
+});
+</script>
+</body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout shell — Pool Party</title>
+  <meta name="description" content="Demo checkout shell — not live payments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-data-root="data">
+<div class="proto-banner">Prototype for Frank Accettulli — Book Now = live handoff. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <nav class="nav-links"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+  <div class="nav-actions">
+    <a class="nav-cart" href="cart.html">🛒<span class="badge" data-cart-count hidden>0</span></a>
+    <a class="nav-cta" href="events.html">Explore events</a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="account.html">Account</a><a href="cart.html">Demo cart</a></div>
+
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">Checkout shell</p>
+  <h1>Almost there — <em>almost</em></h1>
+  <p class="lead">Visual POS chrome for partnership conversations. Does not process payments. Live Woo checkout currently redirects to cart on production.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap" style="display:grid;gap:1.5rem;grid-template-columns:1fr">
+  <div class="demo-callout"><strong>Not live checkout.</strong> To buy real tickets, use Book Now on any event (Booketing / SquadUp on poolparty.com).</div>
+  <div class="panel" id="summary"></div>
+  <div class="form-card">
+    <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1rem">Guest details (demo)</h3>
+    <form id="co" onsubmit="event.preventDefault();document.getElementById('done').hidden=false;">
+      <div class="field"><label>Name</label><input required name="name" /></div>
+      <div class="field"><label>Email</label><input type="email" required name="email" /></div>
+      <div class="field"><label>Phone</label><input name="phone" placeholder="For SMS order updates on live SquadUp — demo only" /></div>
+      <button class="btn btn-primary" type="submit">Place demo order (no charge)</button>
+    </form>
+    <p id="done" class="form-note" hidden style="color:var(--aqua)">Demo only — nothing was charged. Clear the cart or return to <a href="events.html">events</a> and use live Book Now.</p>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="wrap footer-grid">
+  <div><a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem">Prototype — live ticketing unchanged.</p></div>
+  <div><h4>Explore</h4><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
+  <div><h4>Partners</h4><a href="advertise.html">Advertise</a><a href="contact.html">Contact</a><a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
+  <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 Pool Party prototype</span><span>Frank Accettulli</span></div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cart = PP.getCart();
+  const el = document.getElementById('summary');
+  if (!cart.length) el.innerHTML = `<div class="empty-state">No demo items. <a href="cart.html">Cart</a> · <a href="events.html">Events</a></div>`;
+  else el.innerHTML = `<h3 style="font-family:var(--font-display);margin-bottom:.75rem">Order summary (DEMO)</h3>` +
+    cart.map(c => `<div class="cart-line"><div style="flex:1"><strong>${PP.esc(c.title)}</strong><div style="font-size:.8rem;color:var(--muted)">${PP.esc(c.tierLabel)} × ${c.qty}</div></div></div>`).join('') +
+    `<p style="font-size:.8rem;color:var(--muted);margin-top:.75rem">Total intentionally blank — no invented prices.</p>`;
+});
+</script>
+</body></html>

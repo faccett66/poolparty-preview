@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>City — Pool Party</title>
+  <meta name="description" content="City hub" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-data-root="data" data-asset-root="">
+<div class="proto-banner">Prototype for Frank Accettulli — Book Now = live handoff. Demo cart has no real prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span> Pool Party</a>
+    <nav class="nav-links" aria-label="Primary"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+    <div class="nav-actions">
+      <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
+      <a class="nav-cta" href="events.html">Explore events</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="account.html">Account</a>
+  <a href="cart.html">Demo cart</a>
+</div>
+
+<section class="page-hero"><div class="wrap" id="city-root"><p>Loading…</p></div></section>
+<section style="padding-top:0"><div class="wrap">
+  <div class="section-head"><h2>Events in this city</h2></div>
+  <div class="card-grid cols-3" id="events"></div>
+  <div class="section-head" style="margin-top:2.5rem"><h2>Venues</h2></div>
+  <div class="card-grid cols-3" id="venues"></div>
+</div></section>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Modernization prototype — ticketing stays on the live PoolParty stack.</p>
+    </div>
+    <div><h4>Explore</h4>
+      <a href="events.html">Events</a><a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
+    <div><h4>Partners</h4>
+      <a href="advertise.html">Advertise</a><a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
+    <div><h4>Legal</h4>
+      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a><a href="checkout.html">Checkout</a></div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Pool Party prototype · Frank Accettulli</span>
+    <span>No CATCH · No invented ticket prices</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const id = PP.qs('id') || 'las-vegas';
+  const [cities, ev, vn] = await Promise.all([PP.loadJSON('cities'), PP.loadJSON('events'), PP.loadJSON('venues')]);
+  const c = (cities.cities||[]).find(x=>x.slug===id) || (cities.cities||[])[0];
+  PP.setCity(c.slug);
+  document.title = c.name + ' — Pool Party';
+  document.getElementById('city-root').innerHTML = `
+    <p class="eyebrow">City hub</p>
+    <h1>${PP.esc(c.name)}</h1>
+    <p class="lead">${PP.esc(c.description||'')}</p>
+    <div class="hero-actions" style="margin-top:1.25rem">
+      <a class="btn btn-primary" href="events.html?city=${encodeURIComponent(c.slug)}">Filter all events</a>
+      <a class="btn btn-ghost" href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live city page</a>
+      <a class="btn btn-ghost" href="cities.html">All cities</a>
+    </div>`;
+  const events = (ev.events||[]).filter(e=>e.city===c.slug);
+  const venues = (vn.venues||[]).filter(v=>v.city===c.slug);
+  document.getElementById('events').innerHTML = events.length
+    ? events.map(e=>PP.eventCard(e,{cities:cities.cities})).join('')
+    : `<div class="empty-state">No sampled events for ${PP.esc(c.name)} in the prototype JSON — <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">browse live</a>.</div>`;
+  document.getElementById('venues').innerHTML = venues.length
+    ? venues.map(v=>PP.venueCard(v,{cities:cities.cities})).join('')
+    : `<div class="empty-state">No sampled venues — <a href="venues.html">venue directory</a>.</div>`;
+});
+</script>
+</body></html>

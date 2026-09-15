@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events — Pool Party</title>
+  <meta name="description" content="Browse pool, beach, yacht & dayclub events. Live Book Now handoffs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-data-root="data" data-asset-root="">
+<div class="proto-banner">Prototype for Frank Accettulli — luxury UX mirror of poolparty.com. Book Now = live handoff (Booketing/SquadUp). Demo cart has no real prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span> Pool Party</a>
+    <nav class="nav-links" aria-label="Primary"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+    <div class="nav-actions">
+      <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
+      <a class="nav-cta" href="events.html">Explore events</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="account.html">Account</a>
+  <a href="cart.html">Demo cart</a>
+</div>
+
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">Event index</p>
+  <h1>Upcoming <em>experiences</em></h1>
+  <p class="lead">Filter by city &amp; vibe. Book Now deep-links to live Booketing or poolparty.com — this page does not sell tickets.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <div class="filters">
+    <input type="search" id="q" placeholder="Search events, DJs, venues…" />
+    <select id="city"><option value="">All cities</option></select>
+    <select id="vibe">
+      <option value="">All vibes</option>
+      <option value="dayclub">Dayclub</option>
+      <option value="beach">Beach</option>
+      <option value="pool">Pool</option>
+      <option value="yacht">Yacht</option>
+      <option value="pass">Pass</option>
+    </select>
+  </div>
+  <p style="margin-bottom:1rem;font-size:.85rem;color:var(--muted)"><span data-result-count></span> · Sampled from live catalog Sep 15, 2026</p>
+  <div class="card-grid cols-3" id="grid"></div>
+</div></section>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. This is a modernization prototype — ticketing fulfillment stays on the live PoolParty stack.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise / list venue</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Pool Party prototype · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music tease on home only · Prices never invent as real</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const [ev, cities] = await Promise.all([PP.loadJSON('events'), PP.loadJSON('cities')]);
+  const citySel = document.getElementById('city');
+  (cities.cities||[]).forEach(c => {
+    const o = document.createElement('option'); o.value=c.slug; o.textContent=c.name; citySel.appendChild(o);
+  });
+  PP.bindFilters({
+    grid: document.getElementById('grid'),
+    search: document.getElementById('q'),
+    city: citySel,
+    vibe: document.getElementById('vibe'),
+    items: ev.events||[],
+    render: e => PP.eventCard(e, {cities: cities.cities||[]})
+  });
+});
+</script>
+</body></html>

@@ -1,0 +1,196 @@
+{
+  "generated": "2026-09-15",
+  "source": "pp-cities-sitemap 19 cities",
+  "cities": [
+    {
+      "id": "city-01",
+      "slug": "amalfi-coast",
+      "name": "Amalfi Coast",
+      "live_url": "https://poolparty.com/pp-cities/amalfi-coast/",
+      "description": "The Amalfi Coast offers pool parties with stunning sea views and Italian charm. Sip cocktails by cliffside pools or dance to live music under the sun. From luxury resorts to coastal villas, every party feels like a dream on this beautiful stretch of coast.",
+      "count_hint": 136,
+      "image": "assets/site/feat-encore-pool.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-02",
+      "slug": "arizona",
+      "name": "Arizona",
+      "live_url": "https://poolparty.com/pp-cities/arizona/",
+      "description": "Arizona\u2019s pool party scene is the perfect mix of desert charm and stylish fun. From Scottsdale to Phoenix, enjoy vibrant poolside venues with live DJs, craft cocktails, and stunning desert views. Whether you're looking to relax or dance the day away, Arizona\u2019s resorts offer the u",
+      "count_hint": 7,
+      "image": "assets/site/vibe-encore-crowd.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-03",
+      "slug": "atlantic-city",
+      "name": "Atlantic City",
+      "live_url": "https://poolparty.com/pp-cities/atlantic-city/",
+      "description": "Atlantic City\u2019s pool parties are all about fun and energy. Enjoy rooftop pools, live DJs, and great drinks. Lounge by the water or dance all night. From boardwalk views to cool poolside bars, Atlantic City has everything you need for a good time.",
+      "count_hint": 63,
+      "image": "assets/site/vibe-encore-umbrellas.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-04",
+      "slug": "bali",
+      "name": "Bali",
+      "live_url": "https://poolparty.com/pp-cities/bali/",
+      "description": "Bali\u2019s pool party scene is a mix of island vibes and tropical fun. Chill at beach clubs with infinity pools, live DJs, and sunset views. Whether you're sipping cocktails or dancing by the pool, Bali offers the perfect blend of beauty and energy.",
+      "count_hint": 27,
+      "image": "assets/site/hero-ayu.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-05",
+      "slug": "budapest",
+      "name": "Budapest",
+      "live_url": "https://poolparty.com/pp-cities/budapest/",
+      "description": "Budapest\u2019s pool party scene is bold, fun, and full of history. Enjoy thermal baths by day and party lights by night. With live DJs, drinks, and epic settings, these parties mix old-world charm with modern beats. It's the perfect way to soak and celebrate.",
+      "count_hint": 17,
+      "image": "assets/site/vibe-ayu-energy.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-06",
+      "slug": "california",
+      "name": "California",
+      "live_url": "https://poolparty.com/pp-cities/california/",
+      "description": "Discover pool, beach, and yacht parties in California.",
+      "count_hint": 2,
+      "image": "assets/site/music-ayu-stage.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-07",
+      "slug": "dubai",
+      "name": "Dubai",
+      "live_url": "https://poolparty.com/pp-cities/dubai/",
+      "description": "Dubai\u2019s pool parties are all about luxury and high energy. Lounge at rooftop pools with skyline views, enjoy live DJs, and sip on stylish cocktails. Whether day or night, Dubai offers glam settings and nonstop fun in the heart of the desert.",
+      "count_hint": 46,
+      "image": "assets/site/vibe-beach-terrace.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-08",
+      "slug": "fort-lauderdale",
+      "name": "Fort lauderdale",
+      "live_url": "https://poolparty.com/pp-cities/fort-lauderdale/",
+      "description": "Fort Lauderdale\u2019s pool parties are full of beach vibes and sunny fun. Chill at poolside bars, enjoy live DJs, and sip tropical drinks by the water. From stylish hotels to waterfront lounges, it's the perfect spot for laid-back party days.",
+      "count_hint": 17,
+      "image": "assets/site/vibe-yacht-bay.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-09",
+      "slug": "france",
+      "name": "France",
+      "live_url": "https://poolparty.com/pp-cities/france/",
+      "description": "France\u2019s pool parties offer a mix of elegance and fun. Enjoy chic venues with stunning views, live DJs, and refreshing cocktails. Whether you're in Paris or the French Riviera, the atmosphere is lively and stylish, making it the perfect place to dance and relax.",
+      "count_hint": 27,
+      "image": "assets/site/dest-miami-night.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-10",
+      "slug": "india",
+      "name": "India",
+      "live_url": "https://poolparty.com/pp-cities/india/",
+      "description": "Discover pool, beach, and yacht parties in India.",
+      "count_hint": 1,
+      "image": "assets/site/dest-ibiza-obeach.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-11",
+      "slug": "italy",
+      "name": "Italy",
+      "live_url": "https://poolparty.com/pp-cities/italy/",
+      "description": "Italy\u2019s pool parties combine Mediterranean charm and vibrant energy. Enjoy stunning views, live DJs, and refreshing cocktails at luxury resorts. From the Amalfi Coast to Tuscany, Italy offers the perfect setting for sun, fun, and relaxation.",
+      "count_hint": 253,
+      "image": "assets/site/vibe-garden-day.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-12",
+      "slug": "las-vegas",
+      "name": "Las Vegas",
+      "live_url": "https://poolparty.com/pp-cities/las-vegas/",
+      "description": "Las Vegas pool parties are legendary, full of energy and excitement. Enjoy stunning pools, live DJs, and amazing cocktails. Whether you\u2019re lounging or dancing, Vegas offers the ultimate party experience with a vibrant desert backdrop.",
+      "count_hint": 1407,
+      "image": "assets/site/vibe-garden-dusk.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-13",
+      "slug": "los-angeles",
+      "name": "Los Angeles",
+      "live_url": "https://poolparty.com/pp-cities/los-angeles/",
+      "description": "Los Angeles pool parties are stylish and full of energy. Enjoy rooftop pools with stunning city views, live DJs, and refreshing cocktails. Whether you're relaxing or dancing, LA\u2019s vibrant atmosphere makes every pool party unforgettable.",
+      "count_hint": 1,
+      "image": "assets/site/vibe-garden-rotunda.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-14",
+      "slug": "miami",
+      "name": "Miami",
+      "live_url": "https://poolparty.com/pp-cities/miami/",
+      "description": "Miami\u2019s pool parties are all about vibrant energy and ocean views. Enjoy rooftop pools, live DJs, and tropical cocktails. Whether you\u2019re dancing or relaxing, Miami offers the perfect setting for fun in the sun.",
+      "count_hint": 230,
+      "image": "assets/site/feat-encore-cabana.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-15",
+      "slug": "new-york",
+      "name": "New York",
+      "live_url": "https://poolparty.com/pp-cities/new-york/",
+      "description": "New York\u2019s pool parties offer a mix of city energy and rooftop views. Enjoy stylish pools, live DJs, and refreshing cocktails. Whether you\u2019re relaxing or dancing, NYC delivers an unforgettable party experience.",
+      "count_hint": 105,
+      "image": "assets/site/lifestyle-cheers.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-16",
+      "slug": "phuket",
+      "name": "Phuket",
+      "live_url": "https://poolparty.com/pp-cities/phuket/",
+      "description": "Phuket\u2019s pool parties offer a perfect blend of tropical beauty and vibrant fun. Enjoy stunning pools, live DJs, and refreshing cocktails at luxury resorts. Whether you're lounging by the water or dancing under the stars, Phuket\u2019s lively atmosphere makes every party unforgettable.",
+      "count_hint": 102,
+      "image": "assets/site/feat-encore-pool.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-17",
+      "slug": "southampton",
+      "name": "Southampton",
+      "live_url": "https://poolparty.com/pp-cities/southampton/",
+      "description": "Discover pool, beach, and yacht parties in Southampton.",
+      "count_hint": 1,
+      "image": "assets/site/vibe-encore-crowd.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-18",
+      "slug": "spain",
+      "name": "Spain",
+      "live_url": "https://poolparty.com/pp-cities/spain/",
+      "description": "Spain\u2019s pool parties are a blend of sunny fun and vibrant energy. Enjoy stunning pools, live DJs, and refreshing cocktails at luxury resorts. Whether you\u2019re dancing under the sun or relaxing by the water, Spain offers the perfect atmosphere for an unforgettable experience. With i",
+      "count_hint": 30,
+      "image": "assets/site/vibe-encore-umbrellas.jpg",
+      "source": "live"
+    },
+    {
+      "id": "city-19",
+      "slug": "sydney",
+      "name": "Sydney",
+      "live_url": "https://poolparty.com/pp-cities/sydney/",
+      "description": "Sydney\u2019s pool parties offer a mix of city style and laid-back vibes. Enjoy rooftop pools, live DJs, and refreshing cocktails with stunning views. Whether you're relaxing by the water or dancing the night away, Sydney\u2019s lively atmosphere makes every party special. With its sunny w",
+      "count_hint": 10,
+      "image": "assets/site/hero-ayu.jpg",
+      "source": "live"
+    }
+  ]
+}

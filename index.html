@@ -3,1361 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pool Party — Luxury Dayclub Experiences</title>
-  <meta name="description" content="Pool Party prototype for Frank Accettulli: cinematic dayclub, yacht, and night-pool energy. Book or get on the list." />
+  <title>Pool Party — Luxury Dayclub Experiences Worldwide</title>
+  <meta name="description" content="Discover and book pool, beach, and yacht parties. Prototype UX mirror for Frank Accettulli." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --ink: #070e1a;
-      --deep: #050b14;
-      --navy: #0c1f36;
-      --teal: #1a9b9b;
-      --aqua: #3dd6d0;
-      --gold: #d4a853;
-      --champagne: #f0d9a8;
-      --sunset: #e87a4a;
-      --foam: #e8f4f4;
-      --mist: rgba(232, 244, 244, 0.72);
-      --glass: rgba(8, 18, 32, 0.55);
-      --glass-border: rgba(240, 217, 168, 0.18);
-      --line: rgba(212, 168, 83, 0.35);
-      --radius: 1.35rem;
-      --shadow: 0 28px 70px rgba(0, 0, 0, 0.5);
-      --font-display: "Cormorant Garamond", Georgia, serif;
-      --font-body: "Outfit", system-ui, sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--deep);
-      color: var(--foam);
-      line-height: 1.55;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; height: auto; }
-    button, input, select, textarea { font: inherit; }
-
-    .wrap {
-      width: min(1180px, calc(100% - 2rem));
-      margin-inline: auto;
-    }
-
-    /* Reveal on scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.in {
-      opacity: 1;
-      transform: none;
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
-    /* ——— Nav ——— */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 60;
-      backdrop-filter: blur(18px) saturate(1.2);
-      background: rgba(5, 11, 20, 0.55);
-      border-bottom: 1px solid rgba(232, 244, 244, 0.06);
-      transition: background 0.3s, border-color 0.3s;
-    }
-    .nav.scrolled {
-      background: rgba(5, 11, 20, 0.88);
-      border-bottom-color: rgba(212, 168, 83, 0.15);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.85rem 0;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .logo-mark {
-      width: 1.65rem;
-      height: 1.65rem;
-      border-radius: 50%;
-      background: conic-gradient(from 210deg, var(--sunset), var(--gold), var(--aqua), var(--teal), var(--sunset));
-      box-shadow: 0 0 18px rgba(61, 214, 208, 0.35);
-    }
-
-    .nav-links {
-      display: none;
-      gap: 1.5rem;
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: var(--mist);
-    }
-    .nav-links a:hover { color: var(--champagne); }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.15rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--gold), var(--sunset));
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 0.82rem;
-      letter-spacing: 0.02em;
-      box-shadow: 0 8px 24px rgba(232, 122, 74, 0.35);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(232, 122, 74, 0.45);
-    }
-
-    @media (min-width: 768px) {
-      .nav-links { display: flex; }
-    }
-
-    /* ——— Sticky mobile book CTA ——— */
-    .sticky-book {
-      position: fixed;
-      bottom: 1.1rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(120%);
-      z-index: 55;
-      padding: 0.85rem 1.6rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--champagne), var(--gold) 40%, var(--sunset));
-      color: var(--ink);
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(240, 217, 168, 0.25);
-      transition: transform 0.35s ease, opacity 0.35s;
-      opacity: 0;
-      white-space: nowrap;
-    }
-    .sticky-book.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
-    @media (min-width: 900px) {
-      .sticky-book { display: none; }
-    }
-
-    /* ——— Buttons ——— */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.95rem 1.65rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--champagne) 0%, var(--gold) 45%, var(--sunset) 100%);
-      color: var(--ink);
-      box-shadow: 0 14px 36px rgba(212, 168, 83, 0.35);
-    }
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--foam);
-      border: 1px solid rgba(232, 244, 244, 0.28);
-      backdrop-filter: blur(8px);
-    }
-    .btn-ghost:hover {
-      border-color: var(--aqua);
-      color: var(--aqua);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 1.5rem;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    /* ——— Full-bleed cinematic hero ——— */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      align-items: flex-end;
-      padding: 7rem 0 4.5rem;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-      transform: scale(1.05);
-      animation: kenburns 22s ease-in-out infinite alternate;
-    }
-    @keyframes kenburns {
-      from { transform: scale(1.05) translate(0, 0); }
-      to { transform: scale(1.12) translate(-1.5%, -1%); }
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(5, 11, 20, 0.45) 0%, rgba(5, 11, 20, 0.25) 35%, rgba(5, 11, 20, 0.75) 70%, rgba(5, 11, 20, 0.95) 100%),
-        linear-gradient(90deg, rgba(5, 11, 20, 0.65) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(232, 122, 74, 0.22), transparent 60%);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 40rem;
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      font-weight: 600;
-      line-height: 1.05;
-      letter-spacing: -0.015em;
-      margin-bottom: 1.2rem;
-      text-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-    }
-    .hero h1 em {
-      font-style: italic;
-      background: linear-gradient(120deg, var(--champagne), var(--aqua));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-lead {
-      font-size: 1.08rem;
-      color: var(--mist);
-      max-width: 34rem;
-      margin-bottom: 1.85rem;
-      font-weight: 300;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-bottom: 2.25rem;
-    }
-
-    .hero-glass {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .hero-pill {
-      padding: 0.7rem 1rem;
-      border-radius: 1rem;
-      background: var(--glass);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--glass-border);
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: rgba(232, 244, 244, 0.7);
-    }
-    .hero-pill strong {
-      display: block;
-      color: var(--foam);
-      font-size: 0.98rem;
-      font-weight: 600;
-      letter-spacing: 0;
-      text-transform: none;
-      margin-top: 0.15rem;
-    }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(232, 244, 244, 0.45);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .scroll-hint::after {
-      content: "";
-      width: 1px;
-      height: 2rem;
-      background: linear-gradient(180deg, var(--gold), transparent);
-      animation: pulse-line 1.8s ease-in-out infinite;
-    }
-    @keyframes pulse-line {
-      0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
-      50% { opacity: 1; transform: scaleY(1); }
-    }
-
-    /* ——— Sections ——— */
-    section { padding: 5rem 0; position: relative; }
-
-    .section-head {
-      max-width: 38rem;
-      margin-bottom: 2.5rem;
-    }
-    .section-head h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2.1rem, 4.5vw, 3rem);
-      font-weight: 600;
-      line-height: 1.12;
-      margin-bottom: 0.75rem;
-    }
-    .section-head p {
-      color: var(--mist);
-      font-weight: 300;
-      font-size: 1.02rem;
-    }
-
-    /* ——— Vibes photo grid ——— */
-    .vibes {
-      background: linear-gradient(180deg, transparent, rgba(12, 31, 54, 0.5), transparent);
-    }
-
-    .vibe-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 640px) {
-      .vibe-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 980px) {
-      .vibe-grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto auto;
-      }
-      .vibe-card:nth-child(1) { grid-column: span 2; min-height: 320px; }
-      .vibe-card:nth-child(2) { min-height: 320px; }
-      .vibe-card:nth-child(3) { min-height: 320px; }
-      .vibe-card:nth-child(4),
-      .vibe-card:nth-child(5) { grid-column: span 2; min-height: 260px; }
-    }
-
-    .vibe-card {
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      min-height: 260px;
-      border: 1px solid rgba(232, 244, 244, 0.08);
-      isolation: isolate;
-      transition: transform 0.35s ease, border-color 0.35s, box-shadow 0.35s;
-    }
-    .vibe-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--line);
-      box-shadow: var(--shadow);
-    }
-    .vibe-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
-    .vibe-card:hover img { transform: scale(1.08); }
-
-    .vibe-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 25%, rgba(5, 11, 20, 0.92) 100%);
-      z-index: 1;
-    }
-
-    .vibe-body {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 1.35rem;
-      z-index: 2;
-    }
-    .vibe-body .tag {
-      display: inline-block;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--champagne);
-      margin-bottom: 0.4rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(212, 168, 83, 0.15);
-      border: 1px solid rgba(212, 168, 83, 0.25);
-    }
-    .vibe-body h3 {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .vibe-body p {
-      font-size: 0.88rem;
-      color: var(--mist);
-      font-weight: 300;
-    }
-
-    .example-note {
-      margin-top: 1.35rem;
-      font-size: 0.78rem;
-      color: rgba(232, 244, 244, 0.4);
-    }
-
-    /* Destination strip */
-    .dest-strip {
-      margin-top: 2.75rem;
-    }
-    .dest-strip .section-sub {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.15rem;
-    }
-    .dest-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 700px) {
-      .dest-grid { grid-template-columns: 1.1fr 0.9fr 1fr; }
-    }
-    .dest-tile {
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      min-height: 220px;
-      border: 1px solid rgba(232, 244, 244, 0.08);
-    }
-    .dest-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-      transition: transform 0.6s;
-    }
-    .dest-tile:hover img { transform: scale(1.06); }
-    .dest-tile figcaption {
-      position: absolute;
-      inset: auto 0 0 0;
-      z-index: 2;
-      padding: 1.15rem;
-      background: linear-gradient(180deg, transparent, rgba(5, 11, 20, 0.9));
-    }
-    .dest-tile figcaption strong {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      display: block;
-    }
-    .dest-tile figcaption span {
-      font-size: 0.8rem;
-      color: var(--mist);
-      font-weight: 300;
-    }
-    .dest-tile::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(5, 11, 20, 0.7));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* ——— How it works — glass cards ——— */
-    .steps {
-      display: grid;
-      gap: 1.15rem;
-    }
-    @media (min-width: 768px) {
-      .steps { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .step {
-      padding: 1.85rem 1.55rem;
-      border-radius: var(--radius);
-      background: rgba(12, 31, 54, 0.45);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(232, 244, 244, 0.1);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .step:hover {
-      border-color: var(--glass-border);
-      transform: translateY(-3px);
-    }
-    .step-num {
-      font-family: var(--font-display);
-      font-size: 2.6rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, var(--gold), var(--aqua));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1;
-      margin-bottom: 0.85rem;
-    }
-    .step h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .step p {
-      font-size: 0.92rem;
-      color: var(--mist);
-      font-weight: 300;
-    }
-
-    /* ——— Featured ——— */
-    .featured-grid {
-      display: grid;
-      gap: 1.15rem;
-    }
-    @media (min-width: 768px) {
-      .featured-grid { grid-template-columns: 1.45fr 1fr; }
-    }
-
-    .feat-card {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(232, 244, 244, 0.1);
-      position: relative;
-      background: rgba(12, 31, 54, 0.5);
-      backdrop-filter: blur(12px);
-    }
-
-    .feat-card.spotlight {
-      min-height: 380px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    .feat-card.spotlight .feat-photo {
-      position: absolute;
-      inset: 0;
-    }
-    .feat-card.spotlight .feat-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .feat-card.spotlight::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(180deg, rgba(5, 11, 20, 0.15), rgba(5, 11, 20, 0.88) 70%);
-    }
-    .feat-card.spotlight .feat-body {
-      position: relative;
-      z-index: 2;
-      padding: 1.85rem;
-    }
-
-    .feat-card .label {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .feat-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.85rem;
-      font-weight: 600;
-      line-height: 1.15;
-      margin: 0.4rem 0 0.65rem;
-    }
-    .feat-card p {
-      color: var(--mist);
-      font-weight: 300;
-      font-size: 0.95rem;
-      margin-bottom: 1.15rem;
-    }
-
-    .feat-stack { display: grid; gap: 1.15rem; }
-
-    .feat-mini {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(232, 244, 244, 0.1);
-      background: rgba(12, 31, 54, 0.55);
-      backdrop-filter: blur(12px);
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      min-height: 140px;
-    }
-    @media (min-width: 500px) {
-      .feat-mini { grid-template-columns: 140px 1fr; }
-    }
-    .feat-mini .thumb {
-      position: relative;
-      overflow: hidden;
-    }
-    .feat-mini .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .feat-mini .copy {
-      padding: 1.15rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .feat-mini h4 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0.3rem 0 0.35rem;
-    }
-    .feat-mini p {
-      font-size: 0.85rem;
-      color: var(--mist);
-      font-weight: 300;
-      margin: 0;
-    }
-
-    /* ——— Music tease ——— */
-    .music-panel {
-      border-radius: calc(var(--radius) + 0.35rem);
-      overflow: hidden;
-      border: 1px solid rgba(61, 214, 208, 0.28);
-      display: grid;
-      min-height: 280px;
-      position: relative;
-      background: rgba(12, 31, 54, 0.6);
-    }
-    @media (min-width: 768px) {
-      .music-panel { grid-template-columns: 1.1fr 0.9fr; }
-    }
-    .music-copy {
-      padding: 2.25rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
-    @media (min-width: 768px) {
-      .music-copy { padding: 2.75rem; }
-    }
-    .music-copy h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
-      font-weight: 600;
-      margin-bottom: 0.55rem;
-    }
-    .music-copy p {
-      color: var(--mist);
-      font-weight: 300;
-      max-width: 30rem;
-    }
-    .music-visual {
-      position: relative;
-      min-height: 200px;
-    }
-    .music-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-    }
-    .music-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(5, 11, 20, 0.85), transparent 50%),
-        radial-gradient(ellipse at 70% 50%, rgba(61, 214, 208, 0.2), transparent 55%);
-    }
-    .eq {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      z-index: 2;
-      display: flex;
-      align-items: flex-end;
-      gap: 5px;
-      height: 48px;
-    }
-    .eq span {
-      width: 5px;
-      border-radius: 3px;
-      background: linear-gradient(180deg, var(--aqua), var(--gold));
-      animation: eq 1.2s ease-in-out infinite;
-    }
-    .eq span:nth-child(1) { height: 30%; animation-delay: 0s; }
-    .eq span:nth-child(2) { height: 60%; animation-delay: 0.15s; }
-    .eq span:nth-child(3) { height: 90%; animation-delay: 0.3s; }
-    .eq span:nth-child(4) { height: 45%; animation-delay: 0.45s; }
-    .eq span:nth-child(5) { height: 70%; animation-delay: 0.1s; }
-    .eq span:nth-child(6) { height: 35%; animation-delay: 0.35s; }
-    .eq span:nth-child(7) { height: 80%; animation-delay: 0.2s; }
-    @keyframes eq {
-      0%, 100% { transform: scaleY(0.55); }
-      50% { transform: scaleY(1); }
-    }
-    .stub-badge {
-      display: inline-block;
-      margin-top: 0.95rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--aqua);
-      border: 1px solid rgba(61, 214, 208, 0.35);
-      width: fit-content;
-    }
-
-    /* ——— Booking ——— */
-    .booking { padding-bottom: 6rem; }
-
-    .booking-shell {
-      display: grid;
-      gap: 2rem;
-      border-radius: calc(var(--radius) + 0.4rem);
-      overflow: hidden;
-      border: 1px solid rgba(232, 244, 244, 0.12);
-      box-shadow: var(--shadow);
-      background: rgba(12, 31, 54, 0.55);
-      backdrop-filter: blur(18px);
-    }
-    @media (min-width: 860px) {
-      .booking-shell { grid-template-columns: 0.95fr 1.15fr; }
-    }
-
-    .booking-aside {
-      position: relative;
-      min-height: 260px;
-    }
-    .booking-aside img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .booking-aside::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, rgba(232, 122, 74, 0.35), rgba(5, 11, 20, 0.75));
-    }
-    .booking-aside-copy {
-      position: relative;
-      z-index: 2;
-      padding: 2rem 1.75rem;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    @media (min-width: 860px) {
-      .booking-aside-copy { padding: 2.5rem; }
-    }
-    .booking-aside-copy h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3.5vw, 2.55rem);
-      font-weight: 600;
-      line-height: 1.12;
-      margin-bottom: 0.75rem;
-    }
-    .booking-aside-copy p {
-      color: var(--mist);
-      font-weight: 300;
-      margin-bottom: 1.15rem;
-      max-width: 26rem;
-    }
-    .booking-aside-copy ul {
-      list-style: none;
-      display: grid;
-      gap: 0.55rem;
-    }
-    .booking-aside-copy li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: 0.9rem;
-      color: rgba(232, 244, 244, 0.85);
-    }
-    .booking-aside-copy li::before {
-      content: "";
-      width: 0.5rem;
-      height: 0.5rem;
-      margin-top: 0.4rem;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--aqua));
-    }
-
-    .booking-form-wrap {
-      padding: 1.75rem 1.5rem 2rem;
-    }
-    @media (min-width: 860px) {
-      .booking-form-wrap { padding: 2.5rem 2.5rem 2.5rem 1.5rem; }
-    }
-
-    .form { display: grid; gap: 0.9rem; }
-    .form label {
-      display: grid;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(232, 244, 244, 0.55);
-    }
-    .form input,
-    .form select,
-    .form textarea {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(232, 244, 244, 0.14);
-      background: rgba(5, 11, 20, 0.65);
-      color: var(--foam);
-      outline: none;
-      transition: border-color 0.2s;
-      text-transform: none;
-      letter-spacing: 0;
-      font-size: 0.95rem;
-    }
-    .form input:focus,
-    .form select:focus,
-    .form textarea:focus { border-color: var(--aqua); }
-    .form select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e8f4f4' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-    }
-    .form textarea { min-height: 88px; resize: vertical; }
-    .form-row {
-      display: grid;
-      gap: 0.9rem;
-    }
-    @media (min-width: 520px) {
-      .form-row { grid-template-columns: 1fr 1fr; }
-    }
-    .form-note {
-      font-size: 0.75rem;
-      color: rgba(232, 244, 244, 0.4);
-      text-transform: none;
-      letter-spacing: 0;
-      margin-top: -0.2rem;
-    }
-    .form .btn-primary { width: 100%; margin-top: 0.25rem; }
-    .form-success {
-      display: none;
-      padding: 1.15rem;
-      border-radius: 0.85rem;
-      background: rgba(26, 155, 155, 0.2);
-      border: 1px solid rgba(61, 214, 208, 0.35);
-      color: var(--foam);
-      font-size: 0.95rem;
-    }
-    .form-success.show { display: block; }
-
-    /* ——— Footer ——— */
-    footer {
-      border-top: 1px solid rgba(232, 244, 244, 0.08);
-      padding: 2.75rem 0 2.25rem;
-      background: rgba(5, 11, 20, 0.6);
-    }
-    .footer-inner {
-      display: grid;
-      gap: 1.75rem;
-    }
-    @media (min-width: 700px) {
-      .footer-inner {
-        grid-template-columns: 1.5fr 1fr 1fr;
-        align-items: start;
-      }
-    }
-    .footer-brand .logo { margin-bottom: 0.65rem; }
-    .footer-brand p {
-      font-size: 0.9rem;
-      color: var(--mist);
-      font-weight: 300;
-      max-width: 24rem;
-    }
-    .footer-col h4 {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.85rem;
-    }
-    .footer-col a,
-    .footer-col p {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--mist);
-      font-weight: 300;
-      margin-bottom: 0.45rem;
-    }
-    .footer-col a:hover { color: var(--champagne); }
-    .footer-bottom {
-      margin-top: 2rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(232, 244, 244, 0.06);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: rgba(232, 244, 244, 0.35);
-    }
-    .proto-tag { color: rgba(212, 168, 83, 0.7); }
-
-    .photo-credit {
-      font-size: 0.7rem;
-      color: rgba(232, 244, 244, 0.28);
-      margin-top: 0.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
-<body>
-  <header class="nav" id="site-nav">
-    <div class="wrap nav-inner">
-      <a href="#top" class="logo" aria-label="Pool Party home">
-        <span class="logo-mark" aria-hidden="true"></span>
-        Pool Party
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#vibes">Vibes</a>
-        <a href="#how">How it works</a>
-        <a href="#featured">Experiences</a>
-        <a href="#music">Sound</a>
-      </nav>
-      <a class="nav-cta" href="#book">Book / Get on the list</a>
+<body data-data-root="data" data-asset-root="">
+<div class="proto-banner">Prototype for Frank Accettulli — luxury UX mirror of poolparty.com. Book Now = live handoff (Booketing/SquadUp). Demo cart has no real prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span> Pool Party</a>
+    <nav class="nav-links" aria-label="Primary"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+    <div class="nav-actions">
+      <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
+      <a class="nav-cta" href="events.html">Explore events</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </header>
+  </div>
+</header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="account.html">Account</a>
+  <a href="cart.html">Demo cart</a>
+</div>
 
-  <a class="sticky-book" id="sticky-book" href="#book">Book / Get on the list</a>
+<a class="sticky-book" href="events.html">Explore events</a>
+<section class="hero">
+  <div class="hero-bg"><img src="assets/site/hero-ayu.jpg" alt="Ayu Dayclub energy" /></div>
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-content">
+    <p class="eyebrow">Global daylife · Pool · Beach · Yacht</p>
+    <h1>The hottest <em>pool parties</em> — search, book, show up.</h1>
+    <p class="hero-lead">A cinematic modernization of PoolParty.com: city-smart discovery, dense event grids, and honest Book Now handoffs to live Booketing / SquadUp fulfillment.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="events.html">View upcoming events</a>
+      <a class="btn btn-ghost" href="#cities">Pick a city</a>
+    </div>
+    <div class="hero-glass">
+      <div class="hero-pill">Cities<strong>19 destinations</strong></div>
+      <div class="hero-pill">Book Now<strong>Live handoff</strong></div>
+      <div class="hero-pill">Prototype<strong>Frank Accettulli</strong></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
 
-  <main id="top">
-    <!-- Hero — full-bleed cinematic -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-bg" aria-hidden="true">
-        <img src="assets/site/hero-ayu.jpg" alt="" width="1600" height="1067" fetchpriority="high" />
+<section class="wrap" style="padding-top:2.5rem;padding-bottom:0">
+  <div class="trust reveal">
+    <div><strong>21+ events</strong><span>Legal drinking age unless noted</span></div>
+    <div><strong>Booketing / SquadUp</strong><span>Live ticket fulfillment</span></div>
+    <div><strong>Venue partners</strong><span>Dayclubs · beaches · yachts</span></div>
+    <div><strong>Prototype honesty</strong><span>No fake ticket prices</span></div>
+  </div>
+</section>
+
+<section id="cities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">City picker</p>
+      <h2>Where are you partying?</h2>
+      <p>Filter the home feed by city — same control powers Events &amp; Venues. Selection sticks in your browser.</p>
+    </div>
+    <div class="city-grid" id="home-cities"></div>
+    <p class="example-note" style="margin-top:1rem;font-size:.78rem;color:var(--muted)"><button type="button" class="chip" id="clear-city">Clear city filter</button> <span id="city-status"></span></p>
+  </div>
+</section>
+
+<section class="vibes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The vibe</p>
+      <h2>Dayclub energy, yacht sunsets, night-pool heat.</h2>
+      <p>Photography from live PoolParty venue assets — Encore, Ayu, Garden of the Gods, yacht &amp; beach frames.</p>
+    </div>
+    <div class="vibe-grid">
+      <a class="vibe-card reveal" href="events.html?vibe=dayclub"><img src="assets/site/vibe-encore-crowd.jpg" alt=""/><div class="vibe-body"><span class="tag">Dayclub</span><h3>Encore-level days</h3><p>Crowds, DJs, cabana rows.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=beach"><img src="assets/site/vibe-beach-terrace.jpg" alt=""/><div class="vibe-body"><span class="tag">Beach</span><h3>Sand &amp; terrace</h3><p>TAO Beach · Palm Tree · coast.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-2" href="events.html?vibe=pool"><img src="assets/site/vibe-ayu-energy.jpg" alt=""/><div class="vibe-body"><span class="tag">Pool</span><h3>Liquid heat</h3><p>Pool decks &amp; midweek dips.</p></div></a>
+      <a class="vibe-card reveal" href="events.html?vibe=yacht"><img src="assets/site/vibe-yacht-bay.jpg" alt=""/><div class="vibe-body"><span class="tag">Yacht</span><h3>Bay escapes</h3><p>Waterfront &amp; yacht social.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=pass"><img src="assets/site/feat-encore-cabana.jpg" alt=""/><div class="vibe-body"><span class="tag">Pass</span><h3>Pool Party Pass</h3><p>Assigned dayclub access — live SquadUp path.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;max-width:none">
+      <div>
+        <p class="eyebrow">Featured from live catalog</p>
+        <h2>This week’s heat</h2>
+        <p>Real event names &amp; Booketing URLs scraped from poolparty.com. <span data-result-count></span></p>
       </div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="wrap hero-content">
-        <p class="eyebrow">For Frank Accettulli · Prototype</p>
-        <h1>Where the dayclub energy <em>never clocks out</em></h1>
-        <p class="hero-lead">
-          Cinematic Pool Party — sun decks, yacht afternoons, and midnight pools.
-          Curated vibes, effortless list access, and luxury leisure from first splash to last glow.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#book">Book or get on the list</a>
-          <a class="btn btn-ghost" href="#vibes">Explore the vibes</a>
-        </div>
-        <div class="hero-glass">
-          <div class="hero-pill">Day to night<strong>One continuous energy</strong></div>
-          <div class="hero-pill">Prototype<strong>Visual &amp; flow only</strong></div>
-          <div class="hero-pill">Honest stub<strong>No fake ticket prices</strong></div>
-        </div>
-      </div>
-      <div class="scroll-hint" aria-hidden="true">Scroll</div>
-    </section>
+      <a class="btn btn-ghost" href="events.html">All events →</a>
+    </div>
+    <div class="card-grid cols-3" id="home-events"></div>
+  </div>
+</section>
 
-    <!-- Vibes + destination photo grid -->
-    <section class="vibes" id="vibes">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">Destinations &amp; vibes</p>
-          <h2>Five moods. One Pool Party standard.</h2>
-          <p>Photo-led cards for destination energy — real venues and availability wire in later. Layout examples only.</p>
-        </div>
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2>Search → Event → Honest checkout handoff</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><h3>Pick city &amp; vibe</h3><p>Filter 19 cities and dayclub / beach / pool / yacht / pass vibes.</p></div>
+      <div class="step reveal reveal-delay-1"><div class="step-num">02</div><h3>Open the event</h3><p>See venue, date, and clear Book Now labeling.</p></div>
+      <div class="step reveal reveal-delay-2"><div class="step-num">03</div><h3>Book on live stack</h3><p>Continues on Booketing or live PoolParty SquadUp — prototype does not replace ticketing.</p></div>
+    </div>
+  </div>
+</section>
 
-        <div class="vibe-grid">
-          <article class="vibe-card reveal">
-            <img src="assets/site/vibe-garden-rotunda.jpg" alt="Garden of the Gods pool rotunda at Caesars" width="800" height="533" loading="lazy" />
-            <div class="vibe-body">
-              <span class="tag">Example layout</span>
-              <h3>Sunrise Splash</h3>
-              <p>Early light, cool water, champagne mornings.</p>
-            </div>
-          </article>
-          <article class="vibe-card reveal reveal-delay-1">
-            <img src="assets/site/vibe-encore-crowd.jpg" alt="Encore Beach Club crowded dayclub pool" width="800" height="533" loading="lazy" />
-            <div class="vibe-body">
-              <span class="tag">Example layout</span>
-              <h3>Midday Heat</h3>
-              <p>Peak sun, DJ warm-up, cabana energy.</p>
-            </div>
-          </article>
-          <article class="vibe-card reveal reveal-delay-2">
-            <img src="assets/site/vibe-yacht-bay.jpg" alt="Yacht bay party with floats and boats" width="800" height="531" loading="lazy" />
-            <div class="vibe-body">
-              <span class="tag">Example layout</span>
-              <h3>Yacht Drift</h3>
-              <p>Blue horizon, soft music, floating lounge.</p>
-            </div>
-          </article>
-          <article class="vibe-card reveal">
-            <img src="assets/site/vibe-beach-terrace.jpg" alt="Cliffside beach club with orange umbrellas" width="800" height="531" loading="lazy" />
-            <div class="vibe-body">
-              <span class="tag">Example layout</span>
-              <h3>Golden Hour</h3>
-              <p>Amber skies, slow pours, photogenic decks.</p>
-            </div>
-          </article>
-          <article class="vibe-card reveal reveal-delay-1">
-            <img src="assets/site/vibe-garden-dusk.jpg" alt="Garden of the Gods pool oasis at dusk" width="800" height="533" loading="lazy" />
-            <div class="vibe-body">
-              <span class="tag">Example layout</span>
-              <h3>Midnight Pool</h3>
-              <p>Underwater lights, late sets, afterglow.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="dest-strip reveal">
-          <h3 class="section-sub">Destination frames</h3>
-          <div class="dest-grid">
-            <figure class="dest-tile">
-              <img src="assets/site/dest-miami-night.jpg" alt="Miami skyline at night" width="900" height="1350" loading="lazy" />
-              <figcaption>
-                <strong>Coastal heat</strong>
-                <span>Skyline · dayclub corridor · example frame</span>
-              </figcaption>
-            </figure>
-            <figure class="dest-tile">
-              <img src="assets/site/dest-ibiza-obeach.jpg" alt="O Beach Ibiza pool party" width="900" height="600" loading="lazy" />
-              <figcaption>
-                <strong>Island blue</strong>
-                <span>Yacht lanes · turquoise decks · example frame</span>
-              </figcaption>
-            </figure>
-            <figure class="dest-tile">
-              <img src="assets/site/lifestyle-cheers.jpg" alt="Friends celebrating at a sunny pool party" width="800" height="534" loading="lazy" />
-              <figcaption>
-                <strong>Nightlife pulse</strong>
-                <span>Celebration energy · editorial stub</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <p class="example-note">Photos sourced from poolparty.com venue and destination pages for prototype mood only — not live inventory or pricing.</p>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="how">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">How it works</p>
-          <h2>From list to lounge in three moves.</h2>
-          <p>Clear path to the primary action — book or get on the list — without friction.</p>
-        </div>
-        <div class="steps">
-          <article class="step reveal">
-            <div class="step-num">01</div>
-            <h3>Pick your vibe</h3>
-            <p>Choose a mood or destination style — sun deck, yacht, dayclub, or night pool energy.</p>
-          </article>
-          <article class="step reveal reveal-delay-1">
-            <div class="step-num">02</div>
-            <h3>Request access</h3>
-            <p>Tell us who you are and when you want in. This prototype routes via email for now.</p>
-          </article>
-          <article class="step reveal reveal-delay-2">
-            <div class="step-num">03</div>
-            <h3>Confirm &amp; arrive</h3>
-            <p>Real confirmation, payments, and guest lists connect when backend systems are wired.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured -->
-    <section id="featured">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">Featured experiences</p>
-          <h2>Signature moments, not flyers.</h2>
-          <p>Editorial treatment with photography — no invented ticket prices.</p>
-        </div>
-        <div class="featured-grid">
-          <article class="feat-card spotlight reveal">
-            <div class="feat-photo" aria-hidden="true">
-              <img src="assets/site/feat-encore-pool.jpg" alt="" width="1100" height="733" loading="lazy" />
-            </div>
-            <div class="feat-body">
-              <span class="label">Signature · Example</span>
-              <h3>Dayclub residency energy</h3>
-              <p>Full-day arc: poolside brunch through sunset set. Hero experience card — availability and pricing live elsewhere.</p>
-              <a class="btn btn-primary" href="#book">Get on the list</a>
-            </div>
-          </article>
-          <div class="feat-stack">
-            <article class="feat-mini reveal reveal-delay-1">
-              <div class="thumb" aria-hidden="true">
-                <img src="assets/site/feat-encore-cabana.jpg" alt="" width="800" height="531" loading="lazy" />
-              </div>
-              <div class="copy">
-                <span class="label">Cabana &amp; yacht · Example</span>
-                <h4>Private shade &amp; service</h4>
-                <p>Lounge pockets and blue-water decks — structure for when real inventory connects.</p>
-              </div>
-            </article>
-            <article class="feat-mini reveal reveal-delay-2">
-              <div class="thumb" aria-hidden="true">
-                <img src="assets/site/vibe-garden-dusk.jpg" alt="" width="800" height="533" loading="lazy" />
-              </div>
-              <div class="copy">
-                <span class="label">Night pool · Example</span>
-                <h4>After-dark immersion</h4>
-                <p>Lit water, late music, and the second wind — editorial stub only.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Music tease -->
-    <section class="music-tease" id="music">
-      <div class="wrap">
-        <div class="music-panel reveal">
-          <div class="music-copy">
-            <p class="eyebrow">Sound layer</p>
-            <h2>Sonic Ear Candy — coming later</h2>
-            <p>
-              Optional ambient music layer for the site experience. Soft tease stub only —
-              no player, no tracks. Wire SEC when you’re ready.
-            </p>
-            <span class="stub-badge">Stub · Not live</span>
-          </div>
-          <div class="music-visual" aria-hidden="true">
-            <img src="assets/site/music-ayu-stage.jpg" alt="" width="800" height="533" loading="lazy" />
-            <div class="eq">
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Booking -->
-    <section class="booking" id="book">
-      <div class="wrap">
-        <div class="booking-shell reveal">
-          <aside class="booking-aside" aria-hidden="true">
-            <img src="assets/site/lifestyle-cheers.jpg" alt="" width="800" height="534" loading="lazy" />
-            <div class="booking-aside-copy">
-              <p class="eyebrow">Primary action</p>
-              <h2>Book or get on the list</h2>
-              <p>Demo request form for this prototype. Submissions open your mail client — no live booking backend claimed.</p>
-              <ul>
-                <li>Strong CTA from every major section</li>
-                <li>Client-side / mailto bridge only</li>
-                <li>Real payments, inventory &amp; CRM still TBD</li>
-              </ul>
-            </div>
-          </aside>
-          <div class="booking-form-wrap">
-            <form class="form" id="booking-form" action="mailto:faccett66@gmail.com" method="GET" enctype="text/plain">
-              <input type="hidden" name="subject" value="Pool Party — Book / List request (prototype)" />
-              <div class="form-row">
-                <label>
-                  Name
-                  <input type="text" name="body" id="guest-name" placeholder="Your name" required autocomplete="name" />
-                </label>
-                <label>
-                  Email
-                  <input type="email" id="guest-email" placeholder="you@email.com" required autocomplete="email" />
-                </label>
-              </div>
-              <div class="form-row">
-                <label>
-                  Vibe
-                  <select id="guest-vibe" required>
-                    <option value="" disabled selected>Select a vibe</option>
-                    <option>Sunrise Splash</option>
-                    <option>Midday Heat</option>
-                    <option>Yacht Drift</option>
-                    <option>Golden Hour</option>
-                    <option>Midnight Pool</option>
-                    <option>Not sure yet — surprise me</option>
-                  </select>
-                </label>
-                <label>
-                  Preferred date
-                  <input type="date" id="guest-date" />
-                </label>
-              </div>
-              <label>
-                Notes
-                <textarea id="guest-notes" placeholder="Party size, occasion, questions…"></textarea>
-              </label>
-              <p class="form-note">Prototype demo — opens mailto to faccett66@gmail.com with your details. Not a live booking system.</p>
-              <button type="submit" class="btn btn-primary">Send request</button>
-              <div class="form-success" id="form-success" role="status">
-                Request prepared. If your mail app didn’t open, email faccett66@gmail.com directly.
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="logo">
-            <span class="logo-mark" aria-hidden="true"></span>
-            Pool Party
-          </div>
-          <p>Modernization prototype for poolparty.com — luxury dayclub visual identity with photography. Friend partnership concept for Frank Accettulli; not an official live site rebuild.</p>
-          <p class="photo-credit">Imagery: poolparty.com photography · local assets</p>
-        </div>
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <a href="#vibes">Vibes</a>
-          <a href="#how">How it works</a>
-          <a href="#featured">Experiences</a>
-          <a href="#music">Sound stub</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:faccett66@gmail.com">faccett66@gmail.com</a>
-          <p>Prototype bridge for Frank Accettulli</p>
-          <a href="https://poolparty.com/" rel="noopener noreferrer" target="_blank">Current poolparty.com</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© Pool Party visual prototype</span>
-        <span class="proto-tag">Design prototype · No live backend claimed</span>
+<section>
+  <div class="wrap">
+    <div class="music-band reveal">
+      <img src="assets/site/music-ayu-stage.jpg" alt="" />
+      <div class="music-inner">
+        <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <p class="eyebrow">Sonic Ear Candy · soft tease</p>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.6rem">Soundtrack the party.</h2>
+        <p style="color:var(--mist);font-weight:300;margin-bottom:1rem">Optional SEC music layer for yacht / bach occasions — partnership concept only. No player shipped in this prototype.</p>
+        <a class="btn btn-ghost btn-sm" href="contact.html">Ask about SEC pilot</a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    (function () {
-      var form = document.getElementById("booking-form");
-      var success = document.getElementById("form-success");
-      if (form) {
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          var name = document.getElementById("guest-name").value.trim();
-          var email = document.getElementById("guest-email").value.trim();
-          var vibe = document.getElementById("guest-vibe").value;
-          var date = document.getElementById("guest-date").value || "Flexible";
-          var notes = document.getElementById("guest-notes").value.trim() || "—";
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. This is a modernization prototype — ticketing fulfillment stays on the live PoolParty stack.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise / list venue</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Pool Party prototype · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music tease on home only · Prices never invent as real</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
 
-          var body =
-            "Pool Party prototype request%0D%0A%0D%0A" +
-            "Name: " + encodeURIComponent(name) + "%0D%0A" +
-            "Email: " + encodeURIComponent(email) + "%0D%0A" +
-            "Vibe: " + encodeURIComponent(vibe) + "%0D%0A" +
-            "Preferred date: " + encodeURIComponent(date) + "%0D%0A" +
-            "Notes: " + encodeURIComponent(notes);
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const [ev, cities] = await Promise.all([PP.loadJSON('events'), PP.loadJSON('cities')]);
+  const events = ev.events || [];
+  const cityList = cities.cities || [];
+  const grid = document.getElementById('home-cities');
+  grid.innerHTML = cityList.map(c => `
+    <button type="button" class="city-tile" data-city="${PP.esc(c.slug)}" aria-pressed="false">
+      <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
+      <span>${PP.esc(c.name)}</span>
+      <small>Live taxonomy</small>
+    </button>`).join('');
 
-          window.location.href =
-            "mailto:faccett66@gmail.com" +
-            "?subject=" + encodeURIComponent("Pool Party — Book / List request (prototype)") +
-            "&body=" + body;
-          success.classList.add("show");
-        });
-      }
-
-      var nav = document.getElementById("site-nav");
-      var sticky = document.getElementById("sticky-book");
-      var book = document.getElementById("book");
-
-      function onScroll() {
-        var y = window.scrollY || 0;
-        if (nav) nav.classList.toggle("scrolled", y > 40);
-        if (sticky && book) {
-          var heroOut = y > window.innerHeight * 0.55;
-          var rect = book.getBoundingClientRect();
-          var overBook = rect.top < window.innerHeight && rect.bottom > 0;
-          sticky.classList.toggle("show", heroOut && !overBook);
-        }
-      }
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-
-      if ("IntersectionObserver" in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (en.isIntersecting) {
-              en.target.classList.add("in");
-              io.unobserve(en.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-        document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
-      } else {
-        document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
-      }
-    })();
-  </script>
-</body>
-</html>
+  const status = document.getElementById('city-status');
+  const eventsEl = document.getElementById('home-events');
+  function renderHome() {
+    const city = PP.getCity();
+    grid.querySelectorAll('.city-tile').forEach(t => {
+      const on = t.dataset.city === city;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-pressed', on);
+    });
+    status.textContent = city ? `Filtering: ${PP.cityName(cityList, city)}` : 'Showing global highlights';
+    let list = events.slice();
+    if (city) list = list.filter(e => e.city === city);
+    if (!list.length) list = events.slice(0, 6);
+    else list = list.slice(0, 6);
+    if (city && !events.some(e => e.city === city)) {
+      eventsEl.innerHTML = `<div class="empty-state">No sample events for ${PP.esc(PP.cityName(cityList, city))} in this prototype dataset — <a href="events.html">browse all</a> or <a href="${PP.esc((cityList.find(c=>c.slug===city)||{}).live_url||'https://poolparty.com/')}" target="_blank" rel="noopener">open live city page</a>.</div>`;
+    } else {
+      eventsEl.innerHTML = list.map(e => PP.eventCard(e, {cities: cityList})).join('');
+    }
+    const count = document.querySelector('[data-result-count]');
+    if (count) count.textContent = city ? `City: ${PP.cityName(cityList, city)}` : `${events.length} sampled live events`;
+  }
+  grid.addEventListener('click', e => {
+    const t = e.target.closest('[data-city]');
+    if (!t) return;
+    const slug = t.dataset.city;
+    PP.setCity(PP.getCity() === slug ? '' : slug);
+    renderHome();
+  });
+  document.getElementById('clear-city').addEventListener('click', () => { PP.setCity(''); renderHome(); });
+  window.addEventListener('pp:city', renderHome);
+  renderHome();
+});
+</script>
+</body></html>

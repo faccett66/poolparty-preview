@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Pool Party</title>
+  <meta name="description" content="Guides and stories from the Pool Party catalog." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-data-root="data">
+<div class="proto-banner">Prototype for Frank Accettulli — Book Now = live handoff. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <nav class="nav-links"><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+  <div class="nav-actions">
+    <a class="nav-cart" href="cart.html">🛒<span class="badge" data-cart-count hidden>0</span></a>
+    <a class="nav-cta" href="events.html">Explore events</a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+<div class="nav-drawer" data-nav-drawer><a href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="account.html">Account</a><a href="cart.html">Demo cart</a></div>
+
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">Editorial</p>
+  <h1>Daylife <em>stories</em></h1>
+  <p class="lead">Titles &amp; excerpts from live wp-json posts — open full articles on poolparty.com or read prototype samples.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="card-grid cols-3" id="grid"></div></div></section>
+
+<footer class="footer"><div class="wrap footer-grid">
+  <div><a class="logo" href="index.html"><span class="logo-mark"></span> Pool Party</a>
+  <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem">Prototype — live ticketing unchanged.</p></div>
+  <div><h4>Explore</h4><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
+  <div><h4>Partners</h4><a href="advertise.html">Advertise</a><a href="contact.html">Contact</a><a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
+  <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 Pool Party prototype</span><span>Frank Accettulli</span></div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const posts = (await PP.loadJSON('blog')).posts || [];
+  const samples = [
+    {slug:'sample-vegas-dayclub-guide', title:'Vegas Dayclub Field Guide (prototype sample)', date:'2026-09-15', excerpt:'How to read passes vs single-event tickets, what Book Now handoffs mean, and how to pick Encore vs Omnia vs Liquid energy.', image:'assets/site/feat-encore-pool.jpg', sample:true},
+    {slug:'sample-pos-future', title:'Why discovery without POS leaves money on the table (prototype sample)', date:'2026-09-15', excerpt:'A partnership note: when Book Now routes to venue ticketing, GA margin walks out the door — the case for PoolParty as point of sale.', image:'assets/site/lifestyle-cheers.jpg', sample:true},
+  ];
+  const all = samples + posts;
+  document.getElementById('grid').innerHTML = all.map(p => `
+    <article class="card">
+      <div class="card-media"><img src="${PP.esc(p.image||'assets/site/hero-ayu.jpg')}" alt="" loading="lazy" />
+        <div class="badge-row"><span class="tag ${p.sample?'demo':'live'}">${p.sample?'SAMPLE':'LIVE'}</span></div>
+      </div>
+      <div class="card-body">
+        <h3>${PP.esc(p.title)}</h3>
+        <div class="card-meta"><span>${PP.esc(p.date||'')}</span></div>
+        <p style="font-size:.88rem;color:var(--mist);font-weight:300">${PP.esc(p.excerpt||'')}</p>
+        <div class="card-actions">
+          ${p.sample
+            ? `<a class="btn btn-primary btn-sm" href="blog-post.html?id=${encodeURIComponent(p.slug)}">Read sample</a>`
+            : `<a class="btn btn-primary btn-sm" href="${PP.esc(p.live_url)}" target="_blank" rel="noopener">Read on live site</a>
+               <a class="btn btn-ghost btn-sm" href="blog-post.html?id=${encodeURIComponent(p.slug)}">Prototype card</a>`}
+        </div>
+      </div>
+    </article>`).join('');
+});
+</script>
+</body></html>
