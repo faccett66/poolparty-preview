@@ -1,11 +1,10 @@
-/*! Pool Party SEC soundtrack layer — streams from sonicearcandy.com (no local MP3s). */
+/*! Pool Party soundtrack layer — 2 demo tracks streamed from SEC until custom PP beds land. */
 (function (global) {
   'use strict';
 
   var TRACKS = [
-    { slug: 'neon-tsunami', title: 'Neon Tsunami', note: 'Instrumental' },
-    { slug: 'off-the-leash', title: 'Off The Leash', note: '' },
-    { slug: 'the-floor-belongs-to-us', title: 'The Floor Belongs to Us', note: '' }
+    { slug: 'neon-tsunami', title: 'Neon Tsunami', note: 'Demo bed · instrumental' },
+    { slug: 'off-the-leash', title: 'Off The Leash', note: 'Demo' }
   ];
   var BASE = 'https://sonicearcandy.com/assets/tracks/';
   var SEC_URL = 'https://sonicearcandy.com/';
