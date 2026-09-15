@@ -85,6 +85,30 @@
       else blurb = 'Open hub · live link';
       return { href: this.cityHubHref(slug), blurb };
     },
+    bookMeta(ev) {
+      const provider = (ev.book_provider || '').toLowerCase();
+      const label = ev.book_label
+        || (provider.includes('booketing') ? 'Book Now — Booketing'
+          : provider.includes('squadup') ? 'Book Now — live checkout'
+          : 'Book Now — live handoff');
+      let noteProvider = 'live';
+      if (provider.includes('booketing')) noteProvider = 'Booketing';
+      else if (provider.includes('squadup')) noteProvider = 'SquadUp / Pool Party checkout';
+      else if (provider) noteProvider = ev.book_provider;
+      return { label, noteProvider, provider };
+    },
+    sortEventsUpcomingFirst(items) {
+      const today = '2026-09-15';
+      return [...items].sort((a, b) => {
+        const da = a.date || '';
+        const db = b.date || '';
+        const ua = da >= today ? 0 : 1;
+        const ub = db >= today ? 0 : 1;
+        if (ua !== ub) return ua - ub;
+        if (da !== db) return da < db ? -1 : 1;
+        return String(a.title || '').localeCompare(String(b.title || ''));
+      });
+    },
     esc(s) {
       return String(s ?? '').replace(/[&<>"']/g, c => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -93,7 +117,7 @@
 
     eventCard(ev, opts = {}) {
       const book = ev.book_url || ev.live_url || '#';
-      const provider = ev.book_provider || 'live';
+      const meta = this.bookMeta(ev);
       const detailHref = opts.detailBase
         ? `${opts.detailBase}?id=${encodeURIComponent(ev.slug)}`
         : `event.html?id=${encodeURIComponent(ev.slug)}`;
@@ -114,7 +138,7 @@
             <span>${this.esc(this.cityName(opts.cities, ev.city))}</span>
           </div>
           <div class="card-actions">
-            <a class="btn btn-primary btn-sm" href="${this.esc(book)}" target="_blank" rel="noopener">${this.esc(ev.book_label || 'Book Now — live handoff')}</a>
+            <a class="btn btn-primary btn-sm" href="${this.esc(book)}" target="_blank" rel="noopener">${this.esc(meta.label)}</a>
             <a class="btn btn-ghost btn-sm" href="${detailHref}">Details</a>
             <button type="button" class="btn btn-ghost btn-sm" data-add-demo
               data-event-id="${this.esc(ev.slug)}"
@@ -123,7 +147,7 @@
               data-tier-id="ga"
               data-tier-label="General Admission (DEMO)">+ Demo cart</button>
           </div>
-          <p class="handoff-note">Book Now opens live ${this.esc(provider)} fulfillment — PoolParty.com ticket stack unchanged. Prototype cart is DEMO quantity-only (no prices).</p>
+          <p class="handoff-note">${this.esc(meta.label)} opens ${this.esc(meta.noteProvider)} — live PoolParty.com ticket stack unchanged. Prototype cart is DEMO quantity-only (no prices).</p>
         </div>
       </article>`;
     },
@@ -243,7 +267,7 @@
         const q = (search?.value || '').toLowerCase().trim();
         const c = city?.value || '';
         const v = vibe?.value || '';
-        const filtered = items.filter(it => {
+        let filtered = items.filter(it => {
           if (c && it.city !== c) return false;
           if (v && it.vibe !== v) return false;
           if (q) {
@@ -252,6 +276,10 @@
           }
           return true;
         });
+        // Events with dates: upcoming-first
+        if (filtered.length && filtered[0] && filtered[0].date !== undefined) {
+          filtered = this.sortEventsUpcomingFirst(filtered);
+        }
         grid.innerHTML = filtered.length
           ? filtered.map(render).join('')
           : `<div class="empty-state">No matches. Try another city or vibe.</div>`;

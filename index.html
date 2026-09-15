@@ -95,7 +95,7 @@
       <div>
         <p class="eyebrow">On the calendar</p>
         <h2>This week’s heat</h2>
-        <p>Live event names from poolparty.com — Book Now opens the real ticket path. <span data-result-count></span></p>
+        <p>Live-sampled catalog from poolparty.com — Book Now opens Booketing or live checkout. <span data-result-count></span></p>
       </div>
       <a class="btn btn-ghost" href="events.html">All events →</a>
     </div>
@@ -168,8 +168,8 @@
     <span>No CATCH branding · SEC music layer live on preview · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=26"></script>
-<script src="assets/js/music.js?v=3"></script>
+<script src="assets/js/site.js?v=27"></script>
+<script src="assets/js/music.js?v=4"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     if (status) status.textContent = city
       ? `Calendar filtered: ${PP.cityName(cityList, city)}`
-      : `${events.length} upcoming sampled events`;
+      : `${events.length} live-catalog events in this preview`;
     let list = events.slice();
     if (city) {
       list = list.filter(e => e.city === city);
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!list.length && city) {
       const c = cityList.find(x => x.slug === city);
       const hasV = venueSlugs.has(city);
-      eventsEl.innerHTML = `<div class="empty-state">No sampled events for ${PP.esc(PP.cityName(cityList, city))} yet.
+      eventsEl.innerHTML = `<div class="empty-state">No preview events for ${PP.esc(PP.cityName(cityList, city))} yet.
         ${hasV ? ` <a href="venues.html?city=${encodeURIComponent(city)}">See venues</a> ·` : ''}
         <a href="${PP.esc(PP.cityHubHref(city))}">City hub</a>
         ${c && c.live_url ? ` · <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live listings</a>` : ''}
