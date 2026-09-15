@@ -742,61 +742,73 @@ body::before{
 
 /* ========== MIAMI ELECTRIC HEADER ========== */
 .proto-banner{
-  background:linear-gradient(90deg,#ff2d6a 0%,#ffe600 45%,#0090e0 100%) !important;
+  background:linear-gradient(90deg,#ff2d6a 0%,#ffe600 50%,#0090e0 100%) !important;
+  color:#0a1628 !important;
+  font-weight:800 !important;
+  letter-spacing:.02em !important;
+}
+.proto-banner a{color:#0a1628 !important;font-weight:800 !important}
+
+.nav{
+  background:linear-gradient(105deg, #ffe600 0%, #ff8a3d 28%, #ff2d6a 58%, #0090e0 100%) !important;
+  background-image:linear-gradient(105deg, #ffe600 0%, #ff8a3d 28%, #ff2d6a 58%, #0090e0 100%) !important;
+  border-bottom:3px solid #0a1628 !important;
+  box-shadow:0 10px 30px rgba(255,45,106,.35) !important;
+  backdrop-filter:none !important;
+}
+.nav::before{
+  display:none !important;
+  background:transparent !important;
+}
+.nav.scrolled{
+  background:linear-gradient(105deg, #0090e0 0%, #ff2d6a 45%, #ffe600 100%) !important;
+  background-image:linear-gradient(105deg, #0090e0 0%, #ff2d6a 45%, #ffe600 100%) !important;
+  border-bottom-color:#0a1628 !important;
+}
+.nav.scrolled::before{display:none !important}
+
+.nav-inner{min-height:4.5rem}
+.logo{
+  color:#0a1628 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  font-weight:700 !important;
+}
+.logo-mark{
+  background:conic-gradient(from 180deg,#0a1628,#ffe600,#ff2d6a,#0090e0,#0a1628) !important;
+  box-shadow:0 0 0 3px #0a1628, 0 0 20px rgba(255,255,255,.5) !important;
+}
+.nav-links a{
   color:#0a1628 !important;
   font-weight:700 !important;
 }
-.proto-banner a{color:#0a1628 !important;text-decoration-thickness:2px}
-
-.nav{
-  background:
-    linear-gradient(180deg, rgba(255,230,0,.22) 0%, rgba(0,144,224,.18) 55%, rgba(255,45,106,.14) 100%),
-    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.7)),
-    url("../site/vibe-encore-umbrellas.jpg") center 35%/cover no-repeat !important;
-  background-blend-mode:normal, normal, soft-light !important;
-  border-bottom:2px solid rgba(255,45,106,.28) !important;
-  box-shadow:0 8px 28px rgba(0,144,224,.12) !important;
-}
-.nav::before{
-  background:linear-gradient(90deg, rgba(255,230,0,.18), rgba(255,255,255,.55), rgba(0,144,224,.16)) !important;
-}
-.nav.scrolled{
-  background:
-    linear-gradient(180deg, rgba(255,45,106,.12) 0%, rgba(0,144,224,.14) 100%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.88)),
-    url("../site/feat-encore-pool.jpg") center 40%/cover no-repeat !important;
-  border-bottom-color:rgba(255,45,106,.35) !important;
-  box-shadow:0 10px 28px rgba(255,45,106,.12) !important;
-}
-.nav.scrolled::before{
-  background:rgba(255,255,255,.55) !important;
-}
-.logo{color:var(--ink) !important}
-.logo-mark{
-  background:conic-gradient(from 200deg,#ffe600,#ff2d6a,#0090e0,#00e8f0,#ff5a00,#ffe600) !important;
-  box-shadow:0 0 0 2px rgba(255,255,255,.85), 0 0 18px rgba(255,45,106,.45) !important;
-}
-.nav-links a{color:var(--ink-soft) !important;font-weight:600 !important}
 .nav-links a:hover,
-.nav-links a.active{color:#ff2d6a !important}
+.nav-links a.active{
+  color:#fff !important;
+  text-shadow:0 1px 4px rgba(0,0,0,.35);
+}
 .nav-links a.active::after,
 .nav-links a:hover::after{
-  background:linear-gradient(90deg,#ffe600,#ff2d6a,#0090e0) !important;
+  background:#fff !important;
   height:3px !important;
+  box-shadow:0 0 8px rgba(0,0,0,.3);
 }
 .nav-cart{
-  background:rgba(255,255,255,.8) !important;
-  border-color:rgba(255,45,106,.35) !important;
-}
-.nav-cart:hover{
-  border-color:#ff2d6a !important;
-  box-shadow:0 4px 16px rgba(255,45,106,.28) !important;
+  background:#fff !important;
+  border:2px solid #0a1628 !important;
 }
 .nav-cart .badge{
-  background:linear-gradient(135deg,#ffe600,#ff2d6a) !important;
-  color:#0a1628 !important;
+  background:#ff2d6a !important;
+  color:#fff !important;
 }
+.nav-cta{
+  background:#0a1628 !important;
+  background-image:none !important;
+  color:#ffe600 !important;
+  border:2px solid #0a1628 !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
+}
+.nav-toggle span{background:#0a1628 !important}
 .nav-drawer{
-  background:linear-gradient(180deg,#fff8d0,#dff3ff) !important;
+  background:linear-gradient(180deg,#ffe600,#ff2d6a,#0090e0) !important;
 }
-.nav-drawer a:hover{color:#ff2d6a !important}
+.nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
