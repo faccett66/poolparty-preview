@@ -258,37 +258,34 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 .hero-overlay{
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  background: linear-gradient(180deg, rgba(12,22,34,.25) 0%, rgba(12,22,34,.08) 40%, rgba(12,22,34,.55) 100%);
+  background:linear-gradient(180deg, rgba(8,18,28,.15) 0%, transparent 45%, rgba(8,18,28,.35) 100%);
 }
 
 .hero-content{
   position:relative;z-index:2;max-width:40rem;
-  padding:0;border-radius:0;background:transparent;border:none;box-shadow:none;
-  backdrop-filter:none;-webkit-backdrop-filter:none;
+  padding:1.25rem 1.4rem 1.4rem;
+  border-radius:1.25rem;
+  background:rgba(8,18,28,.72);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 16px 48px rgba(0,0,0,.35);
 }
 .hero h1{
   font-family:var(--font-display);font-size:clamp(2.9rem,8.5vw,5.4rem);
   font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:1.15rem;
   color:#fff;
-  text-shadow:0 2px 8px rgba(0,0,0,.85), 0 10px 30px rgba(0,0,0,.6);
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
 }
 .hero h1 em{
   font-style:italic;
-  color:#ff6a00;
-  -webkit-text-fill-color:#ff6a00;
+  color:#ff8a20;
+  -webkit-text-fill-color:#ff8a20;
   background:none !important;
   -webkit-background-clip:border-box !important;
   background-clip:border-box !important;
-  -webkit-text-stroke:1.5px rgba(0,0,0,.85);
-  paint-order:stroke fill;
-  text-shadow:
-    0 0 0 #000,
-    1px 0 0 #000,
-    -1px 0 0 #000,
-    0 1px 0 #000,
-    0 -1px 0 #000,
-    2px 2px 0 rgba(0,0,0,.75),
-    0 4px 16px rgba(0,0,0,.55);
+  -webkit-text-stroke:0;
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
 }
 .hero-lead{
   font-size:1.08rem;
@@ -297,11 +294,8 @@ button,input,select,textarea{font:inherit;color:inherit}
   margin-bottom:1.6rem;
   font-weight:600;
   line-height:1.45;
-  text-shadow:
-    0 0 2px rgba(0,0,0,.95),
-    0 1px 2px rgba(0,0,0,.9),
-    0 2px 8px rgba(0,0,0,.75),
-    0 6px 20px rgba(0,0,0,.5);
+  text-shadow:none;
+  opacity:1;
 }
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.35rem;margin-bottom:1.75rem}
 .hero .btn-ghost,.hero-cta-secondary{
