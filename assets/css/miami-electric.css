@@ -811,3 +811,23 @@ body::before{
   background:linear-gradient(180deg,#fff066,#ff6a9a,#4db8f0) !important;
 }
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
+
+/* HEADER LETTER OUTLINE */
+.nav .logo,
+.nav .nav-links a,
+.nav .nav-cta,
+.proto-banner{
+  -webkit-text-stroke:1px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,0 2px 6px rgba(0,0,0,.25) !important;
+}
+.nav .nav-links a:hover,
+.nav .nav-links a.active{
+  color:#fff !important;
+  -webkit-text-stroke:1.1px #000 !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,0 2px 8px rgba(0,0,0,.4) !important;
+}
+.nav .nav-cta{
+  color:#fff066 !important;
+  -webkit-text-stroke:1px #000 !important;
+}
