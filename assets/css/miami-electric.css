@@ -754,7 +754,7 @@ body::before{
 .nav{
   background:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
   background-image:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
-  border-bottom:3px solid #0a1628 !important;
+  border-bottom:3px solid #ffe600 !important;
   box-shadow:0 10px 30px rgba(255,106,154,.28) !important;
   backdrop-filter:none !important;
 }
@@ -765,7 +765,7 @@ body::before{
 .nav.scrolled{
   background:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
   background-image:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
-  border-bottom-color:#0a1628 !important;
+  border-bottom-color:#ffe600 !important;
 }
 .nav.scrolled::before{display:none !important}
 
@@ -833,4 +833,22 @@ body::before{
 .nav .nav-cta{
   color:#0a1628 !important;
   -webkit-text-stroke:1px #ffe600 !important;
+}
+
+/* Header Home link — yellow */
+.nav .nav-links a[href="index.html"],
+.nav-drawer a[href="index.html"]{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  font-weight:800 !important;
+}
+.nav .nav-links a[href="index.html"]:hover,
+.nav .nav-links a[href="index.html"].active{
+  color:#fff066 !important;
+  -webkit-text-fill-color:#fff066 !important;
+}
+.nav .nav-links a[href="index.html"].active::after,
+.nav .nav-links a[href="index.html"]:hover::after{
+  background:#ffe600 !important;
+  box-shadow:0 0 10px rgba(255,230,0,.55) !important;
 }
