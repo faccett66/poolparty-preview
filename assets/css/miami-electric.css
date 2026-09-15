@@ -687,8 +687,7 @@ body::before{
 .tag,.eyebrow{
   color:var(--coral) !important;
 }
-.hero .eyebrow{color:#ffe600 !important;text-shadow:0 1px 8px rgba(0,0,0,.55) !important}
-.hero .eyebrow::before{background:#ff2d6a !important}
+
 .hero h1{
   color:#ffe600 !important;
   -webkit-text-fill-color:#ffe600 !important;
@@ -812,3 +811,27 @@ body::before{
   background:linear-gradient(180deg,#ffe600,#ff2d6a,#0090e0) !important;
 }
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
+
+/* Bold hero eyebrow — It's a party · Pool · Beach · Yacht */
+.hero .eyebrow{
+  font-size:clamp(1.05rem, 2.4vw, 1.35rem) !important;
+  font-weight:800 !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase !important;
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:0.8px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 1px 0 #000, 0 3px 12px rgba(0,0,0,.55) !important;
+  margin-bottom:1.1rem !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:.65rem !important;
+}
+.hero .eyebrow::before{
+  width:2rem !important;
+  height:4px !important;
+  background:linear-gradient(90deg,#ff2d6a,#ffe600,#0090e0) !important;
+  border-radius:4px !important;
+  flex-shrink:0 !important;
+}
