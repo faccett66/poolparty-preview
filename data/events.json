@@ -1,82 +1,82 @@
 {
-  "generated": "2026-09-15",
-  "source": "poolparty.com public scrape",
-  "note": "No ticket prices \u2014 Book Now deep-links to live Booketing/PP. Prototype cart is DEMO quantity-only.",
+  "generated": "2026-09-15T18:45:00-04:00",
+  "source": "https://poolparty.com/events/",
+  "note": "Calendar fill from live poolparty.com events index (Sep\u2013Oct 2026). Book Now uses Booketing when known, else live event page.",
   "events": [
     {
-      "slug": "cedric-gervais-at-omnia-dayclub-september-18",
-      "title": "Cedric Gervais at Omnia Dayclub \u2013 September 18",
-      "city": "las-vegas",
-      "venue": "Omnia Dayclub",
-      "vibe": "dayclub",
-      "date": "2026-09-18",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/cedric-gervais?eventcode=EVE4091154168600020260918",
-      "live_url": "https://poolparty.com/event/cedric-gervais-at-omnia-dayclub-september-18/",
+      "slug": "all-seasons-stay-lucknow",
+      "title": "All Seasons Stay Lucknow \u2013 Rooftop Pool",
+      "city": "india",
+      "venue": "All Seasons Stay Lucknow",
+      "vibe": "pool",
+      "date": "2026-09-15",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/all-seasons-stay-lucknow/",
       "id": "ev-01",
+      "image": "assets/site/dest-miami-night.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/all-seasons-stay-lucknow/",
+      "book_provider": "live poolparty.com",
+      "book_label": "Book Now \u2014 opens live PoolParty.com",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "dj-buza-the-wednesday-dip-at-liquid-pool-september-16",
+      "title": "DJ Buza \u2013 The Wednesday Dip at Liquid ...",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-16",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/dj-buza-the-wednesday-dip?eventcode=EVE111900020260916",
+      "live_url": "https://poolparty.com/event/dj-buza-the-wednesday-dip-at-liquid-pool-september-16/",
+      "id": "ev-02",
+      "image": "assets/site/lifestyle-cheers.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-buza-the-wednesday-dip?eventcode=EVE111900020260916",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "vegas-nightclub-access-pass-september-16",
+      "title": "Vegas Nightclub Access Pass \u2013 Septembe...",
+      "city": "las-vegas",
+      "venue": "Pool Party venue",
+      "vibe": "pass",
+      "date": "2026-09-16",
+      "booketing": "",
+      "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-16/",
+      "id": "ev-03",
       "image": "assets/site/feat-encore-pool.jpg",
       "source": "live",
       "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/cedric-gervais?eventcode=EVE4091154168600020260918",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "steve-aoki-at-omnia-dayclub-september-19",
-      "title": "Steve Aoki at Omnia Dayclub \u2013 September 19",
-      "city": "las-vegas",
-      "venue": "Omnia Dayclub",
-      "vibe": "dayclub",
-      "date": "2026-09-19",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/steve-aoki?eventcode=EVE4091154168600020260919",
-      "live_url": "https://poolparty.com/event/steve-aoki-at-omnia-dayclub-september-19/",
-      "id": "ev-02",
-      "image": "assets/site/vibe-encore-crowd.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/steve-aoki?eventcode=EVE4091154168600020260919",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "twinsick-at-omnia-dayclub-september-20",
-      "title": "Twinsick at Omnia Dayclub \u2013 September 20",
-      "city": "las-vegas",
-      "venue": "Omnia Dayclub",
-      "vibe": "dayclub",
-      "date": "2026-09-20",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/twinsick?eventcode=EVE4091154168600020260920",
-      "live_url": "https://poolparty.com/event/twinsick-at-omnia-dayclub-september-20/",
-      "id": "ev-03",
-      "image": "assets/site/vibe-encore-umbrellas.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/twinsick?eventcode=EVE4091154168600020260920",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
+      "book_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-16/",
+      "book_provider": "PoolParty",
+      "book_label": "Book Now \u2014 live event page",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -92,7 +92,7 @@
     },
     {
       "slug": "dj-lucky-lou-at-marquee-dayclub-september-17",
-      "title": "DJ Lucky Lou at Marquee Dayclub \u2013 September 17",
+      "title": "DJ Lucky Lou at Marquee Dayclub \u2013 Sept...",
       "city": "las-vegas",
       "venue": "Marquee Dayclub",
       "vibe": "dayclub",
@@ -120,309 +120,19 @@
       ]
     },
     {
-      "slug": "mike-attack-at-marquee-dayclub-september-18",
-      "title": "Mike Attack at Marquee Dayclub \u2013 September 18",
-      "city": "las-vegas",
-      "venue": "Marquee Dayclub",
-      "vibe": "dayclub",
-      "date": "2026-09-18",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1109/mike-attack?eventcode=EVE110900020260918",
-      "live_url": "https://poolparty.com/event/mike-attack-at-marquee-dayclub-september-18/",
-      "id": "ev-05",
-      "image": "assets/site/vibe-ayu-energy.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1109/mike-attack?eventcode=EVE110900020260918",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "lavern-at-marquee-dayclub-september-19",
-      "title": "Lavern at Marquee Dayclub \u2013 September 19",
-      "city": "las-vegas",
-      "venue": "Marquee Dayclub",
-      "vibe": "dayclub",
-      "date": "2026-09-19",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1109/lavern?eventcode=EVE110900020260919",
-      "live_url": "https://poolparty.com/event/lavern-at-marquee-dayclub-september-19/",
-      "id": "ev-06",
-      "image": "assets/site/music-ayu-stage.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1109/lavern?eventcode=EVE110900020260919",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "party-pupils-presents-yacht-house-september-20",
-      "title": "Party Pupils Presents Yacht House \u2013 September 20",
-      "city": "las-vegas",
-      "venue": "Marquee Dayclub",
-      "vibe": "yacht",
-      "date": "2026-09-20",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1109/party-pupils-presents-yacht-house?eventcode=EVE110900020260920",
-      "live_url": "https://poolparty.com/event/party-pupils-presents-yacht-house-september-20/",
-      "id": "ev-07",
-      "image": "assets/site/vibe-beach-terrace.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1109/party-pupils-presents-yacht-house?eventcode=EVE110900020260920",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "don-diablo-at-tao-beach-september-19",
-      "title": "Don Diablo at TAO Beach \u2013 September 19",
-      "city": "las-vegas",
-      "venue": "TAO Beach",
-      "vibe": "beach",
-      "date": "2026-09-19",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/don-diablo?eventcode=EVE111300020260919",
-      "live_url": "https://poolparty.com/event/don-diablo-at-tao-beach-september-19/",
-      "id": "ev-08",
-      "image": "assets/site/vibe-yacht-bay.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/don-diablo?eventcode=EVE111300020260919",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "nimino-at-tao-beach-september-18",
-      "title": "Nimino at TAO Beach \u2013 September 18",
-      "city": "las-vegas",
-      "venue": "TAO Beach",
-      "vibe": "beach",
-      "date": "2026-09-18",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/nimino?eventcode=EVE111300020260918",
-      "live_url": "https://poolparty.com/event/nimino-at-tao-beach-september-18/",
-      "id": "ev-09",
-      "image": "assets/site/dest-miami-night.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/nimino?eventcode=EVE111300020260918",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "mike-attack-at-tao-beach-september-20",
-      "title": "Mike Attack at TAO Beach \u2013 September 20",
-      "city": "las-vegas",
-      "venue": "TAO Beach",
-      "vibe": "beach",
-      "date": "2026-09-20",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/mike-attack?eventcode=EVE111300020260920",
-      "live_url": "https://poolparty.com/event/mike-attack-at-tao-beach-september-20/",
-      "id": "ev-10",
-      "image": "assets/site/dest-ibiza-obeach.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/mike-attack?eventcode=EVE111300020260920",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "blondish-at-palm-tree-beach-club-september-19",
-      "title": "Blond:ish at Palm Tree Beach Club \u2013 September 19",
-      "city": "las-vegas",
-      "venue": "Palm Tree Beach Club",
-      "vibe": "beach",
-      "date": "2026-09-19",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/blondish?eventcode=EVE111700020260919",
-      "live_url": "https://poolparty.com/event/blondish-at-palm-tree-beach-club-september-19/",
-      "id": "ev-11",
-      "image": "assets/site/vibe-garden-day.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/blondish?eventcode=EVE111700020260919",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "dj-e-rock-good-life-fridays-at-palm-tree-beach-club",
-      "title": "DJ E-Rock \u2014 Good Life Fridays at Palm Tree Beach Club",
-      "city": "las-vegas",
-      "venue": "Palm Tree Beach Club",
-      "vibe": "beach",
-      "date": "2026-09-18",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-e-rock-good-life-fridays?eventcode=EVE111700020260918",
-      "live_url": "https://poolparty.com/event/dj-e-rock-good-life-fridays-at-palm-tree-beach-club/",
-      "id": "ev-12",
-      "image": "assets/site/vibe-garden-dusk.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-e-rock-good-life-fridays?eventcode=EVE111700020260918",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
       "slug": "dj-mondo-at-palm-tree-beach-club-september-17",
-      "title": "DJ Mondo at Palm Tree Beach Club \u2013 September 17",
+      "title": "DJ Mondo at Palm Tree Beach Club \u2013 Sep...",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
       "date": "2026-09-17",
       "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-mondo?eventcode=EVE111700020260917",
       "live_url": "https://poolparty.com/event/dj-mondo-at-palm-tree-beach-club-september-17/",
-      "id": "ev-13",
+      "id": "ev-05",
       "image": "assets/site/vibe-garden-rotunda.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-mondo?eventcode=EVE111700020260917",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "dj-shift-at-palm-tree-beach-club-september-20",
-      "title": "DJ Shift at Palm Tree Beach Club \u2013 September 20",
-      "city": "las-vegas",
-      "venue": "Palm Tree Beach Club",
-      "vibe": "beach",
-      "date": "2026-09-20",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-shift?eventcode=EVE111700020260920",
-      "live_url": "https://poolparty.com/event/dj-shift-at-palm-tree-beach-club-september-20/",
-      "id": "ev-14",
-      "image": "assets/site/feat-encore-cabana.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-shift?eventcode=EVE111700020260920",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "dj-buza-the-wednesday-dip-at-liquid-pool-september-16",
-      "title": "DJ Buza \u2014 The Wednesday Dip at Liquid Pool \u2013 September 16",
-      "city": "las-vegas",
-      "venue": "Liquid Pool",
-      "vibe": "pool",
-      "date": "2026-09-16",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/dj-buza-the-wednesday-dip?eventcode=EVE111900020260916",
-      "live_url": "https://poolparty.com/event/dj-buza-the-wednesday-dip-at-liquid-pool-september-16/",
-      "id": "ev-15",
-      "image": "assets/site/lifestyle-cheers.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-buza-the-wednesday-dip?eventcode=EVE111900020260916",
       "book_provider": "Booketing",
       "book_label": "Book Now \u2014 continues on Booketing",
       "ticket_tiers": [
@@ -447,11 +157,98 @@
       "date": "2026-09-17",
       "booketing": "https://booketing.com/microsite/ppl/event/61/1119/dj-shr3d?eventcode=EVE111900020260917",
       "live_url": "https://poolparty.com/event/dj-shr3d-at-liquid-pool-september-17/",
-      "id": "ev-16",
+      "id": "ev-06",
       "image": "assets/site/feat-encore-pool.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-shr3d?eventcode=EVE111900020260917",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "vegas-nightclub-access-pass-september-17",
+      "title": "Vegas Nightclub Access Pass \u2013 Septembe...",
+      "city": "las-vegas",
+      "venue": "Pool Party venue",
+      "vibe": "pass",
+      "date": "2026-09-17",
+      "booketing": "",
+      "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-17/",
+      "id": "ev-07",
+      "image": "assets/site/vibe-encore-crowd.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-17/",
+      "book_provider": "PoolParty",
+      "book_label": "Book Now \u2014 live event page",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "cedric-gervais-at-omnia-dayclub-september-18",
+      "title": "Cedric Gervais at OMNIA Dayclub \u2013 Sept...",
+      "city": "las-vegas",
+      "venue": "Omnia Dayclub",
+      "vibe": "dayclub",
+      "date": "2026-09-18",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/cedric-gervais?eventcode=EVE4091154168600020260918",
+      "live_url": "https://poolparty.com/event/cedric-gervais-at-omnia-dayclub-september-18/",
+      "id": "ev-08",
+      "image": "assets/site/feat-encore-pool.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/cedric-gervais?eventcode=EVE4091154168600020260918",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "dj-e-rock-good-life-fridays-at-palm-tree-beach-club",
+      "title": "DJ E-Rock \u2014 Good Life Fridays at Palm Tree Beach Club",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-18",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-e-rock-good-life-fridays?eventcode=EVE111700020260918",
+      "live_url": "https://poolparty.com/event/dj-e-rock-good-life-fridays-at-palm-tree-beach-club/",
+      "id": "ev-09",
+      "image": "assets/site/vibe-garden-dusk.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-e-rock-good-life-fridays?eventcode=EVE111700020260918",
       "book_provider": "Booketing",
       "book_label": "Book Now \u2014 continues on Booketing",
       "ticket_tiers": [
@@ -476,69 +273,11 @@
       "date": "2026-09-18",
       "booketing": "https://booketing.com/microsite/ppl/event/61/1119/dj-que?eventcode=EVE111900020260918",
       "live_url": "https://poolparty.com/event/dj-que-at-liquid-pool-september-18/",
-      "id": "ev-17",
+      "id": "ev-10",
       "image": "assets/site/vibe-encore-crowd.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-que?eventcode=EVE111900020260918",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "kid-conrad-at-liquid-pool-september-19",
-      "title": "Kid Conrad at Liquid Pool \u2013 September 19",
-      "city": "las-vegas",
-      "venue": "Liquid Pool",
-      "vibe": "pool",
-      "date": "2026-09-19",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad?eventcode=EVE111900020260919",
-      "live_url": "https://poolparty.com/event/kid-conrad-at-liquid-pool-september-19/",
-      "id": "ev-18",
-      "image": "assets/site/vibe-encore-umbrellas.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad?eventcode=EVE111900020260919",
-      "book_provider": "Booketing",
-      "book_label": "Book Now \u2014 continues on Booketing",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "slug": "eric-remy-at-liquid-pool-september-20",
-      "title": "Eric Remy at Liquid Pool \u2013 September 20",
-      "city": "las-vegas",
-      "venue": "Liquid Pool",
-      "vibe": "pool",
-      "date": "2026-09-20",
-      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy?eventcode=EVE111900020260920",
-      "live_url": "https://poolparty.com/event/eric-remy-at-liquid-pool-september-20/",
-      "id": "ev-19",
-      "image": "assets/site/hero-ayu.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy?eventcode=EVE111900020260920",
       "book_provider": "Booketing",
       "book_label": "Book Now \u2014 continues on Booketing",
       "ticket_tiers": [
@@ -564,13 +303,188 @@
       "booketing": null,
       "live_url": "https://poolparty.com/event/las-vegas-pool-party-pass-sept-18/",
       "book_note": "SquadUp overlay on live site",
-      "id": "ev-20",
+      "id": "ev-11",
       "image": "assets/site/vibe-ayu-energy.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://poolparty.com/event/las-vegas-pool-party-pass-sept-18/",
       "book_provider": "SquadUp overlay on live site",
       "book_label": "Book Now \u2014 opens live PoolParty.com",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "mike-attack-at-marquee-dayclub-september-18",
+      "title": "Mike Attack at Marquee Dayclub \u2013 Septe...",
+      "city": "las-vegas",
+      "venue": "Marquee Dayclub",
+      "vibe": "dayclub",
+      "date": "2026-09-18",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1109/mike-attack?eventcode=EVE110900020260918",
+      "live_url": "https://poolparty.com/event/mike-attack-at-marquee-dayclub-september-18/",
+      "id": "ev-12",
+      "image": "assets/site/vibe-ayu-energy.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1109/mike-attack?eventcode=EVE110900020260918",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "nimino-at-tao-beach-september-18",
+      "title": "Nimino at TAO Beach \u2013 September 18",
+      "city": "las-vegas",
+      "venue": "TAO Beach",
+      "vibe": "beach",
+      "date": "2026-09-18",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/nimino?eventcode=EVE111300020260918",
+      "live_url": "https://poolparty.com/event/nimino-at-tao-beach-september-18/",
+      "id": "ev-13",
+      "image": "assets/site/dest-miami-night.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/nimino?eventcode=EVE111300020260918",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "vegas-nightclub-access-pass-september-18",
+      "title": "Vegas Nightclub Access Pass \u2013 Septembe...",
+      "city": "las-vegas",
+      "venue": "Assigned nightclub",
+      "vibe": "pass",
+      "date": "2026-09-18",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-18/",
+      "book_note": "SquadUp overlay on live site",
+      "id": "ev-14",
+      "image": "assets/site/vibe-beach-terrace.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-18/",
+      "book_provider": "SquadUp overlay on live site",
+      "book_label": "Book Now \u2014 opens live PoolParty.com",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "blondish-at-palm-tree-beach-club-september-19",
+      "title": "BLOND:ISH at Palm Tree Beach Club \u2013 Se...",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-19",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/blondish?eventcode=EVE111700020260919",
+      "live_url": "https://poolparty.com/event/blondish-at-palm-tree-beach-club-september-19/",
+      "id": "ev-15",
+      "image": "assets/site/vibe-garden-day.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/blondish?eventcode=EVE111700020260919",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "don-diablo-at-tao-beach-september-19",
+      "title": "Don Diablo at TAO Beach \u2013 September 19",
+      "city": "las-vegas",
+      "venue": "TAO Beach",
+      "vibe": "beach",
+      "date": "2026-09-19",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/don-diablo?eventcode=EVE111300020260919",
+      "live_url": "https://poolparty.com/event/don-diablo-at-tao-beach-september-19/",
+      "id": "ev-16",
+      "image": "assets/site/vibe-yacht-bay.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/don-diablo?eventcode=EVE111300020260919",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "kid-conrad-at-liquid-pool-september-19",
+      "title": "Kid Conrad at Liquid Pool \u2013 September ...",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-19",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad?eventcode=EVE111900020260919",
+      "live_url": "https://poolparty.com/event/kid-conrad-at-liquid-pool-september-19/",
+      "id": "ev-17",
+      "image": "assets/site/vibe-encore-umbrellas.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad?eventcode=EVE111900020260919",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -594,7 +508,7 @@
       "booketing": null,
       "live_url": "https://poolparty.com/event/las-vegas-pool-party-pass-sept-19/",
       "book_note": "SquadUp overlay on live site",
-      "id": "ev-21",
+      "id": "ev-18",
       "image": "assets/site/music-ayu-stage.jpg",
       "source": "live",
       "demo": false,
@@ -615,22 +529,166 @@
       ]
     },
     {
-      "slug": "vegas-nightclub-access-pass-september-18",
-      "title": "Vegas Nightclub Access Pass \u2013 September 18",
+      "slug": "lavern-at-marquee-dayclub-september-19",
+      "title": "Lavern at Marquee Dayclub \u2013 September ...",
       "city": "las-vegas",
-      "venue": "Assigned nightclub",
-      "vibe": "pass",
-      "date": "2026-09-18",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-18/",
-      "book_note": "SquadUp overlay on live site",
-      "id": "ev-22",
-      "image": "assets/site/vibe-beach-terrace.jpg",
+      "venue": "Marquee Dayclub",
+      "vibe": "dayclub",
+      "date": "2026-09-19",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1109/lavern?eventcode=EVE110900020260919",
+      "live_url": "https://poolparty.com/event/lavern-at-marquee-dayclub-september-19/",
+      "id": "ev-19",
+      "image": "assets/site/music-ayu-stage.jpg",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-18/",
-      "book_provider": "SquadUp overlay on live site",
-      "book_label": "Book Now \u2014 opens live PoolParty.com",
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1109/lavern?eventcode=EVE110900020260919",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "steve-aoki-at-omnia-dayclub-september-19",
+      "title": "Steve Aoki at OMNIA Dayclub \u2013 Septembe...",
+      "city": "las-vegas",
+      "venue": "Omnia Dayclub",
+      "vibe": "dayclub",
+      "date": "2026-09-19",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/steve-aoki?eventcode=EVE4091154168600020260919",
+      "live_url": "https://poolparty.com/event/steve-aoki-at-omnia-dayclub-september-19/",
+      "id": "ev-20",
+      "image": "assets/site/vibe-encore-crowd.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/steve-aoki?eventcode=EVE4091154168600020260919",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "vegas-nightclub-access-pass-september-19",
+      "title": "Vegas Nightclub Access Pass \u2013 Septembe...",
+      "city": "las-vegas",
+      "venue": "Pool Party venue",
+      "vibe": "pass",
+      "date": "2026-09-19",
+      "booketing": "",
+      "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-19/",
+      "id": "ev-21",
+      "image": "assets/site/feat-encore-cabana.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-19/",
+      "book_provider": "PoolParty",
+      "book_label": "Book Now \u2014 live event page",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "dj-shift-at-palm-tree-beach-club-september-20",
+      "title": "DJ Shift at Palm Tree Beach Club \u2013 Sep...",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-20",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-shift?eventcode=EVE111700020260920",
+      "live_url": "https://poolparty.com/event/dj-shift-at-palm-tree-beach-club-september-20/",
+      "id": "ev-22",
+      "image": "assets/site/feat-encore-cabana.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-shift?eventcode=EVE111700020260920",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "eric-remy-at-liquid-pool-september-20",
+      "title": "Eric Remy at Liquid Pool \u2013 September 2...",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-20",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy?eventcode=EVE111900020260920",
+      "live_url": "https://poolparty.com/event/eric-remy-at-liquid-pool-september-20/",
+      "id": "ev-23",
+      "image": "assets/site/hero-ayu.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy?eventcode=EVE111900020260920",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "mike-attack-at-tao-beach-september-20",
+      "title": "Mike Attack at TAO Beach \u2013 September 2...",
+      "city": "las-vegas",
+      "venue": "TAO Beach",
+      "vibe": "beach",
+      "date": "2026-09-20",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/mike-attack?eventcode=EVE111300020260920",
+      "live_url": "https://poolparty.com/event/mike-attack-at-tao-beach-september-20/",
+      "id": "ev-24",
+      "image": "assets/site/dest-ibiza-obeach.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/mike-attack?eventcode=EVE111300020260920",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -653,7 +711,7 @@
       "date": "2026-09-20",
       "booketing": null,
       "live_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-241/",
-      "id": "ev-23",
+      "id": "ev-25",
       "image": "assets/site/vibe-yacht-bay.jpg",
       "source": "live",
       "demo": false,
@@ -674,21 +732,50 @@
       ]
     },
     {
-      "slug": "all-seasons-stay-lucknow",
-      "title": "All Seasons Stay Lucknow \u2013 Rooftop Pool",
-      "city": "india",
-      "venue": "All Seasons Stay Lucknow",
-      "vibe": "pool",
-      "date": "2026-09-15",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/all-seasons-stay-lucknow/",
-      "id": "ev-24",
-      "image": "assets/site/dest-miami-night.jpg",
+      "slug": "party-pupils-presents-yacht-house-september-20",
+      "title": "Party Pupils Presents Yacht House \u2013 September 20",
+      "city": "las-vegas",
+      "venue": "Marquee Dayclub",
+      "vibe": "yacht",
+      "date": "2026-09-20",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1109/party-pupils-presents-yacht-house?eventcode=EVE110900020260920",
+      "live_url": "https://poolparty.com/event/party-pupils-presents-yacht-house-september-20/",
+      "id": "ev-26",
+      "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/all-seasons-stay-lucknow/",
-      "book_provider": "live poolparty.com",
-      "book_label": "Book Now \u2014 opens live PoolParty.com",
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1109/party-pupils-presents-yacht-house?eventcode=EVE110900020260920",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "slug": "twinsick-at-omnia-dayclub-september-20",
+      "title": "TWINSICK at OMNIA Dayclub \u2013 September ...",
+      "city": "las-vegas",
+      "venue": "Omnia Dayclub",
+      "vibe": "dayclub",
+      "date": "2026-09-20",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/twinsick?eventcode=EVE4091154168600020260920",
+      "live_url": "https://poolparty.com/event/twinsick-at-omnia-dayclub-september-20/",
+      "id": "ev-27",
+      "image": "assets/site/vibe-encore-umbrellas.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/twinsick?eventcode=EVE4091154168600020260920",
+      "book_provider": "Booketing",
+      "book_label": "Book Now \u2014 continues on Booketing",
       "ticket_tiers": [
         {
           "id": "ga",

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site-summer.css?v=2" />
+  <link rel="stylesheet" href="assets/css/site-summer.css?v=citylink1" />
 </head>
 <body data-data-root="data" data-asset-root="">
 <div class="proto-banner">Preview for Frank Accettulli · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
@@ -64,7 +64,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">City picker</p>
       <h2>Where’s the weekend?</h2>
-      <p>Vegas, Miami, Dubai, Ibiza, LA — tap a city and the feed locks in. Same filter powers Events &amp; Venues.</p>
+      <p>Vegas, Miami, Dubai, Ibiza, LA — tap a city to jump into its events. Calendar below stays the full weekend feed.</p>
     </div>
     <div class="city-grid" id="home-cities"></div>
     <p class="example-note" style="margin-top:1rem;font-size:.78rem;color:var(--muted)"><button type="button" class="chip" id="clear-city">Clear city filter</button> <span id="city-status"></span></p>
@@ -88,7 +88,7 @@
   </div>
 </section>
 
-<section>
+<section id="on-calendar">
   <div class="wrap">
     <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;max-width:none">
       <div>
@@ -173,44 +173,49 @@ document.addEventListener('DOMContentLoaded', async () => {
   const cityList = cities.cities || [];
   const grid = document.getElementById('home-cities');
   grid.innerHTML = cityList.map(c => `
-    <button type="button" class="city-tile" data-city="${PP.esc(c.slug)}" aria-pressed="false">
+    <a class="city-tile" href="events.html?city=${encodeURIComponent(c.slug)}" data-city="${PP.esc(c.slug)}">
       <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
-      <small>Live taxonomy</small>
-    </button>`).join('');
+      <small>View events</small>
+    </a>`).join('');
 
   const status = document.getElementById('city-status');
   const eventsEl = document.getElementById('home-events');
   function renderHome() {
     const city = PP.getCity();
-    grid.querySelectorAll('.city-tile').forEach(t => {
-      const on = t.dataset.city === city;
-      t.classList.toggle('active', on);
-      t.setAttribute('aria-pressed', on);
+    grid.querySelectorAll('.city-tile').forEach(tile => {
+      tile.classList.toggle('active', tile.dataset.city === city);
     });
-    status.textContent = city ? `Filtering: ${PP.cityName(cityList, city)}` : 'Showing global highlights';
+    if (status) status.textContent = city
+      ? `Calendar filtered: ${PP.cityName(cityList, city)}`
+      : `${events.length} upcoming sampled events`;
     let list = events.slice();
-    if (city) list = list.filter(e => e.city === city);
-    if (!list.length) list = events.slice(0, 6);
-    else list = list.slice(0, 6);
-    if (city && !events.some(e => e.city === city)) {
-      eventsEl.innerHTML = `<div class="empty-state">No sample events for ${PP.esc(PP.cityName(cityList, city))} in this prototype dataset — <a href="events.html">browse all</a> or <a href="${PP.esc((cityList.find(c=>c.slug===city)||{}).live_url||'https://poolparty.com/')}" target="_blank" rel="noopener">open live city page</a>.</div>`;
-    } else {
-      eventsEl.innerHTML = list.map(e => PP.eventCard(e, {cities: cityList})).join('');
+    if (city) {
+      const filtered = list.filter(e => e.city === city);
+      list = filtered.length ? filtered : list;
     }
+    list = list.slice(0, 12);
+    eventsEl.innerHTML = list.map(e => PP.eventCard(e, {cities: cityList})).join('');
     const count = document.querySelector('[data-result-count]');
-    if (count) count.textContent = city ? `City: ${PP.cityName(cityList, city)}` : `${events.length} sampled live events`;
+    if (count) count.textContent = city
+      ? `Showing ${PP.cityName(cityList, city)}`
+      : `${events.length} upcoming · showing ${list.length}`;
   }
   grid.addEventListener('click', e => {
-    const t = e.target.closest('[data-city]');
-    if (!t) return;
-    const slug = t.dataset.city;
-    PP.setCity(PP.getCity() === slug ? '' : slug);
-    renderHome();
+    const tile = e.target.closest('[data-city]');
+    if (!tile) return;
+    PP.setCity(tile.dataset.city);
   });
-  document.getElementById('clear-city').addEventListener('click', () => { PP.setCity(''); renderHome(); });
+  const clear = document.getElementById('clear-city');
+  if (clear) clear.addEventListener('click', () => { PP.setCity(''); renderHome(); });
   window.addEventListener('pp:city', renderHome);
+  const urlCity = PP.qs('city');
+  if (urlCity) PP.setCity(urlCity);
   renderHome();
+  if (urlCity) {
+    const cal = document.getElementById('home-events');
+    if (cal) setTimeout(() => cal.scrollIntoView({behavior:'smooth', block:'start'}), 80);
+  }
 });
 </script>
 </body></html>

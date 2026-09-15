@@ -814,3 +814,8 @@ section{padding:5.5rem 0}
 section:has(.music-band){
   background:transparent;
 }
+
+
+/* City tiles as links */
+a.city-tile{display:block;color:inherit;text-decoration:none;cursor:pointer}
+a.city-tile:hover{transform:translateY(-3px)}

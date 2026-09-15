@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site-summer.css?v=2" />
+  <link rel="stylesheet" href="assets/css/site-summer.css?v=citylink1" />
 </head>
 <body data-data-root="data" data-asset-root="">
 <div class="proto-banner">Preview for Frank Accettulli · Book Now goes live. Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
@@ -32,7 +32,7 @@
 <section class="page-hero cities"><div class="wrap">
   <p class="eyebrow">Destinations</p>
   <h1>19 cities. <em>One</em> daylife map.</h1>
-  <p class="lead">From the live pp-cities sitemap — tap a city to filter events &amp; venues in this prototype, or open the live taxonomy page.</p>
+  <p class="lead">Tap a city to open its filtered events feed.</p>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="city-grid" id="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))"></div>
@@ -65,7 +65,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const cities = (await PP.loadJSON('cities')).cities||[];
   document.getElementById('grid').innerHTML = cities.map(c => `
-    <a class="city-tile" href="city.html?id=${encodeURIComponent(c.slug)}" style="display:block;color:inherit">
+    <a class="city-tile" href="events.html?city=${encodeURIComponent(c.slug)}" style="display:block;color:inherit">
       <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
       <small>${c.count_hint!=null? c.count_hint+' live listings signal': 'Live city'}</small>
