@@ -7,30 +7,30 @@
   --foam: #ffffff;
   --sky: #7ed4ff;
   --navy: #005f9e;
-  --navy-2: #0090e0;
+  --navy-2: #4db8f0;
   --teal: #00c8d4;
   --aqua: #00e8f0;
   --aqua-hot: #5ef6ff;
   --aqua-dim: rgba(0, 144, 224, 0.22);
-  --gold: #ffe600;
+  --gold: #fff066;
   --gold-hot: #fff200;
   --champagne: #ffe566;
   --champagne-deep: #f0c400;
   --sunset: #ff5a00;
   --sunset-hot: #ff7a33;
-  --coral: #ff2d6a;
-  --lemon: #ffe600;
-  --pool: #0090e0;
+  --coral: #ff6a9a;
+  --lemon: #fff066;
+  --pool: #4db8f0;
   --mist: rgba(10, 39, 64, 0.78);
   --muted: rgba(10, 39, 64, 0.52);
   --glass: rgba(255, 255, 255, 0.86);
   --glass-strong: rgba(255, 255, 255, 0.96);
   --glass-border: rgba(0, 144, 224, 0.28);
-  --line: rgba(255, 45, 106, 0.45);
+  --line: rgba(255, 106, 154, 0.4);
   --radius: 1.35rem;
   --radius-sm: 0.85rem;
   --shadow: 0 16px 36px rgba(0, 144, 224, 0.14);
-  --shadow-glow: 0 0 36px rgba(255, 45, 106, 0.22);
+  --shadow-glow: 0 0 36px rgba(255, 106, 154, 0.18);
   --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --nav-h: 4.25rem;
@@ -642,98 +642,6 @@ section{padding:5.25rem 0;position:relative}
 }
 
 
-/* ——— CLEAN POLISH: champagne daylight, less busy ——— */
-body::before{display:none}
-
-.logo-mark{
-  box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 14px rgba(255,138,76,.28);
-}
-
-.btn-primary,.nav-cta{
-  background-image:linear-gradient(135deg,var(--sunset-hot) 0%,var(--sunset) 55%,var(--coral) 100%);
-  animation:none;
-  text-shadow:none;
-}
-.btn-primary:hover,.nav-cta:hover{filter:brightness(1.04)}
-
-.hero-bg img{filter:contrast(1.05) saturate(1.04)}
-.hero-overlay{
-  background:
-    linear-gradient(180deg,rgba(20,37,54,.12) 0%,transparent 35%,rgba(20,37,54,.3) 72%,rgba(20,37,54,.58) 100%),
-    linear-gradient(90deg,rgba(20,37,54,.22) 0%,transparent 50%);
-}
-.hero-pill{
-  background:rgba(255,255,255,.16);
-  box-shadow:none;
-}
-.hero-actions .btn-primary{padding:1.05rem 1.9rem;font-size:1rem}
-
-.card{
-  background:#fff;
-  box-shadow:0 6px 22px rgba(26,58,82,.06);
-}
-.card::before{display:none}
-.card-media::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 60%,rgba(20,37,54,.1));
-}
-.card:hover{
-  box-shadow:0 16px 36px rgba(26,58,82,.1),0 0 0 1px rgba(212,168,75,.22);
-}
-.card-media img{filter:saturate(1.08) contrast(1.02) brightness(1.02)}
-
-.vibe-card{box-shadow:0 8px 26px rgba(26,58,82,.08)}
-.vibe-card img{filter:saturate(1.1) contrast(1.03) brightness(1.03)}
-.vibe-card::after{
-  background:linear-gradient(180deg,transparent 20%,rgba(20,37,54,.55) 62%,rgba(20,37,54,.9));
-}
-.vibe-body h3{font-size:clamp(1.35rem,2vw,1.6rem);text-shadow:0 1px 8px rgba(0,0,0,.25)}
-
-.city-tile img{filter:saturate(1.1) brightness(1.03)}
-.city-tile:hover img,.city-tile.active img{transform:scale(1.02);transition:transform .45s var(--ease)}
-
-.trust{
-  background:rgba(255,255,255,.75);
-  border:1px solid rgba(20,37,54,.06);
-  box-shadow:0 4px 16px rgba(26,58,82,.04);
-}
-.trust strong{
-  background:none;
-  -webkit-background-clip:unset;background-clip:unset;color:var(--ink);
-}
-
-.step{
-  background:#fff;
-  box-shadow:0 6px 20px rgba(26,58,82,.05);
-}
-.step-num{font-size:2.6rem}
-
-.section-head h2{
-  background:none;
-  -webkit-background-clip:unset;background-clip:unset;color:var(--ink);
-}
-
-.sticky-book,.nav-cta,.btn-primary{letter-spacing:.03em}
-
-/* airy rhythm */
-section{padding:5.5rem 0}
-.card-grid{gap:1.4rem}
-.vibe-grid{gap:1.25rem}
-
-@media(max-width:640px){
-  section{padding:3.75rem 0}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .btn-primary,.nav-cta{animation:none}
-  .hero-bg img,.reveal{animation:none;transition:none}
-}
-
-.hero .eyebrow{color:#ffe8a8;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-.hero .eyebrow::before{background:#ffe8a8}
-.hero .hero-cta-secondary{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
-
-
 /* Tasteful section color bands — Miami Electric */
 #cities{
   background:linear-gradient(180deg, rgba(0,144,224,.14) 0%, rgba(255,255,255,.3) 45%, rgba(255,230,0,.14) 100%);
@@ -743,4 +651,186 @@ section{padding:5.5rem 0}
 }
 section:has(.music-band){
   background:transparent;
+}
+
+
+
+/* ========== MIAMI ELECTRIC — FINAL (wins all) ========== */
+body{
+  background-image:
+    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(255,106,154,.22), transparent 55%),
+    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(77,184,240,.32), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(255,240,102,.26), transparent 55%),
+    linear-gradient(180deg, #fff6b0 0%, #c8eaff 42%, #a8dcff 100%) !important;
+}
+body::before{
+  display:block !important;
+  content:"";
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle 320px at 15% 40%, rgba(255,240,102,.18), transparent 70%),
+    radial-gradient(circle 360px at 85% 55%, rgba(255,106,154,.14), transparent 70%),
+    radial-gradient(circle 280px at 50% 85%, rgba(77,184,240,.16), transparent 70%);
+}
+.btn-primary,
+.nav-cta,
+.sticky-book{
+  background:linear-gradient(135deg,#fff066 0%,#ff6a9a 55%,#4db8f0 140%) !important;
+  background-image:linear-gradient(135deg,#fff066 0%,#ff6a9a 55%,#ff8ab0 100%) !important;
+  color:#0a1628 !important;
+  border:none !important;
+  box-shadow:0 10px 28px rgba(255,106,154,.28) !important;
+  font-weight:800 !important;
+}
+.btn-primary:hover,.nav-cta:hover,.sticky-book:hover{
+  filter:brightness(1.05) saturate(1.05);
+  box-shadow:0 14px 36px rgba(255,106,154,.35) !important;
+}
+.tag,.eyebrow{
+  color:#ff6a9a !important;
+}
+.hero .eyebrow{color:#ffe600 !important;text-shadow:0 1px 8px rgba(0,0,0,.55) !important}
+.hero .eyebrow::before{background:linear-gradient(90deg,#ff6a9a,#fff066,#4db8f0) !important}
+.hero h1{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:2px 2px 0 #000, 0 4px 14px rgba(0,0,0,.55) !important;
+}
+.hero h1 em,.hero h1 em *{
+  color:#ff5a00 !important;
+  -webkit-text-fill-color:#ff5a00 !important;
+  background:none !important;
+  -webkit-background-clip:border-box !important;
+  -webkit-text-stroke:1.25px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:2px 2px 0 #000, 0 4px 14px rgba(0,0,0,.55) !important;
+}
+.hero-lead,.hero .hero-cta-secondary{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  font-weight:700 !important;
+  text-shadow:1px 1px 0 #000, 0 3px 10px rgba(0,0,0,.5) !important;
+}
+.hero-pill{
+  background:linear-gradient(145deg, rgba(255,240,102,.36), rgba(77,184,240,.22)) !important;
+  border:2px solid rgba(255,106,154,.4) !important;
+  color:#fff8d0 !important;
+  box-shadow:0 6px 22px rgba(255,106,154,.18) !important;
+}
+.hero-glass .hero-pill:nth-child(2){
+  background:linear-gradient(145deg, rgba(255,106,154,.28), rgba(255,240,102,.22)) !important;
+  border-color:rgba(255,106,154,.55) !important;
+}
+.hero-pill strong{
+  color:#ff5a00 !important;
+  -webkit-text-fill-color:#ff5a00 !important;
+}
+#cities{
+  background:linear-gradient(180deg, rgba(255,106,154,.08) 0%, rgba(77,184,240,.12) 50%, rgba(255,240,102,.14) 100%) !important;
+}
+.vibes{
+  background:linear-gradient(165deg, rgba(255,240,102,.14) 0%, rgba(255,106,154,.08) 100%) !important;
+}
+.trust{
+  background:linear-gradient(135deg, rgba(255,240,102,.16), rgba(77,184,240,.12), rgba(255,106,154,.08)) !important;
+  border:1.5px solid rgba(255,106,154,.2) !important;
+}
+.card:hover{
+  box-shadow:0 16px 36px rgba(255,106,154,.14), 0 0 0 2px rgba(77,184,240,.3) !important;
+}
+.section-head h2{color:var(--ink) !important}
+
+/* ========== MIAMI ELECTRIC HEADER ========== */
+.proto-banner{
+  background:linear-gradient(90deg,#ff6a9a 0%,#fff066 50%,#4db8f0 100%) !important;
+  color:#0a1628 !important;
+  font-weight:800 !important;
+  letter-spacing:.02em !important;
+}
+.proto-banner a{color:#0a1628 !important;font-weight:800 !important}
+
+.nav{
+  background:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
+  background-image:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
+  border-bottom:3px solid #0a1628 !important;
+  box-shadow:0 10px 30px rgba(255,106,154,.28) !important;
+  backdrop-filter:none !important;
+}
+.nav::before{
+  display:none !important;
+  background:transparent !important;
+}
+.nav.scrolled{
+  background:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
+  background-image:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
+  border-bottom-color:#0a1628 !important;
+}
+.nav.scrolled::before{display:none !important}
+
+.nav-inner{min-height:4.5rem}
+.logo{
+  color:#0a1628 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  font-weight:700 !important;
+}
+.logo-mark{
+  background:conic-gradient(from 180deg,#0a1628,#fff066,#ff6a9a,#4db8f0,#0a1628) !important;
+  box-shadow:0 0 0 3px #0a1628, 0 0 20px rgba(255,255,255,.5) !important;
+}
+.nav-links a{
+  color:#0a1628 !important;
+  font-weight:700 !important;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:#fff !important;
+  text-shadow:0 1px 4px rgba(0,0,0,.35);
+}
+.nav-links a.active::after,
+.nav-links a:hover::after{
+  background:#fff !important;
+  height:3px !important;
+  box-shadow:0 0 8px rgba(0,0,0,.3);
+}
+.nav-cart{
+  background:#fff !important;
+  border:2px solid #0a1628 !important;
+}
+.nav-cart .badge{
+  background:#ff6a9a !important;
+  color:#fff !important;
+}
+.nav-cta{
+  background:#ffe600 !important;
+  background-image:none !important;
+  color:#0a1628 !important;
+  border:2px solid #ffe600 !important;
+  box-shadow:0 6px 18px rgba(255,230,0,.35) !important;
+}
+.nav-toggle span{background:#ffe600 !important}
+.nav-drawer{
+  background:linear-gradient(180deg,#fff066,#ff6a9a,#4db8f0) !important;
+}
+.nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
+
+/* HEADER LETTER OUTLINE — yellow */
+.nav .logo,
+.nav .nav-links a,
+.nav .nav-cta,
+.proto-banner{
+  -webkit-text-stroke:1px #ffe600 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 8px rgba(255,230,0,.35) !important;
+}
+.nav .nav-links a:hover,
+.nav .nav-links a.active{
+  color:#fff !important;
+  -webkit-text-stroke:1.1px #ffe600 !important;
+  text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 10px rgba(255,230,0,.45) !important;
+}
+.nav .nav-cta{
+  color:#0a1628 !important;
+  -webkit-text-stroke:1px #ffe600 !important;
 }

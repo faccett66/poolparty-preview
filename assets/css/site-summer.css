@@ -7,30 +7,30 @@
   --foam: #ffffff;
   --sky: #7ed4ff;
   --navy: #005f9e;
-  --navy-2: #0090e0;
+  --navy-2: #4db8f0;
   --teal: #00c8d4;
   --aqua: #00e8f0;
   --aqua-hot: #5ef6ff;
   --aqua-dim: rgba(0, 144, 224, 0.22);
-  --gold: #ffe600;
+  --gold: #fff066;
   --gold-hot: #fff200;
   --champagne: #ffe566;
   --champagne-deep: #f0c400;
   --sunset: #ff5a00;
   --sunset-hot: #ff7a33;
-  --coral: #ff2d6a;
-  --lemon: #ffe600;
-  --pool: #0090e0;
+  --coral: #ff6a9a;
+  --lemon: #fff066;
+  --pool: #4db8f0;
   --mist: rgba(10, 39, 64, 0.78);
   --muted: rgba(10, 39, 64, 0.52);
   --glass: rgba(255, 255, 255, 0.86);
   --glass-strong: rgba(255, 255, 255, 0.96);
   --glass-border: rgba(0, 144, 224, 0.28);
-  --line: rgba(255, 45, 106, 0.45);
+  --line: rgba(255, 106, 154, 0.4);
   --radius: 1.35rem;
   --radius-sm: 0.85rem;
   --shadow: 0 16px 36px rgba(0, 144, 224, 0.14);
-  --shadow-glow: 0 0 36px rgba(255, 45, 106, 0.22);
+  --shadow-glow: 0 0 36px rgba(255, 106, 154, 0.18);
   --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --nav-h: 4.25rem;
@@ -653,42 +653,44 @@ section:has(.music-band){
   background:transparent;
 }
 
+
+
 /* ========== MIAMI ELECTRIC — FINAL (wins all) ========== */
 body{
   background-image:
-    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(255,45,106,.38), transparent 55%),
-    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(0,144,224,.48), transparent 52%),
-    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(255,230,0,.36), transparent 55%),
-    linear-gradient(180deg, #ffe566 0%, #9ad8ff 40%, #5ec0ff 100%) !important;
+    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(255,106,154,.22), transparent 55%),
+    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(77,184,240,.32), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(255,240,102,.26), transparent 55%),
+    linear-gradient(180deg, #fff6b0 0%, #c8eaff 42%, #a8dcff 100%) !important;
 }
 body::before{
   display:block !important;
   content:"";
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(circle 320px at 15% 40%, rgba(255,230,0,.28), transparent 70%),
-    radial-gradient(circle 360px at 85% 55%, rgba(255,45,106,.22), transparent 70%),
-    radial-gradient(circle 280px at 50% 85%, rgba(0,144,224,.25), transparent 70%);
+    radial-gradient(circle 320px at 15% 40%, rgba(255,240,102,.18), transparent 70%),
+    radial-gradient(circle 360px at 85% 55%, rgba(255,106,154,.14), transparent 70%),
+    radial-gradient(circle 280px at 50% 85%, rgba(77,184,240,.16), transparent 70%);
 }
 .btn-primary,
 .nav-cta,
 .sticky-book{
-  background:linear-gradient(135deg,#ffe600 0%,#ff2d6a 55%,#0090e0 140%) !important;
-  background-image:linear-gradient(135deg,#ffe600 0%,#ff2d6a 55%,#c2185b 100%) !important;
+  background:linear-gradient(135deg,#fff066 0%,#ff6a9a 55%,#4db8f0 140%) !important;
+  background-image:linear-gradient(135deg,#fff066 0%,#ff6a9a 55%,#ff8ab0 100%) !important;
   color:#0a1628 !important;
   border:none !important;
-  box-shadow:0 12px 32px rgba(255,45,106,.4) !important;
+  box-shadow:0 10px 28px rgba(255,106,154,.28) !important;
   font-weight:800 !important;
 }
 .btn-primary:hover,.nav-cta:hover,.sticky-book:hover{
-  filter:brightness(1.06) saturate(1.1);
-  box-shadow:0 16px 40px rgba(255,45,106,.5) !important;
+  filter:brightness(1.05) saturate(1.05);
+  box-shadow:0 14px 36px rgba(255,106,154,.35) !important;
 }
 .tag,.eyebrow{
-  color:var(--coral) !important;
+  color:#ff6a9a !important;
 }
 .hero .eyebrow{color:#ffe600 !important;text-shadow:0 1px 8px rgba(0,0,0,.55) !important}
-.hero .eyebrow::before{background:#ff2d6a !important}
+.hero .eyebrow::before{background:linear-gradient(90deg,#ff6a9a,#fff066,#4db8f0) !important}
 .hero h1{
   color:#ffe600 !important;
   -webkit-text-fill-color:#ffe600 !important;
@@ -712,91 +714,123 @@ body::before{
   text-shadow:1px 1px 0 #000, 0 3px 10px rgba(0,0,0,.5) !important;
 }
 .hero-pill{
-  background:linear-gradient(145deg, rgba(255,230,0,.42), rgba(0,144,224,.28)) !important;
-  border:2px solid rgba(255,45,106,.55) !important;
+  background:linear-gradient(145deg, rgba(255,240,102,.36), rgba(77,184,240,.22)) !important;
+  border:2px solid rgba(255,106,154,.4) !important;
   color:#fff8d0 !important;
-  box-shadow:0 6px 22px rgba(255,45,106,.25) !important;
+  box-shadow:0 6px 22px rgba(255,106,154,.18) !important;
 }
 .hero-glass .hero-pill:nth-child(2){
-  background:linear-gradient(145deg, rgba(255,45,106,.4), rgba(255,230,0,.25)) !important;
-  border-color:rgba(255,45,106,.8) !important;
+  background:linear-gradient(145deg, rgba(255,106,154,.28), rgba(255,240,102,.22)) !important;
+  border-color:rgba(255,106,154,.55) !important;
 }
 .hero-pill strong{
   color:#ff5a00 !important;
   -webkit-text-fill-color:#ff5a00 !important;
 }
 #cities{
-  background:linear-gradient(180deg, rgba(255,45,106,.12) 0%, rgba(0,144,224,.16) 50%, rgba(255,230,0,.18) 100%) !important;
+  background:linear-gradient(180deg, rgba(255,106,154,.08) 0%, rgba(77,184,240,.12) 50%, rgba(255,240,102,.14) 100%) !important;
 }
 .vibes{
-  background:linear-gradient(165deg, rgba(255,230,0,.2) 0%, rgba(255,45,106,.12) 100%) !important;
+  background:linear-gradient(165deg, rgba(255,240,102,.14) 0%, rgba(255,106,154,.08) 100%) !important;
 }
 .trust{
-  background:linear-gradient(135deg, rgba(255,230,0,.2), rgba(0,144,224,.15), rgba(255,45,106,.12)) !important;
-  border:1.5px solid rgba(255,45,106,.25) !important;
+  background:linear-gradient(135deg, rgba(255,240,102,.16), rgba(77,184,240,.12), rgba(255,106,154,.08)) !important;
+  border:1.5px solid rgba(255,106,154,.2) !important;
 }
 .card:hover{
-  box-shadow:0 16px 36px rgba(255,45,106,.18), 0 0 0 2px rgba(0,144,224,.35) !important;
+  box-shadow:0 16px 36px rgba(255,106,154,.14), 0 0 0 2px rgba(77,184,240,.3) !important;
 }
 .section-head h2{color:var(--ink) !important}
 
 /* ========== MIAMI ELECTRIC HEADER ========== */
 .proto-banner{
-  background:linear-gradient(90deg,#ff2d6a 0%,#ffe600 45%,#0090e0 100%) !important;
+  background:linear-gradient(90deg,#ff6a9a 0%,#fff066 50%,#4db8f0 100%) !important;
+  color:#0a1628 !important;
+  font-weight:800 !important;
+  letter-spacing:.02em !important;
+}
+.proto-banner a{color:#0a1628 !important;font-weight:800 !important}
+
+.nav{
+  background:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
+  background-image:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
+  border-bottom:3px solid #0a1628 !important;
+  box-shadow:0 10px 30px rgba(255,106,154,.28) !important;
+  backdrop-filter:none !important;
+}
+.nav::before{
+  display:none !important;
+  background:transparent !important;
+}
+.nav.scrolled{
+  background:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
+  background-image:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
+  border-bottom-color:#0a1628 !important;
+}
+.nav.scrolled::before{display:none !important}
+
+.nav-inner{min-height:4.5rem}
+.logo{
+  color:#0a1628 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  font-weight:700 !important;
+}
+.logo-mark{
+  background:conic-gradient(from 180deg,#0a1628,#fff066,#ff6a9a,#4db8f0,#0a1628) !important;
+  box-shadow:0 0 0 3px #0a1628, 0 0 20px rgba(255,255,255,.5) !important;
+}
+.nav-links a{
   color:#0a1628 !important;
   font-weight:700 !important;
 }
-.proto-banner a{color:#0a1628 !important;text-decoration-thickness:2px}
-
-.nav{
-  background:
-    linear-gradient(180deg, rgba(255,230,0,.22) 0%, rgba(0,144,224,.18) 55%, rgba(255,45,106,.14) 100%),
-    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.7)),
-    url("../site/vibe-encore-umbrellas.jpg") center 35%/cover no-repeat !important;
-  background-blend-mode:normal, normal, soft-light !important;
-  border-bottom:2px solid rgba(255,45,106,.28) !important;
-  box-shadow:0 8px 28px rgba(0,144,224,.12) !important;
-}
-.nav::before{
-  background:linear-gradient(90deg, rgba(255,230,0,.18), rgba(255,255,255,.55), rgba(0,144,224,.16)) !important;
-}
-.nav.scrolled{
-  background:
-    linear-gradient(180deg, rgba(255,45,106,.12) 0%, rgba(0,144,224,.14) 100%),
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.88)),
-    url("../site/feat-encore-pool.jpg") center 40%/cover no-repeat !important;
-  border-bottom-color:rgba(255,45,106,.35) !important;
-  box-shadow:0 10px 28px rgba(255,45,106,.12) !important;
-}
-.nav.scrolled::before{
-  background:rgba(255,255,255,.55) !important;
-}
-.logo{color:var(--ink) !important}
-.logo-mark{
-  background:conic-gradient(from 200deg,#ffe600,#ff2d6a,#0090e0,#00e8f0,#ff5a00,#ffe600) !important;
-  box-shadow:0 0 0 2px rgba(255,255,255,.85), 0 0 18px rgba(255,45,106,.45) !important;
-}
-.nav-links a{color:var(--ink-soft) !important;font-weight:600 !important}
 .nav-links a:hover,
-.nav-links a.active{color:#ff2d6a !important}
+.nav-links a.active{
+  color:#fff !important;
+  text-shadow:0 1px 4px rgba(0,0,0,.35);
+}
 .nav-links a.active::after,
 .nav-links a:hover::after{
-  background:linear-gradient(90deg,#ffe600,#ff2d6a,#0090e0) !important;
+  background:#fff !important;
   height:3px !important;
+  box-shadow:0 0 8px rgba(0,0,0,.3);
 }
 .nav-cart{
-  background:rgba(255,255,255,.8) !important;
-  border-color:rgba(255,45,106,.35) !important;
-}
-.nav-cart:hover{
-  border-color:#ff2d6a !important;
-  box-shadow:0 4px 16px rgba(255,45,106,.28) !important;
+  background:#fff !important;
+  border:2px solid #0a1628 !important;
 }
 .nav-cart .badge{
-  background:linear-gradient(135deg,#ffe600,#ff2d6a) !important;
+  background:#ff6a9a !important;
+  color:#fff !important;
+}
+.nav-cta{
+  background:#ffe600 !important;
+  background-image:none !important;
   color:#0a1628 !important;
+  border:2px solid #ffe600 !important;
+  box-shadow:0 6px 18px rgba(255,230,0,.35) !important;
 }
+.nav-toggle span{background:#ffe600 !important}
 .nav-drawer{
-  background:linear-gradient(180deg,#fff8d0,#dff3ff) !important;
+  background:linear-gradient(180deg,#fff066,#ff6a9a,#4db8f0) !important;
 }
-.nav-drawer a:hover{color:#ff2d6a !important}
+.nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
+
+/* HEADER LETTER OUTLINE — yellow */
+.nav .logo,
+.nav .nav-links a,
+.nav .nav-cta,
+.proto-banner{
+  -webkit-text-stroke:1px #ffe600 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 8px rgba(255,230,0,.35) !important;
+}
+.nav .nav-links a:hover,
+.nav .nav-links a.active{
+  color:#fff !important;
+  -webkit-text-stroke:1.1px #ffe600 !important;
+  text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 10px rgba(255,230,0,.45) !important;
+}
+.nav .nav-cta{
+  color:#0a1628 !important;
+  -webkit-text-stroke:1px #ffe600 !important;
+}

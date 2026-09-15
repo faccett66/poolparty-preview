@@ -803,34 +803,34 @@ body::before{
   color:#fff !important;
 }
 .nav-cta{
-  background:#0a1628 !important;
+  background:#ffe600 !important;
   background-image:none !important;
-  color:#fff066 !important;
-  border:2px solid #0a1628 !important;
-  box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
+  color:#0a1628 !important;
+  border:2px solid #ffe600 !important;
+  box-shadow:0 6px 18px rgba(255,230,0,.35) !important;
 }
-.nav-toggle span{background:#0a1628 !important}
+.nav-toggle span{background:#ffe600 !important}
 .nav-drawer{
   background:linear-gradient(180deg,#fff066,#ff6a9a,#4db8f0) !important;
 }
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
 
-/* HEADER LETTER OUTLINE */
+/* HEADER LETTER OUTLINE — yellow */
 .nav .logo,
 .nav .nav-links a,
 .nav .nav-cta,
 .proto-banner{
-  -webkit-text-stroke:1px #000 !important;
+  -webkit-text-stroke:1px #ffe600 !important;
   paint-order:stroke fill !important;
-  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,0 2px 6px rgba(0,0,0,.25) !important;
+  text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 8px rgba(255,230,0,.35) !important;
 }
 .nav .nav-links a:hover,
 .nav .nav-links a.active{
   color:#fff !important;
-  -webkit-text-stroke:1.1px #000 !important;
-  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,0 2px 8px rgba(0,0,0,.4) !important;
+  -webkit-text-stroke:1.1px #ffe600 !important;
+  text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 10px rgba(255,230,0,.45) !important;
 }
 .nav .nav-cta{
-  color:#fff066 !important;
-  -webkit-text-stroke:1px #000 !important;
+  color:#0a1628 !important;
+  -webkit-text-stroke:1px #ffe600 !important;
 }
