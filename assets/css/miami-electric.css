@@ -835,17 +835,22 @@ body::before{
   -webkit-text-stroke:1px #ffe600 !important;
 }
 
-/* Header Home link — yellow */
+/* Header Home — yellow fill, black outline */
 .nav .nav-links a[href="index.html"],
 .nav-drawer a[href="index.html"]{
   color:#ffe600 !important;
   -webkit-text-fill-color:#ffe600 !important;
   font-weight:800 !important;
+  -webkit-text-stroke:1.1px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,0 2px 6px rgba(0,0,0,.35) !important;
 }
 .nav .nav-links a[href="index.html"]:hover,
 .nav .nav-links a[href="index.html"].active{
-  color:#fff066 !important;
-  -webkit-text-fill-color:#fff066 !important;
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1.2px #000 !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,0 2px 8px rgba(0,0,0,.4) !important;
 }
 .nav .nav-links a[href="index.html"].active::after,
 .nav .nav-links a[href="index.html"]:hover::after{
