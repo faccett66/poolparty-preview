@@ -1,0 +1,15 @@
+hero-ayu.jpg <- https://www.poolparty.com/wp-content/uploads/2025/06/Ayu-Dayclub-at-Resorts-World-scaled.webp (ayu-day-club venue)
+vibe-garden-rotunda.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Garden-of-the-Gods-Pool-Oasis-at-Caesars-Pool-party-3-1.webp
+vibe-encore-crowd.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Encore-Beach-Club-Pool-Party-3.webp
+vibe-yacht-bay.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Yatch-Social-Club-image-4.webp (homepage CSS bg)
+vibe-beach-terrace.jpg <- https://www.poolparty.com/wp-content/uploads/2025/10/beach-party.webp (homepage CSS bg)
+vibe-garden-dusk.jpg <- https://www.poolparty.com/wp-content/uploads/2025/06/Garden-of-the-Gods-Pool-Oasis-at-Caesars-cover-scaled.webp
+dest-miami-night.jpg <- https://www.poolparty.com/wp-content/uploads/2025/06/Miami.webp (/venues/)
+dest-ibiza-obeach.jpg <- https://www.poolparty.com/wp-content/uploads/bb-plugin/cache/O-Beach-Ibiza-Pool-party-2-landscape-...webp (homepage)
+lifestyle-cheers.jpg <- https://www.poolparty.com/wp-content/uploads/2025/10/pool-party-day-night.webp (homepage CSS bg)
+feat-encore-cabana.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Encore-Beach-Club-Pool-Party-1.webp
+music-ayu-stage.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Pool-Party-Ayu-Dayclub-at-Resorts-World-2.webp
+feat-encore-pool.jpg <- https://www.poolparty.com/wp-content/uploads/2025/06/Encore-Beach-Club-scaled.webp
+vibe-encore-umbrellas.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Encore-Beach-Club-Pool-Party-4.webp
+vibe-ayu-energy.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Pool-Party-Ayu-Dayclub-at-Resorts-World-1.webp
+vibe-garden-day.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Garden-of-the-Gods-Pool-Oasis-at-Caesars-Pool-party-1.webp
