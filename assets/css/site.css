@@ -321,13 +321,15 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero-pill{
   padding:.55rem .85rem;border-radius:.85rem;background:rgba(255,255,255,.14);
   backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);
-  font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.7);
+  font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;
+  color:#ffe8a8;
+  text-shadow:0 1px 4px rgba(0,0,0,.55);
 }
-.hero-pill strong{display:block;color:#fff;font-size:.9rem;font-weight:650;letter-spacing:0;text-transform:none;margin-top:.15rem}
-.scroll-hint{
-  position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:2;
-  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);
-  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+.hero-pill strong{
+  display:block;color:#ff5a00;font-size:.9rem;font-weight:750;letter-spacing:0;
+  text-transform:none;margin-top:.15rem;
+  -webkit-text-stroke:0.6px #000;paint-order:stroke fill;
+  text-shadow:1px 1px 0 #000, 0 2px 8px rgba(0,0,0,.45);
 }
 .scroll-hint::after{
   content:"";width:1px;height:2rem;
@@ -743,7 +745,29 @@ section{padding:5.5rem 0}
   paint-order:stroke fill !important;
   text-shadow:1px 1px 0 #000, 0 3px 12px rgba(0,0,0,.55) !important;
 }
+/* Browse cities — same punch as lead */
 .hero .hero-cta-secondary{
   color:#ffe566 !important;
-  text-shadow:0 1px 4px #000 !important;
+  -webkit-text-fill-color:#ffe566 !important;
+  text-decoration-color:rgba(255,229,102,.7) !important;
+  text-shadow:1px 1px 0 #000, 0 2px 8px rgba(0,0,0,.5) !important;
+  font-weight:700 !important;
+}
+.hero .hero-cta-secondary:hover{
+  color:#ff5a00 !important;
+  -webkit-text-fill-color:#ff5a00 !important;
+  text-decoration-color:#ff5a00 !important;
+}
+/* Destinations / Book Now labels — soft lemon */
+.hero-pill{
+  color:#ffe8a8 !important;
+  text-shadow:0 1px 4px rgba(0,0,0,.55) !important;
+}
+/* 19 party cities / Goes live — hot orange punch */
+.hero-pill strong{
+  color:#ff5a00 !important;
+  -webkit-text-fill-color:#ff5a00 !important;
+  -webkit-text-stroke:0.6px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 1px 0 #000, 0 2px 8px rgba(0,0,0,.45) !important;
 }
