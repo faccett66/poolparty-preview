@@ -185,37 +185,37 @@ button,input,select,textarea{font:inherit;color:inherit}
 .page-hero{
   position:relative;padding:calc(var(--nav-h) + 3.5rem) 0 3rem;overflow:hidden;
   background:
-    linear-gradient(180deg, rgba(255,248,239,.72) 0%, rgba(246,251,255,.9) 55%, rgba(246,251,255,.98) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.25) 0%, rgba(255,248,239,.55) 70%, rgba(246,251,255,.95) 100%),
     url("../site/vibe-garden-dusk.jpg") center 30%/cover no-repeat;
 }
 .page-hero.events{
   background:
-    linear-gradient(180deg, rgba(255,248,239,.68) 0%, rgba(246,251,255,.94) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.2) 0%, rgba(255,248,239,.5) 55%, rgba(246,251,255,.92) 100%),
     url("../site/vibe-encore-crowd.jpg") center 35%/cover no-repeat;
 }
 .page-hero.venues{
   background:
-    linear-gradient(180deg, rgba(255,248,239,.68) 0%, rgba(246,251,255,.94) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.2) 0%, rgba(255,248,239,.5) 55%, rgba(246,251,255,.92) 100%),
     url("../site/feat-encore-cabana.jpg") center 35%/cover no-repeat;
 }
 .page-hero.cities{
   background:
-    linear-gradient(180deg, rgba(255,248,239,.68) 0%, rgba(246,251,255,.94) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.2) 0%, rgba(255,248,239,.5) 55%, rgba(246,251,255,.92) 100%),
     url("../site/dest-miami-night.jpg") center 35%/cover no-repeat;
 }
 .page-hero.blog{
   background:
-    linear-gradient(180deg, rgba(255,248,239,.68) 0%, rgba(246,251,255,.94) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.2) 0%, rgba(255,248,239,.5) 55%, rgba(246,251,255,.92) 100%),
     url("../site/lifestyle-cheers.jpg") center 35%/cover no-repeat;
 }
 .page-hero.contact,.page-hero.advertise{
   background:
-    linear-gradient(180deg, rgba(255,248,239,.68) 0%, rgba(246,251,255,.94) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.2) 0%, rgba(255,248,239,.5) 55%, rgba(246,251,255,.92) 100%),
     url("../site/vibe-yacht-bay.jpg") center 40%/cover no-repeat;
 }
 .page-hero.faqs{
   background:
-    linear-gradient(180deg, rgba(255,248,239,.68) 0%, rgba(246,251,255,.94) 100%),
+    linear-gradient(180deg, rgba(20,37,54,.2) 0%, rgba(255,248,239,.5) 55%, rgba(246,251,255,.92) 100%),
     url("../site/vibe-beach-terrace.jpg") center 35%/cover no-repeat;
 }
 .page-hero::before{
@@ -248,7 +248,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   gap:0;background:#fff8ef;
 }
 .hero-bg img{
-  width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.02) brightness(1.04);
+  width:100%;height:100%;object-fit:cover;filter:none;
   transform:none;animation:none;
 }
 .hero-bg img:nth-child(1){grid-row:1;grid-column:1;object-position:center 28%}
@@ -262,8 +262,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(180deg,rgba(255,248,239,.42) 0%,rgba(255,248,239,.12) 32%,rgba(20,37,54,.2) 68%,rgba(20,37,54,.7) 100%),
-    linear-gradient(90deg,rgba(20,37,54,.42) 0%,transparent 52%);
+    linear-gradient(180deg,rgba(20,37,54,.15) 0%,rgba(20,37,54,.05) 40%,rgba(20,37,54,.35) 75%,rgba(20,37,54,.62) 100%),
+    linear-gradient(90deg,rgba(20,37,54,.28) 0%,transparent 48%);
 }
 .hero-content{position:relative;z-index:2;max-width:42rem}
 .hero h1{
@@ -367,7 +367,7 @@ section{padding:5.25rem 0;position:relative}
   transform:translateY(-4px);border-color:rgba(212,168,75,.35);box-shadow:0 16px 36px rgba(26,58,82,.1);
 }
 .card-media{position:relative;aspect-ratio:16/11;overflow:hidden}
-.card-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);filter:saturate(1.05)}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);filter:none}
 .card:hover .card-media img{transform:scale(1.02)}
 .card-media .badge-row{position:absolute;top:.75rem;left:.75rem;display:flex;gap:.35rem;flex-wrap:wrap;z-index:2}
 .tag{
@@ -403,10 +403,10 @@ section{padding:5.25rem 0;position:relative}
   transform:translateY(-2px);border-color:var(--champagne-deep);box-shadow:0 10px 24px rgba(201,160,74,.18);
 }
 .city-tile.active{outline:2px solid var(--aqua);outline-offset:1px}
-.city-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;filter:saturate(1.15)}
+.city-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;filter:none}
 .city-tile::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 15%,rgba(20,37,54,.88));
+  background:linear-gradient(180deg,transparent 35%,rgba(20,37,54,.55) 75%,rgba(20,37,54,.82));
 }
 .city-tile span{
   position:relative;z-index:2;display:block;padding:1rem;
@@ -431,11 +431,11 @@ section{padding:5.25rem 0;position:relative}
   box-shadow:0 8px 24px rgba(26,58,82,.08);
 }
 .vibe-card:hover{transform:translateY(-4px);border-color:rgba(212,168,75,.3);box-shadow:var(--shadow)}
-.vibe-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s;filter:saturate(1.08) brightness(1.03)}
+.vibe-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s;filter:none}
 .vibe-card:hover img{transform:scale(1.02)}
 .vibe-card::after{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,transparent 18%,rgba(20,37,54,.9));
+  background:linear-gradient(180deg,transparent 40%,rgba(20,37,54,.5) 70%,rgba(20,37,54,.82));
 }
 .vibe-body{position:absolute;inset:auto 0 0 0;padding:1.35rem;z-index:2}
 .vibe-body h3{font-family:var(--font-display);font-size:1.55rem;font-weight:650;margin:.35rem 0 .3rem;color:#fff}
@@ -614,11 +614,11 @@ body::before{display:none}
 }
 .btn-primary:hover,.nav-cta:hover{filter:brightness(1.04)}
 
-.hero-bg img{filter:saturate(1.1) contrast(1.02) brightness(1.05)}
+.hero-bg img{filter:contrast(1.05) saturate(1.04)}
 .hero-overlay{
   background:
-    linear-gradient(180deg,rgba(255,248,239,.38) 0%,rgba(255,248,239,.1) 30%,rgba(20,37,54,.22) 64%,rgba(20,37,54,.68) 100%),
-    linear-gradient(90deg,rgba(20,37,54,.4) 0%,transparent 55%);
+    linear-gradient(180deg,rgba(20,37,54,.12) 0%,transparent 35%,rgba(20,37,54,.3) 72%,rgba(20,37,54,.58) 100%),
+    linear-gradient(90deg,rgba(20,37,54,.22) 0%,transparent 50%);
 }
 .hero h1{
   font-size:clamp(2.9rem,8vw,5.2rem);
