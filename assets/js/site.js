@@ -191,6 +191,76 @@
       </article>`;
     },
 
+
+    /** Apply dayclub page overlays: LA rooftop / yacht / checkout (static class preferred). */
+    initPageTheme() {
+      const body = document.body;
+      if (!body || body.classList.contains('page-checkout')) return;
+
+      const path = (location.pathname.split('/').pop() || '').toLowerCase();
+      const cityQ = (this.qs('city') || this.qs('id') || '').toLowerCase();
+      const vibeQ = (this.qs('vibe') || '').toLowerCase();
+      const stored = (this.getCity && this.getCity()) || '';
+
+      const isLA = (s) => {
+        const v = String(s || '').toLowerCase();
+        return v === 'los-angeles' || v === 'la' || v === 'losangeles';
+      };
+      const isYacht = (s) => String(s || '').toLowerCase() === 'yacht';
+
+      let la = false;
+      let yacht = false;
+
+      if (path === 'city.html' && isLA(cityQ)) la = true;
+      if (path === 'events.html' || path === 'venues.html') {
+        if (isLA(cityQ) || (!cityQ && isLA(stored))) la = true;
+        if (isYacht(vibeQ)) yacht = true;
+      }
+      if (path === 'event.html') {
+        // event detail may set data-city / data-vibe on body after load; also URL hints
+        if (isYacht(vibeQ)) yacht = true;
+        if (isLA(cityQ)) la = true;
+      }
+
+      // Prefer yacht when both (yacht vibe pages)
+      if (yacht) {
+        body.classList.add('page-yacht');
+        body.classList.remove('page-la');
+      } else if (la) {
+        body.classList.add('page-la');
+        body.classList.remove('page-yacht');
+      }
+
+      // Observe late-bound event detail attributes
+      if (path === 'event.html') {
+        const applyFromDataset = () => {
+          if (isYacht(body.dataset.vibe)) {
+            body.classList.add('page-yacht');
+            body.classList.remove('page-la');
+          } else if (isLA(body.dataset.city)) {
+            body.classList.add('page-la');
+            body.classList.remove('page-yacht');
+          }
+        };
+        applyFromDataset();
+        const mo = new MutationObserver(applyFromDataset);
+        mo.observe(body, { attributes: true, attributeFilter: ['data-city', 'data-vibe'] });
+      }
+
+      // React to filter changes on events/venues
+      if (path === 'events.html' || path === 'venues.html') {
+        const citySel = document.querySelector('#city, [name="city"], select[data-filter="city"]');
+        const vibeSel = document.querySelector('#vibe, [name="vibe"], select[data-filter="vibe"]');
+        const sync = () => {
+          const c = (citySel && citySel.value) || this.qs('city') || '';
+          const v = (vibeSel && vibeSel.value) || this.qs('vibe') || '';
+          body.classList.toggle('page-yacht', isYacht(v));
+          body.classList.toggle('page-la', !isYacht(v) && isLA(c));
+        };
+        [citySel, vibeSel].forEach(el => el && el.addEventListener('change', sync));
+      }
+    },
+
     initNav() {
       const nav = document.querySelector('.nav');
       const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 24);
@@ -334,6 +404,7 @@
 
   window.PP = PP;
   document.addEventListener('DOMContentLoaded', () => {
+    PP.initPageTheme();
     PP.initNav();
     PP.initReveal();
     PP.initDemoCartButtons();
