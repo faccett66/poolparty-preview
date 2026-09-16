@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T06:18:36Z",
+  "generated": "2026-09-16T06:19:32Z",
   "source": "pp-cities-sitemap 19 cities",
   "cities": [
     {
@@ -8,7 +8,7 @@
       "name": "Amalfi Coast",
       "live_url": "https://poolparty.com/pp-cities/amalfi-coast/",
       "description": "Cliffside daybeds, Amalfi blue, and villa-pool energy — Amalfi’s catalog leans luxury resorts and sea-view decks. Mid-September often sits between peak Italian summer and shoulder season, so this preview may show venues with few or no near-term dated products. Browse venues here, then open the live city page for the freshest Book Now inventory.",
-      "count_hint": "1 venues",
+      "count_hint": "1 venue",
       "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "live-prior-unique"
     },
@@ -48,7 +48,7 @@
       "name": "Budapest",
       "live_url": "https://poolparty.com/pp-cities/budapest/",
       "description": "Thermal baths by day, party lights by night — Budapest’s scene blends spa heritage with modern DJ culture. Preview inventory may be sparse outside festival windows; venue cards + the live city link stay honest when upcoming = 0.",
-      "count_hint": "1 venues",
+      "count_hint": "1 venue",
       "image": "assets/site/live/city-budapest-2ec42d6170.jpg",
       "source": "live-prior-unique"
     },
@@ -78,8 +78,8 @@
       "name": "Fort Lauderdale",
       "live_url": "https://poolparty.com/pp-cities/fort-lauderdale/",
       "description": "Yacht-adjacent lounges, hotel pools, and Intracoastal vibes — Fort Lauderdale is Miami’s sun-soaked neighbor. Expect beach-bar energy and waterfront decks when dated events post; otherwise browse venues and jump to the live city page.",
-      "count_hint": "1 venues",
-      "image": "assets/site/vibe-garden-day.jpg",
+      "count_hint": "1 venue",
+      "image": "assets/site/live/city-miami-dc05bed707.jpg",
       "source": "live-prior-unique"
     },
     {
@@ -88,7 +88,7 @@
       "name": "France",
       "live_url": "https://poolparty.com/pp-cities/france/",
       "description": "Riviera chic meets Paris rooftop energy — France’s catalog covers Cannes-to-Nice pool days and stylish city decks. Shoulder season can thin dated products; this hub keeps venues + live links without inventing weekend inventory.",
-      "count_hint": "1 venues",
+      "count_hint": "1 venue",
       "image": "assets/site/live/city-france-e65d7c491f.jpg",
       "source": "live-prior-unique"
     },
@@ -108,7 +108,7 @@
       "name": "Italy",
       "live_url": "https://poolparty.com/pp-cities/italy/",
       "description": "Beyond Amalfi: Capri, Positano energy, and mainland resort pools with Mediterranean charm. Italy’s live catalog is deep historically; mid-September preview rows may skew past-dated — filter upcoming honestly and use the live city page for new drops.",
-      "count_hint": "1 venues",
+      "count_hint": "1 venue",
       "image": "assets/site/live/city-italy-1fd2c39a04.jpg",
       "source": "live-prior-unique"
     },
@@ -158,7 +158,7 @@
       "name": "Phuket",
       "live_url": "https://poolparty.com/pp-cities/phuket/",
       "description": "Andaman blue, cliff clubs, and resort pool decks — Phuket daylife is tropical high season when partners post. International API rows may be older; venues stay listed, upcoming only when truly dated ahead.",
-      "count_hint": "1 venues",
+      "count_hint": "1 venue",
       "image": "assets/site/live/city-phuket-13f7fa0ef2.jpg",
       "source": "live-prior-unique"
     },
@@ -197,19 +197,19 @@
       "slug": "florida",
       "name": "Florida",
       "live_url": "https://poolparty.com/city/florida/",
-      "description": "Florida venues on Pool Party.",
+      "description": "Florida daylife — Miami heat, Fort Lauderdale decks, and Keys energy when the calendar is live.",
       "count_hint": "18 venues",
-      "image": "",
+      "image": "assets/site/dest-miami-night.jpg",
       "source": "venues-refresh"
     },
     {
       "id": "goa",
       "slug": "goa",
-      "name": "India",
+      "name": "Goa",
       "live_url": "https://poolparty.com/city/goa/",
-      "description": "India venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Goa beach clubs and resort pools — Arabian Sea sunsets and late-day bass when inventory is live.",
+      "count_hint": "1 venue",
+      "image": "assets/site/live/city-india-060ca4129d.jpg",
       "source": "venues-refresh"
     },
     {
@@ -217,9 +217,9 @@
       "slug": "romania",
       "name": "Romania",
       "live_url": "https://poolparty.com/city/romania/",
-      "description": "Romania venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Romania thermal and pool escapes — Bucharest-area daylife when listings are active.",
+      "count_hint": "1 venue",
+      "image": "assets/site/live/city-budapest-2ec42d6170.jpg",
       "source": "venues-refresh"
     },
     {
@@ -227,9 +227,9 @@
       "slug": "australia",
       "name": "Australia",
       "live_url": "https://poolparty.com/city/australia/",
-      "description": "Australia venues on Pool Party.",
+      "description": "Australia rooftop and waterfront clubs — Sydney, Melbourne, Brisbane & Perth energy.",
       "count_hint": "5 venues",
-      "image": "",
+      "image": "assets/site/live/city-sydney-df30ed43a1.jpg",
       "source": "venues-refresh"
     },
     {
@@ -237,9 +237,9 @@
       "slug": "philippines",
       "name": "Philippines",
       "live_url": "https://poolparty.com/city/philippines/",
-      "description": "Philippines venues on Pool Party.",
+      "description": "Philippines beach resorts and island pools — Boracay foam to garden decks.",
       "count_hint": "4 venues",
-      "image": "",
+      "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "venues-refresh"
     },
     {
@@ -247,9 +247,9 @@
       "slug": "thailand",
       "name": "Thailand",
       "live_url": "https://poolparty.com/city/thailand/",
-      "description": "Thailand venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Thailand beach clubs — Phuket decks and Bangkok water clubs when the feed has dates.",
+      "count_hint": "1 venue",
+      "image": "assets/site/live/city-phuket-13f7fa0ef2.jpg",
       "source": "venues-refresh"
     },
     {
@@ -257,9 +257,9 @@
       "slug": "lebanon",
       "name": "Lebanon",
       "live_url": "https://poolparty.com/city/lebanon/",
-      "description": "Lebanon venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Lebanon pool and rooftop daylife — Beirut-area decks when partners are listed.",
+      "count_hint": "1 venue",
+      "image": "assets/site/vibe-garden-day.jpg",
       "source": "venues-refresh"
     },
     {
@@ -267,9 +267,9 @@
       "slug": "aruba",
       "name": "Aruba",
       "live_url": "https://poolparty.com/city/aruba/",
-      "description": "Aruba venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Aruba beach clubs — Caribbean sand, swim-up bars, and golden-hour sets.",
+      "count_hint": "1 venue",
+      "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "venues-refresh"
     },
     {
@@ -277,9 +277,9 @@
       "slug": "croatia",
       "name": "Croatia",
       "live_url": "https://poolparty.com/city/croatia/",
-      "description": "Croatia venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Croatia coast clubs — Adriatic daybeds and yacht-adjacent energy.",
+      "count_hint": "1 venue",
+      "image": "assets/site/vibe-yacht-bay.jpg",
       "source": "venues-refresh"
     },
     {
@@ -287,9 +287,9 @@
       "slug": "sri-lanka",
       "name": "Sri Lanka",
       "live_url": "https://poolparty.com/city/sri-lanka/",
-      "description": "Sri Lanka venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Sri Lanka beach clubs — Indian Ocean pools and resort daylife.",
+      "count_hint": "1 venue",
+      "image": "assets/site/live/city-bali-fa6291121c.jpg",
       "source": "venues-refresh"
     },
     {
@@ -297,9 +297,9 @@
       "slug": "colombia",
       "name": "Colombia",
       "live_url": "https://poolparty.com/city/colombia/",
-      "description": "Colombia venues on Pool Party.",
+      "description": "Colombia pool and rooftop parties — Cartagena-to-Medellín daylife when live.",
       "count_hint": "2 venues",
-      "image": "",
+      "image": "assets/site/vibe-ayu-energy.jpg",
       "source": "venues-refresh"
     },
     {
@@ -307,9 +307,9 @@
       "slug": "bahamas",
       "name": "Bahamas",
       "live_url": "https://poolparty.com/city/bahamas/",
-      "description": "Bahamas venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Bahamas beach and pool parties — Bimini resort decks and island heat.",
+      "count_hint": "1 venue",
+      "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "venues-refresh"
     },
     {
@@ -317,9 +317,9 @@
       "slug": "texas",
       "name": "Texas",
       "live_url": "https://poolparty.com/city/texas/",
-      "description": "Texas venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Texas daylife — Houston rooftops and pool clubs when the catalog is hot.",
+      "count_hint": "1 venue",
+      "image": "assets/site/vibe-encore-crowd.jpg",
       "source": "venues-refresh"
     },
     {
@@ -327,9 +327,9 @@
       "slug": "amsterdam",
       "name": "Amsterdam",
       "live_url": "https://poolparty.com/city/amsterdam/",
-      "description": "Amsterdam venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Amsterdam pool and rooftop culture — canal-city daylife when partners list.",
+      "count_hint": "1 venue",
+      "image": "assets/site/vibe-garden-dusk.jpg",
       "source": "venues-refresh"
     },
     {
@@ -337,9 +337,9 @@
       "slug": "mexico",
       "name": "Mexico",
       "live_url": "https://poolparty.com/city/mexico/",
-      "description": "Mexico venues on Pool Party.",
-      "count_hint": "1 venues",
-      "image": "",
+      "description": "Mexico beach clubs — Cabo-to-coast daylife when inventory is live.",
+      "count_hint": "1 venue",
+      "image": "assets/site/dest-ibiza-obeach.jpg",
       "source": "venues-refresh"
     },
     {
@@ -347,11 +347,11 @@
       "slug": "reno",
       "name": "Reno",
       "live_url": "https://poolparty.com/city/reno/",
-      "description": "Reno venues on Pool Party.",
+      "description": "Reno pool decks — high-desert dayclub energy near the Sierra.",
       "count_hint": "2 venues",
-      "image": "",
+      "image": "assets/site/live/city-las-vegas-fca2d4a3b0.jpg",
       "source": "venues-refresh"
     }
   ],
-  "note": "City hubs; count_hint synced from venues.json refresh."
+  "note": "City hubs; count_hint synced from venues.json refresh. · city tile images filled for venues-refresh hubs (2026-09-16)"
 }

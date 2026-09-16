@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-16T05:31:59Z",
+  "generated": "2026-09-16T06:21:52Z",
   "source": "poolparty.com",
-  "note": "Static feature-mirror sampled 2026-09-15 from public wp-json product + HTML Booketing links. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing. · city tags audited 2026-09-16",
+  "note": "Static feature-mirror refreshed 2026-09-16 from public wp-json product + HTML Booketing links; city-tag corrected and semantic-deduped. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing.",
   "events": [
     {
       "id": "ev-001",
       "slug": "vegas-nightclub-access-pass-september-16",
       "title": "Vegas Nightclub Access Pass – September 16",
       "city": "las-vegas",
-      "venue": "September 16",
+      "venue": "Las Vegas partner venues",
       "vibe": "pass",
       "date": "2026-09-16",
       "booketing": null,
@@ -124,7 +124,7 @@
       "slug": "vegas-nightclub-access-pass-september-17",
       "title": "Vegas Nightclub Access Pass – September 17",
       "city": "las-vegas",
-      "venue": "September 17",
+      "venue": "Las Vegas partner venues",
       "vibe": "pass",
       "date": "2026-09-17",
       "booketing": null,
@@ -298,7 +298,7 @@
       "slug": "vegas-nightclub-access-pass-september-18",
       "title": "Vegas Nightclub Access Pass – September 18",
       "city": "las-vegas",
-      "venue": "September 18",
+      "venue": "Las Vegas partner venues",
       "vibe": "pass",
       "date": "2026-09-18",
       "booketing": null,
@@ -472,7 +472,7 @@
       "slug": "vegas-nightclub-access-pass-september-19",
       "title": "Vegas Nightclub Access Pass – September 19",
       "city": "las-vegas",
-      "venue": "September 19",
+      "venue": "Las Vegas partner venues",
       "vibe": "pass",
       "date": "2026-09-19",
       "booketing": null,
@@ -643,39 +643,10 @@
     },
     {
       "id": "ev-023",
-      "slug": "el-kabron-sunset-party-balis-iconic-cliffside-celebration-18",
-      "title": "El Kabron Sunset Party: Bali’s Iconic Cliffside Celebration",
-      "city": "bali",
-      "venue": "El Kabron Sunset Party: Bali’s Iconic Cliffside Celebration",
-      "vibe": "pool",
-      "date": "2024-12-13",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/el-kabron-sunset-party-balis-iconic-cliffside-celebration-18/",
-      "image": "https://poolparty.com/wp-content/uploads/2024/12/Untitled-design-57-1-768x768.png",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/el-kabron-sunset-party-balis-iconic-cliffside-celebration-18/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-024",
       "slug": "the-yacht-social-club-sydney-7",
       "title": "The Yacht Social Club Sydney",
       "city": "sydney",
-      "venue": "The Yacht Social Club Sydney",
+      "venue": "The Yacht Social Club",
       "vibe": "yacht",
       "date": "2024-12-24",
       "booketing": null,
@@ -700,36 +671,7 @@
       ]
     },
     {
-      "id": "ev-025",
-      "slug": "the-yacht-social-club-sydney-6",
-      "title": "The Yacht Social Club Sydney",
-      "city": "sydney",
-      "venue": "The Yacht Social Club Sydney",
-      "vibe": "yacht",
-      "date": "2024-12-24",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/the-yacht-social-club-sydney-6/",
-      "image": "assets/site/hero-crowd-hi.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/the-yacht-social-club-sydney-6/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-026",
+      "id": "ev-024",
       "slug": "yona-beach-club-bali-morning-package-31",
       "title": "Yona Beach Club Bali: Morning Package",
       "city": "bali",
@@ -758,19 +700,19 @@
       ]
     },
     {
-      "id": "ev-027",
-      "slug": "yona-beach-club-bali-morning-package-30",
-      "title": "Yona Beach Club Bali: Morning Package",
-      "city": "bali",
-      "venue": "Yona Beach Club",
-      "vibe": "beach",
-      "date": "2024-12-24",
+      "id": "ev-025",
+      "slug": "social-pool-five-palm-jumeirah-dubai-luxury-entertainment-16",
+      "title": "Social Pool FIVE Palm Jumeirah Dubai: Luxury & Entertainment",
+      "city": "dubai",
+      "venue": "FIVE Palm Jumeirah Dubai Social Pool",
+      "vibe": "pool",
+      "date": "2025-01-06",
       "booketing": null,
-      "live_url": "https://poolparty.com/event/yona-beach-club-bali-morning-package-30/",
-      "image": "https://poolparty.com/wp-content/uploads/2024/12/Yona-Beach-Club-1-768x432.jpg",
+      "live_url": "https://poolparty.com/event/social-pool-five-palm-jumeirah-dubai-luxury-entertainment-16/",
+      "image": "assets/site/feat-encore-pool.jpg",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/yona-beach-club-bali-morning-package-30/",
+      "book_url": "https://poolparty.com/event/social-pool-five-palm-jumeirah-dubai-luxury-entertainment-16/",
       "book_provider": "squadup",
       "book_label": "Book on Pool Party",
       "ticket_tiers": [
@@ -787,7 +729,36 @@
       ]
     },
     {
-      "id": "ev-028",
+      "id": "ev-026",
+      "slug": "social-pool-five-palm-jumeirah-dubai-luxury-entertainment-19",
+      "title": "Social Pool FIVE Palm Jumeirah Dubai: Luxury & Entertainment",
+      "city": "dubai",
+      "venue": "FIVE Palm Jumeirah Dubai Social Pool",
+      "vibe": "pool",
+      "date": "2025-01-07",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/social-pool-five-palm-jumeirah-dubai-luxury-entertainment-19/",
+      "image": "assets/site/dest-ibiza-obeach.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/social-pool-five-palm-jumeirah-dubai-luxury-entertainment-19/",
+      "book_provider": "squadup",
+      "book_label": "Book on Pool Party",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-027",
       "slug": "sparty-budapest-bath-party-17",
       "title": "Sparty Budapest: Bath Party",
       "city": "budapest",
@@ -816,65 +787,7 @@
       ]
     },
     {
-      "id": "ev-029",
-      "slug": "sparty-budapest-bath-party-16",
-      "title": "Sparty Budapest: Bath Party",
-      "city": "budapest",
-      "venue": "Sparty Budapest Step into the heart of",
-      "vibe": "pool",
-      "date": "2025-02-05",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/sparty-budapest-bath-party-16/",
-      "image": "assets/site/hero-crowd-hi2.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/sparty-budapest-bath-party-16/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-030",
-      "slug": "sparty-budapest-bath-party-15",
-      "title": "Sparty Budapest: Bath Party",
-      "city": "budapest",
-      "venue": "Sparty Budapest Step into the heart of",
-      "vibe": "pool",
-      "date": "2025-02-05",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/sparty-budapest-bath-party-15/",
-      "image": "assets/site/hero-live-banner.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/sparty-budapest-bath-party-15/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-031",
+      "id": "ev-028",
       "slug": "nikki-beach-saint-tropez-the-ultimate-riviera-experience-27",
       "title": "Nikki Beach Saint-Tropez | The Ultimate Riviera Experience",
       "city": "france",
@@ -903,123 +816,7 @@
       ]
     },
     {
-      "id": "ev-032",
-      "slug": "nikki-beach-saint-tropez-the-ultimate-riviera-experience-26",
-      "title": "Nikki Beach Saint-Tropez | The Ultimate Riviera Experience",
-      "city": "france",
-      "venue": "Nikki Beach",
-      "vibe": "beach",
-      "date": "2025-02-18",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-26/",
-      "image": "assets/site/vibe-garden-dusk.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-26/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-033",
-      "slug": "nikki-beach-saint-tropez-the-ultimate-riviera-experience-25",
-      "title": "Nikki Beach Saint-Tropez | The Ultimate Riviera Experience",
-      "city": "france",
-      "venue": "Nikki Beach",
-      "vibe": "beach",
-      "date": "2025-02-18",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-25/",
-      "image": "assets/site/vibe-garden-rotunda.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-25/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-034",
-      "slug": "nikki-beach-saint-tropez-the-ultimate-riviera-experience-24",
-      "title": "Nikki Beach Saint-Tropez | The Ultimate Riviera Experience",
-      "city": "france",
-      "venue": "Nikki Beach",
-      "vibe": "beach",
-      "date": "2025-02-18",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-24/",
-      "image": "assets/site/vibe-yacht-bay.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-24/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-035",
-      "slug": "nikki-beach-saint-tropez-the-ultimate-riviera-experience-23",
-      "title": "Nikki Beach Saint-Tropez | The Ultimate Riviera Experience",
-      "city": "france",
-      "venue": "Nikki Beach",
-      "vibe": "beach",
-      "date": "2025-02-18",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-23/",
-      "image": "assets/site/dest-ibiza-obeach.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/nikki-beach-saint-tropez-the-ultimate-riviera-experience-23/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-036",
+      "id": "ev-029",
       "slug": "ibiza-rocks-pool-days-11",
       "title": "Ibiza Rocks : Pool Days",
       "city": "spain",
@@ -1048,7 +845,7 @@
       ]
     },
     {
-      "id": "ev-037",
+      "id": "ev-030",
       "slug": "ibiza-rocks-pool-days-17",
       "title": "Ibiza Rocks : Pool Days",
       "city": "spain",
@@ -1077,152 +874,7 @@
       ]
     },
     {
-      "id": "ev-038",
-      "slug": "ibiza-rocks-pool-days-15",
-      "title": "Ibiza Rocks : Pool Days",
-      "city": "spain",
-      "venue": "Ibiza",
-      "vibe": "pool",
-      "date": "2025-03-25",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/ibiza-rocks-pool-days-15/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/03/daylight-beach-club-768x512.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/ibiza-rocks-pool-days-15/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-039",
-      "slug": "ibiza-rocks-pool-days-14",
-      "title": "Ibiza Rocks : Pool Days",
-      "city": "spain",
-      "venue": "Ibiza",
-      "vibe": "pool",
-      "date": "2025-03-25",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/ibiza-rocks-pool-days-14/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/03/daylight-beach-club-768x512.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/ibiza-rocks-pool-days-14/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-040",
-      "slug": "ibiza-rocks-pool-days-13",
-      "title": "Ibiza Rocks : Pool Days",
-      "city": "spain",
-      "venue": "Ibiza",
-      "vibe": "pool",
-      "date": "2025-03-25",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/ibiza-rocks-pool-days-13/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/03/w1350-5-768x960.webp",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/ibiza-rocks-pool-days-13/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-041",
-      "slug": "ibiza-rocks-pool-days-12",
-      "title": "Ibiza Rocks : Pool Days",
-      "city": "spain",
-      "venue": "Ibiza",
-      "vibe": "pool",
-      "date": "2025-03-25",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/ibiza-rocks-pool-days-12/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/03/w1350-5-768x960.webp",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/ibiza-rocks-pool-days-12/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-042",
-      "slug": "one-fire-beach-the-amalfi-escape-125",
-      "title": "One Fire Beach: The Amalfi Escape.",
-      "city": "amalfi-coast",
-      "venue": "One Fire Beach",
-      "vibe": "beach",
-      "date": "2025-04-23",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-125/",
-      "image": "assets/site/hero-one.jpg",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-125/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-048",
+      "id": "ev-031",
       "slug": "fort-lauderdales-rooftop-pool-party-at-the-easton",
       "title": "Fort Lauderdale’s Rooftop Pool Party at The Easton",
       "city": "fort-lauderdale",
@@ -1251,7 +903,7 @@
       ]
     },
     {
-      "id": "ev-049",
+      "id": "ev-032",
       "slug": "saturday-splash-rooftop-pool-party-at-the-easton",
       "title": "Saturday Splash Rooftop Pool Party at The Easton",
       "city": "fort-lauderdale",
@@ -1280,19 +932,19 @@
       ]
     },
     {
-      "id": "ev-050",
-      "slug": "saturday-splash-at-the-easton-fort-lauderdale-8",
+      "id": "ev-033",
+      "slug": "saturday-splash-at-the-easton-fort-lauderdale-2",
       "title": "Saturday Splash at The Easton – Fort Lauderdale",
       "city": "fort-lauderdale",
-      "venue": "Fort Lauderdale",
+      "venue": "The Easton Need a break from the ordinary",
       "vibe": "pool",
       "date": "2025-05-05",
       "booketing": null,
-      "live_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-8/",
+      "live_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-2/",
       "image": "https://poolparty.com/wp-content/uploads/2025/05/DJI_0805-1-300x300-1.webp",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-8/",
+      "book_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-2/",
       "book_provider": "squadup",
       "book_label": "Book on Pool Party",
       "ticket_tiers": [
@@ -1309,69 +961,11 @@
       ]
     },
     {
-      "id": "ev-051",
-      "slug": "saturday-splash-at-the-easton-fort-lauderdale-5",
-      "title": "Saturday Splash at The Easton – Fort Lauderdale",
-      "city": "fort-lauderdale",
-      "venue": "The Easton Why wait for a special",
-      "vibe": "pool",
-      "date": "2025-05-05",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-5/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/05/DJI_0805-1-300x300-1.webp",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-5/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-052",
-      "slug": "saturday-splash-at-the-easton-fort-lauderdale-4",
-      "title": "Saturday Splash at The Easton – Fort Lauderdale",
-      "city": "fort-lauderdale",
-      "venue": "The Easton Locals and visitors alike",
-      "vibe": "pool",
-      "date": "2025-05-05",
-      "booketing": null,
-      "live_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-4/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/05/DJI_0805-1-300x300-1.webp",
-      "source": "live",
-      "demo": false,
-      "book_url": "https://poolparty.com/event/saturday-splash-at-the-easton-fort-lauderdale-4/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
-      "ticket_tiers": [
-        {
-          "id": "ga",
-          "label": "General Admission (DEMO layout)",
-          "demo": true
-        },
-        {
-          "id": "cabana",
-          "label": "Cabana / VIP interest (DEMO layout)",
-          "demo": true
-        }
-      ]
-    },
-    {
-      "id": "ev-053",
+      "id": "ev-034",
       "slug": "ducking-fridays-pool-party-at-bla-bla-dubai",
       "title": "Bla Bla Dubai Weekend Pool Vibes – Ducking Fridays are Back",
       "city": "dubai",
-      "venue": "Bla Bla. The beach club offers lockers",
+      "venue": "Bla Bla Dubai",
       "vibe": "beach",
       "date": "2025-05-06",
       "booketing": null,
@@ -1396,11 +990,11 @@
       ]
     },
     {
-      "id": "ev-054",
+      "id": "ev-035",
       "slug": "ducking-fridays-pool-party-at-bla-bla-dubai-4",
       "title": "Dubai Friday Pool Party – Unlimited Drinks at Bla Bla Beach Club",
       "city": "dubai",
-      "venue": "Unlimited Drinks at Bla Bla Beach Club",
+      "venue": "Bla Bla Dubai",
       "vibe": "beach",
       "date": "2025-05-06",
       "booketing": null,
@@ -1425,11 +1019,11 @@
       ]
     },
     {
-      "id": "ev-055",
+      "id": "ev-036",
       "slug": "ducking-fridays-pool-party-at-bla-bla-dubai-2",
       "title": "Ducking Fridays Pool Party at Bla Bla Dubai",
       "city": "dubai",
-      "venue": "Bla Bla Dubai Float Into the Weekend the",
+      "venue": "Bla Bla Dubai",
       "vibe": "beach",
       "date": "2025-05-06",
       "booketing": null,
@@ -1454,11 +1048,11 @@
       ]
     },
     {
-      "id": "ev-056",
+      "id": "ev-037",
       "slug": "ducking-fridays-pool-party-at-bla-bla-dubai-3",
       "title": "Ducking Fridays Pool Party at Bla Bla Dubai with unlimited drinks",
       "city": "dubai",
-      "venue": "Ducking Fridays Pool Party at Bla Bla Dubai with unlimited d",
+      "venue": "Bla Bla Dubai",
       "vibe": "beach",
       "date": "2025-05-06",
       "booketing": null,
@@ -1483,7 +1077,7 @@
       ]
     },
     {
-      "id": "ev-057",
+      "id": "ev-038",
       "slug": "midweek-margarita-madness-at-bla-bla-dubai",
       "title": "Midweek Margarita Madness at Bla Bla Dubai",
       "city": "dubai",
@@ -1512,7 +1106,65 @@
       ]
     },
     {
-      "id": "ev-058",
+      "id": "ev-039",
+      "slug": "muchas-margaritas-pool-drunch-at-bla-bla-dubai",
+      "title": "Muchas Margaritas Pool Drunch at Bla Bla Dubai",
+      "city": "dubai",
+      "venue": "Bla Bla Dubai",
+      "vibe": "beach",
+      "date": "2025-05-06",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/muchas-margaritas-pool-drunch-at-bla-bla-dubai/",
+      "image": "https://poolparty.com/wp-content/uploads/2025/05/Bla-Bla-Dubai-Pool-Party-1-768x532.webp",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/muchas-margaritas-pool-drunch-at-bla-bla-dubai/",
+      "book_provider": "squadup",
+      "book_label": "Book on Pool Party",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-040",
+      "slug": "wednesdaysgot-better-muchas-margaritas-at-bla-bla-beach-club",
+      "title": "WednesdaysGot Better: Muchas Margaritas at Bla Bla Beach club",
+      "city": "dubai",
+      "venue": "Bla Bla Beach Club",
+      "vibe": "beach",
+      "date": "2025-05-06",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/wednesdaysgot-better-muchas-margaritas-at-bla-bla-beach-club/",
+      "image": "https://poolparty.com/wp-content/uploads/2025/05/Bla-Bla-Dubai-Pool-Party-1-768x532.webp",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/wednesdaysgot-better-muchas-margaritas-at-bla-bla-beach-club/",
+      "book_provider": "squadup",
+      "book_label": "Book on Pool Party",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-041",
       "slug": "happy-hour-at-mrs-sippy-bali",
       "title": "Happy Hour at Mrs Sippy Bali",
       "city": "bali",
@@ -1541,7 +1193,7 @@
       ]
     },
     {
-      "id": "ev-059",
+      "id": "ev-042",
       "slug": "saturday-happy-hour-at-mrs-sippy",
       "title": "Saturday Happy Hour at Mrs Sippy",
       "city": "bali",
@@ -1570,7 +1222,7 @@
       ]
     },
     {
-      "id": "ev-060",
+      "id": "ev-043",
       "slug": "saturday-happy-hour-at-mrs-sippy-bali",
       "title": "Saturday Happy Hour at Mrs Sippy Bali",
       "city": "bali",
@@ -1599,7 +1251,7 @@
       ]
     },
     {
-      "id": "ev-061",
+      "id": "ev-044",
       "slug": "sunday-happy-hour-at-mrs-sippy-bali",
       "title": "Sunday Happy Hour at Mrs Sippy Bali",
       "city": "bali",
@@ -1628,7 +1280,7 @@
       ]
     },
     {
-      "id": "ev-062",
+      "id": "ev-045",
       "slug": "porter-robinson-maya-dayclub",
       "title": "Porter Robinson at Maya Dayclub",
       "city": "arizona",
@@ -1657,7 +1309,7 @@
       ]
     },
     {
-      "id": "ev-063",
+      "id": "ev-046",
       "slug": "san-holo-at-maya-dayclub",
       "title": "San Holo at Maya Dayclub",
       "city": "arizona",
@@ -1686,11 +1338,11 @@
       ]
     },
     {
-      "id": "ev-064",
+      "id": "ev-047",
       "slug": "soaked-saturdays-at-maya-dayclub",
       "title": "Soaked Saturdays at Maya Dayclub",
       "city": "arizona",
-      "venue": "Maya Dayclub deliver just that",
+      "venue": "Maya Dayclub",
       "vibe": "dayclub",
       "date": "2025-05-21",
       "booketing": null,
@@ -1715,11 +1367,11 @@
       ]
     },
     {
-      "id": "ev-065",
+      "id": "ev-048",
       "slug": "the-sunday-drip-at-maya-dayclub",
       "title": "The Sunday Drip at Maya Dayclub",
       "city": "arizona",
-      "venue": "The Sunday Drip at Maya Dayclub",
+      "venue": "Maya Dayclub",
       "vibe": "dayclub",
       "date": "2025-05-21",
       "booketing": null,
@@ -1744,11 +1396,11 @@
       ]
     },
     {
-      "id": "ev-066",
+      "id": "ev-049",
       "slug": "yona-monday",
       "title": "YONA Mondays at YONA Beach Club Phuket",
       "city": "phuket",
-      "venue": "YONA Beach Club",
+      "venue": "Yona Beach Club",
       "vibe": "beach",
       "date": "2025-05-28",
       "booketing": null,
@@ -1773,11 +1425,11 @@
       ]
     },
     {
-      "id": "ev-067",
+      "id": "ev-050",
       "slug": "palm-tree-music-festival",
       "title": "Hamptons 2025 : Palm Tree Music Festival",
       "city": "southampton",
-      "venue": "Hamptons 2025 : Palm Tree Music Festival",
+      "venue": "Palm Tree Music Festival",
       "vibe": "beach",
       "date": "2025-06-21",
       "booketing": null,
@@ -1802,11 +1454,11 @@
       ]
     },
     {
-      "id": "ev-068",
+      "id": "ev-051",
       "slug": "yona-beach-club-floating-party-paradise-in-phuket-2",
       "title": "Yona Beach Club: Floating Party Paradise in Phuket",
       "city": "phuket",
-      "venue": "Yona Beach Club: Floating Party Paradise in Phuket",
+      "venue": "Yona Beach Club",
       "vibe": "beach",
       "date": "2025-08-18",
       "booketing": null,
@@ -1831,11 +1483,11 @@
       ]
     },
     {
-      "id": "ev-069",
+      "id": "ev-052",
       "slug": "yona-beach-club-sunset-splash-affair-2",
       "title": "Yona Beach Club: Sunset Splash Affair",
       "city": "phuket",
-      "venue": "Yona Beach Club: Sunset Splash Affair",
+      "venue": "Yona Beach Club",
       "vibe": "yacht",
       "date": "2025-08-18",
       "booketing": null,
@@ -1860,11 +1512,11 @@
       ]
     },
     {
-      "id": "ev-070",
+      "id": "ev-053",
       "slug": "yona-beach-club-tropical-pool-escape-2",
       "title": "Yona Beach Club: Tropical Pool Escape",
       "city": "phuket",
-      "venue": "Yona Beach Club: Tropical Pool Escape",
+      "venue": "Yona Beach Club",
       "vibe": "beach",
       "date": "2025-08-18",
       "booketing": null,
@@ -1889,11 +1541,11 @@
       ]
     },
     {
-      "id": "ev-071",
+      "id": "ev-054",
       "slug": "yona-sunset-event-golden-hour-groove",
       "title": "Yona sunset event: Golden Hour Groove",
       "city": "phuket",
-      "venue": "Yona sunset event: Golden Hour Groove",
+      "venue": "Yona Beach Club",
       "vibe": "beach",
       "date": "2025-08-18",
       "booketing": null,
@@ -1918,7 +1570,7 @@
       ]
     },
     {
-      "id": "ev-072",
+      "id": "ev-055",
       "slug": "friday-night-at-the-pool-after-dark",
       "title": "Friday Night at The Pool After Dark",
       "city": "atlantic-city",
@@ -1947,7 +1599,7 @@
       ]
     },
     {
-      "id": "ev-073",
+      "id": "ev-056",
       "slug": "k-gianni-live-at-the-pool-after-dark",
       "title": "K. Gianni Live at The Pool After Dark",
       "city": "atlantic-city",
@@ -1976,7 +1628,7 @@
       ]
     },
     {
-      "id": "ev-074",
+      "id": "ev-057",
       "slug": "chencho-corleone-at-the-pool-after-dark",
       "title": "Chencho Corleone at The Pool After Dark",
       "city": "atlantic-city",
@@ -2005,7 +1657,7 @@
       ]
     },
     {
-      "id": "ev-075",
+      "id": "ev-058",
       "slug": "new-years-eve-2026",
       "title": "New Year’s Eve 2026 at The Pool After Dark",
       "city": "atlantic-city",
@@ -2034,7 +1686,36 @@
       ]
     },
     {
-      "id": "ev-076",
+      "id": "ev-059",
+      "slug": "ariel-assault-at-the-pool-at-strawberry-moon",
+      "title": "Ariel Assault at The Pool at Strawberry Moon",
+      "city": "miami",
+      "venue": "Strawberry Moon at The Goodtime Hotel",
+      "vibe": "beach",
+      "date": "2026-01-02",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/ariel-assault-at-the-pool-at-strawberry-moon/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/01/7901af28-371b-4ce9-9bdc-3c58ec146a94-e1767063919200.jpg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/ariel-assault-at-the-pool-at-strawberry-moon/",
+      "book_provider": "squadup",
+      "book_label": "Book on Pool Party",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-060",
       "slug": "friday-night-with-nomad",
       "title": "Friday Night with NOMAD at The Pool After Dark",
       "city": "atlantic-city",
@@ -2063,7 +1744,7 @@
       ]
     },
     {
-      "id": "ev-077",
+      "id": "ev-061",
       "slug": "roxy-ferrari-at-the-pool-after-dark",
       "title": "Roxy Ferrari at The Pool After Dark",
       "city": "atlantic-city",
@@ -2092,19 +1773,19 @@
       ]
     },
     {
-      "id": "ev-078",
-      "slug": "one-fire-beach-the-amalfi-escape-207",
+      "id": "ev-062",
+      "slug": "one-fire-beach-the-amalfi-escape-227",
       "title": "One Fire Beach: The Amalfi Escape.",
       "city": "amalfi-coast",
-      "venue": "One Fire Beach: The Amalfi Escape.",
+      "venue": "One Fire Beach",
       "vibe": "beach",
-      "date": "2026-01-20",
+      "date": "2026-01-22",
       "booketing": null,
-      "live_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-207/",
+      "live_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-227/",
       "image": "https://poolparty.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-23-2025-10_22_06-PM-768x768.webp",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-207/",
+      "book_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-227/",
       "book_provider": "squadup",
       "book_label": "Book on Pool Party",
       "ticket_tiers": [
@@ -2121,10 +1802,10 @@
       ]
     },
     {
-      "id": "ev-080",
+      "id": "ev-063",
       "slug": "chris-valencia-at-the-pool-at-strawberry-moon",
       "title": "Chris Valencia at The Pool at Strawberry Moon",
-      "city": "miami",
+      "city": "amalfi-coast",
       "venue": "Strawberry Moon at The Goodtime Hotel",
       "vibe": "beach",
       "date": "2026-01-24",
@@ -2150,10 +1831,10 @@
       ]
     },
     {
-      "id": "ev-081",
+      "id": "ev-064",
       "slug": "nice-guy-erwin-at-the-pool",
       "title": "Nice Guy Erwin at The Pool at Strawberry Moon",
-      "city": "miami",
+      "city": "amalfi-coast",
       "venue": "Strawberry Moon at The Goodtime Hotel",
       "vibe": "beach",
       "date": "2026-01-25",
@@ -2179,10 +1860,10 @@
       ]
     },
     {
-      "id": "ev-082",
+      "id": "ev-065",
       "slug": "mondays-at-the-pool-at-strawberry-moon-2",
       "title": "Mondays at The Pool at Strawberry Moon",
-      "city": "miami",
+      "city": "amalfi-coast",
       "venue": "Strawberry Moon offer a relaxed and refreshing way to start t",
       "vibe": "beach",
       "date": "2026-01-26",
@@ -2208,7 +1889,7 @@
       ]
     },
     {
-      "id": "ev-083",
+      "id": "ev-066",
       "slug": "strawberry-moon-pool-party-with-valen-g",
       "title": "Strawberry Moon Pool Party with Valen G",
       "city": "miami",
@@ -2237,11 +1918,11 @@
       ]
     },
     {
-      "id": "ev-084",
+      "id": "ev-067",
       "slug": "splash-dance-with-dj-maori-may-18",
       "title": "Splash Dance with DJ Maori – May 18",
       "city": "dubai",
-      "venue": "May 18",
+      "venue": "Dubai daylife",
       "vibe": "pool",
       "date": "2026-05-18",
       "booketing": null,
@@ -2266,7 +1947,7 @@
       ]
     },
     {
-      "id": "ev-085",
+      "id": "ev-068",
       "slug": "sa-plana-nova-june-14",
       "title": "Sa Plana Nova – June 14",
       "city": "spain",
@@ -2295,7 +1976,7 @@
       ]
     },
     {
-      "id": "ev-086",
+      "id": "ev-069",
       "slug": "tao-nightclub-damaged-goods",
       "title": "TAO Nightclub : Damaged Goods",
       "city": "los-angeles",
@@ -2324,7 +2005,36 @@
       ]
     },
     {
-      "id": "ev-087",
+      "id": "ev-070",
+      "slug": "the-summer-club-tobehonest",
+      "title": "The Summer Club : TOBEHONEST",
+      "city": "new-york",
+      "venue": "The Summer Club",
+      "vibe": "pool",
+      "date": "2026-07-12",
+      "booketing": null,
+      "live_url": "https://poolparty.com/event/the-summer-club-tobehonest/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/06/Summer-club-5.png",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://poolparty.com/event/the-summer-club-tobehonest/",
+      "book_provider": "squadup",
+      "book_label": "Book on Pool Party",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-071",
       "slug": "the-summer-club-july-13",
       "title": "The Summer Club : July 13",
       "city": "new-york",
@@ -2353,7 +2063,7 @@
       ]
     },
     {
-      "id": "ev-088",
+      "id": "ev-072",
       "slug": "the-summer-club-july-16",
       "title": "The Summer Club : July 16",
       "city": "new-york",
@@ -2382,7 +2092,7 @@
       ]
     },
     {
-      "id": "ev-089",
+      "id": "ev-073",
       "slug": "the-summer-club-july-17",
       "title": "The Summer Club : July 17",
       "city": "new-york",
@@ -2411,7 +2121,7 @@
       ]
     },
     {
-      "id": "ev-090",
+      "id": "ev-074",
       "slug": "the-summer-club-july-20",
       "title": "The Summer Club : July 20",
       "city": "new-york",
@@ -2440,7 +2150,7 @@
       ]
     },
     {
-      "id": "ev-091",
+      "id": "ev-075",
       "slug": "the-summer-club-july-23",
       "title": "The Summer Club : July 23",
       "city": "new-york",
@@ -2469,7 +2179,7 @@
       ]
     },
     {
-      "id": "ev-092",
+      "id": "ev-076",
       "slug": "the-summer-club-july-24",
       "title": "The Summer Club : July 24",
       "city": "new-york",
@@ -2498,7 +2208,7 @@
       ]
     },
     {
-      "id": "ev-093",
+      "id": "ev-077",
       "slug": "the-summer-club-green-velvet",
       "title": "The Summer Club : Green Velvet",
       "city": "new-york",
@@ -2527,11 +2237,11 @@
       ]
     },
     {
-      "id": "ev-094",
+      "id": "ev-078",
       "slug": "splash-house-2026-weekend-one",
       "title": "Splash House 2026 – Weekend One",
       "city": "california",
-      "venue": "The Renaissance Palm Springs",
+      "venue": "Splash House",
       "vibe": "pool",
       "date": "2026-08-07",
       "booketing": null,
@@ -2556,11 +2266,11 @@
       ]
     },
     {
-      "id": "ev-095",
+      "id": "ev-079",
       "slug": "splash-house-2026-weekend-two",
       "title": "Splash House 2026 – Weekend Two",
       "city": "california",
-      "venue": "Weekend Two",
+      "venue": "Splash House",
       "vibe": "pool",
       "date": "2026-08-14",
       "booketing": null,
@@ -2585,7 +2295,326 @@
       ]
     },
     {
-      "id": "ev-096",
+      "id": "ev-080",
+      "slug": "dj-shr3d-labor-day-weekend-at-liquid-pool",
+      "title": "DJ Shr3d – Labor Day Weekend at Liquid Pool",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-03",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/dj-shr3d-labor-day-weekend?eventcode=EVE111900020260903",
+      "live_url": "https://poolparty.com/event/dj-shr3d-labor-day-weekend-at-liquid-pool/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/08/401062257038.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-shr3d-labor-day-weekend?eventcode=EVE111900020260903",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-081",
+      "slug": "dj-que-labor-day-weekend-at-liquid-pool",
+      "title": "DJ Que – Labor Day Weekend at Liquid Pool",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-04",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/dj-que-labor-day-weekend?eventcode=EVE111900020260904",
+      "live_url": "https://poolparty.com/event/dj-que-labor-day-weekend-at-liquid-pool/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401062257076.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-que-labor-day-weekend?eventcode=EVE111900020260904",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-082",
+      "slug": "kid-conrad-labor-day-weekend-at-liquid-pool",
+      "title": "Kid Conrad – Labor Day Weekend at Liquid Pool",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-05",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad-labor-day-weekend?eventcode=EVE111900020260905",
+      "live_url": "https://poolparty.com/event/kid-conrad-labor-day-weekend-at-liquid-pool/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401062257130.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad-labor-day-weekend?eventcode=EVE111900020260905",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-083",
+      "slug": "martin-garrix-w-justin-mylo-labor-day-weekend-at-palm-tree-beach-club",
+      "title": "Martin Garrix w/ Justin Mylo – Labor Day Weekend at Palm Tree Beach Club",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-05",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/martin-garrix-w-justin-mylo-labor-day-weekend?eventcode=EVE111700020260905",
+      "live_url": "https://poolparty.com/event/martin-garrix-w-justin-mylo-labor-day-weekend-at-palm-tree-beach-club/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/08/401055051164.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/martin-garrix-w-justin-mylo-labor-day-weekend?eventcode=EVE111700020260905",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-084",
+      "slug": "blondish-labor-day-weekend-at-palm-tree-beach-club",
+      "title": "BLOND:ISH – Labor Day Weekend at Palm Tree Beach Club",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-06",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/blondish-labor-day-weekend?eventcode=EVE111700020260906",
+      "live_url": "https://poolparty.com/event/blondish-labor-day-weekend-at-palm-tree-beach-club/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/08/401055051270.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/blondish-labor-day-weekend?eventcode=EVE111700020260906",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-085",
+      "slug": "eric-remy-labor-day-weekend-at-liquid-pool",
+      "title": "Eric Remy – Labor Day Weekend at Liquid Pool",
+      "city": "las-vegas",
+      "venue": "Liquid Pool",
+      "vibe": "pool",
+      "date": "2026-09-06",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy-labor-day-weekend?eventcode=EVE111900020260906",
+      "live_url": "https://poolparty.com/event/eric-remy-labor-day-weekend-at-liquid-pool/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401062257220.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy-labor-day-weekend?eventcode=EVE111900020260906",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-086",
+      "slug": "baja-beach-fest-at-palm-tree-beach-club",
+      "title": "Baja Beach Fest at Palm Tree Beach Club",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-08",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/street-mob-takeover-ft-chuyin-clave-especial-dynamic-more-baja-beach-fest?eventcode=EVE111700020260913",
+      "live_url": "https://poolparty.com/event/baja-beach-fest-at-palm-tree-beach-club/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401045191902.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/street-mob-takeover-ft-chuyin-clave-especial-dynamic-more-baja-beach-fest?eventcode=EVE111700020260913",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-087",
+      "slug": "mikey-francis-mexican-independence-weekend",
+      "title": "Mikey Francis – Mexican Independence Weekend",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-10",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/mikey-francis-mexican-independence-weekend?eventcode=EVE111700020260910",
+      "live_url": "https://poolparty.com/event/mikey-francis-mexican-independence-weekend/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/40991906108.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/mikey-francis-mexican-independence-weekend?eventcode=EVE111700020260910",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-088",
+      "slug": "dj-sourmilk-mexican-independence-weekend",
+      "title": "DJ Sourmilk – Mexican Independence Weekend",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-11",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-sourmilk-good-life-fridays-mexican-independence-weekend?eventcode=EVE111700020260911",
+      "live_url": "https://poolparty.com/event/dj-sourmilk-mexican-independence-weekend/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401037129653.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-sourmilk-good-life-fridays-mexican-independence-weekend?eventcode=EVE111700020260911",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-089",
+      "slug": "lavern-mexican-independence-weekend-at-tao-beach",
+      "title": "Lavern – Mexican Independence Weekend at TAO Beach",
+      "city": "las-vegas",
+      "venue": "TAO Beach",
+      "vibe": "beach",
+      "date": "2026-09-11",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1113/lavern-mexican-independence-weekend?eventcode=EVE111300020260911",
+      "live_url": "https://poolparty.com/event/lavern-mexican-independence-weekend-at-tao-beach/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401036393204.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1113/lavern-mexican-independence-weekend?eventcode=EVE111300020260911",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-090",
+      "slug": "roz-baja-beach-fest-at-omnia-dayclub",
+      "title": "RØZ – Baja Beach Fest at OMNIA Dayclub",
+      "city": "las-vegas",
+      "venue": "Baja Beach",
+      "vibe": "beach",
+      "date": "2026-09-11",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/40911541686/r-z-baja-beach-fest?eventcode=EVE4091154168600020260911",
+      "live_url": "https://poolparty.com/event/roz-baja-beach-fest-at-omnia-dayclub/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/09/401045169144.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/r-z-baja-beach-fest?eventcode=EVE4091154168600020260911",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-091",
       "slug": "kygo-mexican-independence-weekend",
       "title": "Kygo – Mexican Independence Weekend",
       "city": "las-vegas",
@@ -2614,7 +2643,7 @@
       ]
     },
     {
-      "id": "ev-097",
+      "id": "ev-092",
       "slug": "martin-garrix-w-justin-mylo-mexican-independence-weekend",
       "title": "Martin Garrix w/ Justin Mylo – Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
@@ -2643,7 +2672,7 @@
       ]
     },
     {
-      "id": "ev-098",
+      "id": "ev-093",
       "slug": "tiesto-mexican-independence-day-weekend-at-omnia-dayclub",
       "title": "Tiësto – Mexican Independence Day Weekend at OMNIA Dayclub",
       "city": "las-vegas",
@@ -2672,7 +2701,7 @@
       ]
     },
     {
-      "id": "ev-099",
+      "id": "ev-094",
       "slug": "justin-credible-mexican-independence-weekend-at-tao-beach",
       "title": "Justin Credible – Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
@@ -2701,7 +2730,7 @@
       ]
     },
     {
-      "id": "ev-100",
+      "id": "ev-095",
       "slug": "sala-de-despecho-at-omnia-dayclub-september-13",
       "title": "Sala de Despecho at OMNIA Dayclub – September 13",
       "city": "las-vegas",
@@ -2730,11 +2759,11 @@
       ]
     },
     {
-      "id": "ev-101",
+      "id": "ev-096",
       "slug": "one-fire-beach-the-amalfi-escape-236",
       "title": "One Fire Beach: The Amalfi Escape.",
       "city": "amalfi-coast",
-      "venue": "One Fire Beach: The Amalfi Escape.",
+      "venue": "One Fire Beach",
       "vibe": "beach",
       "date": "2026-09-14",
       "booketing": null,
@@ -2759,7 +2788,7 @@
       ]
     },
     {
-      "id": "ev-105",
+      "id": "ev-097",
       "slug": "all-seasons-stay-lucknow",
       "title": "All Seasons Stay Lucknow – Rooftop Pool, Hotel & Dining Experience",
       "city": "india",
@@ -2788,11 +2817,11 @@
       ]
     },
     {
-      "id": "ev-106",
+      "id": "ev-098",
       "slug": "one-fire-beach-the-amalfi-escape-240",
       "title": "One Fire Beach: The Amalfi Escape.",
       "city": "amalfi-coast",
-      "venue": "One Fire Beach: The Amalfi Escape.",
+      "venue": "One Fire Beach",
       "vibe": "beach",
       "date": "2026-09-15",
       "booketing": null,

@@ -13,7 +13,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path("/workspace/poolparty")
+ROOT = Path("/workspace/poolparty-public")
 DATA = ROOT / "data"
 SITE_IMGS = sorted(
     str(p.relative_to(ROOT))
@@ -297,6 +297,67 @@ def match_booketing(slug: str, title: str, booketing_map: dict) -> str | None:
     return None
 
 
+def correct_event_city(title: str, slug: str, current: str) -> str:
+    """Correct known bad/multi taxonomy tags using explicit title/slug geography."""
+    hay = f"{title} {slug}".lower()
+    explicit = [
+        ("amalfi-coast", ["amalfi", "one-fire-beach", "one fire beach"]),
+        ("bali", [" bali", "bali-", "seminyak", "canggu", "el-kabron", "el kabron"]),
+        ("phuket", ["phuket"]),
+        ("dubai", ["dubai", "bla-bla"]),
+        ("spain", ["ibiza", "marbella"]),
+        ("las-vegas", ["las vegas", "vegas-nightclub", "vegas-pool", "omnia dayclub", "marquee dayclub", "liquid pool", "tao beach"]),
+        ("new-york", ["new york", "nyc", "manhattan", "brooklyn"]),
+        ("fort-lauderdale", ["fort lauderdale"]),
+        ("atlantic-city", ["atlantic city"]),
+        ("sydney", ["sydney"]),
+        ("budapest", ["budapest"]),
+        ("california", ["palm springs", "splash house"]),
+        ("arizona", ["scottsdale", "phoenix", "arizona"]),
+        ("southampton", ["hamptons", "southampton"]),
+    ]
+    for city, needles in explicit:
+        if any(n in hay for n in needles):
+            return city
+    return current
+
+
+def clean_event_venue(title: str, slug: str, guessed: str, city: str, vibe: str) -> str:
+    """Avoid dates or full event titles showing as venue names."""
+    hay = f"{title} {slug}".lower()
+    known = [
+        ("One Fire Beach", ["one fire beach", "one-fire-beach"]),
+        ("Yona Beach Club", ["yona beach club", "yona-beach-club", "yona sunset"]),
+        ("Bla Bla Dubai", ["bla bla dubai", "bla-bla-dubai"]),
+        ("Maya Dayclub", ["maya dayclub", "maya-dayclub"]),
+        ("El Kabron", ["el kabron", "el-kabron"]),
+        ("The Yacht Social Club", ["yacht social club"]),
+        ("Splash House", ["splash house", "splash-house"]),
+        ("Palm Tree Music Festival", ["palm tree music festival"]),
+    ]
+    for venue, needles in known:
+        if any(n in hay for n in needles):
+            return venue
+    if "nightclub access pass" in hay:
+        return "Las Vegas partner venues"
+    bad = not guessed or guessed == title[:60] or re.match(
+        r"^(january|february|march|april|may|june|july|august|september|october|november|december|weekend)\b",
+        guessed,
+        re.I,
+    )
+    if bad:
+        return name_for_city(city) + (" daylife" if vibe != "yacht" else " waterfront")
+    return guessed[:80]
+
+
+def name_for_city(slug: str) -> str:
+    return {
+        "las-vegas": "Las Vegas", "new-york": "New York", "los-angeles": "Los Angeles",
+        "fort-lauderdale": "Fort Lauderdale", "atlantic-city": "Atlantic City",
+        "amalfi-coast": "Amalfi Coast", "southampton": "The Hamptons",
+    }.get(slug, slug.replace("-", " ").title())
+
+
 def build_events(products_by_city, booketing_map, name_by_slug):
     events = []
     seen = set()
@@ -325,7 +386,8 @@ def build_events(products_by_city, booketing_map, name_by_slug):
                     }
             date = parse_event_date(title, text, p.get("date") or p.get("modified") or "")
             vibe = detect_vibe(title, text)
-            venue = guess_venue(title, text)
+            city_slug = correct_event_city(title, slug, city_slug)
+            venue = clean_event_venue(title, slug, guess_venue(title, text), city_slug, vibe)
             emb = p.get("_embedded") or {}
             media = (emb.get("wp:featuredmedia") or [None])[0]
             remote = best_media_url(media) if media else None
@@ -357,6 +419,28 @@ def build_events(products_by_city, booketing_map, name_by_slug):
                 ],
             })
             seen.add(slug)
+    # Semantic dedupe: the live CPT contains duplicate products with different numeric
+    # slugs for the same title/date/city. Prefer honest external booking + real media.
+    def duplicate_key(e):
+        title_key = re.sub(r"[^a-z0-9]+", " ", (e.get("title") or "").lower()).strip()
+        return (title_key, e.get("date"), e.get("city"))
+
+    unique = {}
+    for e in events:
+        key = duplicate_key(e)
+        score = (
+            2 if e.get("book_provider") == "booketing" else 0,
+            1 if str(e.get("image", "")).startswith("http") else 0,
+            len(e.get("venue") or ""),
+        )
+        old = unique.get(key)
+        if not old or score > old[0]:
+            unique[key] = (score, e)
+    removed = len(events) - len(unique)
+    events = [pair[1] for pair in unique.values()]
+    if removed:
+        print(f"  semantic dedupe removed {removed} duplicate title/date/city rows")
+
     # Prefer upcoming-first; keep a DIVERSE past catalog so city hubs stay browsable.
     # Never invent upcoming — empty cities stay empty of near-term dates.
     def sort_key(e):
@@ -502,6 +586,8 @@ def fetch_venues(allowed, name_by_slug, target=50):
 
 
 def main():
+    import sys
+    events_only = "--events-only" in sys.argv
     print("Loading city map…")
     cities, id_to_slug, name_by_slug, allowed = load_city_map()
     print(f"Mapped {len(id_to_slug)} city term IDs")
@@ -526,27 +612,31 @@ def main():
     print("City breakdown:", dict(Counter(e["city"] for e in events)))
     print("Book providers:", dict(Counter(e["book_provider"] for e in events)))
 
-    print("Fetching venues…")
-    venues = fetch_venues(allowed, name_by_slug, target=45)
-    print(f"Built {len(venues)} venues")
-    print("Venue cities:", dict(Counter(v["city"] for v in venues)))
+    venues = None
+    if not events_only:
+        print("Fetching venues…")
+        venues = fetch_venues(allowed, name_by_slug, target=45)
+        print(f"Built {len(venues)} venues")
+        print("Venue cities:", dict(Counter(v["city"] for v in venues)))
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     events_doc = {
         "generated": now,
         "source": "poolparty.com",
-        "note": "Static feature-mirror sampled 2026-09-15 from public wp-json product + HTML Booketing links. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing.",
+        "note": "Static feature-mirror refreshed 2026-09-16 from public wp-json product + HTML Booketing links; city-tag corrected and semantic-deduped. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing.",
         "events": events,
     }
-    venues_doc = {
-        "generated": now,
-        "source": "poolparty.com",
-        "note": "Venues from public wp-json venue CPT; city inferred from public copy. Preview images may be local assets or remote https.",
-        "venues": venues,
-    }
     (DATA / "events.json").write_text(json.dumps(events_doc, indent=2, ensure_ascii=False) + "\n")
-    (DATA / "venues.json").write_text(json.dumps(venues_doc, indent=2, ensure_ascii=False) + "\n")
-    print("Wrote", DATA / "events.json", "and", DATA / "venues.json")
+    print("Wrote", DATA / "events.json")
+    if not events_only:
+        venues_doc = {
+            "generated": now,
+            "source": "poolparty.com",
+            "note": "Venues from public wp-json venue CPT; city inferred from public copy. Preview images may be local assets or remote https.",
+            "venues": venues,
+        }
+        (DATA / "venues.json").write_text(json.dumps(venues_doc, indent=2, ensure_ascii=False) + "\n")
+        print("Wrote", DATA / "venues.json")
 
 
 if __name__ == "__main__":
