@@ -629,3 +629,350 @@ body::before {
   -webkit-text-stroke: 0 !important;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55) !important;
 }
+
+/* ========== 2026-09-16 photo visibility + type (dayclub) ========== */
+
+/* Kill residual yellow stroke anywhere on dark shell */
+.nav .nav-links a,
+.nav .nav-cta,
+.nav-drawer a,
+.proto-banner,
+.hero .eyebrow,
+.hero h1,
+.hero h1 *,
+.hero-lead,
+.hero-pill,
+.hero-pill strong,
+.stat-pills strong {
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+}
+
+/* ——— Homepage hero: strong navy scrim + readable type ——— */
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(7, 11, 20, 0.78) 0%, rgba(7, 11, 20, 0.32) 36%, rgba(7, 11, 20, 0.58) 64%, rgba(7, 11, 20, 0.92) 100%),
+    linear-gradient(90deg, rgba(7, 11, 20, 0.62) 0%, rgba(7, 11, 20, 0.18) 52%, rgba(7, 11, 20, 0.4) 100%) !important;
+}
+.hero-content {
+  max-width: 42rem !important;
+  padding: 1.25rem 1.35rem 1.35rem !important;
+  border-radius: 1.15rem !important;
+  background: linear-gradient(165deg, rgba(7, 11, 20, 0.72), rgba(14, 26, 43, 0.55)) !important;
+  border: 1px solid rgba(0, 229, 232, 0.18) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+.hero-eyebrow,
+.hero .eyebrow {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75) !important;
+}
+.hero h1 {
+  font-size: clamp(2.75rem, 8vw, 5.1rem) !important;
+  font-weight: 700 !important;
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.55) !important;
+}
+.hero h1 .sun-out,
+.hero .sun-out {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+}
+.hero h1 em,
+.hero h1 em * {
+  /* coral accent on solid scrim panel — not floating on red photo */
+  color: var(--pp-coral) !important;
+  -webkit-text-fill-color: var(--pp-coral) !important;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.7) !important;
+}
+.hero-lead {
+  font-size: 1.08rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--pp-text-dim) !important;
+  -webkit-text-fill-color: var(--pp-text-dim) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
+}
+.hero-pill {
+  background: rgba(7, 11, 20, 0.82) !important;
+  border: 1px solid rgba(0, 229, 232, 0.28) !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.78rem !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.06em !important;
+  text-shadow: none !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35) !important;
+}
+.hero-pill strong {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  font-size: 0.95rem !important;
+  font-weight: 750 !important;
+  text-shadow: none !important;
+}
+
+/* Nav type — readable on dark; Home cyan/coral; no yellow */
+.nav .nav-links a {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  -webkit-text-fill-color: var(--pp-text-dim) !important;
+}
+.nav .nav-links a:hover,
+.nav .nav-links a.active {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.nav .nav-links a.nav-home,
+.nav .nav-links a[href="index.html"] {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.nav .nav-links a.nav-home:hover,
+.nav .nav-links a.nav-home.active,
+.nav .nav-links a[href="index.html"]:hover,
+.nav .nav-links a[href="index.html"].active {
+  color: var(--pp-coral) !important;
+  -webkit-text-fill-color: var(--pp-coral) !important;
+}
+.nav .nav-cta {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-weight: 800 !important;
+}
+
+/* Section heads / eyebrows — cyan labels, light titles */
+.eyebrow,
+.section-head .eyebrow,
+.page-hero .eyebrow {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+}
+.section-head h2,
+.page-hero h1 {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  font-weight: 650 !important;
+}
+.section-head p,
+.page-hero .lead {
+  color: var(--pp-text-dim) !important;
+  font-size: 1.05rem !important;
+  font-weight: 450 !important;
+}
+
+/* Page heroes on photo BGs — heavier navy wash already in miami; lock type */
+.page-hero h1,
+.page-hero .lead,
+.page-hero .eyebrow {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* ——— Photo cards: city / vibe / event badges ——— */
+.city-tile::after {
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.2) 0%, rgba(7, 11, 20, 0.42) 38%, rgba(7, 11, 20, 0.82) 70%, rgba(7, 11, 20, 0.96) 100%) !important;
+}
+.city-tile span {
+  color: var(--pp-text) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65) !important;
+}
+.city-tile small {
+  /* was tiny white — cyan label on heavy scrim */
+  color: var(--pp-cyan) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55) !important;
+  opacity: 1 !important;
+}
+.city-tile:hover,
+.city-tile.active {
+  border-color: rgba(0, 229, 232, 0.45) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
+}
+
+.vibe-card::after {
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.18) 0%, rgba(7, 11, 20, 0.35) 40%, rgba(7, 11, 20, 0.82) 70%, rgba(7, 11, 20, 0.96) 100%) !important;
+}
+.vibe-body {
+  padding: 1.15rem 1.25rem 1.3rem !important;
+  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.55) 28%, rgba(7, 11, 20, 0.88)) !important;
+}
+.vibe-body h3 {
+  color: var(--pp-text) !important;
+  font-size: clamp(1.35rem, 2.4vw, 1.65rem) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
+}
+.vibe-body p {
+  /* no tiny white captions — cyan-dim readable */
+  color: var(--pp-text-dim) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
+}
+.vibe-body .tag,
+.card-media .tag,
+.badge-row .tag {
+  background: rgba(7, 11, 20, 0.88) !important;
+  border: 1px solid rgba(0, 229, 232, 0.35) !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.1em !important;
+  backdrop-filter: blur(8px) !important;
+}
+.tag.live {
+  border-color: rgba(0, 229, 232, 0.55) !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.tag.demo {
+  border-color: rgba(232, 200, 114, 0.45) !important;
+  color: var(--pp-gold) !important;
+  -webkit-text-fill-color: var(--pp-gold) !important;
+}
+
+/* Event/venue cards on homepage “this week” */
+.card-media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.55));
+  pointer-events: none;
+  z-index: 1;
+}
+.card-body h3,
+.card-body h3 a {
+  color: var(--pp-text) !important;
+  font-weight: 650 !important;
+}
+.card-meta {
+  color: var(--pp-cyan) !important;
+  font-size: 0.88rem !important;
+  font-weight: 550 !important;
+}
+.handoff-note {
+  font-size: 0.82rem !important;
+  color: var(--pp-text-mute) !important;
+  background: rgba(21, 34, 56, 0.9) !important;
+  border: 1px solid var(--pp-line) !important;
+}
+
+/* City hub photo */
+.city-hub-media {
+  position: relative;
+  margin: 1rem 0 1.25rem;
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 320px;
+  border: 1px solid var(--pp-line);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+.city-hub-media img {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+.city-hub-media .city-hub-scrim,
+.city-hub-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.15), rgba(7, 11, 20, 0.55) 70%, rgba(7, 11, 20, 0.75));
+  pointer-events: none;
+}
+.city-hub-media .city-hub-scrim { display: block; }
+
+/* Music band type — cyan eyebrow, light title, dim body (not tiny white) */
+.music-band::before {
+  background: linear-gradient(90deg, rgba(7, 11, 20, 0.94) 0%, rgba(7, 11, 20, 0.78) 48%, rgba(7, 11, 20, 0.5) 100%) !important;
+}
+.music-inner .eyebrow {
+  color: var(--pp-cyan) !important;
+  font-size: 0.85rem !important;
+}
+.music-inner h2 {
+  color: var(--pp-text) !important;
+}
+.music-inner p {
+  color: var(--pp-text-dim) !important;
+  font-size: 1rem !important;
+  font-weight: 450 !important;
+}
+
+/* Stat pills / trust — no yellow stroke; cyan numbers */
+.stat-pills strong {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  text-shadow: none !important;
+}
+.stat-pills small {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+.trust span {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.82rem !important;
+}
+.trust strong {
+  color: var(--pp-text) !important;
+}
+
+/* Secondary links / ghost → cyan (Frank: that blue is nice) */
+a.btn-ghost,
+.btn-ghost,
+.hero-cta-secondary,
+.example-note a,
+.empty-state a {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.chip {
+  color: var(--pp-text-dim) !important;
+}
+.chip:hover,
+.chip.active {
+  color: var(--pp-cyan) !important;
+  border-color: var(--pp-cyan) !important;
+}
+
+/* Scarcity stays gold */
+.scarcity,
+.text-scarcity,
+[data-scarcity] {
+  color: var(--pp-gold) !important;
+  font-weight: 650 !important;
+}
+
+/* Homepage FOMO / example note — not tiny muted white */
+.example-note,
+#city-status {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+}
+
+/* Buttons keep coral primary; size readable */
+.btn-sm {
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+}
