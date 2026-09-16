@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — Overflow (custom) + Off The Leash. cache-bust:v5 */
+/*! Pool Party soundtrack layer — Overflow + Off The Leash + volume. cache-bust:v6 */
 (function (global) {
   'use strict';
 
@@ -7,16 +7,19 @@
     { title: 'Off The Leash', note: 'Demo', src: 'https://sonicearcandy.com/assets/tracks/off-the-leash.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
-  var VOL = 0.35;
+  var DEFAULT_VOL = 0.35;
   var KEY_MUTE = 'pp_music_muted';
   var KEY_TRACK = 'pp_music_track';
+  var KEY_VOL = 'pp_music_vol';
 
   var audio = null;
   var index = 0;
   var muted = false;
+  var volume = DEFAULT_VOL;
   var dock = null;
   var playBtn = null;
   var muteBtn = null;
+  var volSlider = null;
   var titleEl = null;
   var ready = false;
 
@@ -29,11 +32,18 @@
     return ((n % len) + len) % len;
   }
 
+  function clampVol(n) {
+    if (isNaN(n)) return DEFAULT_VOL;
+    return Math.min(1, Math.max(0, n));
+  }
+
   function loadPersisted() {
     try {
       var t = parseInt(localStorage.getItem(KEY_TRACK), 10);
       if (!isNaN(t)) index = clampIndex(t);
       muted = localStorage.getItem(KEY_MUTE) === '1';
+      var v = parseFloat(localStorage.getItem(KEY_VOL));
+      if (!isNaN(v)) volume = clampVol(v);
     } catch (e) { /* ignore */ }
   }
 
@@ -41,6 +51,7 @@
     try {
       localStorage.setItem(KEY_TRACK, String(index));
       localStorage.setItem(KEY_MUTE, muted ? '1' : '0');
+      localStorage.setItem(KEY_VOL, String(volume));
     } catch (e) { /* ignore */ }
   }
 
@@ -61,18 +72,36 @@
     var t = TRACKS[index];
     var label = t.title + (t.note ? ' (' + t.note + ')' : '');
     if (titleEl) titleEl.textContent = label;
-    if (audio) audio.setAttribute('title', label + ' — Sonic Ear Candy');
+    if (audio) audio.setAttribute('title', label + ' — Pool Party');
+  }
+
+  function syncVolUI() {
+    if (volSlider) {
+      volSlider.value = String(Math.round(volume * 100));
+      volSlider.setAttribute('aria-valuenow', String(Math.round(volume * 100)));
+      volSlider.setAttribute('aria-valuetext', Math.round(volume * 100) + ' percent');
+    }
   }
 
   function applyMute() {
     if (!audio) return;
     audio.muted = muted;
-    audio.volume = muted ? 0 : VOL;
+    audio.volume = muted ? 0 : volume;
     if (muteBtn) {
       muteBtn.setAttribute('aria-label', muted ? 'Unmute soundtrack' : 'Mute soundtrack');
       muteBtn.setAttribute('data-state', muted ? 'muted' : 'unmuted');
       muteBtn.innerHTML = muted ? iconMuted() : iconVolume();
     }
+    if (dock) dock.classList.toggle('is-muted', muted);
+    syncVolUI();
+  }
+
+  function setVolume(v, fromUser) {
+    volume = clampVol(v);
+    if (fromUser && volume > 0 && muted) muted = false;
+    if (fromUser && volume === 0) muted = true;
+    persist();
+    applyMute();
   }
 
   function loadTrack(i, autoPlay) {
@@ -82,6 +111,7 @@
     if (!audio) return;
     audio.src = trackUrl(index);
     audio.load();
+    applyMute();
     if (autoPlay) {
       var p = audio.play();
       if (p && p.catch) p.catch(function () { setPlayingUI(false); });
@@ -129,6 +159,7 @@
 
   function toggleMute() {
     muted = !muted;
+    if (!muted && volume === 0) volume = DEFAULT_VOL;
     persist();
     applyMute();
   }
@@ -167,11 +198,18 @@
           '<span class="pp-music-dock__title"></span>' +
           '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Sonic Ear Candy · Frank Accettulli">SEC</a>' +
         '</div>' +
-        '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
+        '<div class="pp-music-dock__vol">' +
+          '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
+          '<label class="pp-music-dock__vol-label">' +
+            '<span class="visually-hidden">Volume</span>' +
+            '<input type="range" class="pp-music-dock__slider" min="0" max="100" step="1" value="35" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" />' +
+          '</label>' +
+        '</div>' +
       '</div>';
 
     playBtn = dock.querySelector('.pp-music-dock__play');
     muteBtn = dock.querySelector('.pp-music-dock__mute');
+    volSlider = dock.querySelector('.pp-music-dock__slider');
     titleEl = dock.querySelector('.pp-music-dock__title');
 
     dock.querySelector('.pp-music-dock__prev').addEventListener('click', function (e) {
@@ -189,6 +227,12 @@
     muteBtn.addEventListener('click', function (e) {
       e.preventDefault();
       toggleMute();
+    });
+    volSlider.addEventListener('input', function () {
+      setVolume(parseInt(volSlider.value, 10) / 100, true);
+    });
+    volSlider.addEventListener('change', function () {
+      setVolume(parseInt(volSlider.value, 10) / 100, true);
     });
 
     document.body.appendChild(dock);
@@ -208,7 +252,7 @@
     audio.preload = 'none';
     audio.setAttribute('playsinline', '');
     audio.setAttribute('title', 'Pool Party soundtrack');
-    audio.volume = VOL;
+    audio.volume = volume;
     audio.addEventListener('play', function () { setPlayingUI(true); });
     audio.addEventListener('pause', function () { setPlayingUI(false); });
     audio.addEventListener('ended', function () { next(); play(); });
@@ -239,6 +283,7 @@
     pause: pause,
     toggle: toggle,
     next: next,
-    prev: prev
+    prev: prev,
+    setVolume: function (v) { setVolume(v, true); }
   };
 })(typeof window !== 'undefined' ? window : this);
