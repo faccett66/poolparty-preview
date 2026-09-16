@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T06:19:32Z",
+  "generated": "2026-09-16T06:23:36Z",
   "source": "pp-cities-sitemap 19 cities",
   "cities": [
     {
@@ -8,7 +8,7 @@
       "name": "Amalfi Coast",
       "live_url": "https://poolparty.com/pp-cities/amalfi-coast/",
       "description": "Cliffside daybeds, Amalfi blue, and villa-pool energy — Amalfi’s catalog leans luxury resorts and sea-view decks. Mid-September often sits between peak Italian summer and shoulder season, so this preview may show venues with few or no near-term dated products. Browse venues here, then open the live city page for the freshest Book Now inventory.",
-      "count_hint": "1 venue",
+      "count_hint": "1 venue · 6 in catalog",
       "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "live-prior-unique"
     },
@@ -18,7 +18,7 @@
       "name": "Arizona",
       "live_url": "https://poolparty.com/pp-cities/arizona/",
       "description": "Scottsdale and Phoenix daylife mix resort pools, desert light, and DJ weekends. Arizona’s public feed is lighter than Vegas in mid-September — expect venue cards first, with upcoming events when partners post dated products. Use Book Now labels (Booketing vs live checkout) when a row appears; don’t invent weekend FOMO.",
-      "count_hint": "2 venues",
+      "count_hint": "2 venues · 4 in catalog",
       "image": "assets/site/live/city-arizona-b2f1321672.jpg",
       "source": "live-dest-cover"
     },
@@ -28,7 +28,7 @@
       "name": "Atlantic City",
       "live_url": "https://poolparty.com/pp-cities/atlantic-city/",
       "description": "Boardwalk energy, rooftop pools, and casino-resort daybeds define Atlantic City pool season. This preview mirrors public catalog rows honestly — if upcoming is thin after Labor Day, hubs still link live so you can catch new drops without fake backfill.",
-      "count_hint": 63,
+      "count_hint": "6 in catalog",
       "image": "assets/site/live/city-atlantic-city-fdfef18e36.jpg",
       "source": "live-dest-cover"
     },
@@ -38,7 +38,7 @@
       "name": "Bali",
       "live_url": "https://poolparty.com/pp-cities/bali/",
       "description": "Canggu-to-Seminyak beach clubs, infinity edges, and sunset sets — Bali daylife is tropical first. International feeds can lag mid-week; we keep venues visible and only list upcoming when the live product API has dated stock. Always Book Now on the labeled live path.",
-      "count_hint": "12 venues",
+      "count_hint": "12 venues · 5 in catalog",
       "image": "assets/site/live/city-bali-fa6291121c.jpg",
       "source": "live-prior-unique"
     },
@@ -48,7 +48,7 @@
       "name": "Budapest",
       "live_url": "https://poolparty.com/pp-cities/budapest/",
       "description": "Thermal baths by day, party lights by night — Budapest’s scene blends spa heritage with modern DJ culture. Preview inventory may be sparse outside festival windows; venue cards + the live city link stay honest when upcoming = 0.",
-      "count_hint": "1 venue",
+      "count_hint": "1 venue · 1 in catalog",
       "image": "assets/site/live/city-budapest-2ec42d6170.jpg",
       "source": "live-prior-unique"
     },
@@ -58,7 +58,7 @@
       "name": "California",
       "live_url": "https://poolparty.com/pp-cities/california/",
       "description": "California daylife spans Palm Springs festival weekends, LA rooftops, and San Diego sunshine. The statewide hub aggregates thinner feeds than Vegas — Splash House-style weekends and resort pools show when partners publish. Filter Events by city or open live California for the current calendar.",
-      "count_hint": "3 venues",
+      "count_hint": "3 venues · 2 in catalog",
       "image": "assets/site/live/city-california-35542f5c85.jpg",
       "source": "live-prior-unique"
     },
@@ -68,7 +68,7 @@
       "name": "Dubai",
       "live_url": "https://poolparty.com/pp-cities/dubai/",
       "description": "Skyline rooftops, marina decks, and polished Friday pool series — Dubai daylife is luxury-forward. Mid-September often means fewer near-term dated products in the public API; hubs show real venues and say so when upcoming is empty. Never backfill Dubai with Vegas heat.",
-      "count_hint": "7 venues",
+      "count_hint": "7 venues · 10 in catalog",
       "image": "assets/site/live/city-dubai-4bdb5b6451.jpg",
       "source": "live-dest-cover"
     },
@@ -78,7 +78,7 @@
       "name": "Fort Lauderdale",
       "live_url": "https://poolparty.com/pp-cities/fort-lauderdale/",
       "description": "Yacht-adjacent lounges, hotel pools, and Intracoastal vibes — Fort Lauderdale is Miami’s sun-soaked neighbor. Expect beach-bar energy and waterfront decks when dated events post; otherwise browse venues and jump to the live city page.",
-      "count_hint": "1 venue",
+      "count_hint": "1 venue · 3 in catalog",
       "image": "assets/site/live/city-miami-dc05bed707.jpg",
       "source": "live-prior-unique"
     },
@@ -88,7 +88,7 @@
       "name": "France",
       "live_url": "https://poolparty.com/pp-cities/france/",
       "description": "Riviera chic meets Paris rooftop energy — France’s catalog covers Cannes-to-Nice pool days and stylish city decks. Shoulder season can thin dated products; this hub keeps venues + live links without inventing weekend inventory.",
-      "count_hint": "1 venue",
+      "count_hint": "1 venue · 1 in catalog",
       "image": "assets/site/live/city-france-e65d7c491f.jpg",
       "source": "live-prior-unique"
     },
@@ -98,7 +98,7 @@
       "name": "India",
       "live_url": "https://poolparty.com/pp-cities/india/",
       "description": "Goa beach clubs, Mumbai hotel pools, and resort day parties — India’s daylife is growing across coastal and metro hubs. Public product density varies; we show what’s mapped and link live rather than fabricating upcoming weekends.",
-      "count_hint": "3 venues",
+      "count_hint": "3 venues · 1 in catalog",
       "image": "assets/site/live/city-india-060ca4129d.jpg",
       "source": "live-prior-unique"
     },
@@ -118,7 +118,7 @@
       "name": "Las Vegas",
       "live_url": "https://poolparty.com/pp-cities/las-vegas/",
       "description": "The heat center for mid-September 2026: Nightclub Access Passes, Liquid Pool, TAO Beach / Encore / Marquee / OMNIA dayclub names when listed live. Vegas carries denser upcoming than most hubs in this snapshot — Book Now remains a Booketing or SquadUp handoff with no invented prices on this preview.",
-      "count_hint": "43 venues",
+      "count_hint": "43 venues · 22 upcoming",
       "image": "assets/site/live/city-las-vegas-fca2d4a3b0.jpg",
       "source": "live-dest-cover"
     },
@@ -128,7 +128,7 @@
       "name": "Los Angeles",
       "live_url": "https://poolparty.com/pp-cities/los-angeles/",
       "description": "Rooftop pools, Hollywood Hills light, and stylish dayclub energy — LA daylife is vibe-first. The public feed can be sparse versus Vegas; use venue cards, any upcoming rows, and the live LA city link without fake FOMO.",
-      "count_hint": "4 venues",
+      "count_hint": "4 venues · 1 in catalog",
       "image": "assets/site/live/city-los-angeles-a2250599b5.jpg",
       "source": "live-dest-cover"
     },
@@ -138,7 +138,7 @@
       "name": "Miami",
       "live_url": "https://poolparty.com/pp-cities/miami/",
       "description": "South Beach energy, Wynwood-adjacent lounges, and oceanfront dayclubs — Miami is the brand’s electric north star. After peak summer, mid-September product density often dips versus Vegas; hubs stay honest with venues + live Miami when upcoming is light.",
-      "count_hint": "39 venues",
+      "count_hint": "39 venues · 2 in catalog",
       "image": "assets/site/live/city-miami-dc05bed707.jpg",
       "source": "live-dest-cover"
     },
@@ -148,7 +148,7 @@
       "name": "New York",
       "live_url": "https://poolparty.com/pp-cities/new-york/",
       "description": "Rooftop pools above Manhattan and Brooklyn decks with skyline views — NYC daylife is compact and seasonal. Summer club guides matter more than deep September calendars; browse what’s dated, then Book Now live when a product is open.",
-      "count_hint": "22 venues",
+      "count_hint": "22 venues · 8 in catalog",
       "image": "assets/site/live/city-new-york-ce5985d5d7.jpg",
       "source": "live-dest-cover"
     },
@@ -158,7 +158,7 @@
       "name": "Phuket",
       "live_url": "https://poolparty.com/pp-cities/phuket/",
       "description": "Andaman blue, cliff clubs, and resort pool decks — Phuket daylife is tropical high season when partners post. International API rows may be older; venues stay listed, upcoming only when truly dated ahead.",
-      "count_hint": "1 venue",
+      "count_hint": "1 venue · 5 in catalog",
       "image": "assets/site/live/city-phuket-13f7fa0ef2.jpg",
       "source": "live-prior-unique"
     },
@@ -168,7 +168,7 @@
       "name": "Southampton",
       "live_url": "https://poolparty.com/pp-cities/southampton/",
       "description": "Hamptons-adjacent pool and beach energy — Southampton is a seasonal US East Coast daylife pocket. Preview inventory can be empty outside summer peaks; we won’t invent events. Use the live city link when partners publish.",
-      "count_hint": 1,
+      "count_hint": "1 in catalog",
       "image": "assets/site/live/city-southampton-a156492342.jpg",
       "source": "live-prior-unique"
     },
@@ -178,7 +178,7 @@
       "name": "Spain",
       "live_url": "https://poolparty.com/pp-cities/spain/",
       "description": "Ibiza Rocks pool days, Marbella decks, and Barcelona sunshine — Spain’s hub covers Mediterranean party capitals. Off-peak weeks can show 0 upcoming in the public feed; venues + live Spain stay available without Vegas backfill.",
-      "count_hint": "4 venues",
+      "count_hint": "4 venues · 3 in catalog",
       "image": "assets/site/live/city-spain-bf24558d24.jpg",
       "source": "live-prior-unique"
     },
@@ -188,7 +188,7 @@
       "name": "Sydney",
       "live_url": "https://poolparty.com/pp-cities/sydney/",
       "description": "Harbour views, rooftop sun, and laid-back Aussie daylife — Sydney mixes city style with beach energy. Southern-hemisphere seasons differ from US calendars; expect thinner mid-September US-oriented feeds and honest empty upcoming when stock isn’t dated.",
-      "count_hint": "3 venues",
+      "count_hint": "3 venues · 1 in catalog",
       "image": "assets/site/live/city-sydney-df30ed43a1.jpg",
       "source": "live-prior-unique"
     },
@@ -266,21 +266,23 @@
       "id": "aruba",
       "slug": "aruba",
       "name": "Aruba",
-      "live_url": "https://poolparty.com/city/aruba/",
+      "live_url": "https://poolparty.com/venue/la-cabana-beach-and-spa/",
       "description": "Aruba beach clubs — Caribbean sand, swim-up bars, and golden-hour sets.",
       "count_hint": "1 venue",
       "image": "assets/site/vibe-beach-terrace.jpg",
-      "source": "venues-refresh"
+      "source": "venues-refresh",
+      "live_note": "No dedicated city hub on live site — links to listed venue page."
     },
     {
       "id": "croatia",
       "slug": "croatia",
       "name": "Croatia",
-      "live_url": "https://poolparty.com/city/croatia/",
+      "live_url": "https://poolparty.com/venue/carpe-diem-beach/",
       "description": "Croatia coast clubs — Adriatic daybeds and yacht-adjacent energy.",
       "count_hint": "1 venue",
       "image": "assets/site/vibe-yacht-bay.jpg",
-      "source": "venues-refresh"
+      "source": "venues-refresh",
+      "live_note": "No dedicated city hub on live site — links to listed venue page."
     },
     {
       "id": "sri-lanka",
@@ -316,21 +318,23 @@
       "id": "texas",
       "slug": "texas",
       "name": "Texas",
-      "live_url": "https://poolparty.com/city/texas/",
+      "live_url": "https://poolparty.com/venue/the-encore-houston/",
       "description": "Texas daylife — Houston rooftops and pool clubs when the catalog is hot.",
       "count_hint": "1 venue",
       "image": "assets/site/vibe-encore-crowd.jpg",
-      "source": "venues-refresh"
+      "source": "venues-refresh",
+      "live_note": "No dedicated city hub on live site — links to listed venue page."
     },
     {
       "id": "amsterdam",
       "slug": "amsterdam",
       "name": "Amsterdam",
-      "live_url": "https://poolparty.com/city/amsterdam/",
+      "live_url": "https://poolparty.com/venue/hq2ac-beachclub/",
       "description": "Amsterdam pool and rooftop culture — canal-city daylife when partners list.",
       "count_hint": "1 venue",
       "image": "assets/site/vibe-garden-dusk.jpg",
-      "source": "venues-refresh"
+      "source": "venues-refresh",
+      "live_note": "No dedicated city hub on live site — links to listed venue page."
     },
     {
       "id": "mexico",

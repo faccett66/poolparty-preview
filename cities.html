@@ -35,8 +35,8 @@
 
 <section class="page-hero cities"><div class="wrap">
   <p class="eyebrow">Destinations · mid-September 2026</p>
-  <h1>19 cities. <em>Real</em> upcoming counts.</h1>
-  <p class="lead">Tap a hub for events + venues. Featured cities show this-week inventory when the live feed has it — empty calendars say empty (no Vegas dump).</p>
+  <h1>35 hubs. <em>Real</em> venue + upcoming counts.</h1>
+  <p class="lead">Tap a hub for events + venues. Flagships (Vegas/Miami/NYC/Dubai/Bali…) front-load density; venue-only hubs stay listed without inventing upcoming. Empty calendars say empty — no Vegas dump.</p>
   <div class="stat-pills" id="city-stats"></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
@@ -77,7 +77,7 @@
     <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=40"></script>
+<script src="assets/js/site.js?v=41"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -91,10 +91,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const upTotal = PP.countUpcoming(events);
   const stats = document.getElementById('city-stats');
   if (stats) stats.innerHTML = `<span><strong>${cities.length}</strong><small>Cities</small></span><span><strong>${upTotal}</strong><small>Upcoming events</small></span><span><strong>${venues.length}</strong><small>Venues</small></span>`;
-  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california'];
+  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california','florida','australia','phuket'];
+  const density = (c) => {
+    const v = venues.filter(x => x.city === c.slug).length;
+    const u = events.filter(x => x.city === c.slug && PP.isUpcoming(x)).length;
+    const a = events.filter(x => x.city === c.slug).length;
+    return (u * 1000) + (v * 10) + a;
+  };
+  const rest = cities.filter(c => !featured.includes(c.slug)).sort((a,b) => density(b) - density(a));
   const ordered = [
     ...featured.map(s => cities.find(c => c.slug === s)).filter(Boolean),
-    ...cities.filter(c => !featured.includes(c.slug))
+    ...rest
   ];
   document.getElementById('grid').innerHTML = ordered.map(c => {
     const up = PP.countUpcoming(events, c.slug);
@@ -106,7 +113,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     else blurb = 'Open hub · live link';
     return `
     <a class="city-tile" href="${meta.href}" style="display:block;color:inherit" data-city="${PP.esc(c.slug)}">
-      <img src="${PP.esc(c.image)}?v=42" alt="${PP.esc(c.name)}" loading="lazy" />
+      <img src="${PP.esc((c.image && String(c.image).trim()) ? c.image : 'assets/site/feat-encore-pool.jpg')}?v=43" alt="${PP.esc(c.name)}" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
       <small>${PP.esc(blurb)}</small>
     </a>`;

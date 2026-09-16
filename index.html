@@ -71,7 +71,7 @@
 <section id="cities">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">City picker</p>
+      <p class="eyebrow">City picker · densest hubs</p>
       <h2>Where’s the weekend?</h2>
       <p>Vegas is stacked Sep 16–20. Miami/Dubai/Ibiza may read empty upcoming — we won’t fake it. Tap a city hub for real counts + venues.</p>
     </div>
@@ -176,7 +176,7 @@
     <span>No CATCH branding · SEC music layer live on preview · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=40"></script>
+<script src="assets/js/site.js?v=41"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -189,19 +189,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   const venueList = venuesData.venues || [];
   const venueSlugs = new Set(venueList.map(v => v.city));
   // Front-load functional destinations (have preview data or are flagship)
-  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california'];
+  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california','florida','australia','phuket'];
+  const density = (c) => {
+    const v = venueList.filter(x => x.city === c.slug).length;
+    const u = PP.countUpcoming(events, c.slug);
+    const a = events.filter(x => x.city === c.slug).length;
+    return (u * 1000) + (v * 10) + a;
+  };
+  const rest = cityList.filter(c => !featured.includes(c.slug)).sort((a,b) => density(b) - density(a));
+  // Home shows flagships + densest hubs (keeps grid honest, not a 35-tile dump)
   const ordered = [
     ...featured.map(s => cityList.find(c => c.slug === s)).filter(Boolean),
-    ...cityList.filter(c => !featured.includes(c.slug))
-  ];
+    ...rest
+  ].filter((c, i, arr) => c && arr.findIndex(x => x.slug === c.slug) === i)
+   .filter(c => venueSlugs.has(c.slug) || eventSlugs.has(c.slug))
+   .slice(0, 16);
   const grid = document.getElementById('home-cities');
   grid.innerHTML = ordered.map(c => {
     const meta = PP.cityTileMeta(c, { eventSlugs, venueSlugs });
     const up = PP.countUpcoming(events, c.slug);
-    const blurb = up ? `${up} upcoming` : (venueSlugs.has(c.slug) ? '0 upcoming · venues' : meta.blurb);
+    const vc = venueList.filter(x => x.city === c.slug).length;
+    const blurb = up ? `${up} upcoming` : (vc ? `0 upcoming · ${vc} venues` : meta.blurb);
+    const img = (c.image && String(c.image).trim()) ? c.image : 'assets/site/feat-encore-pool.jpg';
     return `
     <a class="city-tile" href="${meta.href}" data-city="${PP.esc(c.slug)}">
-      <img src="${PP.esc(c.image)}?v=42" alt="${PP.esc(c.name)}" loading="lazy" />
+      <img src="${PP.esc(img)}?v=43" alt="${PP.esc(c.name)}" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
       <small>${PP.esc(blurb)}</small>
     </a>`;
