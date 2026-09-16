@@ -2,7 +2,7 @@
 (function () {
   const CART_KEY = 'pp_demo_cart_v1';
   const CITY_KEY = 'pp_selected_city';
-  const IMG_BUST = '31';
+  const IMG_BUST = '32';
   const bust = (src) => (!src ? '' : src.includes('?') ? src : `${src}?v=${IMG_BUST}`);
   const PREVIEW_TODAY = '2026-09-15'; // mid-Sep 2026 preview "now"
 
@@ -11,8 +11,8 @@
     assetRoot: (document.body.dataset.assetRoot || '').replace(/\/$/, ''),
 
     async loadJSON(name) {
-      const url = `${this.dataRoot}/${name}.json`;
-      const res = await fetch(url);
+      const url = `${this.dataRoot}/${name}.json?v=${IMG_BUST}`;
+      const res = await fetch(url, { cache: 'no-cache' });
       if (!res.ok) throw new Error(`Failed to load ${url}`);
       return res.json();
     },
