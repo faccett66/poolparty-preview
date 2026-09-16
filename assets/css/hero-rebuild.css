@@ -340,3 +340,34 @@ html body .nav .nav-links a[href="index.html"]:hover::after{
   height:3px !important;
 }
 
+/* Bigger logo, same header height */
+html body .nav{
+  overflow:visible !important;
+}
+html body .nav .nav-inner,
+html body .nav-inner{
+  min-height:4.5rem !important;
+  height:4.5rem !important;
+  max-height:4.5rem !important;
+  align-items:center !important;
+  overflow:visible !important;
+}
+html body .nav .logo,
+html body a.logo{
+  overflow:visible !important;
+  line-height:0 !important;
+  align-self:center !important;
+}
+html body .nav .logo-img,
+html body a.logo .logo-img,
+html body img.logo-img{
+  display:block !important;
+  height:100px !important;          /* was 72px — bigger mark */
+  width:auto !important;
+  max-width:290px !important;
+  object-fit:contain !important;
+  /* keep header chrome at 4.5rem — logo can overhang */
+  margin-top:-14px !important;
+  margin-bottom:-14px !important;
+}
+
