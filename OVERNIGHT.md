@@ -40,3 +40,7 @@
 - Retargeted 4 events that still used mismatched Vegas/Ibiza stock to city-matched local covers (Sydney/Dubai/France) when live featured media was missing
 - Venues still **190**
 
+## QA pass 4 — 2026-09-16 06:26 ET
+- Advertise + cities meta: **35 hubs** (was stale “19 cities”)
+- Amalfi city tile uses Italy live cover (was generic beach vibe stock)
+

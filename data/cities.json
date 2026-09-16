@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-16T06:23:36Z",
-  "source": "pp-cities-sitemap 19 cities",
+  "generated": "2026-09-16T06:26:43Z",
+  "source": "pp-cities sitemap + venue-refresh hubs (35)",
   "cities": [
     {
       "id": "city-01",
@@ -9,7 +9,7 @@
       "live_url": "https://poolparty.com/pp-cities/amalfi-coast/",
       "description": "Cliffside daybeds, Amalfi blue, and villa-pool energy — Amalfi’s catalog leans luxury resorts and sea-view decks. Mid-September often sits between peak Italian summer and shoulder season, so this preview may show venues with few or no near-term dated products. Browse venues here, then open the live city page for the freshest Book Now inventory.",
       "count_hint": "1 venue · 6 in catalog",
-      "image": "assets/site/vibe-beach-terrace.jpg",
+      "image": "assets/site/live/city-italy-1fd2c39a04.jpg",
       "source": "live-prior-unique"
     },
     {
