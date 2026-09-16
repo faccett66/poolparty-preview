@@ -203,9 +203,11 @@
 }
 
 /* Keep clear of typical bottom nav / CTA on very small screens */
+
 @media (max-width: 380px) {
-  .pp-music-dock__meta {
+  .pp-music-dock__title {
     display: none;
   }
 }
+
 
