@@ -1,12 +1,11 @@
-/*! Pool Party soundtrack layer — 2 demo tracks streamed from SEC until custom PP beds land. cache-bust:v3 */
+/*! Pool Party soundtrack layer — Overflow (custom) + Off The Leash. cache-bust:v5 */
 (function (global) {
   'use strict';
 
   var TRACKS = [
-    { slug: 'neon-tsunami', title: 'Neon Tsunami', note: 'Demo bed · instrumental' },
-    { slug: 'off-the-leash', title: 'Off The Leash', note: 'Demo' }
+    { title: 'Overflow', note: 'Pool Party bed', src: 'assets/audio/overflow.mp3' },
+    { title: 'Off The Leash', note: 'Demo', src: 'https://sonicearcandy.com/assets/tracks/off-the-leash.mp3' }
   ];
-  var BASE = 'https://sonicearcandy.com/assets/tracks/';
   var SEC_URL = 'https://sonicearcandy.com/';
   var VOL = 0.35;
   var KEY_MUTE = 'pp_music_muted';
@@ -22,7 +21,7 @@
   var ready = false;
 
   function trackUrl(i) {
-    return BASE + TRACKS[i].slug + '.mp3';
+    return TRACKS[i].src;
   }
 
   function clampIndex(n) {
@@ -157,7 +156,7 @@
     dock = document.createElement('div');
     dock.className = 'pp-music-dock';
     dock.setAttribute('role', 'region');
-    dock.setAttribute('aria-label', 'Sonic Ear Candy soundtrack');
+    dock.setAttribute('aria-label', 'Pool Party soundtrack');
 
     dock.innerHTML =
       '<div class="pp-music-dock__inner">' +
@@ -208,7 +207,7 @@
     audio = document.createElement('audio');
     audio.preload = 'none';
     audio.setAttribute('playsinline', '');
-    audio.setAttribute('title', 'Sonic Ear Candy soundtrack');
+    audio.setAttribute('title', 'Pool Party soundtrack');
     audio.volume = VOL;
     audio.addEventListener('play', function () { setPlayingUI(true); });
     audio.addEventListener('pause', function () { setPlayingUI(false); });
