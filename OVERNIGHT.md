@@ -18,7 +18,8 @@
 - Domain: deferred
 
 ## Still grinding
-- PP page QA / thin copy / link sweep (executor in flight)
+- None material on customer-facing pages after QA passes 1–4
+- Known constraint: venue excerpts from `a5c8779` are still generic shells (do not regress 190 venues to rewrite)
 
 ## QA pass — 2026-09-16 06:23 ET
 - Cities: fixed `count_hint` (atlantic-city/southampton were bare ints); retargeted 404 hubs (aruba/croatia/texas/amsterdam) → live venue pages; Goa name already corrected
@@ -43,4 +44,9 @@
 ## QA pass 4 — 2026-09-16 06:26 ET
 - Advertise + cities meta: **35 hubs** (was stale “19 cities”)
 - Amalfi city tile uses Italy live cover (was generic beach vibe stock)
+
+## Status — morning checklist (2026-09-16 06:27 ET)
+- Live: https://faccett66.github.io/poolparty-preview/ (cache `site.js?v=42`, city imgs `?v=43`)
+- Venues **190** · Events **98** (22 upcoming, all Vegas) · Cities **35** hubs
+- Commits tonight after inventory: `d4ff910` → `5febff1` → `b7a9c59` → `be0b6a6`
 
