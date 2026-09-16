@@ -1086,3 +1086,14 @@ a, a:link, a:visited {
   text-shadow: none !important;
 }
 
+/* Center the hero glass stack in the viewport */
+.hero{
+  justify-content:center !important;
+}
+.hero > .wrap.hero-stack,
+.hero .hero-stack{
+  margin-left:auto !important;
+  margin-right:auto !important;
+  align-items:center !important;
+}
+
