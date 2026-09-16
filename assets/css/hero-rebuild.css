@@ -340,9 +340,9 @@ html body .nav .nav-links a[href="index.html"]:hover::after{
   height:3px !important;
 }
 
-/* Bigger logo, same header height */
+/* Header logo — tight crop, transparent, inside 4.5rem bar */
 html body .nav{
-  overflow:visible !important;
+  overflow:hidden !important;
 }
 html body .nav .nav-inner,
 html body .nav-inner{
@@ -350,24 +350,35 @@ html body .nav-inner{
   height:4.5rem !important;
   max-height:4.5rem !important;
   align-items:center !important;
-  overflow:visible !important;
+  overflow:hidden !important;
 }
 html body .nav .logo,
 html body a.logo{
-  overflow:visible !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  overflow:hidden !important;
   line-height:0 !important;
   align-self:center !important;
+  max-height:4.5rem !important;
 }
 html body .nav .logo-img,
 html body a.logo .logo-img,
 html body img.logo-img{
   display:block !important;
-  height:100px !important;          /* was 72px — bigger mark */
+  height:52px !important;
   width:auto !important;
-  max-width:290px !important;
+  max-width:200px !important;
+  max-height:52px !important;
   object-fit:contain !important;
-  /* keep header chrome at 4.5rem — logo can overhang */
-  margin-top:-14px !important;
-  margin-bottom:-14px !important;
+  margin:0 !important;
+}
+@media (max-width:720px){
+  html body .nav .logo-img,
+  html body a.logo .logo-img,
+  html body img.logo-img{
+    height:42px !important;
+    max-height:42px !important;
+    max-width:150px !important;
+  }
 }
 
