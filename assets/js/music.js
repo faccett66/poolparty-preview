@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v14 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v15 */
 (function (global) {
   'use strict';
 
@@ -58,19 +58,41 @@
 
   function loadPersisted() {
     try {
-      var t = parseInt(ssGet(KEY_TRACK) || localStorage.getItem(KEY_TRACK), 10);
-      if (!isNaN(t)) index = clampIndex(t);
+      // Volume / mute can persist; track always opens on Overflow unless this
+      // tab already soft-nav'd mid-play (sessionStorage playing+track).
       var muteRaw = ssGet(KEY_MUTE);
       if (muteRaw === null) muteRaw = localStorage.getItem(KEY_MUTE);
       muted = muteRaw === '1';
       var v = parseFloat(ssGet(KEY_VOL) || localStorage.getItem(KEY_VOL));
       if (!isNaN(v)) volume = clampVol(v);
       else volume = DEFAULT_VOL;
-      var tm = parseFloat(ssGet(KEY_TIME));
-      if (!isNaN(tm) && tm > 0) resumeTime = tm;
       wantPlaying = ssGet(KEY_PLAYING) === '1';
       sessionTouched = ssGet(KEY_TOUCHED) === '1';
-    } catch (e) { /* ignore */ }
+      var t = parseInt(ssGet(KEY_TRACK), 10);
+      var tm = parseFloat(ssGet(KEY_TIME));
+      if (wantPlaying && !isNaN(t)) {
+        // Mid-session soft-nav / hard refresh while playing — keep track+time
+        index = clampIndex(t);
+        if (!isNaN(tm) && tm > 0) resumeTime = tm;
+      } else {
+        // Fresh visit / first click start — always Overflow from the top
+        index = 0;
+        resumeTime = 0;
+      }
+    } catch (e) {
+      index = 0;
+      resumeTime = 0;
+    }
+  }
+
+  /** First start / unlock always begins on Overflow. */
+  function ensureOverflowStart() {
+    index = 0;
+    resumeTime = 0;
+    if (audio) {
+      try { audio.currentTime = 0; } catch (e) { /* ignore */ }
+    }
+    loadTrack(0, false);
   }
 
   function persist() {
@@ -345,6 +367,7 @@
           disarmGestureUnlock();
           muted = false;
           if (volume < 0.05) volume = DEFAULT_VOL;
+          ensureOverflowStart();
           persist();
           applyMute();
           play();
@@ -377,9 +400,10 @@
     if (!audio) return;
     muted = false;
     if (volume < 0.05) volume = DEFAULT_VOL;
+    ensureOverflowStart();
     persist();
     applyMute();
-    if (audio.paused) play();
+    play();
   }
 
   function armGestureUnlock() {
@@ -432,6 +456,10 @@
       volume = DEFAULT_VOL;
     }
     muted = false;
+    // Cold start / first play intent: Overflow. Mid-session resume keeps index.
+    if (!wantPlaying) {
+      ensureOverflowStart();
+    }
     persist();
     applyMute();
 
@@ -745,6 +773,7 @@
       // Same user gesture: start audio if autoplay was blocked, then hop
       if (audio && audio.paused) {
         muted = false;
+        ensureOverflowStart();
         applyMute();
         var p = audio.play();
         if (p && p.catch) p.catch(function () { /* still blocked */ });
