@@ -1021,3 +1021,30 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
 .stat-pills strong{font-size:1.05rem;color:var(--pp-cyan,#00E5E8);-webkit-text-stroke:0;paint-order:normal}
 .stat-pills small{font-size:.68rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
 .page-trust{margin-top:1.5rem}
+
+/* Free offer — homepage advertise entry */
+.free-offer-link{
+  border-color: var(--pp-cyan, #00E5E8) !important;
+  color: var(--pp-cyan, #00E5E8) !important;
+}
+.free-offer-band{max-width:none}
+.free-offer-card{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem 1.1rem;
+  padding:1rem 1.25rem;border-radius:1rem;
+  border:1px solid rgba(0,229,232,.35);
+  background:linear-gradient(105deg,rgba(0,229,232,.12),rgba(255,56,100,.1));
+  color:var(--pp-text,#F4F7FA);text-decoration:none;
+  transition:border-color .2s, transform .2s, box-shadow .2s;
+}
+.free-offer-card:hover{
+  border-color:var(--pp-cyan,#00E5E8);
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,229,232,.18);
+}
+.free-offer-kicker{
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--pp-gold,#E8C872);
+}
+.free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem}
+.free-offer-copy{color:var(--pp-text-dim,#B7C2D0);font-weight:300}
+
