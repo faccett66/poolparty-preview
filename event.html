@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=30" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=31" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=9" />
-  <link rel="stylesheet" href="assets/css/pp-tokens.css?v=2" />
+  <link rel="stylesheet" href="assets/css/pp-tokens.css?v=3" />
 </head>
 <body data-data-root="data" data-asset-root="">
 <div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
@@ -78,7 +78,7 @@
     <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=30"></script>
+<script src="assets/js/site.js?v=31"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     <h1>${PP.esc(e.title)}</h1>
     <p class="lead">${PP.esc(e.venue||'')} · ${PP.esc((e.vibe||'').toUpperCase())}</p>
     <div style="margin:1.5rem 0;border-radius:var(--radius);overflow:hidden;max-height:420px;border:1px solid rgba(238,248,248,.1)">
-      <img src="${PP.esc(e.image)}?v=28" alt="${PP.esc(e.title)}" style="width:100%;height:420px;object-fit:cover" />
+      <img src="${PP.esc(e.image)}?v=31" alt="${PP.esc(e.title)}" style="width:100%;height:420px;object-fit:cover;object-position:center 30%;filter:brightness(1.04) contrast(1.03)" />
     </div>
     <div class="hero-actions" style="margin-bottom:0">
       <a class="btn btn-primary" href="${PP.esc(book)}" target="_blank" rel="noopener">${PP.esc(meta.label)}</a>

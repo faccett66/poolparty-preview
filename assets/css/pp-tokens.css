@@ -648,18 +648,23 @@ body::before {
   paint-order: normal !important;
 }
 
-/* ——— Homepage hero: strong navy scrim + readable type ——— */
+/* ——— Homepage hero: lighter navy wash so faces stay readable ——— */
 .hero-overlay {
   background:
-    linear-gradient(180deg, rgba(7, 11, 20, 0.78) 0%, rgba(7, 11, 20, 0.32) 36%, rgba(7, 11, 20, 0.58) 64%, rgba(7, 11, 20, 0.92) 100%),
-    linear-gradient(90deg, rgba(7, 11, 20, 0.62) 0%, rgba(7, 11, 20, 0.18) 52%, rgba(7, 11, 20, 0.4) 100%) !important;
+    linear-gradient(180deg, rgba(7, 11, 20, 0.48) 0%, rgba(7, 11, 20, 0.12) 38%, rgba(7, 11, 20, 0.28) 62%, rgba(7, 11, 20, 0.72) 100%),
+    linear-gradient(90deg, rgba(7, 11, 20, 0.38) 0%, rgba(7, 11, 20, 0.08) 52%, rgba(7, 11, 20, 0.22) 100%) !important;
+}
+.hero-bg img {
+  object-fit: cover !important;
+  object-position: center 38% !important;
+  filter: brightness(1.06) contrast(1.04) saturate(1.05) !important;
 }
 .hero-content {
   max-width: 42rem !important;
   padding: 1.25rem 1.35rem 1.35rem !important;
   border-radius: 1.15rem !important;
-  background: linear-gradient(165deg, rgba(7, 11, 20, 0.72), rgba(14, 26, 43, 0.55)) !important;
-  border: 1px solid rgba(0, 229, 232, 0.18) !important;
+  background: linear-gradient(165deg, rgba(7, 11, 20, 0.78), rgba(14, 26, 43, 0.62)) !important;
+  border: 1px solid rgba(0, 229, 232, 0.22) !important;
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
@@ -782,7 +787,12 @@ body::before {
 
 /* ——— Photo cards: city / vibe / event badges ——— */
 .city-tile::after {
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.2) 0%, rgba(7, 11, 20, 0.42) 38%, rgba(7, 11, 20, 0.82) 70%, rgba(7, 11, 20, 0.96) 100%) !important;
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.08) 0%, rgba(7, 11, 20, 0.22) 42%, rgba(7, 11, 20, 0.62) 72%, rgba(7, 11, 20, 0.88) 100%) !important;
+}
+.city-tile img {
+  object-fit: cover !important;
+  object-position: center 35% !important;
+  filter: brightness(1.05) contrast(1.04) !important;
 }
 .city-tile span {
   color: var(--pp-text) !important;
@@ -806,11 +816,16 @@ body::before {
 }
 
 .vibe-card::after {
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.18) 0%, rgba(7, 11, 20, 0.35) 40%, rgba(7, 11, 20, 0.82) 70%, rgba(7, 11, 20, 0.96) 100%) !important;
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.06) 0%, rgba(7, 11, 20, 0.18) 42%, rgba(7, 11, 20, 0.58) 72%, rgba(7, 11, 20, 0.86) 100%) !important;
+}
+.vibe-card img {
+  object-fit: cover !important;
+  object-position: center 32% !important;
+  filter: brightness(1.06) contrast(1.04) saturate(1.04) !important;
 }
 .vibe-body {
   padding: 1.15rem 1.25rem 1.3rem !important;
-  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.55) 28%, rgba(7, 11, 20, 0.88)) !important;
+  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.42) 28%, rgba(7, 11, 20, 0.82)) !important;
 }
 .vibe-body h3 {
   color: var(--pp-text) !important;
@@ -849,12 +864,21 @@ body::before {
 }
 
 /* Event/venue cards on homepage “this week” */
+.card-media {
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+}
+.card-media img {
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  filter: brightness(1.04) contrast(1.03) !important;
+}
 .card-media::after {
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 42%;
-  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.55));
+  height: 28%;
+  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.35));
   pointer-events: none;
   z-index: 1;
 }
@@ -896,8 +920,12 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.15), rgba(7, 11, 20, 0.55) 70%, rgba(7, 11, 20, 0.75));
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.05), rgba(7, 11, 20, 0.28) 70%, rgba(7, 11, 20, 0.55));
   pointer-events: none;
+}
+.city-hub-media img {
+  object-position: center 32% !important;
+  filter: brightness(1.05) contrast(1.04) !important;
 }
 .city-hub-media .city-hub-scrim { display: block; }
 
@@ -975,4 +1003,26 @@ a.btn-ghost,
 .btn-sm {
   font-size: 0.84rem !important;
   font-weight: 700 !important;
+}
+
+
+/* kill yellow miami !important link leftovers */
+a, a:link, a:visited {
+  -webkit-text-stroke: 0 !important;
+}
+.nav-links a,
+.nav-drawer a,
+.footer a,
+.chip-link,
+.card-body a,
+.hero-actions a,
+.btn {
+  pointer-events: auto !important;
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+}
+.nav-links a[style*="ffe600"],
+.nav-links a[style*="yellow"] {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
 }

@@ -19,3 +19,9 @@ assets/site/live/* <- live poolparty.com wp-json product/venue featured media + 
   (downloaded + JPEG compressed max-w 1200 q82 for preview fidelity)
 city-southampton-* <- Unsplash royalty-clear beach (PP had no Southampton city cover)
 Homepage vibe tiles: Encore crowd / beach terrace / Garden pool / Yacht bay / Encore cabana
+
+--- 2026-09-16 clean+mirror pass ---
+hero-live-banner.jpg <- https://poolparty.com/wp-content/uploads/2026/04/banner-pool-party-2-scaled-2.webp (live homepage banner)
+City covers: live destination og/covers where available (LV/Miami/Dubai/NY/LA/AZ/AC); unique prior live venue/city media for hubs without og.
+This-week Vegas event thumbs: re-pulled wp:featuredmedia, square 768, face-biased crop, q86.
+Scrims lightened in pp-tokens.css so faces remain readable; Super Grok navy/coral/cyan kept.

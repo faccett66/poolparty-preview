@@ -6,7 +6,7 @@
     {
       "id": "ev-001",
       "slug": "all-seasons-stay-lucknow",
-      "title": "All Seasons Stay Lucknow – Rooftop Pool, Hotel & Dining Experience",
+      "title": "All Seasons Stay Lucknow \u2013 Rooftop Pool, Hotel & Dining Experience",
       "city": "india",
       "venue": "All Seasons Stay All Seasons Stay offers",
       "vibe": "pool",
@@ -186,14 +186,14 @@
     {
       "id": "ev-007",
       "slug": "vegas-nightclub-access-pass-september-16",
-      "title": "Vegas Nightclub Access Pass – September 16",
+      "title": "Vegas Nightclub Access Pass \u2013 September 16",
       "city": "las-vegas",
       "venue": "September 16",
       "vibe": "pass",
       "date": "2026-09-16",
       "booketing": null,
       "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-16/",
-      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-16-6071c0bbaa.jpg",
+      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-16-9347a479d8.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-16/",
@@ -216,7 +216,7 @@
     {
       "id": "ev-008",
       "slug": "dj-lucky-lou-at-marquee-dayclub-september-17",
-      "title": "DJ Lucky Lou at Marquee Dayclub – September 17",
+      "title": "DJ Lucky Lou at Marquee Dayclub \u2013 September 17",
       "city": "las-vegas",
       "venue": "Marquee Dayclub",
       "vibe": "dayclub",
@@ -228,7 +228,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1109/dj-lucky-lou?eventcode=EVE110900020260917",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -246,7 +246,7 @@
     {
       "id": "ev-009",
       "slug": "dj-mondo-at-palm-tree-beach-club-september-17",
-      "title": "DJ Mondo at Palm Tree Beach Club – September 17",
+      "title": "DJ Mondo at Palm Tree Beach Club \u2013 September 17",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -258,7 +258,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-mondo?eventcode=EVE111700020260917",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -276,7 +276,7 @@
     {
       "id": "ev-010",
       "slug": "dj-shr3d-at-liquid-pool-september-17",
-      "title": "DJ Shr3d at Liquid Pool – September 17",
+      "title": "DJ Shr3d at Liquid Pool \u2013 September 17",
       "city": "las-vegas",
       "venue": "Liquid Pool",
       "vibe": "pool",
@@ -288,7 +288,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-shr3d?eventcode=EVE111900020260917",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -306,19 +306,19 @@
     {
       "id": "ev-011",
       "slug": "vegas-nightclub-access-pass-september-17",
-      "title": "Vegas Nightclub Access Pass – September 17",
+      "title": "Vegas Nightclub Access Pass \u2013 September 17",
       "city": "las-vegas",
       "venue": "September 17",
       "vibe": "pass",
       "date": "2026-09-17",
       "booketing": null,
       "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-17/",
-      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-17-5ee3c482be.jpg",
+      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-17-c6f7d91064.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://squadup.com/events/146519",
       "book_provider": "squadup",
-      "book_label": "Book Now — live checkout",
+      "book_label": "Book Now \u2014 live checkout",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -336,7 +336,7 @@
     {
       "id": "ev-012",
       "slug": "cedric-gervais-at-omnia-dayclub-september-18",
-      "title": "Cedric Gervais at OMNIA Dayclub – September 18",
+      "title": "Cedric Gervais at OMNIA Dayclub \u2013 September 18",
       "city": "las-vegas",
       "venue": "OMNIA Dayclub",
       "vibe": "dayclub",
@@ -348,7 +348,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/cedric-gervais?eventcode=EVE4091154168600020260918",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -366,19 +366,19 @@
     {
       "id": "ev-013",
       "slug": "dj-e-rock-good-life-fridays-at-palm-tree-beach-club",
-      "title": "DJ E-Rock – Good Life Fridays at Palm Tree Beach Club",
+      "title": "DJ E-Rock \u2013 Good Life Fridays at Palm Tree Beach Club",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
       "date": "2026-09-18",
       "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-e-rock-good-life-fridays?eventcode=EVE111700020260918",
       "live_url": "https://poolparty.com/event/dj-e-rock-good-life-fridays-at-palm-tree-beach-club/",
-      "image": "assets/site/live/ev-dj-e-rock-good-life-fridays-at-palm-tree-beach--90bdaa43ba.jpg",
+      "image": "assets/site/live/ev-dj-e-rock-good-life-fridays-at-palm-tree-beach-c-90bdaa43ba.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-e-rock-good-life-fridays?eventcode=EVE111700020260918",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -396,7 +396,7 @@
     {
       "id": "ev-014",
       "slug": "dj-que-at-liquid-pool-september-18",
-      "title": "DJ Que at Liquid Pool – September 18",
+      "title": "DJ Que at Liquid Pool \u2013 September 18",
       "city": "las-vegas",
       "venue": "Liquid Pool",
       "vibe": "pool",
@@ -408,7 +408,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1119/dj-que?eventcode=EVE111900020260918",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -426,7 +426,7 @@
     {
       "id": "ev-015",
       "slug": "mike-attack-at-marquee-dayclub-september-18",
-      "title": "Mike Attack at Marquee Dayclub – September 18",
+      "title": "Mike Attack at Marquee Dayclub \u2013 September 18",
       "city": "las-vegas",
       "venue": "Marquee Dayclub",
       "vibe": "dayclub",
@@ -438,7 +438,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1109/mike-attack?eventcode=EVE110900020260918",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -456,7 +456,7 @@
     {
       "id": "ev-016",
       "slug": "nimino-at-tao-beach-september-18",
-      "title": "Nimino at TAO Beach – September 18",
+      "title": "Nimino at TAO Beach \u2013 September 18",
       "city": "las-vegas",
       "venue": "TAO Beach",
       "vibe": "beach",
@@ -468,7 +468,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1113/nimino?eventcode=EVE111300020260918",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -486,19 +486,19 @@
     {
       "id": "ev-017",
       "slug": "vegas-nightclub-access-pass-september-18",
-      "title": "Vegas Nightclub Access Pass – September 18",
+      "title": "Vegas Nightclub Access Pass \u2013 September 18",
       "city": "las-vegas",
       "venue": "September 18",
       "vibe": "pass",
       "date": "2026-09-18",
       "booketing": null,
       "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-18/",
-      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-18-c31b3ab52c.jpg",
+      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-18-4d8901feba.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://squadup.com/events/146525",
       "book_provider": "squadup",
-      "book_label": "Book Now — live checkout",
+      "book_label": "Book Now \u2014 live checkout",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -516,7 +516,7 @@
     {
       "id": "ev-018",
       "slug": "blondish-at-palm-tree-beach-club-september-19",
-      "title": "BLOND:ISH at Palm Tree Beach Club – September 19",
+      "title": "BLOND:ISH at Palm Tree Beach Club \u2013 September 19",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -528,7 +528,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/blondish?eventcode=EVE111700020260919",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -546,7 +546,7 @@
     {
       "id": "ev-019",
       "slug": "don-diablo-at-tao-beach-september-19",
-      "title": "Don Diablo at TAO Beach – September 19",
+      "title": "Don Diablo at TAO Beach \u2013 September 19",
       "city": "las-vegas",
       "venue": "TAO Beach",
       "vibe": "beach",
@@ -558,7 +558,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1113/don-diablo?eventcode=EVE111300020260919",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -576,7 +576,7 @@
     {
       "id": "ev-020",
       "slug": "kid-conrad-at-liquid-pool-september-19",
-      "title": "Kid Conrad at Liquid Pool – September 19",
+      "title": "Kid Conrad at Liquid Pool \u2013 September 19",
       "city": "las-vegas",
       "venue": "Liquid Pool",
       "vibe": "pool",
@@ -588,7 +588,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1119/kid-conrad?eventcode=EVE111900020260919",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -606,7 +606,7 @@
     {
       "id": "ev-021",
       "slug": "lavern-at-marquee-dayclub-september-19",
-      "title": "Lavern at Marquee Dayclub – September 19",
+      "title": "Lavern at Marquee Dayclub \u2013 September 19",
       "city": "las-vegas",
       "venue": "Marquee Dayclub",
       "vibe": "dayclub",
@@ -618,7 +618,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1109/lavern?eventcode=EVE110900020260919",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -636,7 +636,7 @@
     {
       "id": "ev-022",
       "slug": "steve-aoki-at-omnia-dayclub-september-19",
-      "title": "Steve Aoki at OMNIA Dayclub – September 19",
+      "title": "Steve Aoki at OMNIA Dayclub \u2013 September 19",
       "city": "las-vegas",
       "venue": "OMNIA Dayclub",
       "vibe": "dayclub",
@@ -648,7 +648,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/steve-aoki?eventcode=EVE4091154168600020260919",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -666,19 +666,19 @@
     {
       "id": "ev-023",
       "slug": "vegas-nightclub-access-pass-september-19",
-      "title": "Vegas Nightclub Access Pass – September 19",
+      "title": "Vegas Nightclub Access Pass \u2013 September 19",
       "city": "las-vegas",
       "venue": "September 19",
       "vibe": "pass",
       "date": "2026-09-19",
       "booketing": null,
       "live_url": "https://poolparty.com/event/vegas-nightclub-access-pass-september-19/",
-      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-18-c31b3ab52c.jpg",
+      "image": "assets/site/live/ev-vegas-nightclub-access-pass-september-19-4d8901feba.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://squadup.com/events/140284",
       "book_provider": "squadup",
-      "book_label": "Book Now — live checkout",
+      "book_label": "Book Now \u2014 live checkout",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -696,7 +696,7 @@
     {
       "id": "ev-024",
       "slug": "dj-shift-at-palm-tree-beach-club-september-20",
-      "title": "DJ Shift at Palm Tree Beach Club – September 20",
+      "title": "DJ Shift at Palm Tree Beach Club \u2013 September 20",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -708,7 +708,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-shift?eventcode=EVE111700020260920",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -726,7 +726,7 @@
     {
       "id": "ev-025",
       "slug": "eric-remy-at-liquid-pool-september-20",
-      "title": "Eric Remy at Liquid Pool – September 20",
+      "title": "Eric Remy at Liquid Pool \u2013 September 20",
       "city": "las-vegas",
       "venue": "Liquid Pool",
       "vibe": "pool",
@@ -738,7 +738,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1119/eric-remy?eventcode=EVE111900020260920",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -756,7 +756,7 @@
     {
       "id": "ev-026",
       "slug": "mike-attack-at-tao-beach-september-20",
-      "title": "Mike Attack at TAO Beach – September 20",
+      "title": "Mike Attack at TAO Beach \u2013 September 20",
       "city": "las-vegas",
       "venue": "TAO Beach",
       "vibe": "beach",
@@ -768,7 +768,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1113/mike-attack?eventcode=EVE111300020260920",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -793,12 +793,12 @@
       "date": "2026-09-20",
       "booketing": "https://booketing.com/microsite/ppl/event/61/1109/party-pupils-presents-yacht-house?eventcode=EVE110900020260920",
       "live_url": "https://poolparty.com/event/party-pupils-presents-yacht-house-at-marquee-dayclub/",
-      "image": "assets/site/live/ev-party-pupils-presents-yacht-house-at-marquee-da-8b32231ecf.jpg",
+      "image": "assets/site/live/ev-party-pupils-presents-yacht-house-at-marquee-day-8b32231ecf.jpg",
       "source": "live",
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1109/party-pupils-presents-yacht-house?eventcode=EVE110900020260920",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -816,7 +816,7 @@
     {
       "id": "ev-028",
       "slug": "twinsick-at-omnia-dayclub-september-20",
-      "title": "TWINSICK at OMNIA Dayclub – September 20",
+      "title": "TWINSICK at OMNIA Dayclub \u2013 September 20",
       "city": "las-vegas",
       "venue": "OMNIA Dayclub",
       "vibe": "dayclub",
@@ -828,7 +828,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/twinsick?eventcode=EVE4091154168600020260920",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -1296,9 +1296,9 @@
     {
       "id": "ev-044",
       "slug": "fort-lauderdales-rooftop-pool-party-at-the-easton",
-      "title": "Fort Lauderdale’s Rooftop Pool Party at The Easton",
+      "title": "Fort Lauderdale\u2019s Rooftop Pool Party at The Easton",
       "city": "fort-lauderdale",
-      "venue": "Fort Lauderdale’s Rooftop Pool Party at The Easton",
+      "venue": "Fort Lauderdale\u2019s Rooftop Pool Party at The Easton",
       "vibe": "pool",
       "date": "2025-05-05",
       "booketing": null,
@@ -1356,7 +1356,7 @@
     {
       "id": "ev-046",
       "slug": "saturday-splash-at-the-easton-fort-lauderdale-8",
-      "title": "Saturday Splash at The Easton – Fort Lauderdale",
+      "title": "Saturday Splash at The Easton \u2013 Fort Lauderdale",
       "city": "fort-lauderdale",
       "venue": "Fort Lauderdale",
       "vibe": "pool",
@@ -1386,7 +1386,7 @@
     {
       "id": "ev-047",
       "slug": "saturday-splash-at-the-easton-fort-lauderdale-5",
-      "title": "Saturday Splash at The Easton – Fort Lauderdale",
+      "title": "Saturday Splash at The Easton \u2013 Fort Lauderdale",
       "city": "fort-lauderdale",
       "venue": "Fort Lauderdale",
       "vibe": "pool",
@@ -1416,7 +1416,7 @@
     {
       "id": "ev-048",
       "slug": "ducking-fridays-pool-party-at-bla-bla-dubai-4",
-      "title": "Dubai Friday Pool Party – Unlimited Drinks at Bla Bla Beach Club",
+      "title": "Dubai Friday Pool Party \u2013 Unlimited Drinks at Bla Bla Beach Club",
       "city": "dubai",
       "venue": "Unlimited Drinks at Bla Bla Beach Club",
       "vibe": "beach",
@@ -1896,9 +1896,9 @@
     {
       "id": "ev-064",
       "slug": "new-years-eve-2026",
-      "title": "New Year’s Eve 2026 at The Pool After Dark",
+      "title": "New Year\u2019s Eve 2026 at The Pool After Dark",
       "city": "atlantic-city",
-      "venue": "New Year’s Eve 2026 at The Pool After Dark",
+      "venue": "New Year\u2019s Eve 2026 at The Pool After Dark",
       "vibe": "pool",
       "date": "2025-12-31",
       "booketing": null,
@@ -2106,7 +2106,7 @@
     {
       "id": "ev-071",
       "slug": "splash-dance-with-dj-maori-may-18",
-      "title": "Splash Dance with DJ Maori – May 18",
+      "title": "Splash Dance with DJ Maori \u2013 May 18",
       "city": "dubai",
       "venue": "May 18",
       "vibe": "pool",
@@ -2136,7 +2136,7 @@
     {
       "id": "ev-072",
       "slug": "sa-plana-nova-june-14",
-      "title": "Sa Plana Nova – June 14",
+      "title": "Sa Plana Nova \u2013 June 14",
       "city": "spain",
       "venue": "June 14",
       "vibe": "pool",
@@ -2208,7 +2208,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1112/damaged-goods-fourth-of-july-weekend?eventcode=EVE111200020260703",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2316,7 +2316,7 @@
     {
       "id": "ev-078",
       "slug": "splash-house-2026-weekend-one",
-      "title": "Splash House 2026 – Weekend One",
+      "title": "Splash House 2026 \u2013 Weekend One",
       "city": "california",
       "venue": "Weekend One",
       "vibe": "pool",
@@ -2346,7 +2346,7 @@
     {
       "id": "ev-079",
       "slug": "splash-house-2026-weekend-two",
-      "title": "Splash House 2026 – Weekend Two",
+      "title": "Splash House 2026 \u2013 Weekend Two",
       "city": "california",
       "venue": "Weekend Two",
       "vibe": "pool",
@@ -2376,7 +2376,7 @@
     {
       "id": "ev-080",
       "slug": "blondish-labor-day-weekend-at-palm-tree-beach-club",
-      "title": "BLOND:ISH – Labor Day Weekend at Palm Tree Beach Club",
+      "title": "BLOND:ISH \u2013 Labor Day Weekend at Palm Tree Beach Club",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -2388,7 +2388,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/blondish-labor-day-weekend?eventcode=EVE111700020260906",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2418,7 +2418,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/street-mob-takeover-ft-chuyin-clave-especial-dynamic-more-baja-beach-fest?eventcode=EVE111700020260913",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2436,7 +2436,7 @@
     {
       "id": "ev-082",
       "slug": "mikey-francis-mexican-independence-weekend",
-      "title": "Mikey Francis – Mexican Independence Weekend",
+      "title": "Mikey Francis \u2013 Mexican Independence Weekend",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -2448,7 +2448,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/mikey-francis-mexican-independence-weekend?eventcode=EVE111700020260910",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2466,7 +2466,7 @@
     {
       "id": "ev-083",
       "slug": "dj-sourmilk-mexican-independence-weekend",
-      "title": "DJ Sourmilk – Mexican Independence Weekend",
+      "title": "DJ Sourmilk \u2013 Mexican Independence Weekend",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -2478,7 +2478,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-sourmilk-good-life-fridays-mexican-independence-weekend?eventcode=EVE111700020260911",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2496,7 +2496,7 @@
     {
       "id": "ev-084",
       "slug": "lavern-mexican-independence-weekend-at-tao-beach",
-      "title": "Lavern – Mexican Independence Weekend at TAO Beach",
+      "title": "Lavern \u2013 Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
       "venue": "TAO Beach",
       "vibe": "beach",
@@ -2508,7 +2508,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1113/lavern-mexican-independence-weekend?eventcode=EVE111300020260911",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2526,7 +2526,7 @@
     {
       "id": "ev-085",
       "slug": "roz-baja-beach-fest-at-omnia-dayclub",
-      "title": "RØZ – Baja Beach Fest at OMNIA Dayclub",
+      "title": "R\u00d8Z \u2013 Baja Beach Fest at OMNIA Dayclub",
       "city": "las-vegas",
       "venue": "Baja Beach",
       "vibe": "beach",
@@ -2538,7 +2538,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/r-z-baja-beach-fest?eventcode=EVE4091154168600020260911",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2556,7 +2556,7 @@
     {
       "id": "ev-086",
       "slug": "kygo-mexican-independence-weekend",
-      "title": "Kygo – Mexican Independence Weekend",
+      "title": "Kygo \u2013 Mexican Independence Weekend",
       "city": "las-vegas",
       "venue": "Palm Tree Beach Club",
       "vibe": "beach",
@@ -2568,7 +2568,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1117/kygo-mexican-independence-weekend?eventcode=EVE111700020260912",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2586,7 +2586,7 @@
     {
       "id": "ev-087",
       "slug": "martin-garrix-w-justin-mylo-mexican-independence-weekend",
-      "title": "Martin Garrix w/ Justin Mylo – Mexican Independence Weekend at TAO Beach",
+      "title": "Martin Garrix w/ Justin Mylo \u2013 Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
       "venue": "TAO Beach",
       "vibe": "beach",
@@ -2598,7 +2598,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1113/martin-garrix-w-justin-mylo-mexican-independence-weekend?eventcode=EVE111300020260912",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2616,7 +2616,7 @@
     {
       "id": "ev-088",
       "slug": "tiesto-mexican-independence-day-weekend-at-omnia-dayclub",
-      "title": "Tiësto – Mexican Independence Day Weekend at OMNIA Dayclub",
+      "title": "Ti\u00ebsto \u2013 Mexican Independence Day Weekend at OMNIA Dayclub",
       "city": "las-vegas",
       "venue": "OMNIA Dayclub",
       "vibe": "dayclub",
@@ -2628,7 +2628,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/ti-sto-mexican-independence-day-weekend?eventcode=EVE4091154168600020260912",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2646,7 +2646,7 @@
     {
       "id": "ev-089",
       "slug": "justin-credible-mexican-independence-weekend-at-tao-beach",
-      "title": "Justin Credible – Mexican Independence Weekend at TAO Beach",
+      "title": "Justin Credible \u2013 Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
       "venue": "TAO Beach",
       "vibe": "beach",
@@ -2658,7 +2658,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/1113/justin-credible-mexican-independence-weekend?eventcode=EVE111300020260913",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2676,7 +2676,7 @@
     {
       "id": "ev-090",
       "slug": "sala-de-despecho-at-omnia-dayclub-september-13",
-      "title": "Sala de Despecho at OMNIA Dayclub – September 13",
+      "title": "Sala de Despecho at OMNIA Dayclub \u2013 September 13",
       "city": "las-vegas",
       "venue": "OMNIA Dayclub",
       "vibe": "dayclub",
@@ -2688,7 +2688,7 @@
       "demo": false,
       "book_url": "https://booketing.com/microsite/ppl/event/61/40911541686/sala-de-despecho?eventcode=EVE4091154168600120260913",
       "book_provider": "booketing",
-      "book_label": "Book Now — Booketing",
+      "book_label": "Book Now \u2014 Booketing",
       "ticket_tiers": [
         {
           "id": "ga",

@@ -2,7 +2,7 @@
 (function () {
   const CART_KEY = 'pp_demo_cart_v1';
   const CITY_KEY = 'pp_selected_city';
-  const IMG_BUST = '28';
+  const IMG_BUST = '31';
   const bust = (src) => (!src ? '' : src.includes('?') ? src : `${src}?v=${IMG_BUST}`);
   const PREVIEW_TODAY = '2026-09-15'; // mid-Sep 2026 preview "now"
 
@@ -90,12 +90,22 @@
     },
     bookMeta(ev) {
       const provider = (ev.book_provider || '').toLowerCase();
-      const label = ev.book_label
-        || (provider.includes('booketing') ? 'Book Now — Booketing'
-          : provider.includes('squadup') ? 'Book Now — live checkout'
-          : 'Book Now — live handoff');
+      const url = String(ev.book_url || ev.live_url || '');
+      const onBooketing = provider.includes('booketing') || /booketing\.com/i.test(url);
+      const onSquadUpDirect = /squadup\.com/i.test(url);
+      const onSiteHandoff = /poolparty\.com/i.test(url);
+      let label = ev.book_label;
+      if (!label) {
+        if (onBooketing) label = 'Book Now — Booketing';
+        else if (onSquadUpDirect) label = 'Book Now — SquadUp';
+        else if (onSiteHandoff) label = 'Book Now — live site';
+        else if (provider.includes('squadup')) label = 'Book Now — live checkout';
+        else label = 'Book Now — live handoff';
+      }
       let noteProvider = 'live';
-      if (provider.includes('booketing')) noteProvider = 'Booketing';
+      if (onBooketing) noteProvider = 'Booketing';
+      else if (onSquadUpDirect) noteProvider = 'SquadUp';
+      else if (onSiteHandoff) noteProvider = 'PoolParty.com (SquadUp overlay on live site — not embedded here)';
       else if (provider.includes('squadup')) noteProvider = 'SquadUp / Pool Party checkout';
       else if (provider) noteProvider = ev.book_provider;
       return { label, noteProvider, provider };
@@ -130,7 +140,7 @@
     },
 
     eventCard(ev, opts = {}) {
-      const book = ev.book_url || ev.live_url || '#';
+      const book = ev.book_url || ev.live_url || (ev.slug ? `https://poolparty.com/event/${encodeURIComponent(ev.slug)}/` : 'events.html');
       const meta = this.bookMeta(ev);
       const detailHref = opts.detailBase
         ? `${opts.detailBase}?id=${encodeURIComponent(ev.slug)}`
@@ -167,25 +177,29 @@
     },
 
     venueCard(v, opts = {}) {
-      const href = opts.listMode ? `venues.html?city=${encodeURIComponent(v.city)}` : (v.live_url || '#');
+      const live = v.live_url || `https://poolparty.com/venue/${encodeURIComponent(v.slug || '')}/`;
+      const hub = this.cityHubHref(v.city);
       return `
       <article class="card" data-city="${this.esc(v.city)}" data-vibe="${this.esc(v.vibe)}">
         <div class="card-media">
-          <img src="${this.esc(bust(v.image))}" alt="${this.esc(v.name)}" loading="lazy" />
+          <a href="${this.esc(live)}" target="_blank" rel="noopener" aria-label="${this.esc(v.name)} on live site">
+            <img src="${this.esc(bust(v.image))}" alt="${this.esc(v.name)}" loading="lazy" />
+          </a>
           <div class="badge-row">
             <span class="tag">${this.esc((v.vibe || 'pool').toUpperCase())}</span>
             <span class="tag live">LIVE</span>
           </div>
         </div>
         <div class="card-body">
-          <h3>${this.esc(v.name)}</h3>
+          <h3><a href="${this.esc(live)}" target="_blank" rel="noopener">${this.esc(v.name)}</a></h3>
           <div class="card-meta">
             <span>${this.esc(v.city_name || this.cityName(opts.cities, v.city))}</span>
           </div>
           <p style="font-size:.88rem;color:var(--mist);font-weight:300">${this.esc(v.excerpt || '')}</p>
           <div class="card-actions">
-            <a class="btn btn-primary btn-sm" href="${this.esc(v.live_url)}" target="_blank" rel="noopener">View on live site</a>
+            <a class="btn btn-primary btn-sm" href="${this.esc(live)}" target="_blank" rel="noopener">Venue on live site</a>
             <a class="btn btn-ghost btn-sm" href="events.html?city=${encodeURIComponent(v.city)}">Events in city</a>
+            <a class="btn btn-ghost btn-sm" href="${hub}">City hub</a>
           </div>
         </div>
       </article>`;
