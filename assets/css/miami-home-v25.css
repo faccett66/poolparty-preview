@@ -1053,17 +1053,27 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
 .free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem}
 .free-offer-copy{color:var(--pp-text-dim,#B7C2D0);font-weight:300}
 
-/* Streaming Advertise here banner */
+/* Streaming Advertise here banner — lives inside fixed .nav */
 .ad-stream{
   display:block;
   overflow:hidden;
   position:relative;
-  z-index:40;
-  border-bottom:1px solid rgba(0,229,232,.28);
-  background:linear-gradient(90deg, rgba(255,56,100,.18), rgba(0,229,232,.14), rgba(232,200,114,.12));
+  z-index:81;
+  width:100%;
+  margin:0;
+  border-top:1px solid rgba(0,229,232,.28);
+  border-bottom:none;
+  background:linear-gradient(90deg, rgba(255,56,100,.22), rgba(0,229,232,.16), rgba(232,200,114,.14));
   text-decoration:none;
   color:var(--pp-text,#F4F7FA);
   cursor:pointer;
+}
+/* Extra clearance for hero/page content when ticker is under nav */
+body.has-ad-stream .hero{
+  padding-top:calc(6.5rem + 2.1rem) !important;
+}
+body.has-ad-stream .page-hero{
+  padding-top:calc(var(--nav-h) + 3.5rem + 2.1rem) !important;
 }
 .ad-stream:hover{background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.22), rgba(232,200,114,.2))}
 .ad-stream-track{

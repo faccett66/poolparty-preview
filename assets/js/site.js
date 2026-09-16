@@ -334,11 +334,14 @@
       a.id = 'freeOffer';
       a.setAttribute('aria-label', 'Advertise here — free offer. Your events. Our audience.');
       a.innerHTML = `<span class="ad-stream-track">${chunks}${chunks}</span>`;
-      const anchor = document.querySelector('[data-nav-drawer]') || document.querySelector('header.nav');
-      if (anchor && anchor.parentNode) {
-        anchor.parentNode.insertBefore(a, anchor.nextSibling);
+      // Sit inside the fixed nav so it is never covered by it
+      const nav = document.querySelector('header.nav');
+      if (nav) {
+        nav.appendChild(a);
+        document.body.classList.add('has-ad-stream');
       } else {
         document.body.prepend(a);
+        document.body.classList.add('has-ad-stream');
       }
     },
 
