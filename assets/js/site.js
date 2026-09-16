@@ -326,7 +326,6 @@
         '<span class="ad-stream-pitch">Your events. Our audience.</span>',
         '<span class="ad-stream-sep">·</span>'
       ].join('');
-      // Duplicate chunks so the loop is seamless
       const chunks = Array.from({ length: 8 }, () => `<span class="ad-stream-chunk">${piece}</span>`).join('');
       const a = document.createElement('a');
       a.className = 'ad-stream';
@@ -334,15 +333,25 @@
       a.id = 'freeOffer';
       a.setAttribute('aria-label', 'Advertise here — free offer. Your events. Our audience.');
       a.innerHTML = `<span class="ad-stream-track">${chunks}${chunks}</span>`;
-      // Sit inside the fixed nav so it is never covered by it
-      const nav = document.querySelector('header.nav');
-      if (nav) {
-        nav.appendChild(a);
-        document.body.classList.add('has-ad-stream');
-      } else {
-        document.body.prepend(a);
-        document.body.classList.add('has-ad-stream');
-      }
+      // Fixed just under the measured nav bottom so the ticker is never covered
+      Object.assign(a.style, {
+        position: 'fixed',
+        left: '0',
+        right: '0',
+        zIndex: '79'
+      });
+      const place = () => {
+        const nav = document.querySelector('header.nav');
+        const top = nav ? Math.round(nav.getBoundingClientRect().bottom) : 0;
+        a.style.top = `${top}px`;
+        document.documentElement.style.setProperty('--ad-stream-offset', `${top + a.offsetHeight}px`);
+      };
+      document.body.appendChild(a);
+      document.body.classList.add('has-ad-stream');
+      place();
+      requestAnimationFrame(place);
+      window.addEventListener('resize', place, { passive: true });
+      window.addEventListener('scroll', place, { passive: true });
     },
 
     initReveal() {

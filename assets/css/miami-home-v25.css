@@ -1057,23 +1057,24 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
 .ad-stream{
   display:block;
   overflow:hidden;
-  position:relative;
-  z-index:81;
   width:100%;
   margin:0;
-  border-top:1px solid rgba(0,229,232,.28);
-  border-bottom:none;
-  background:linear-gradient(90deg, rgba(255,56,100,.22), rgba(0,229,232,.16), rgba(232,200,114,.14));
+  border-top:1px solid rgba(0,229,232,.35);
+  border-bottom:1px solid rgba(0,229,232,.2);
+  background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.2), rgba(232,200,114,.16));
   text-decoration:none;
   color:var(--pp-text,#F4F7FA);
   cursor:pointer;
 }
 /* Extra clearance for hero/page content when ticker is under nav */
 body.has-ad-stream .hero{
-  padding-top:calc(6.5rem + 2.1rem) !important;
+  padding-top:calc(var(--ad-stream-offset, 8.6rem) + 1.5rem) !important;
 }
 body.has-ad-stream .page-hero{
-  padding-top:calc(var(--nav-h) + 3.5rem + 2.1rem) !important;
+  padding-top:calc(var(--ad-stream-offset, 8.6rem) + 2.5rem) !important;
+}
+.ad-stream{
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 .ad-stream:hover{background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.22), rgba(232,200,114,.2))}
 .ad-stream-track{
