@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=27" />
-  <link rel="stylesheet" href="assets/css/music-layer.css?v=7" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=28" />
+  <link rel="stylesheet" href="assets/css/music-layer.css?v=8" />
 </head>
 <body data-data-root="data" data-asset-root="">
 <div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
@@ -33,7 +33,7 @@
 <a class="sticky-book" href="events.html">Book Now</a>
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src="assets/site/hero-one.jpg?v=fixtext3" alt="Encore Beach Club pool party crowd" width="1300" height="900" />
+    <img src="assets/site/hero-one.jpg?v=imgfix20260916" alt="Encore Beach Club pool party crowd" width="1300" height="900" />
   </div>
   <div class="hero-overlay"></div>
   <div class="wrap hero-content">
@@ -80,11 +80,11 @@
       <p>Encore-level decks, TAO Beach sand, Ayu heat, bay escapes — scroll the vibes, then Book Now.</p>
     </div>
     <div class="vibe-grid">
-      <a class="vibe-card reveal" href="events.html?vibe=dayclub"><img src="assets/site/vibe-encore-crowd.jpg" alt=""/><div class="vibe-body"><span class="tag">Dayclub</span><h3>Dayclub main stage</h3><p>Crowds, DJs, cabana FOMO.</p></div></a>
-      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=beach"><img src="assets/site/vibe-beach-terrace.jpg" alt=""/><div class="vibe-body"><span class="tag">Beach</span><h3>Beach club days</h3><p>Sand, terrace, golden hour.</p></div></a>
-      <a class="vibe-card reveal reveal-delay-2" href="events.html?vibe=pool"><img src="assets/site/vibe-ayu-energy.jpg" alt=""/><div class="vibe-body"><span class="tag">Pool</span><h3>Pool deck heat</h3><p>Splash, floats, midweek dips.</p></div></a>
-      <a class="vibe-card reveal" href="events.html?vibe=yacht"><img src="assets/site/vibe-yacht-bay.jpg" alt=""/><div class="vibe-body"><span class="tag">Yacht</span><h3>Yacht energy</h3><p>Waterfront flex, sunset sets.</p></div></a>
-      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=pass"><img src="assets/site/feat-encore-cabana.jpg" alt=""/><div class="vibe-body"><span class="tag">Pass</span><h3>Pool Party Pass</h3><p>Assigned dayclub access — live booking path.</p></div></a>
+      <a class="vibe-card reveal" href="events.html?vibe=dayclub"><img src="assets/site/vibe-encore-crowd.jpg?v=28" alt="Encore Beach Club dayclub crowd"/><div class="vibe-body"><span class="tag">Dayclub</span><h3>Dayclub main stage</h3><p>Crowds, DJs, cabana FOMO.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=beach"><img src="assets/site/vibe-beach-terrace.jpg?v=28" alt="Beach club terrace party"/><div class="vibe-body"><span class="tag">Beach</span><h3>Beach club days</h3><p>Sand, terrace, golden hour.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-2" href="events.html?vibe=pool"><img src="assets/site/vibe-garden-day.jpg?v=28" alt="Garden of the Gods pool deck"/><div class="vibe-body"><span class="tag">Pool</span><h3>Pool deck heat</h3><p>Splash, floats, midweek dips.</p></div></a>
+      <a class="vibe-card reveal" href="events.html?vibe=yacht"><img src="assets/site/vibe-yacht-bay.jpg?v=28" alt="Yacht Social Club on the water"/><div class="vibe-body"><span class="tag">Yacht</span><h3>Yacht energy</h3><p>Waterfront flex, sunset sets.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=pass"><img src="assets/site/feat-encore-cabana.jpg?v=28" alt="Dayclub cabana Pool Party Pass vibes"/><div class="vibe-body"><span class="tag">Pass</span><h3>Pool Party Pass</h3><p>Assigned dayclub access — live booking path.</p></div></a>
     </div>
   </div>
 </section>
@@ -120,7 +120,7 @@
 <section>
   <div class="wrap">
     <div class="music-band reveal">
-      <img src="assets/site/music-ayu-stage.jpg" alt="" />
+      <img src="assets/site/music-ayu-stage.jpg?v=28" alt="AYU Dayclub main stage" />
       <div class="music-inner">
         <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <p class="eyebrow">Sonic Ear Candy · live bed</p>
@@ -168,7 +168,7 @@
     <span>No CATCH branding · SEC music layer live on preview · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=28"></script>
+<script src="assets/js/site.js?v=29"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const blurb = up ? `${up} upcoming` : (venueSlugs.has(c.slug) ? '0 upcoming · venues' : meta.blurb);
     return `
     <a class="city-tile" href="${meta.href}" data-city="${PP.esc(c.slug)}">
-      <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
+      <img src="${PP.esc(c.image)}?v=28" alt="${PP.esc(c.name)}" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
       <small>${PP.esc(blurb)}</small>
     </a>`;

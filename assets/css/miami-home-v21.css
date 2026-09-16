@@ -898,13 +898,13 @@ body::before{
   display:block !important;
   visibility:visible !important;
   opacity:1 !important;
-  height:52px !important;
+  height:72px !important;
   width:auto !important;
-  max-width:160px !important;
+  max-width:210px !important;
   object-fit:contain !important;
 }
 .nav-inner{
-  min-height:4.25rem !important;
+  min-height:5rem !important;
   display:flex !important;
   align-items:center !important;
   gap:.85rem !important;

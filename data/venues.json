@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-16T03:33:42Z",
+  "generated": "2026-09-16T04:00:23Z",
   "source": "poolparty.com",
-  "note": "Venues from public wp-json venue CPT; city inferred from public copy. Preview images may be local assets or remote https.",
+  "note": "Venues from public wp-json venue CPT; city inferred from public copy. Images from live featured media (downloaded/compressed into assets/site/live/).",
   "venues": [
     {
       "id": "vn-001",
@@ -11,7 +11,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/sahara-las-vegas/",
-      "image": "assets/site/hero-one.jpg",
+      "image": "assets/site/live/venue-sahara-las-vegas-8698d2c7f5.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Sahara Las Vegas Hotel & Casino—luxury vibes, great music, and unforgettable fun under the Vegas sun!"
     },
@@ -23,7 +23,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/garden-of-the-gods-pool-oasis-at-caesars/",
-      "image": "assets/site/dest-miami-night.jpg",
+      "image": "assets/site/live/venue-garden-of-the-gods-pool-oasis-at-caesars-c5197b5638.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Garden of the Gods Pool Oasis at Caesars—luxury, fun, and sun collide in Las Vegas style."
     },
@@ -35,7 +35,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/sway-pool-at-the-silverton/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Sway-Pool-at-the-Silverton-cover-scaled.webp",
+      "image": "assets/site/live/venue-sway-pool-at-the-silverton-8a8c9d03e3.jpg",
       "source": "live",
       "excerpt": "Sway Pool at the Silverton brings the ultimate Las Vegas pool party with DJs, cocktails, cabanas & non-stop summer vibes."
     },
@@ -47,7 +47,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/the-pond-at-green-valley-ranch/",
-      "image": "assets/site/feat-encore-pool.jpg",
+      "image": "assets/site/live/venue-the-pond-at-green-valley-ranch-d093ff4988.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at The Pond at Green Valley Ranch—Las Vegas' top spot for luxury, music, and sun-soaked vibes."
     },
@@ -59,7 +59,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/golden-nugget-hideout-pool/",
-      "image": "assets/site/hero-ayu.jpg",
+      "image": "assets/site/live/venue-golden-nugget-hideout-pool-f065099ff6.jpg",
       "source": "live",
       "excerpt": "Join the hottest pool party at the Golden Nugget Hideout Pool. Dive into luxury, beats, and unforgettable vibes in the heart of Las Vegas."
     },
@@ -71,7 +71,7 @@
       "city_name": "Las Vegas",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/moorea-beach-club-at-mandalay-bay/",
-      "image": "assets/site/hero-crowd-hi.jpg",
+      "image": "assets/site/live/venue-moorea-beach-club-at-mandalay-bay-464220f564.jpg",
       "source": "live",
       "excerpt": "Experience luxury daylife at Moorea Beach Club at Mandalay Bay. Chill, sip, and party poolside at the hottest adults-only spot in Vegas."
     },
@@ -83,7 +83,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/european-pool-at-the-lexi-las-vegas/",
-      "image": "assets/site/music-ayu-stage.jpg",
+      "image": "assets/site/live/venue-european-pool-at-the-lexi-las-vegas-6073f963e0.jpg",
       "source": "live",
       "excerpt": "Experience the European Pool at the Lexi Las Vegas—an adults-only, clothing-optional rooftop escape and the hottest pool party scene."
     },
@@ -95,7 +95,7 @@
       "city_name": "Las Vegas",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/flamingo-go-pool-at-flamingo-las-vegas/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Flamingo-Go-Pool-at-Flamingo-Las-Vegas-Cover-photo-scaled.webp",
+      "image": "assets/site/live/venue-flamingo-go-pool-at-flamingo-las-vegas-9f90b6209a.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Flamingo GO Pool at Flamingo Las Vegas with tropical vibes, and nonstop daytime fun on the Strip."
     },
@@ -107,7 +107,7 @@
       "city_name": "Miami",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/moxy-miami/",
-      "image": "assets/site/dest-miami-night.jpg",
+      "image": "assets/site/live/venue-moxy-miami-1427c2dda8.jpg",
       "source": "live",
       "excerpt": "Experience vibrant pool party, chic style, and unbeatable vibes at Moxy Miami—your ultimate destination for fun in the heart of the city."
     },
@@ -119,7 +119,7 @@
       "city_name": "Miami",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/sagamore-hotel-south-beach/",
-      "image": "assets/site/hero-crowd-hi2.jpg",
+      "image": "assets/site/live/venue-sagamore-hotel-south-beach-0a52386253.jpg",
       "source": "live",
       "excerpt": "Sagamore Hotel South Beach offers luxury stays, ocean views, and iconic pool parties in the heart of Miami’s Art Deco District."
     },
@@ -131,7 +131,7 @@
       "city_name": "Miami",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/nao-pool-club/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Nao-Pool-Club-Pool-Party-Cover-scaled.webp",
+      "image": "assets/site/live/venue-nao-pool-club-219813437b.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Naô Pool Club – your top destination for luxury, music, and unforgettable summer vibes."
     },
@@ -143,7 +143,7 @@
       "city_name": "Miami",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/resorts-world-bimini-beach-and-pool-party/",
-      "image": "assets/site/hero-people-4.jpg",
+      "image": "assets/site/live/venue-resorts-world-bimini-beach-and-pool-party-0c94044398.jpg",
       "source": "live",
       "excerpt": "At Resorts World Bimini Beach and Pool Party, enjoy tropical vibes, live DJs, ocean views, and nonstop fun just 50 miles from Miami."
     },
@@ -155,7 +155,7 @@
       "city_name": "Miami",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/joya-beach-miami-beach-club-beachfront-experience-in-miami/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Joia-Beach-Club-scaled.webp",
+      "image": "assets/site/live/venue-joya-beach-miami-beach-club-beachfront-exper-4f8eb6518b.jpg",
       "source": "live",
       "excerpt": "Experience Joya Beach Miami Beach Club with luxury cabanas, gourmet bites, cocktails, and live entertainment."
     },
@@ -167,7 +167,7 @@
       "city_name": "Miami",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/w-south-beach-hotel/",
-      "image": "assets/site/vibe-ayu-energy.jpg",
+      "image": "assets/site/live/venue-w-south-beach-hotel-c1ab613d4c.jpg",
       "source": "live",
       "excerpt": "Experience the epitome of luxury at W South Beach Hotel. Located in Miami, this beachfront retreat offers stylish suites, exceptional dining, and vibrant nightl"
     },
@@ -179,7 +179,7 @@
       "city_name": "Miami",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/w-miami-hotel/",
-      "image": "assets/site/vibe-beach-terrace.jpg",
+      "image": "assets/site/live/venue-w-miami-hotel-9231f54332.jpg",
       "source": "live",
       "excerpt": "Discover urban luxury at W Miami Hotel. Located in Brickell, this chic retreat offers stunning city views, indulgent dining, and world-class amenities in the he"
     },
@@ -191,7 +191,7 @@
       "city_name": "Miami",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/vagabond-hotel/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Pool-party-Vagabond-Hotel-scaled.webp",
+      "image": "assets/site/live/venue-vagabond-hotel-09324f432d.jpg",
       "source": "live",
       "excerpt": "Stay at the iconic Vagabond Hotel in Miami, where vintage charm meets modern luxury. Enjoy stylish accommodations, a vibrant pool scene, and a prime location in"
     },
@@ -203,7 +203,7 @@
       "city_name": "Dubai",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/four-seasons-resort-dubai-2/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/07/four-seasons-resort-dubai.webp",
+      "image": "assets/site/live/venue-four-seasons-resort-dubai-2-975234bb32.jpg",
       "source": "live",
       "excerpt": "Relax by the pool at Four Seasons Resort Dubai on Jumeirah Beach. Enjoy skyline views, private cabanas, fine dining & true Dubai luxury."
     },
@@ -215,7 +215,7 @@
       "city_name": "Dubai",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/zero-gravity-dubai/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Zero-Gravity-Dubai-Cover-scaled.webp",
+      "image": "assets/site/live/venue-zero-gravity-dubai-564c189a0d.jpg",
       "source": "live",
       "excerpt": "Experience ultimate beach vibes at Zero Gravity Dubai – beach club, restaurant, and legendary pool parties with stunning Marina views."
     },
@@ -227,7 +227,7 @@
       "city_name": "Dubai",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/bla-bla-dubai/",
-      "image": "assets/site/hero-one.jpg",
+      "image": "assets/site/live/venue-bla-bla-dubai-2f4f9dfcd8.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Bla Bla Dubai – sun, music, cocktails, and luxury vibes in the heart of JBR. Book your spot now!"
     },
@@ -239,7 +239,7 @@
       "city_name": "Dubai",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/wet-deck-dubai/",
-      "image": "assets/site/hero-people-1.jpg",
+      "image": "assets/site/live/venue-wet-deck-dubai-9fc9da3fb1.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Wet Deck Dubai with top DJs, cocktails, stunning views, and nonstop vibes at W Dubai – The Palm."
     },
@@ -251,7 +251,7 @@
       "city_name": "Dubai",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/the-social-pool-at-five-jumeirah-palm-islands/",
-      "image": "assets/site/hero-people-4.jpg",
+      "image": "assets/site/live/venue-the-social-pool-at-five-jumeirah-palm-island-53581f04a5.jpg",
       "source": "live",
       "excerpt": "Dive into luxury at The Social Pool at FIVE Jumeirah, Palm Islands. Experience vibrant vibes, world-class service, and stunning views in Dubai's most glamorous "
     },
@@ -263,7 +263,7 @@
       "city_name": "Dubai",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/mimis-pool-club-at-five-jumeirah-village/",
-      "image": "assets/site/music-ayu-stage.jpg",
+      "image": "assets/site/live/venue-mimis-pool-club-at-five-jumeirah-village-9ee83a763d.jpg",
       "source": "live",
       "excerpt": "Dive into luxury at MiMi’s Pool Club at FIVE Jumeirah Village in Dubai. Experience stunning skyline views, gourmet cuisine, private cabanas, and energetic enter"
     },
@@ -275,7 +275,7 @@
       "city_name": "Spain",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/ibiza-rocks/",
-      "image": "assets/site/hero-people-2.jpg",
+      "image": "assets/site/live/venue-ibiza-rocks-a96c20c825.jpg",
       "source": "live",
       "excerpt": "Ibiza Rocks is the ultimate party destination, known for epic live music and legendary pool parties in the heart of Ibiza."
     },
@@ -287,7 +287,7 @@
       "city_name": "Spain",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/amnesia-ibiza/",
-      "image": "assets/site/hero-people-4.jpg",
+      "image": "assets/site/live/venue-amnesia-ibiza-212b4edfad.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Amnesia Ibiza—world-famous DJs, epic vibes, and unforgettable summer nights await you!"
     },
@@ -299,7 +299,7 @@
       "city_name": "Spain",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/cafe-del-mar-beach-club-bali/",
-      "image": "assets/site/vibe-encore-umbrellas.jpg",
+      "image": "assets/site/live/venue-cafe-del-mar-beach-club-bali-1dd2fa80cb.jpg",
       "source": "live",
       "excerpt": "Experience tropical vibes at Café del Mar Beach Club Bali—chill beats, ocean views, and epic pool party await daily!"
     },
@@ -311,7 +311,7 @@
       "city_name": "Spain",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/o-beach-ibiza/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/O-Beach-Ibiza-Pool-party-cover-scaled.webp",
+      "image": "assets/site/live/venue-o-beach-ibiza-714946e875.jpg",
       "source": "live",
       "excerpt": "Join the ultimate pool party at O Beach Ibiza – luxury vibes, top DJs, and unforgettable daytime fun under the Balearic sun!"
     },
@@ -323,7 +323,7 @@
       "city_name": "New York",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/mr-purple/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Mr.-Purple-Cover-scaled.webp",
+      "image": "assets/site/live/venue-mr-purple-be3ebd2d9c.jpg",
       "source": "live",
       "excerpt": "Experience rooftop vibes at Mr. Purple NYC — cocktails, skyline views, and epic pool parties in the heart of the Lower East Side."
     },
@@ -335,7 +335,7 @@
       "city_name": "Los Angeles",
       "vibe": "dayclub",
       "live_url": "https://poolparty.com/venue/daer-day-club-of-hollywood-florida-hardrock/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Daer-Day-Club-scaled.webp",
+      "image": "assets/site/live/venue-daer-day-club-of-hollywood-florida-hardrock-d59aec1101.jpg",
       "source": "live",
       "excerpt": "Dive into epic pool parties, top DJs, and luxury vibes at Daer Day Club — South Florida’s premier daylife destination for unforgettable fun."
     },
@@ -347,7 +347,7 @@
       "city_name": "Amalfi Coast",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/one-fire-beach-amalfi-coast-italy/",
-      "image": "assets/site/dest-miami-night.jpg",
+      "image": "assets/site/live/venue-one-fire-beach-amalfi-coast-italy-56d94129c5.jpg",
       "source": "live",
       "excerpt": "Party at One Fire Beach Amalfi Coast Italy, Cocktails, DJs, ocean views, and summer vibes await on the Amalfi Coast. Book your beach day now!"
     },
@@ -359,7 +359,7 @@
       "city_name": "Italy",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/ceresio-7-pools-and-restaurant/",
-      "image": "assets/site/hero-crowd-hi.jpg",
+      "image": "assets/site/live/venue-ceresio-7-pools-and-restaurant-86d9f4c8f3.jpg",
       "source": "live",
       "excerpt": "Ceresio 7 Pools and Restaurant offers stunning rooftop pools, gourmet dining, and vibrant pool parties in the heart of Milan."
     },
@@ -371,7 +371,7 @@
       "city_name": "Bali",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/oneeighty-at-the-edge/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Oneeighty-at-The-Edge-Cover-scaled.webp",
+      "image": "assets/site/live/venue-oneeighty-at-the-edge-9722af13ac.jpg",
       "source": "live",
       "excerpt": "Splash into summer at Oneeighty at The Edge! Join us for the ultimate pool party—beats, drinks & breathtaking views!"
     },
@@ -383,7 +383,7 @@
       "city_name": "Bali",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/alternative-beach/",
-      "image": "assets/site/vibe-garden-day.jpg",
+      "image": "assets/site/live/venue-alternative-beach-14f29b7079.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate vibe at Alternative Beach – Bali's top spot for relaxation, fun, and an unforgettable pool party scene."
     },
@@ -395,7 +395,7 @@
       "city_name": "Bali",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/chapung-sebali/",
-      "image": "assets/site/vibe-garden-dusk.jpg",
+      "image": "assets/site/live/venue-chapung-sebali-77c22f3057.jpg",
       "source": "live",
       "excerpt": "Experience luxury at Chapung Sebali in Ubud. Join our vibrant pool party surrounded by jungle views, cocktails, and tropical vibes."
     },
@@ -407,7 +407,7 @@
       "city_name": "Bali",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/cocoon-beach-club/",
-      "image": "assets/site/vibe-yacht-bay.jpg",
+      "image": "assets/site/live/venue-cocoon-beach-club-22112c98ec.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate pool party at Cocoon Beach Club in Bali – luxury vibes, beachfront fun, top DJs, and unforgettable moments await!"
     },
@@ -419,7 +419,7 @@
       "city_name": "Bali",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/ulu-cliffhouse/",
-      "image": "assets/site/dest-ibiza-obeach.jpg",
+      "image": "assets/site/live/venue-ulu-cliffhouse-50f8dccfe7.jpg",
       "source": "live",
       "excerpt": "Experience oceanfront vibes, world-class dining & Bali's best pool party at Ulu Cliffhouse. Book now for unforgettable cliffside moments!"
     },
@@ -431,7 +431,7 @@
       "city_name": "Bali",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/cretya-ubud-balis-most-breathtaking-jungle-pool-club/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Cretya-Ubud-Pool-Party-scaled.webp",
+      "image": "assets/site/live/venue-cretya-ubud-balis-most-breathtaking-jungle-p-40727c0f68.jpg",
       "source": "live",
       "excerpt": "Escape to Cretya Ubud, a luxurious jungle pool club offering infinity pools, world-class dining, and stunning rice terrace views."
     },
@@ -443,7 +443,7 @@
       "city_name": "Phuket",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/yona-beach-club/",
-      "image": "assets/site/vibe-encore-umbrellas.jpg",
+      "image": "assets/site/live/venue-yona-beach-club-f11d6b388f.jpg",
       "source": "live",
       "excerpt": "Experience tropical vibes, and epic pool parties at Yona Beach Club Phuket— the ultimate beachside escape for fun, sun, and celebration."
     },
@@ -455,7 +455,7 @@
       "city_name": "France",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/azure-urban-resort-residences/",
-      "image": "assets/site/vibe-beach-terrace.jpg",
+      "image": "assets/site/live/venue-azure-urban-resort-residences-1918526742.jpg",
       "source": "live",
       "excerpt": "Experience tropical luxury at Azure Urban Resort Residences. Join our vibrant pool parties for fun, music, and unforgettable vibes!"
     },
@@ -467,7 +467,7 @@
       "city_name": "Budapest",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/sparty-budapest-dance-night-club/",
-      "image": "assets/site/hero-people-3.jpg",
+      "image": "assets/site/live/venue-sparty-budapest-dance-night-club-fc6687e7db.jpg",
       "source": "live",
       "excerpt": "Experience Sparty Budapest: a lively dance party at Széchenyi Baths with DJs, cocktails, and thermal pools for an unforgettable night out."
     },
@@ -479,7 +479,7 @@
       "city_name": "Fort lauderdale",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/the-easton-rooftop-pool-lounge/",
-      "image": "assets/site/music-ayu-stage.jpg",
+      "image": "assets/site/live/venue-the-easton-rooftop-pool-lounge-da6688cd3e.jpg",
       "source": "live",
       "excerpt": "Experience luxury at The Easton – Rooftop Pool & Lounge—unwind, sip cocktails, and enjoy vibrant pool parties in a stunning seaside setting."
     },
@@ -491,7 +491,7 @@
       "city_name": "Sydney",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/bondi-icebergs-club/",
-      "image": "assets/site/vibe-ayu-energy.jpg",
+      "image": "assets/site/live/venue-bondi-icebergs-club-a185835a2e.jpg",
       "source": "live",
       "excerpt": "Bondi Icebergs Club: iconic ocean pool, epic views, great dining, and legendary pool party at Bondi Beach. A must-visit since 1929!"
     },
@@ -503,7 +503,7 @@
       "city_name": "Sydney",
       "vibe": "yacht",
       "live_url": "https://poolparty.com/venue/yacht-social-club-sydneys-ultimate-party-on-the-water/",
-      "image": "assets/site/feat-encore-cabana.jpg",
+      "image": "assets/site/live/venue-yacht-social-club-sydneys-ultimate-party-on--8ec1cf9877.jpg",
       "source": "live",
       "excerpt": "Experience Sydney’s best floating party with Yacht Social Club. Enjoy stunning views, premium drinks, and top DJs on a luxury yacht."
     },
@@ -515,7 +515,7 @@
       "city_name": "Sydney",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/ivy-pool-club-a-chic-oasis-in-the-heart-of-australia/",
-      "image": "assets/site/feat-encore-pool.jpg",
+      "image": "assets/site/live/venue-ivy-pool-club-a-chic-oasis-in-the-heart-of-a-76f2cbbce2.jpg",
       "source": "live",
       "excerpt": "Experience luxury at Ivy Pool Club on the Gold Coast. Enjoy chic infinity pools, gourmet dining, and a lively yet relaxing atmosphere. Book your spot today!"
     },
@@ -527,7 +527,7 @@
       "city_name": "Arizona",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/talking-stick-resort/",
-      "image": "assets/site/feat-encore-cabana.jpg",
+      "image": "assets/site/live/venue-talking-stick-resort-e296c8dbae.jpg",
       "source": "live",
       "excerpt": "Experience luxury at Talking Stick Resort with casino action, fine dining, spa services, and epic pool party vibes every weekend."
     },
@@ -539,7 +539,7 @@
       "city_name": "Arizona",
       "vibe": "dayclub",
       "live_url": "https://poolparty.com/venue/maya-dayclub/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Maya-dayclub-Thumbnail-scaled.webp",
+      "image": "assets/site/live/venue-maya-dayclub-47d4bc144d.jpg",
       "source": "live",
       "excerpt": "Maya Dayclub Arizona, Scottsdale pool parties, Arizona dayclub, Maya Dayclub Scottsdale, Scottsdale nightlife destinations"
     },
@@ -551,7 +551,7 @@
       "city_name": "California",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/ace-hotel-palm-springs/",
-      "image": "assets/site/hero-people-3.jpg",
+      "image": "assets/site/live/venue-ace-hotel-palm-springs-283104d721.jpg",
       "source": "live",
       "excerpt": "Experience the ultimate vibe at ACE Hotel Palm Springs — stylish stays, desert views, and epic pool party await!"
     },
@@ -563,7 +563,7 @@
       "city_name": "California",
       "vibe": "pool",
       "live_url": "https://poolparty.com/venue/splash-house/",
-      "image": "assets/site/lifestyle-cheers.jpg",
+      "image": "assets/site/live/venue-splash-house-d76274de35.jpg",
       "source": "live",
       "excerpt": "Experience Splash House — the ultimate Palm Springs pool party with top DJs, resort vibes, and nonstop summer fun."
     },
@@ -575,7 +575,7 @@
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/riva-beach-resort/",
-      "image": "assets/site/feat-encore-pool.jpg",
+      "image": "assets/site/live/venue-riva-beach-resort-811c45d216.jpg",
       "source": "live",
       "excerpt": "Enjoy a tropical getaway at Riva Beach Resort with beachfront views, luxury stays, and unforgettable pool party fun every weekend!"
     },
@@ -587,7 +587,7 @@
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/marbela-beach/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Marbela-beach-Cover-scaled.webp",
+      "image": "assets/site/live/venue-marbela-beach-368a883e2f.jpg",
       "source": "live",
       "excerpt": "Experience luxury at Marbela Beach with stunning views, chic vibes, and epic pool parties that keep the energy going day and night."
     },
@@ -599,7 +599,7 @@
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/tropical-temptation-beach-club/",
-      "image": "https://poolparty.com/wp-content/uploads/2025/06/Tropical-Temptation-Beach-Club-cover-scaled.webp",
+      "image": "assets/site/live/venue-tropical-temptation-beach-club-296e236f27.jpg",
       "source": "live",
       "excerpt": "Tropical Temptation Beach Club offers luxury vibes, ocean views, and Bali’s hottest pool party experience. Book your unforgettable day now!"
     },
@@ -611,7 +611,7 @@
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/savaya-bali/",
-      "image": "assets/site/hero-people-2.jpg",
+      "image": "assets/site/live/venue-savaya-bali-00d4e7a737.jpg",
       "source": "live",
       "excerpt": "Join the ultimate pool party at Savaya Bali – a luxury cliffside day club featuring top DJs, ocean views, cocktails, and unforgettable vibes."
     },
@@ -623,7 +623,7 @@
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/el-kabron-bali-beach-club-with-breathtaking-sunsets-luxuries/",
-      "image": "assets/site/hero-one.jpg",
+      "image": "assets/site/live/venue-el-kabron-bali-beach-club-with-breathtaking--d36aee3122.jpg",
       "source": "live",
       "excerpt": "Discover El Kabron Bali, Uluwatu’s top cliffside beach club with stunning ocean views, and unforgettable sunset experiences."
     }

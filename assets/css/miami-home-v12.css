@@ -872,3 +872,26 @@ body::before{
     1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
     0 2px 6px rgba(0,0,0,.35) !important;
 }
+
+/* Official Pool Party logo image */
+.nav .logo,
+.logo{
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:0 !important;
+  line-height:0 !important;
+}
+.logo .logo-mark{display:none !important}
+.logo img,
+.logo-img{
+  display:block !important;
+  height:52px !important;
+  width:auto !important;
+  max-width:160px !important;
+  object-fit:contain !important;
+}
+@media (max-width:720px){
+  .logo img,.logo-img{height:42px !important}
+}

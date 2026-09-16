@@ -873,7 +873,8 @@ body::before{
     0 2px 6px rgba(0,0,0,.35) !important;
 }
 
-/* Official Pool Party logo image */
+
+/* Official Pool Party logo — jazzed */
 .nav .logo,
 .logo{
   -webkit-text-stroke:0 !important;
@@ -882,19 +883,20 @@ body::before{
   align-items:center !important;
   gap:0 !important;
   line-height:0 !important;
+  filter:drop-shadow(0 4px 0 #000) drop-shadow(0 0 14px rgba(255,106,154,.55)) drop-shadow(0 0 22px rgba(255,230,0,.4)) !important;
 }
 .logo .logo-mark{display:none !important}
 .logo img,
 .logo-img{
   display:block !important;
-  height:78px !important;
+  height:88px !important;
   width:auto !important;
-  max-width:220px !important;
+  max-width:260px !important;
   object-fit:contain !important;
 }
-.nav-inner{min-height:5.5rem !important}
+.nav-inner{min-height:6rem !important}
 @media (max-width:720px){
-  .logo img,.logo-img{height:58px !important;max-width:170px !important}
-  .nav-inner{min-height:4.6rem !important}
+  .logo img,.logo-img{height:64px !important;max-width:200px !important}
+  .nav-inner{min-height:5rem !important}
 }
 

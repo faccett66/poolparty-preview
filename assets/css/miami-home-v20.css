@@ -916,3 +916,21 @@ body::before{
   .nav-inner{min-height:3.75rem !important}
 }
 
+/* Nav links line — bigger */
+.nav-links{
+  gap:1.15rem !important;
+  font-size:1.05rem !important;
+}
+.nav-links a{
+  font-size:1.12rem !important;
+  font-weight:800 !important;
+  letter-spacing:.01em !important;
+  padding:.35rem 0 !important;
+}
+.nav-drawer a{
+  font-size:1.15rem !important;
+  font-weight:800 !important;
+}
+@media (max-width:900px){
+  .nav-links a{font-size:1rem !important}
+}

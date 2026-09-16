@@ -742,30 +742,30 @@ body::before{
 }
 .section-head h2{color:var(--ink) !important}
 
-/* ========== MIAMI ELECTRIC HEADER ========== */
+
+/* ========== MIAMI ELECTRIC HEADER (light + compact) ========== */
 .proto-banner{
-  background:linear-gradient(90deg,#ff6a9a 0%,#fff066 50%,#4db8f0 100%) !important;
+  background:linear-gradient(90deg,#ff8ab8 0%,#fff5a0 50%,#7ec8f5 100%) !important;
   color:#0a1628 !important;
   font-weight:800 !important;
   letter-spacing:.02em !important;
+  padding:.4rem 1rem !important;
+  font-size:.72rem !important;
 }
 .proto-banner a{color:#0a1628 !important;font-weight:800 !important}
 
 .nav{
-  background:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
-  background-image:linear-gradient(105deg,#fff066 0%,#ffb07a 28%,#ff6a9a 58%,#4db8f0 100%) !important;
-  border-bottom:3px solid #0a1628 !important;
-  box-shadow:0 10px 30px rgba(255,106,154,.28) !important;
+  background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%) !important;
+  background-image:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%) !important;
+  border-bottom:2px solid #ffe600 !important;
+  box-shadow:0 8px 24px rgba(255,138,184,.22) !important;
   backdrop-filter:none !important;
 }
-.nav::before{
-  display:none !important;
-  background:transparent !important;
-}
+.nav::before{display:none !important;background:transparent !important}
 .nav.scrolled{
-  background:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
-  background-image:linear-gradient(105deg,#4db8f0 0%,#ff6a9a 45%,#fff066 100%) !important;
-  border-bottom-color:#0a1628 !important;
+  background:linear-gradient(105deg,#7ec8f5 0%,#ff8ab8 45%,#fff5a0 100%) !important;
+  background-image:linear-gradient(105deg,#7ec8f5 0%,#ff8ab8 45%,#fff5a0 100%) !important;
+  border-bottom-color:#ffe600 !important;
 }
 .nav.scrolled::before{display:none !important}
 
@@ -816,16 +816,15 @@ body::before{
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
 
 /* HEADER LETTER OUTLINE — yellow */
-.nav .logo,
-.nav .nav-links a,
+.nav .nav-links a:not([href="index.html"]):not(.nav-home),
 .nav .nav-cta,
 .proto-banner{
   -webkit-text-stroke:1px #ffe600 !important;
   paint-order:stroke fill !important;
   text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 8px rgba(255,230,0,.35) !important;
 }
-.nav .nav-links a:hover,
-.nav .nav-links a.active{
+.nav .nav-links a:not([href="index.html"]):not(.nav-home):hover,
+.nav .nav-links a:not([href="index.html"]):not(.nav-home).active{
   color:#fff !important;
   -webkit-text-stroke:1.1px #ffe600 !important;
   text-shadow:1px 0 0 #ffe600,-1px 0 0 #ffe600,0 1px 0 #ffe600,0 -1px 0 #ffe600,0 2px 10px rgba(255,230,0,.45) !important;
@@ -833,4 +832,164 @@ body::before{
 .nav .nav-cta{
   color:#0a1628 !important;
   -webkit-text-stroke:1px #ffe600 !important;
+}
+
+/* Header Home — yellow letters, thick black outline */
+.nav .nav-links a.nav-home,
+.nav .nav-links a[href="index.html"],
+.nav-drawer a.nav-home,
+.nav-drawer a[href="index.html"]{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  font-weight:800 !important;
+  -webkit-text-stroke:1.5px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:
+    1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
+    2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
+    0 3px 8px rgba(0,0,0,.4) !important;
+}
+.nav .nav-links a.nav-home:hover,
+.nav .nav-links a.nav-home.active,
+.nav .nav-links a[href="index.html"]:hover,
+.nav .nav-links a[href="index.html"].active{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1.6px #000 !important;
+}
+
+/* Header Home underline — yellow + black outline */
+.nav .nav-links a.nav-home.active::after,
+.nav .nav-links a.nav-home:hover::after,
+.nav .nav-links a[href="index.html"].active::after,
+.nav .nav-links a[href="index.html"]:hover::after{
+  background:#ffe600 !important;
+  height:3px !important;
+  border:1.5px solid #000 !important;
+  box-shadow:
+    0 0 0 1px #000,
+    1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
+    0 2px 6px rgba(0,0,0,.35) !important;
+}
+
+
+
+
+
+
+/* Header logo — matches light Miami header */
+.nav .logo,
+.logo{
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  z-index:50 !important;
+  position:relative !important;
+  line-height:0 !important;
+  flex:0 0 auto !important;
+}
+.logo .logo-mark{display:none !important}
+.logo img,
+.logo-img{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  height:72px !important;
+  width:auto !important;
+  max-width:210px !important;
+  object-fit:contain !important;
+}
+.nav-inner{
+  min-height:5rem !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:.85rem !important;
+  overflow:visible !important;
+}
+.nav{overflow:visible !important}
+@media (max-width:720px){
+  .logo img,.logo-img{height:42px !important;max-width:130px !important}
+  .nav-inner{min-height:3.75rem !important}
+}
+
+/* Nav links line — bigger */
+.nav-links{
+  gap:1.15rem !important;
+  font-size:1.05rem !important;
+}
+.nav-links a{
+  font-size:1.12rem !important;
+  font-weight:800 !important;
+  letter-spacing:.01em !important;
+  padding:.35rem 0 !important;
+}
+.nav-drawer a{
+  font-size:1.15rem !important;
+  font-weight:800 !important;
+}
+@media (max-width:900px){
+  .nav-links a{font-size:1rem !important}
+}
+
+/* Hero over pool — bigger whole section */
+.hero{
+  min-height:84vh !important;
+  padding:9.25rem 0 5.5rem !important;
+  display:flex !important;
+  align-items:flex-end !important;
+}
+.hero-content{
+  max-width:58rem !important;
+  padding-bottom:1.25rem !important;
+}
+.hero .eyebrow{
+  font-size:clamp(1.28rem, 3vw, 1.65rem) !important;
+  margin-bottom:1rem !important;
+}
+.hero h1{
+  font-size:clamp(3.5rem, 9.5vw, 6.1rem) !important;
+  line-height:1.02 !important;
+  margin-bottom:1.1rem !important;
+}
+.hero-lead{
+  font-size:clamp(1.22rem, 2.4vw, 1.55rem) !important;
+  max-width:36rem !important;
+  margin-bottom:1.6rem !important;
+  line-height:1.45 !important;
+}
+.hero-actions{
+  gap:1.15rem 1.6rem !important;
+  margin-bottom:2rem !important;
+}
+.hero-actions .btn-primary{
+  font-size:1.22rem !important;
+  padding:1.05rem 1.9rem !important;
+}
+.hero-cta-secondary{
+  font-size:1.18rem !important;
+}
+.hero-pill{
+  font-size:1.08rem !important;
+  padding:.85rem 1.2rem !important;
+}
+.hero-pill strong{
+  font-size:1.22rem !important;
+}
+.hero-bg img{
+  object-position:center 42% !important;
+}
+@media (max-width:720px){
+  .hero{min-height:74vh !important;padding:7.5rem 0 4rem !important}
+  .hero h1{font-size:clamp(2.8rem, 12.5vw, 3.9rem) !important}
+}
+
+/* Hero eyebrow only — thicker black outline */
+.hero .eyebrow{
+  -webkit-text-stroke:1.35px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,1px 1px 0 #000,0 3px 12px rgba(0,0,0,.55) !important;
 }

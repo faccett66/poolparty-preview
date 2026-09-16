@@ -13,3 +13,9 @@ feat-encore-pool.jpg <- https://www.poolparty.com/wp-content/uploads/2025/06/Enc
 vibe-encore-umbrellas.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Encore-Beach-Club-Pool-Party-4.webp
 vibe-ayu-energy.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Pool-Party-Ayu-Dayclub-at-Resorts-World-1.webp
 vibe-garden-day.jpg <- https://www.poolparty.com/wp-content/uploads/2025/05/Garden-of-the-Gods-Pool-Oasis-at-Caesars-Pool-party-1.webp
+
+--- 2026-09-16 image accuracy pass ---
+assets/site/live/* <- live poolparty.com wp-json product/venue featured media + city destination covers
+  (downloaded + JPEG compressed max-w 1200 q82 for preview fidelity)
+city-southampton-* <- Unsplash royalty-clear beach (PP had no Southampton city cover)
+Homepage vibe tiles: Encore crowd / beach terrace / Garden pool / Yacht bay / Encore cabana

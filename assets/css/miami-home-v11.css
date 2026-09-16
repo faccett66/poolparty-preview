@@ -858,10 +858,17 @@ body::before{
   -webkit-text-fill-color:#ffe600 !important;
   -webkit-text-stroke:1.6px #000 !important;
 }
+
+/* Header Home underline — yellow + black outline */
 .nav .nav-links a.nav-home.active::after,
 .nav .nav-links a.nav-home:hover::after,
 .nav .nav-links a[href="index.html"].active::after,
 .nav .nav-links a[href="index.html"]:hover::after{
-  background:#000 !important;
-  box-shadow:0 0 0 1px #ffe600 !important;
+  background:#ffe600 !important;
+  height:3px !important;
+  border:1.5px solid #000 !important;
+  box-shadow:
+    0 0 0 1px #000,
+    1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000,
+    0 2px 6px rgba(0,0,0,.35) !important;
 }

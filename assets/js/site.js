@@ -2,6 +2,8 @@
 (function () {
   const CART_KEY = 'pp_demo_cart_v1';
   const CITY_KEY = 'pp_selected_city';
+  const IMG_BUST = '28';
+  const bust = (src) => (!src ? '' : src.includes('?') ? src : `${src}?v=${IMG_BUST}`);
   const PREVIEW_TODAY = '2026-09-15'; // mid-Sep 2026 preview "now"
 
   const PP = {
@@ -136,7 +138,7 @@
       return `
       <article class="card" data-city="${this.esc(ev.city)}" data-vibe="${this.esc(ev.vibe)}">
         <div class="card-media">
-          <img src="${this.esc(ev.image)}" alt="${this.esc(ev.title)}" loading="lazy" />
+          <img src="${this.esc(bust(ev.image))}" alt="${this.esc(ev.title)}" loading="lazy" />
           <div class="badge-row">
             <span class="tag">${this.esc((ev.vibe || 'pool').toUpperCase())}</span>
             ${this.isUpcoming(ev) ? '<span class="tag live">THIS WEEK</span>' : '<span class="tag demo">PAST CATALOG</span>'}
@@ -169,7 +171,7 @@
       return `
       <article class="card" data-city="${this.esc(v.city)}" data-vibe="${this.esc(v.vibe)}">
         <div class="card-media">
-          <img src="${this.esc(v.image)}" alt="${this.esc(v.name)}" loading="lazy" />
+          <img src="${this.esc(bust(v.image))}" alt="${this.esc(v.name)}" loading="lazy" />
           <div class="badge-row">
             <span class="tag">${this.esc((v.vibe || 'pool').toUpperCase())}</span>
             <span class="tag live">LIVE</span>

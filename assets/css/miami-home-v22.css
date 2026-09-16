@@ -934,3 +934,55 @@ body::before{
 @media (max-width:900px){
   .nav-links a{font-size:1rem !important}
 }
+
+/* Hero over pool — bigger whole section */
+.hero{
+  min-height:78vh !important;
+  padding:8.5rem 0 5rem !important;
+  display:flex !important;
+  align-items:flex-end !important;
+}
+.hero-content{
+  max-width:58rem !important;
+  padding-bottom:1.25rem !important;
+}
+.hero .eyebrow{
+  font-size:clamp(1.2rem, 2.8vw, 1.55rem) !important;
+  margin-bottom:1rem !important;
+}
+.hero h1{
+  font-size:clamp(3.2rem, 9vw, 5.6rem) !important;
+  line-height:1.02 !important;
+  margin-bottom:1.1rem !important;
+}
+.hero-lead{
+  font-size:clamp(1.15rem, 2.2vw, 1.45rem) !important;
+  max-width:36rem !important;
+  margin-bottom:1.6rem !important;
+  line-height:1.45 !important;
+}
+.hero-actions{
+  gap:1.15rem 1.6rem !important;
+  margin-bottom:2rem !important;
+}
+.hero-actions .btn-primary{
+  font-size:1.15rem !important;
+  padding:.95rem 1.75rem !important;
+}
+.hero-cta-secondary{
+  font-size:1.1rem !important;
+}
+.hero-pill{
+  font-size:1rem !important;
+  padding:.75rem 1.1rem !important;
+}
+.hero-pill strong{
+  font-size:1.15rem !important;
+}
+.hero-bg img{
+  object-position:center 42% !important;
+}
+@media (max-width:720px){
+  .hero{min-height:70vh !important;padding:7rem 0 3.5rem !important}
+  .hero h1{font-size:clamp(2.6rem, 12vw, 3.6rem) !important}
+}

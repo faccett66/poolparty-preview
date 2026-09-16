@@ -937,8 +937,8 @@ body::before{
 
 /* Hero over pool — bigger whole section */
 .hero{
-  min-height:78vh !important;
-  padding:8.5rem 0 5rem !important;
+  min-height:84vh !important;
+  padding:9.25rem 0 5.5rem !important;
   display:flex !important;
   align-items:flex-end !important;
 }
@@ -947,16 +947,16 @@ body::before{
   padding-bottom:1.25rem !important;
 }
 .hero .eyebrow{
-  font-size:clamp(1.2rem, 2.8vw, 1.55rem) !important;
+  font-size:clamp(1.28rem, 3vw, 1.65rem) !important;
   margin-bottom:1rem !important;
 }
 .hero h1{
-  font-size:clamp(3.2rem, 9vw, 5.6rem) !important;
+  font-size:clamp(3.5rem, 9.5vw, 6.1rem) !important;
   line-height:1.02 !important;
   margin-bottom:1.1rem !important;
 }
 .hero-lead{
-  font-size:clamp(1.15rem, 2.2vw, 1.45rem) !important;
+  font-size:clamp(1.22rem, 2.4vw, 1.55rem) !important;
   max-width:36rem !important;
   margin-bottom:1.6rem !important;
   line-height:1.45 !important;
@@ -966,23 +966,23 @@ body::before{
   margin-bottom:2rem !important;
 }
 .hero-actions .btn-primary{
-  font-size:1.15rem !important;
-  padding:.95rem 1.75rem !important;
+  font-size:1.22rem !important;
+  padding:1.05rem 1.9rem !important;
 }
 .hero-cta-secondary{
-  font-size:1.1rem !important;
+  font-size:1.18rem !important;
 }
 .hero-pill{
-  font-size:1rem !important;
-  padding:.75rem 1.1rem !important;
+  font-size:1.08rem !important;
+  padding:.85rem 1.2rem !important;
 }
 .hero-pill strong{
-  font-size:1.15rem !important;
+  font-size:1.22rem !important;
 }
 .hero-bg img{
   object-position:center 42% !important;
 }
 @media (max-width:720px){
-  .hero{min-height:70vh !important;padding:7rem 0 3.5rem !important}
-  .hero h1{font-size:clamp(2.6rem, 12vw, 3.6rem) !important}
+  .hero{min-height:74vh !important;padding:7.5rem 0 4rem !important}
+  .hero h1{font-size:clamp(2.8rem, 12.5vw, 3.9rem) !important}
 }

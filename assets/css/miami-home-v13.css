@@ -887,11 +887,14 @@ body::before{
 .logo img,
 .logo-img{
   display:block !important;
-  height:52px !important;
+  height:78px !important;
   width:auto !important;
-  max-width:160px !important;
+  max-width:220px !important;
   object-fit:contain !important;
 }
+.nav-inner{min-height:5.5rem !important}
 @media (max-width:720px){
-  .logo img,.logo-img{height:42px !important}
+  .logo img,.logo-img{height:58px !important;max-width:170px !important}
+  .nav-inner{min-height:4.6rem !important}
 }
+
