@@ -660,6 +660,7 @@ body::before {
   filter: brightness(1.06) contrast(1.04) saturate(1.05) !important;
 }
 .hero-content {
+  /* Frosted copy panel ONLY — hero CTAs must stay outside this node */
   max-width: 42rem !important;
   padding: 1.25rem 1.35rem 1.35rem !important;
   border-radius: 1.15rem !important;
@@ -1026,3 +1027,30 @@ a, a:link, a:visited {
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
 }
+
+/* Hero stack: frosted copy panel + CTAs OUTSIDE the box (Book Now matches nav) */
+.hero-stack{
+  position:relative;
+  z-index:2;
+  max-width:58rem !important;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:1.1rem;
+  padding-bottom:1.25rem !important;
+}
+.hero .hero-content{
+  /* text-only glass panel — CTAs are siblings outside */
+  max-width:42rem !important;
+  width:100%;
+}
+.hero .hero-actions{
+  position:relative;
+  z-index:6;
+  isolation:isolate;
+  /* sit clear of any parent backdrop-filter */
+  filter:none !important;
+  opacity:1 !important;
+  mix-blend-mode:normal !important;
+}
+
