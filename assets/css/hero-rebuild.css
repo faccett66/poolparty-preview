@@ -1,0 +1,242 @@
+/* ============================================================
+   Homepage hero REBUILD (loads last) — single source of truth
+   Centered glass panel + Book Now chip twin of nav .nav-cta
+   ============================================================ */
+
+.hero[data-hero-rebuild]{
+  position:relative !important;
+  min-height:84vh !important;
+  min-height:84dvh !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important; /* CENTER the whole stack */
+  padding:9rem 1rem 4.5rem !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+}
+
+.hero[data-hero-rebuild] .hero-bg{
+  position:absolute !important; inset:0 !important; z-index:0 !important;
+  background:#070B14 !important;
+}
+.hero[data-hero-rebuild] .hero-bg img{
+  width:100% !important; height:100% !important;
+  object-fit:cover !important; object-position:center 40% !important;
+  display:block !important; filter:none !important;
+}
+
+.hero[data-hero-rebuild] .hero-overlay{
+  position:absolute !important; inset:0 !important; z-index:1 !important;
+  pointer-events:none !important;
+  background:
+    linear-gradient(180deg, rgba(7,11,20,.55) 0%, rgba(7,11,20,.18) 40%, rgba(7,11,20,.35) 70%, rgba(7,11,20,.62) 100%),
+    linear-gradient(90deg, rgba(7,11,20,.28) 0%, rgba(7,11,20,.08) 50%, rgba(7,11,20,.2) 100%) !important;
+}
+
+/* Center column */
+.hero[data-hero-rebuild] .hero-center{
+  position:relative !important;
+  z-index:2 !important;
+  width:min(42rem, calc(100% - 1.5rem)) !important;
+  margin:0 auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:1.15rem !important;
+  text-align:center !important;
+}
+
+/* Frosted glass — light, centered */
+.hero[data-hero-rebuild] .hero-panel{
+  width:100% !important;
+  box-sizing:border-box !important;
+  padding:1.35rem 1.5rem 1.4rem !important;
+  border-radius:1.15rem !important;
+  background:linear-gradient(165deg, rgba(14,26,43,.55), rgba(7,11,20,.42)) !important;
+  border:1px solid rgba(0,229,232,.28) !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.4) !important;
+  backdrop-filter:blur(12px) !important;
+  -webkit-backdrop-filter:blur(12px) !important;
+  text-align:center !important;
+}
+
+.hero[data-hero-rebuild] .hero-kicker{
+  margin:0 0 .85rem !important;
+  font-size:clamp(.9rem, 2vw, 1.05rem) !important;
+  font-weight:700 !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase !important;
+  color:#00E5E8 !important;
+  -webkit-text-fill-color:#00E5E8 !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:0 2px 14px rgba(0,0,0,.7) !important;
+}
+
+.hero[data-hero-rebuild] h1{
+  margin:0 0 .85rem !important;
+  font-family:var(--font-display, Fraunces, Georgia, serif) !important;
+  font-size:clamp(2.6rem, 8vw, 4.8rem) !important;
+  font-weight:700 !important;
+  line-height:1.05 !important;
+  color:#F4F7FA !important;
+  -webkit-text-fill-color:#F4F7FA !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:0 4px 28px rgba(0,0,0,.7) !important;
+}
+.hero[data-hero-rebuild] h1 .sun-out{
+  color:#F4F7FA !important;
+  -webkit-text-fill-color:#F4F7FA !important;
+}
+.hero[data-hero-rebuild] h1 em{
+  font-style:italic !important;
+  color:#FF3864 !important;
+  -webkit-text-fill-color:#FF3864 !important;
+  text-shadow:0 4px 22px rgba(0,0,0,.65) !important;
+}
+
+.hero[data-hero-rebuild] .hero-copy{
+  margin:0 auto 1.15rem !important;
+  max-width:34rem !important;
+  font-size:1.05rem !important;
+  font-weight:500 !important;
+  line-height:1.5 !important;
+  color:#B7C2D0 !important;
+  -webkit-text-fill-color:#B7C2D0 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.5) !important;
+}
+
+.hero[data-hero-rebuild] .hero-meta{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:.65rem !important;
+  justify-content:center !important;
+  align-items:stretch !important;
+}
+
+.hero[data-hero-rebuild] .hero-chip{
+  display:inline-flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  text-align:left !important;
+  padding:.7rem 1.05rem !important;
+  border-radius:.95rem !important;
+  background:rgba(7,11,20,.75) !important;
+  border:1px solid rgba(0,229,232,.28) !important;
+  color:#00E5E8 !important;
+  -webkit-text-fill-color:#00E5E8 !important;
+  font-size:.72rem !important;
+  font-weight:650 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+  text-decoration:none !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.3) !important;
+}
+.hero[data-hero-rebuild] .hero-chip strong{
+  display:block !important;
+  margin-top:.2rem !important;
+  font-size:.92rem !important;
+  font-weight:750 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  color:#F4F7FA !important;
+  -webkit-text-fill-color:#F4F7FA !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+}
+
+/* THE glass Book Now chip — IDENTICAL coral to nav .nav-cta */
+.hero[data-hero-rebuild] .hero-chip-book,
+.hero[data-hero-rebuild] a.hero-chip-book{
+  background:#FF3864 !important;
+  background-color:#FF3864 !important;
+  background-image:none !important;
+  border:none !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  cursor:pointer !important;
+}
+.hero[data-hero-rebuild] .hero-chip-book strong{
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+}
+.hero[data-hero-rebuild] a.hero-chip-book:hover{
+  filter:brightness(1.06) !important;
+  color:#fff !important;
+}
+
+/* CTAs under glass — centered, matching pills */
+.hero[data-hero-rebuild] .hero-ctas{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:.85rem !important;
+  width:100% !important;
+}
+
+.hero[data-hero-rebuild] .hero-cta{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:3.1rem !important;
+  padding:0 1.55rem !important;
+  border-radius:999px !important;
+  font-size:1.05rem !important;
+  font-weight:700 !important;
+  letter-spacing:.02em !important;
+  text-decoration:none !important;
+  line-height:1 !important;
+  box-sizing:border-box !important;
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  backdrop-filter:none !important;
+}
+
+/* Primary Book Now button — same coral as nav */
+.hero[data-hero-rebuild] .hero-cta-book{
+  background:#FF3864 !important;
+  background-image:none !important;
+  color:#FFFFFF !important;
+  border:none !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+}
+.hero[data-hero-rebuild] .hero-cta-book:hover{
+  filter:brightness(1.06) !important;
+  color:#fff !important;
+}
+
+.hero[data-hero-rebuild] .hero-cta-cities{
+  background:rgba(7,11,20,.72) !important;
+  color:#F4F7FA !important;
+  border:1.5px solid rgba(244,247,250,.35) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.35) !important;
+}
+.hero[data-hero-rebuild] .hero-cta-cities:hover{
+  border-color:rgba(0,229,232,.65) !important;
+}
+
+.hero[data-hero-rebuild] .hero-cta-offer{
+  background:rgba(7,11,20,.78) !important;
+  color:#F4F7FA !important;
+  border:1.5px solid rgba(0,229,232,.7) !important;
+  box-shadow:0 0 14px rgba(0,229,232,.28), 0 8px 22px rgba(0,0,0,.35) !important;
+  animation:hero-offer-glow 2.4s ease-in-out infinite !important;
+}
+@keyframes hero-offer-glow{
+  0%,100%{ box-shadow:0 0 10px rgba(0,229,232,.22), 0 8px 22px rgba(0,0,0,.35); }
+  50%{ box-shadow:0 0 18px rgba(0,229,232,.4), 0 8px 22px rgba(0,0,0,.35); }
+}
+@media (prefers-reduced-motion:reduce){
+  .hero[data-hero-rebuild] .hero-cta-offer{ animation:none !important; }
+}
+
