@@ -36,3 +36,7 @@
 - `venues.html` city filter: densest-first with venue counts
 - Cache `site.js?v=42` on city/events/venues
 
+## QA pass 3 — 2026-09-16 06:26 ET
+- Retargeted 4 events that still used mismatched Vegas/Ibiza stock to city-matched local covers (Sydney/Dubai/France) when live featured media was missing
+- Venues still **190**
+
