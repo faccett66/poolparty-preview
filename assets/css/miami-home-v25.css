@@ -223,10 +223,15 @@ body::before{
     linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/lifestyle-cheers.jpg") center 35%/cover no-repeat;
 }
-.page-hero.contact,.page-hero.advertise{
+.page-hero.contact{
   background:
     linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/vibe-yacht-bay.jpg") center 40%/cover no-repeat;
+}
+.page-hero.advertise{
+  /* No photo — partner pitch stays clean */
+  background:
+    linear-gradient(165deg, #0E1A2B 0%, #070B14 55%, #0a1628 100%);
 }
 .page-hero.faqs{
   background:
