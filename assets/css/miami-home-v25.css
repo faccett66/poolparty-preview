@@ -727,9 +727,24 @@ body::before{
   color:var(--pp-cyan,#00E5E8) !important;
   box-shadow:0 6px 22px rgba(255,106,154,.18) !important;
 }
+.hero-glass .hero-pill-book,
 .hero-glass .hero-pill:nth-child(2){
-  background:linear-gradient(145deg, rgba(255,106,154,.28), rgba(255,240,102,.22)) !important;
-  border-color:rgba(255,106,154,.55) !important;
+  /* Same solid coral as nav Book Now — not yellow-pink wash */
+  background:var(--pp-coral,#FF3864) !important;
+  background-image:none !important;
+  border:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  backdrop-filter:none !important;
+  opacity:1 !important;
+}
+.hero-glass .hero-pill-book strong,
+.hero-glass .hero-pill:nth-child(2) strong{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
 }
 .hero-pill strong{
   color:#ff5a00 !important;
