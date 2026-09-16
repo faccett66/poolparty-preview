@@ -1052,21 +1052,26 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
   line-height:1 !important;
   transform:none !important;
 }
-/* Book Now — coral solid, same pill geometry */
+/* Book Now — exact same coral as nav .nav-cta (kill leftover yellow-pink gradient) */
 .hero-actions .btn-primary{
   color:#fff !important;
   background:var(--pp-coral,#FF3864) !important;
-  border:1.5px solid var(--pp-coral,#FF3864) !important;
+  background-image:none !important;
+  border:none !important;
   box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
   text-shadow:none !important;
   animation:none !important;
   backdrop-filter:none !important;
+  filter:none !important;
 }
 .hero-actions .btn-primary:hover{
-  background:var(--pp-coral-hover,#FF5A7C) !important;
-  border-color:var(--pp-coral-hover,#FF5A7C) !important;
+  background:var(--pp-coral,#FF3864) !important;
+  background-image:none !important;
+  filter:brightness(1.06) !important;
+  border:none !important;
   box-shadow:0 10px 28px rgba(255,56,100,.45) !important;
   transform:translateY(-1px) !important;
+  color:#fff !important;
 }
 /* Browse cities — glass twin of Free offer, no pulse */
 .hero-actions .btn-glass:not(.free-offer-link){
