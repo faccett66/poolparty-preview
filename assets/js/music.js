@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v13 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v14 */
 (function (global) {
   'use strict';
 
@@ -328,6 +328,41 @@
     });
   }
 
+  function showStartChip(show) {
+    if (!dock) return;
+    var chip = dock.querySelector('.pp-music-dock__start');
+    if (show) {
+      if (!chip) {
+        chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'pp-music-dock__start';
+        chip.setAttribute('aria-label', 'Start soundtrack');
+        chip.textContent = 'Tap to start soundtrack';
+        chip.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          hideStartChip();
+          disarmGestureUnlock();
+          muted = false;
+          if (volume < 0.05) volume = DEFAULT_VOL;
+          persist();
+          applyMute();
+          play();
+        });
+        dock.appendChild(chip);
+      }
+      chip.hidden = false;
+      dock.classList.add('needs-start');
+    } else if (chip) {
+      chip.hidden = true;
+      dock.classList.remove('needs-start');
+    }
+  }
+
+  function hideStartChip() {
+    showStartChip(false);
+  }
+
   function disarmGestureUnlock() {
     if (typeof gestureUnbind === 'function') {
       try { gestureUnbind(); } catch (e) { /* ignore */ }
@@ -336,43 +371,92 @@
     gestureArmed = false;
   }
 
+  function unlockAndPlay() {
+    disarmGestureUnlock();
+    hideStartChip();
+    if (!audio) return;
+    muted = false;
+    if (volume < 0.05) volume = DEFAULT_VOL;
+    persist();
+    applyMute();
+    if (audio.paused) play();
+  }
+
   function armGestureUnlock() {
     if (gestureArmed) return;
     gestureArmed = true;
-    var evts = ['click', 'keydown', 'touchstart', 'pointerdown'];
-    // Bubble phase so dock play/toggle handlers run first; only start if still paused.
-    var unlock = function () {
-      disarmGestureUnlock();
-      if (audio && audio.paused) play();
+    showStartChip(true);
+    var evts = ['pointerdown', 'touchstart', 'keydown', 'click'];
+    // Capture phase so we unlock in the same gesture before soft-nav runs.
+    var unlock = function (e) {
+      // Don't steal dock controls — they handle play themselves
+      if (e && e.target && e.target.closest && e.target.closest('.pp-music-dock__btn, .pp-music-dock__start')) {
+        return;
+      }
+      unlockAndPlay();
     };
     evts.forEach(function (t) {
-      document.addEventListener(t, unlock, false);
+      document.addEventListener(t, unlock, true);
     });
     gestureUnbind = function () {
       evts.forEach(function (t) {
-        document.removeEventListener(t, unlock, false);
+        document.removeEventListener(t, unlock, true);
       });
     };
   }
 
-  /** Unmuted autoplay attempt — never uses muted-unlock hack. */
-  function tryAutoplay() {
-    if (!audio) return;
+  function attemptPlayPromise() {
     applyMute();
     var p = audio.play();
     if (p && p.then) {
-      p.then(function () {
+      return p.then(function () {
         setPlayingUI(true);
         wantPlaying = true;
         sessionTouched = true;
         ssSet(KEY_TOUCHED, '1');
         persistSessionPlayback();
-      }).catch(function () {
+        hideStartChip();
+        disarmGestureUnlock();
+      });
+    }
+    setPlayingUI(true);
+    hideStartChip();
+    return Promise.resolve();
+  }
+
+  /** Try unmuted autoplay; if blocked, show chip + capture-phase gesture unlock. */
+  function tryAutoplay() {
+    if (!audio) return;
+    // Fresh visits should land at ~50% unless user set a volume before
+    if (!localStorage.getItem(KEY_VOL)) {
+      volume = DEFAULT_VOL;
+    }
+    muted = false;
+    persist();
+    applyMute();
+
+    var run = function () {
+      attemptPlayPromise().catch(function () {
         setPlayingUI(false);
         armGestureUnlock();
       });
+    };
+
+    if (audio.readyState >= 2) {
+      run();
     } else {
-      setPlayingUI(true);
+      var onReady = function () {
+        audio.removeEventListener('canplay', onReady);
+        audio.removeEventListener('loadeddata', onReady);
+        run();
+      };
+      audio.addEventListener('canplay', onReady);
+      audio.addEventListener('loadeddata', onReady);
+      try { audio.load(); } catch (e) { /* ignore */ }
+      // Fallback if events never fire
+      setTimeout(function () {
+        if (audio && audio.paused && !gestureArmed) run();
+      }, 800);
     }
   }
 
@@ -658,6 +742,16 @@
       var a = e.target.closest && e.target.closest('a[href]');
       if (!shouldSoftNav(a, e)) return;
       e.preventDefault();
+      // Same user gesture: start audio if autoplay was blocked, then hop
+      if (audio && audio.paused) {
+        muted = false;
+        applyMute();
+        var p = audio.play();
+        if (p && p.catch) p.catch(function () { /* still blocked */ });
+        else setPlayingUI(true);
+        hideStartChip();
+        disarmGestureUnlock();
+      }
       softNavigate(a.href, { replace: false });
     }, true);
 
