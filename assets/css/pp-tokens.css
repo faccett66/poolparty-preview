@@ -1097,3 +1097,47 @@ a, a:link, a:visited {
   align-items:center !important;
 }
 
+
+/* Filters / dropdowns — dark navy (Events, Venues, Cities) */
+.filters input,
+.filters select,
+.when-bar {
+  background: var(--pp-bg-3) !important;
+  border: 1px solid var(--pp-line) !important;
+  color: var(--pp-text) !important;
+  box-shadow: none !important;
+}
+.when-bar {
+  background: linear-gradient(105deg, rgba(21, 34, 56, 0.95), rgba(14, 26, 43, 0.98)) !important;
+  border-color: var(--pp-line) !important;
+}
+.when-bar label {
+  color: var(--pp-text) !important;
+}
+.when-bar input[type="checkbox"] {
+  background: transparent !important;
+  border: none !important;
+  accent-color: var(--pp-coral, #FF3864) !important;
+  width: 1.05rem !important;
+  height: 1.05rem !important;
+}
+.filters input::placeholder {
+  color: var(--pp-text-mute) !important;
+}
+.filters input:focus,
+.filters select:focus {
+  border-color: var(--pp-cyan) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.18) !important;
+  outline: none !important;
+}
+.filters select {
+  background-color: var(--pp-bg-3) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300E5E8'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  color: var(--pp-text) !important;
+}
+.filters select option {
+  background: var(--pp-bg-2);
+  color: var(--pp-text);
+}
