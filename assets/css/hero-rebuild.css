@@ -340,9 +340,9 @@ html body .nav .nav-links a[href="index.html"]:hover::after{
   height:3px !important;
 }
 
-/* Header logo — tight crop, transparent, inside 4.5rem bar */
+/* Header logo — navy on transparent, fits inside 4.5rem bar */
 html body .nav{
-  overflow:hidden !important;
+  overflow:visible !important;
 }
 html body .nav .nav-inner,
 html body .nav-inner{
@@ -350,35 +350,35 @@ html body .nav-inner{
   height:4.5rem !important;
   max-height:4.5rem !important;
   align-items:center !important;
-  overflow:hidden !important;
+  overflow:visible !important;
 }
 html body .nav .logo,
 html body a.logo{
   display:inline-flex !important;
   align-items:center !important;
-  overflow:hidden !important;
   line-height:0 !important;
   align-self:center !important;
   max-height:4.5rem !important;
+  overflow:visible !important;
 }
 html body .nav .logo-img,
 html body a.logo .logo-img,
 html body img.logo-img{
   display:block !important;
-  height:52px !important;
+  height:44px !important;
   width:auto !important;
-  max-width:200px !important;
-  max-height:52px !important;
+  max-width:170px !important;
+  max-height:44px !important;
   object-fit:contain !important;
   margin:0 !important;
+  filter:none !important;
 }
 @media (max-width:720px){
   html body .nav .logo-img,
   html body a.logo .logo-img,
   html body img.logo-img{
-    height:42px !important;
-    max-height:42px !important;
-    max-width:150px !important;
+    height:36px !important;
+    max-height:36px !important;
+    max-width:130px !important;
   }
 }
-
