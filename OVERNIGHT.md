@@ -5,6 +5,7 @@
 - Venues: **190** from live CPT (was 52) — `a5c8779`
 - Events: refreshed from live `product` catalog — **98** events, Booketing/SquadUp labeled — `82de567` (venues kept at 190)
 - Advertise pitch + streaming banner live
+- Venue excerpts: tightened all **190** from live CPT copy (1–2 sentence blurbs, ~220 cap); count/slugs/ids/city tags unchanged
 
 ## Live
 - https://faccett66.github.io/poolparty-preview/
@@ -19,7 +20,7 @@
 
 ## Still grinding
 - None material on customer-facing pages after QA passes 1–4
-- Known constraint: venue excerpts from `a5c8779` are still generic shells (do not regress 190 venues to rewrite)
+- Venue excerpt shells replaced from live copy (190 unchanged)
 
 ## QA pass — 2026-09-16 06:23 ET
 - Cities: fixed `count_hint` (atlantic-city/southampton were bare ints); retargeted 404 hubs (aruba/croatia/texas/amsterdam) → live venue pages; Goa name already corrected
