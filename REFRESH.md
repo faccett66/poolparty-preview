@@ -1,0 +1,4 @@
+# Pool Party preview — inventory refresh log
+
+2026-09-16 09:46:36 EDT — venues 190, events 98 (upcoming 22), changed no — live WP venue CPT total 190 confirmed; events scrape rebuilt 98 identical catalog; no push.
+2026-09-16 16:50:14 EDT — venues 190, events 98 (upcoming 22), changed yes — full CPT refresh (X-WP-Total 190); live images/excerpts/vibes updated; events catalog 98 with 4 image URL refreshes; no count regression.
