@@ -36,16 +36,24 @@
 <section class="page-hero events"><div class="wrap">
   <p class="eyebrow">Demo cart · DEMO · localStorage</p>
   <h1>Your <em>demo</em> bag</h1>
-  <p class="lead">Quantity-only layout for a future POS. <strong>No ticket prices.</strong> Real purchases use Book Now → live Booketing/SquadUp.</p>
+  <p class="lead">Quantity-only layout for a future first-party POS conversation. <strong>No ticket prices, no fees, no tax.</strong> Real purchases use Book Now → live Booketing or SquadUp.</p>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
-  <div class="demo-callout">This cart does not charge cards and does not replace SquadUp/Booketing.</div>
+  <div class="demo-callout">This cart does not charge cards, store payment methods, or replace SquadUp/Booketing. Lines are layout chrome only.</div>
+  <div class="trust page-trust" style="margin-top:1rem">
+    <div><strong>No prices</strong><span>Never invented here</span></div>
+    <div><strong>No charge</strong><span>Demo quantity only</span></div>
+    <div><strong>Live Book Now</strong><span>Real tickets elsewhere</span></div>
+    <div><strong>localStorage</strong><span>Clears on this device</span></div>
+  </div>
   <div class="panel" id="cart-root" style="margin-top:1rem"></div>
   <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem">
     <a class="btn btn-primary" href="checkout.html">Continue to checkout shell</a>
     <a class="btn btn-ghost" href="events.html?city=las-vegas">Vegas this week</a>
+    <a class="btn btn-ghost" href="events.html">Browse events</a>
     <button type="button" class="btn btn-ghost" id="clear">Clear demo cart</button>
   </div>
+  <p class="form-note" style="margin-top:1rem">Tip: open any event detail and tap <strong>+ Demo cart</strong> to populate lines. Prefer live Book Now when you’re ready to buy.</p>
 </div></section>
 
 
@@ -90,7 +98,7 @@ function render() {
   const cart = PP.getCart();
   const root = document.getElementById('cart-root');
   if (!cart.length) {
-    root.innerHTML = `<div class="empty-state">Cart is empty. Open an event and tap <strong>+ Demo cart</strong>, or <a href="events.html">browse upcoming</a>.</div>`;
+    root.innerHTML = `<div class="empty-state">Your demo bag is empty. Open an event and tap <strong>+ Demo cart</strong> for layout chrome, or <a href="events.html">browse upcoming</a> and use live <strong>Book Now</strong> for real tickets.</div>`;
     return;
   }
   root.innerHTML = cart.map(c => `

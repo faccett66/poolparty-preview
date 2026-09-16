@@ -36,20 +36,27 @@
 <section class="page-hero events"><div class="wrap">
   <p class="eyebrow">Checkout shell · DEMO</p>
   <h1>Almost there — <em>almost</em></h1>
-  <p class="lead">Visual POS chrome for partnership conversations. Does not process payments. Buy real tickets with Book Now on any event.</p>
+  <p class="lead">Visual POS chrome for partnership conversations. <strong>Does not process payments, capture cards, or talk to Stripe.</strong> Buy real tickets with Book Now on any event.</p>
 </div></section>
 <section style="padding-top:0"><div class="wrap" style="display:grid;gap:1.5rem">
-  <div class="demo-callout"><strong>Not live checkout.</strong> To buy real tickets, use Book Now (Booketing / SquadUp on poolparty.com).</div>
+  <div class="demo-callout"><strong>Not live checkout.</strong> Guest fields stay in-browser for the demo click. To buy real tickets, use Book Now (Booketing / SquadUp on poolparty.com).</div>
+  <div class="trust page-trust">
+    <div><strong>No Stripe</strong><span>No card fields</span></div>
+    <div><strong>No prices</strong><span>Total stays blank</span></div>
+    <div><strong>No charge</strong><span>Submit is a toast</span></div>
+    <div><strong>Live path</strong><span>Booketing / SquadUp</span></div>
+  </div>
   <div class="panel" id="summary"></div>
   <div class="form-card">
     <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:1rem">Guest details (demo)</h3>
     <form id="co">
-      <div class="field"><label>Name</label><input required name="name" /></div>
-      <div class="field"><label>Email</label><input type="email" required name="email" /></div>
-      <div class="field"><label>Phone</label><input name="phone" placeholder="SMS updates on live SquadUp — demo only" /></div>
+      <div class="field"><label>Name</label><input required name="name" placeholder="Guest name" autocomplete="name" /></div>
+      <div class="field"><label>Email</label><input type="email" required name="email" placeholder="you@email.com" autocomplete="email" /></div>
+      <div class="field"><label>Phone</label><input name="phone" placeholder="SMS updates happen on live SquadUp — demo only" autocomplete="tel" /></div>
       <button class="btn btn-primary btn-pay" type="submit">Place demo order (no charge)</button>
     </form>
-    <p id="done" class="form-note" hidden style="color:var(--aqua)">Demo only — nothing was charged. Return to <a href="events.html">events</a> and use live Book Now.</p>
+    <p class="form-note">Submitting only reveals a success note — no network payment call. Deposits, refunds, and ID checks live on the provider you Book Now into.</p>
+    <p id="done" class="form-note" hidden style="color:var(--aqua)">Demo only — nothing was charged. Return to <a href="events.html">events</a> and use live Book Now, or clear the <a href="cart.html">demo cart</a>.</p>
   </div>
 </div></section>
 
@@ -94,7 +101,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cart = PP.getCart();
   const el = document.getElementById('summary');
-  if (!cart.length) el.innerHTML = `<div class="empty-state">No demo items. <a href="cart.html">Cart</a> · <a href="events.html">Events</a></div>`;
+  if (!cart.length) el.innerHTML = `<div class="empty-state">No demo items in bag. Add lines from an event’s <strong>+ Demo cart</strong>, or skip this shell and <a href="events.html">Book Now live</a>. <a href="cart.html">Cart</a></div>`;
   else el.innerHTML = `<h3 style="font-family:var(--font-display);margin-bottom:.75rem">Order summary (DEMO)</h3>` +
     cart.map(c => `<div class="cart-line"><div style="flex:1"><strong>${PP.esc(c.title)}</strong><div style="font-size:.8rem;color:var(--muted)">${PP.esc(c.tierLabel)} × ${c.qty}</div></div></div>`).join('') +
     `<p style="font-size:.8rem;color:var(--muted);margin-top:.75rem">Total intentionally blank — no invented prices.</p>`;

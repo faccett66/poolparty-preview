@@ -36,21 +36,28 @@
 <section class="page-hero venues"><div class="wrap">
   <p class="eyebrow">My account · DEMO shell</p>
   <h1>Sign in <em>shell</em></h1>
-  <p class="lead">Mirrors WooCommerce My Account chrome for partnership demos. <strong>No authentication backend</strong> — credentials are never verified or sent to a server.</p>
+  <p class="lead">Mirrors WooCommerce My Account chrome for partnership demos. <strong>No authentication backend</strong> — credentials are never verified or sent to a server. Real tickets and orders stay on poolparty.com.</p>
 </div></section>
-<section style="padding-top:0"><div class="wrap" style="max-width:480px">
-  <div class="demo-callout">DEMO ONLY — local mock login for UI review. Live account: poolparty.com/my-account/</div>
+<section style="padding-top:0"><div class="wrap" style="max-width:560px">
+  <div class="demo-callout">DEMO ONLY — local mock login for UI review. Nothing is verified server-side. Live account: <a href="https://poolparty.com/my-account/" target="_blank" rel="noopener">poolparty.com/my-account/</a></div>
+  <div class="trust page-trust" style="margin-top:1rem">
+    <div><strong>No server auth</strong><span>Password discarded</span></div>
+    <div><strong>No order sync</strong><span>History stays live</span></div>
+    <div><strong>Book Now real</strong><span>Booketing / SquadUp</span></div>
+    <div><strong>21+ typical</strong><span>Venue door policy</span></div>
+  </div>
   <div class="form-card" id="login-card" style="margin-top:1rem">
     <form id="login">
-      <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com" /></div>
-      <div class="field"><label>Password</label><input type="password" name="password" required placeholder="••••••••" /></div>
+      <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com" autocomplete="username" /></div>
+      <div class="field"><label>Password</label><input type="password" name="password" required placeholder="••••••••" autocomplete="current-password" /></div>
       <button class="btn btn-primary btn-block" type="submit">Sign in (mock)</button>
-      <p class="form-note">Mock only — email is stored in localStorage as a display name. Password is discarded.</p>
+      <p class="form-note">Mock only — email is stored in <code>localStorage</code> as a display name. Password is discarded immediately. Use live My Account for real purchases and refunds.</p>
     </form>
   </div>
   <div class="panel" id="dash" hidden style="margin-top:1rem">
     <h3 style="font-family:var(--font-display);font-size:1.6rem">Welcome back</h3>
-    <p style="color:var(--mist);font-weight:300;margin:.5rem 0 1rem">Signed in as <strong id="who"></strong> (local mock). Order history would load from Woo/SquadUp on the live stack.</p>
+    <p style="color:var(--mist);font-weight:300;margin:.5rem 0 1rem">Signed in as <strong id="who"></strong> (local mock).</p>
+    <div class="empty-state" style="margin-bottom:1rem">No orders here — this shell doesn’t sync WooCommerce or SquadUp history. Open <a href="https://poolparty.com/my-account/" target="_blank" rel="noopener">live My Account</a> for real tickets, or browse <a href="events.html?city=las-vegas">Vegas this week</a>.</div>
     <div class="card-actions">
       <a class="btn btn-ghost btn-sm" href="cart.html">Demo cart</a>
       <a class="btn btn-ghost btn-sm" href="events.html?city=las-vegas">Vegas this week</a>

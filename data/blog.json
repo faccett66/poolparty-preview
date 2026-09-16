@@ -1,7 +1,47 @@
 {
-  "generated": "2026-09-15",
-  "note": "Preview editorial — timely Sep 2026 posts authored for this Miami Electric redesign. Live stubs link to poolparty.com. Not counsel-approved marketing claims.",
+  "generated": "2026-09-16",
+  "note": "Preview editorial — timely Sep 2026 posts for Miami Electric redesign. Live stubs link to poolparty.com. Not counsel-approved marketing claims.",
   "posts": [
+    {
+      "slug": "advertise-free-offer-partner-pitch-2026",
+      "title": "Free offer & Advertise: how venues pitch the calendar",
+      "date": "2026-09-15",
+      "excerpt": "Featured placement, city-hub sponsorship, and calendar drops — what the Free offer page is for (and what this preview won’t promise).",
+      "image": "assets/site/vibe-dayclub.jpg",
+      "source": "preview",
+      "tags": [
+        "partners",
+        "advertise"
+      ],
+      "body_html": "\n<p>The glowing <a href=\"advertise.html\">Free offer</a> / Advertise path is for venues and promoters who want discovery placement on the Pool Party surface — city hubs, featured event cards, or seasonal pushes.</p>\n<h2>What to bring</h2>\n<ul>\n<li>City + venue name and typical vibe (dayclub / beach / yacht / pool)</li>\n<li>Sample calendar window and Booketing or on-site booking path</li>\n<li>Creative assets you’d want featured</li>\n</ul>\n<h2>Honesty for partners</h2>\n<p>This GitHub Pages preview is a redesign demo for Frank — partner ops still close on the live stack. Preview mailto goes to <strong>faccett66@gmail.com</strong>; production venue ops remain <strong>info@poolparty.com</strong>.</p>\n"
+    },
+    {
+      "slug": "dress-code-dayclub-2026",
+      "title": "Dayclub dress code 101: swim-ready without the red flags",
+      "date": "2026-09-16",
+      "excerpt": "Expect to get wet. Here’s the practical mid-2026 dress code for pools, beach clubs, and yacht decks — plus what venues usually ban.",
+      "image": "assets/site/lifestyle-toast.jpg",
+      "source": "preview",
+      "tags": [
+        "dress-code",
+        "guide"
+      ],
+      "body_html": "\n<p>Default vibe: <strong>swimwear-friendly</strong> outfits you can dance in. Resort dayclubs want elevated casual; beach clubs lean more sand-ready; yacht decks may ask for softer soles.</p>\n<h2>Usually fine</h2>\n<ul>\n<li>Swimsuits + cover-ups, stylish sneakers or slides</li>\n<li>Lightweight dresses / linen that can handle splash</li>\n</ul>\n<h2>Usually not</h2>\n<ul>\n<li>Glass bottles, outside alcohol, professional cameras (varies)</li>\n<li>Sports jerseys or overly casual streetwear at premium rooms — check the event page</li>\n</ul>\n<p>Age is typically <strong>21+</strong> unless noted. Final rules live on the venue / ticketing terms when you Book Now.</p>\n"
+    },
+    {
+      "slug": "cabana-day-vs-ga-what-to-ask-2026",
+      "title": "Cabana day vs GA: what to ask before you Book Now",
+      "date": "2026-09-16",
+      "excerpt": "Daybeds, minimums, and guest counts live on Booketing/SquadUp — here’s how to shop cabanas without inventing prices on this preview.",
+      "image": "assets/site/feat-cabana.jpg",
+      "source": "preview",
+      "tags": [
+        "cabanas",
+        "booking",
+        "guide"
+      ],
+      "body_html": "\n<p>General Admission gets you on the deck. <strong>Cabanas / daybeds / VIP</strong> lock a footprint, often with guest counts and spend expectations — details that only appear on the live booking handoff.</p>\n<h2>What this preview will never invent</h2>\n<p>Dollar minimums, bottle packages, or “from $X” badges. Demo cart tiers are layout-only labels.</p>\n<h2>What to check on Book Now</h2>\n<ul>\n<li>Guest capacity and arrival window</li>\n<li>Whether a deposit holds the cabana</li>\n<li>Refund / weather language on Booketing or SquadUp terms</li>\n</ul>\n<p>Start with an upcoming Vegas or Miami row, tap the labeled Book Now, and read the provider page before you commit.</p>\n"
+    },
     {
       "slug": "vegas-this-weekend-sep-2026",
       "title": "Vegas this weekend (Sep 16–20): passes, Liquid Pool, nightclub access",
@@ -93,7 +133,7 @@
       "tags": [
         "california"
       ],
-      "body_html": "<p>Full article lives on poolparty.com. This card mirrors the public post for the preview index.</p>"
+      "body_html": "\n<p><strong>Splash House 2026 – Palm Springs pool festival weekends</strong> is mirrored from the live Pool Party editorial site for this preview index.</p>\n<p>Read the full article on <a href=\"https://poolparty.com/splash-house-2026/\" target=\"_blank\" rel=\"noopener\">poolparty.com</a>. Booking still happens via labeled Book Now (Booketing or SquadUp) — not inside this static post.</p>\n<p>Browse related hubs: <a href=\"events.html\">Events</a> · <a href=\"cities.html\">Cities</a> · <a href=\"blog.html\">Blog</a>.</p>\n"
     },
     {
       "slug": "nyc-summer-club-guide",
@@ -106,7 +146,7 @@
       "tags": [
         "new-york"
       ],
-      "body_html": "<p>Full article lives on poolparty.com.</p>"
+      "body_html": "\n<p><strong>NYC Summer Club Guide</strong> is mirrored from the live Pool Party editorial site for this preview index.</p>\n<p>Read the full article on <a href=\"https://poolparty.com/nyc-summer-club-guide/\" target=\"_blank\" rel=\"noopener\">poolparty.com</a>. Booking still happens via labeled Book Now (Booketing or SquadUp) — not inside this static post.</p>\n<p>Browse related hubs: <a href=\"events.html\">Events</a> · <a href=\"cities.html\">Cities</a> · <a href=\"blog.html\">Blog</a>.</p>\n"
     },
     {
       "slug": "tao",
@@ -119,7 +159,7 @@
       "tags": [
         "venues"
       ],
-      "body_html": "<p>Full article lives on poolparty.com.</p>"
+      "body_html": "\n<p><strong>TAO Venues Guide 2026</strong> is mirrored from the live Pool Party editorial site for this preview index.</p>\n<p>Read the full article on <a href=\"https://poolparty.com/tao/\" target=\"_blank\" rel=\"noopener\">poolparty.com</a>. Booking still happens via labeled Book Now (Booketing or SquadUp) — not inside this static post.</p>\n<p>Browse related hubs: <a href=\"events.html\">Events</a> · <a href=\"cities.html\">Cities</a> · <a href=\"blog.html\">Blog</a>.</p>\n"
     }
   ]
 }

@@ -26,7 +26,7 @@ BASE = "https://poolparty.com/wp-json/wp/v2"
 SLEEP = 0.35
 
 # Preview "now" for upcoming-first selection (America/New_York week of Sep 15, 2026)
-TODAY = "2026-09-15"
+TODAY = "2026-09-16"
 
 # Caps per cities.json slug — oversample flagships; build_events keeps upcoming first
 CITY_CAPS = {
@@ -357,20 +357,56 @@ def build_events(products_by_city, booketing_map, name_by_slug):
                 ],
             })
             seen.add(slug)
-    # Prefer upcoming-first; keep a controlled past tail for catalog depth
+    # Prefer upcoming-first; keep a DIVERSE past catalog so city hubs stay browsable.
+    # Never invent upcoming — empty cities stay empty of near-term dates.
     def sort_key(e):
         d = e.get("date") or "9999"
         return (0 if d >= TODAY else 1, d, e.get("title") or "")
     events.sort(key=sort_key)
     upcoming = [e for e in events if (e.get("date") or "") >= TODAY]
     past = [e for e in events if (e.get("date") or "") < TODAY]
-    past_cap = max(20, len(upcoming) // 2)
     past.sort(key=lambda e: e.get("date") or "", reverse=True)
-    events = upcoming + past[:past_cap]
+    # Per-city past caps — flagships denser; thin hubs still get a few PAST rows
+    past_city_caps = {
+        "las-vegas": 18, "miami": 14, "dubai": 10, "new-york": 8, "spain": 8,
+        "italy": 10, "amalfi-coast": 6, "atlantic-city": 6, "los-angeles": 4,
+        "california": 4, "phuket": 5, "bali": 5, "france": 5, "fort-lauderdale": 5,
+        "sydney": 4, "arizona": 4, "budapest": 3, "india": 3, "southampton": 2,
+    }
+    from collections import defaultdict
+    past_by = defaultdict(list)
+    for e in past:
+        past_by[e["city"]].append(e)
+    # Round-robin past picks so thin hubs (France, Amalfi, Sydney…) aren’t
+    # wiped by Vegas/Miami’s newer past dates when we soft-cap total size.
+    buckets = {}
+    for city, rows in past_by.items():
+        cap = past_city_caps.get(city, 4)
+        buckets[city] = rows[:cap]
+    selected_past = []
+    total_target = 110
+    room = max(0, total_target - len(upcoming))
+    idx = 0
+    while len(selected_past) < room and buckets:
+        progressed = False
+        for city in list(buckets.keys()):
+            if len(selected_past) >= room:
+                break
+            rows = buckets[city]
+            if idx < len(rows):
+                selected_past.append(rows[idx])
+                progressed = True
+            else:
+                del buckets[city]
+        if not progressed:
+            break
+        idx += 1
+    events = upcoming + selected_past
     events.sort(key=sort_key)
     for i, e in enumerate(events, 1):
         e["id"] = f"ev-{i:03d}"
-    print(f"  selection: {len(upcoming)} upcoming + {min(len(past), past_cap)} past = {len(events)}")
+    print(f"  selection: {len(upcoming)} upcoming + {len(selected_past)} past = {len(events)}")
+    print(f"  past cities: {dict(__import__('collections').Counter(e['city'] for e in selected_past))}")
     return events
 
 

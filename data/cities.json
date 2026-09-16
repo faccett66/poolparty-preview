@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T04:00:23Z",
+  "generated": "2026-09-16T05:29:03Z",
   "source": "pp-cities-sitemap 19 cities",
   "cities": [
     {
@@ -7,7 +7,7 @@
       "slug": "amalfi-coast",
       "name": "Amalfi Coast",
       "live_url": "https://poolparty.com/pp-cities/amalfi-coast/",
-      "description": "The Amalfi Coast offers pool parties with stunning sea views and Italian charm. Sip cocktails by cliffside pools or dance to live music under the sun. From luxury resorts to coastal villas, every party feels like a dream on this beautiful stretch of coast.",
+      "description": "Cliffside daybeds, Amalfi blue, and villa-pool energy — Amalfi’s catalog leans luxury resorts and sea-view decks. Mid-September often sits between peak Italian summer and shoulder season, so this preview may show venues with few or no near-term dated products. Browse venues here, then open the live city page for the freshest Book Now inventory.",
       "count_hint": 136,
       "image": "assets/site/live/venue-one-fire-beach-amalfi-coast-italy-56d94129c5.jpg",
       "source": "live-prior-unique"
@@ -17,7 +17,7 @@
       "slug": "arizona",
       "name": "Arizona",
       "live_url": "https://poolparty.com/pp-cities/arizona/",
-      "description": "Arizona\u2019s pool party scene is the perfect mix of desert charm and stylish fun. From Scottsdale to Phoenix, enjoy vibrant poolside venues with live DJs, craft cocktails, and stunning desert views. Whether you're looking to relax or dance the day away, Arizona\u2019s resorts offer the u",
+      "description": "Scottsdale and Phoenix daylife mix resort pools, desert light, and DJ weekends. Arizona’s public feed is lighter than Vegas in mid-September — expect venue cards first, with upcoming events when partners post dated products. Use Book Now labels (Booketing vs live checkout) when a row appears; don’t invent weekend FOMO.",
       "count_hint": 7,
       "image": "assets/site/live/city-arizona-b2f1321672.jpg",
       "source": "live-dest-cover"
@@ -27,7 +27,7 @@
       "slug": "atlantic-city",
       "name": "Atlantic City",
       "live_url": "https://poolparty.com/pp-cities/atlantic-city/",
-      "description": "Atlantic City\u2019s pool parties are all about fun and energy. Enjoy rooftop pools, live DJs, and great drinks. Lounge by the water or dance all night. From boardwalk views to cool poolside bars, Atlantic City has everything you need for a good time.",
+      "description": "Boardwalk energy, rooftop pools, and casino-resort daybeds define Atlantic City pool season. This preview mirrors public catalog rows honestly — if upcoming is thin after Labor Day, hubs still link live so you can catch new drops without fake backfill.",
       "count_hint": 63,
       "image": "assets/site/live/city-atlantic-city-fdfef18e36.jpg",
       "source": "live-dest-cover"
@@ -37,7 +37,7 @@
       "slug": "bali",
       "name": "Bali",
       "live_url": "https://poolparty.com/pp-cities/bali/",
-      "description": "Bali\u2019s pool party scene is a mix of island vibes and tropical fun. Chill at beach clubs with infinity pools, live DJs, and sunset views. Whether you're sipping cocktails or dancing by the pool, Bali offers the perfect blend of beauty and energy.",
+      "description": "Canggu-to-Seminyak beach clubs, infinity edges, and sunset sets — Bali daylife is tropical first. International feeds can lag mid-week; we keep venues visible and only list upcoming when the live product API has dated stock. Always Book Now on the labeled live path.",
       "count_hint": 27,
       "image": "assets/site/live/city-bali-fa6291121c.jpg",
       "source": "live-prior-unique"
@@ -47,7 +47,7 @@
       "slug": "budapest",
       "name": "Budapest",
       "live_url": "https://poolparty.com/pp-cities/budapest/",
-      "description": "Budapest\u2019s pool party scene is bold, fun, and full of history. Enjoy thermal baths by day and party lights by night. With live DJs, drinks, and epic settings, these parties mix old-world charm with modern beats. It's the perfect way to soak and celebrate.",
+      "description": "Thermal baths by day, party lights by night — Budapest’s scene blends spa heritage with modern DJ culture. Preview inventory may be sparse outside festival windows; venue cards + the live city link stay honest when upcoming = 0.",
       "count_hint": 17,
       "image": "assets/site/live/city-budapest-2ec42d6170.jpg",
       "source": "live-prior-unique"
@@ -57,7 +57,7 @@
       "slug": "california",
       "name": "California",
       "live_url": "https://poolparty.com/pp-cities/california/",
-      "description": "Discover pool, beach, and yacht parties in California.",
+      "description": "California daylife spans Palm Springs festival weekends, LA rooftops, and San Diego sunshine. The statewide hub aggregates thinner feeds than Vegas — Splash House-style weekends and resort pools show when partners publish. Filter Events by city or open live California for the current calendar.",
       "count_hint": 2,
       "image": "assets/site/live/city-california-35542f5c85.jpg",
       "source": "live-prior-unique"
@@ -67,7 +67,7 @@
       "slug": "dubai",
       "name": "Dubai",
       "live_url": "https://poolparty.com/pp-cities/dubai/",
-      "description": "Dubai\u2019s pool parties are all about luxury and high energy. Lounge at rooftop pools with skyline views, enjoy live DJs, and sip on stylish cocktails. Whether day or night, Dubai offers glam settings and nonstop fun in the heart of the desert.",
+      "description": "Skyline rooftops, marina decks, and polished Friday pool series — Dubai daylife is luxury-forward. Mid-September often means fewer near-term dated products in the public API; hubs show real venues and say so when upcoming is empty. Never backfill Dubai with Vegas heat.",
       "count_hint": 46,
       "image": "assets/site/live/city-dubai-4bdb5b6451.jpg",
       "source": "live-dest-cover"
@@ -75,9 +75,9 @@
     {
       "id": "city-08",
       "slug": "fort-lauderdale",
-      "name": "Fort lauderdale",
+      "name": "Fort Lauderdale",
       "live_url": "https://poolparty.com/pp-cities/fort-lauderdale/",
-      "description": "Fort Lauderdale\u2019s pool parties are full of beach vibes and sunny fun. Chill at poolside bars, enjoy live DJs, and sip tropical drinks by the water. From stylish hotels to waterfront lounges, it's the perfect spot for laid-back party days.",
+      "description": "Yacht-adjacent lounges, hotel pools, and Intracoastal vibes — Fort Lauderdale is Miami’s sun-soaked neighbor. Expect beach-bar energy and waterfront decks when dated events post; otherwise browse venues and jump to the live city page.",
       "count_hint": 17,
       "image": "assets/site/live/venue-the-easton-rooftop-pool-lounge-da6688cd3e.jpg",
       "source": "live-prior-unique"
@@ -87,7 +87,7 @@
       "slug": "france",
       "name": "France",
       "live_url": "https://poolparty.com/pp-cities/france/",
-      "description": "France\u2019s pool parties offer a mix of elegance and fun. Enjoy chic venues with stunning views, live DJs, and refreshing cocktails. Whether you're in Paris or the French Riviera, the atmosphere is lively and stylish, making it the perfect place to dance and relax.",
+      "description": "Riviera chic meets Paris rooftop energy — France’s catalog covers Cannes-to-Nice pool days and stylish city decks. Shoulder season can thin dated products; this hub keeps venues + live links without inventing weekend inventory.",
       "count_hint": 27,
       "image": "assets/site/live/city-france-e65d7c491f.jpg",
       "source": "live-prior-unique"
@@ -97,7 +97,7 @@
       "slug": "india",
       "name": "India",
       "live_url": "https://poolparty.com/pp-cities/india/",
-      "description": "Discover pool, beach, and yacht parties in India.",
+      "description": "Goa beach clubs, Mumbai hotel pools, and resort day parties — India’s daylife is growing across coastal and metro hubs. Public product density varies; we show what’s mapped and link live rather than fabricating upcoming weekends.",
       "count_hint": 1,
       "image": "assets/site/live/city-india-060ca4129d.jpg",
       "source": "live-prior-unique"
@@ -107,7 +107,7 @@
       "slug": "italy",
       "name": "Italy",
       "live_url": "https://poolparty.com/pp-cities/italy/",
-      "description": "Italy\u2019s pool parties combine Mediterranean charm and vibrant energy. Enjoy stunning views, live DJs, and refreshing cocktails at luxury resorts. From the Amalfi Coast to Tuscany, Italy offers the perfect setting for sun, fun, and relaxation.",
+      "description": "Beyond Amalfi: Capri, Positano energy, and mainland resort pools with Mediterranean charm. Italy’s live catalog is deep historically; mid-September preview rows may skew past-dated — filter upcoming honestly and use the live city page for new drops.",
       "count_hint": 253,
       "image": "assets/site/live/city-italy-1fd2c39a04.jpg",
       "source": "live-prior-unique"
@@ -117,7 +117,7 @@
       "slug": "las-vegas",
       "name": "Las Vegas",
       "live_url": "https://poolparty.com/pp-cities/las-vegas/",
-      "description": "Las Vegas pool parties are legendary, full of energy and excitement. Enjoy stunning pools, live DJs, and amazing cocktails. Whether you\u2019re lounging or dancing, Vegas offers the ultimate party experience with a vibrant desert backdrop.",
+      "description": "The heat center for mid-September 2026: Nightclub Access Passes, Liquid Pool, TAO Beach / Encore / Marquee / OMNIA dayclub names when listed live. Vegas carries denser upcoming than most hubs in this snapshot — Book Now remains a Booketing or SquadUp handoff with no invented prices on this preview.",
       "count_hint": 1407,
       "image": "assets/site/live/city-las-vegas-fca2d4a3b0.jpg",
       "source": "live-dest-cover"
@@ -127,7 +127,7 @@
       "slug": "los-angeles",
       "name": "Los Angeles",
       "live_url": "https://poolparty.com/pp-cities/los-angeles/",
-      "description": "Los Angeles pool parties are stylish and full of energy. Enjoy rooftop pools with stunning city views, live DJs, and refreshing cocktails. Whether you're relaxing or dancing, LA\u2019s vibrant atmosphere makes every pool party unforgettable.",
+      "description": "Rooftop pools, Hollywood Hills light, and stylish dayclub energy — LA daylife is vibe-first. The public feed can be sparse versus Vegas; use venue cards, any upcoming rows, and the live LA city link without fake FOMO.",
       "count_hint": 1,
       "image": "assets/site/live/city-los-angeles-a2250599b5.jpg",
       "source": "live-dest-cover"
@@ -137,7 +137,7 @@
       "slug": "miami",
       "name": "Miami",
       "live_url": "https://poolparty.com/pp-cities/miami/",
-      "description": "Miami\u2019s pool parties are all about vibrant energy and ocean views. Enjoy rooftop pools, live DJs, and tropical cocktails. Whether you\u2019re dancing or relaxing, Miami offers the perfect setting for fun in the sun.",
+      "description": "South Beach energy, Wynwood-adjacent lounges, and oceanfront dayclubs — Miami is the brand’s electric north star. After peak summer, mid-September product density often dips versus Vegas; hubs stay honest with venues + live Miami when upcoming is light.",
       "count_hint": 230,
       "image": "assets/site/live/city-miami-dc05bed707.jpg",
       "source": "live-dest-cover"
@@ -147,7 +147,7 @@
       "slug": "new-york",
       "name": "New York",
       "live_url": "https://poolparty.com/pp-cities/new-york/",
-      "description": "New York\u2019s pool parties offer a mix of city energy and rooftop views. Enjoy stylish pools, live DJs, and refreshing cocktails. Whether you\u2019re relaxing or dancing, NYC delivers an unforgettable party experience.",
+      "description": "Rooftop pools above Manhattan and Brooklyn decks with skyline views — NYC daylife is compact and seasonal. Summer club guides matter more than deep September calendars; browse what’s dated, then Book Now live when a product is open.",
       "count_hint": 105,
       "image": "assets/site/live/city-new-york-ce5985d5d7.jpg",
       "source": "live-dest-cover"
@@ -157,7 +157,7 @@
       "slug": "phuket",
       "name": "Phuket",
       "live_url": "https://poolparty.com/pp-cities/phuket/",
-      "description": "Phuket\u2019s pool parties offer a perfect blend of tropical beauty and vibrant fun. Enjoy stunning pools, live DJs, and refreshing cocktails at luxury resorts. Whether you're lounging by the water or dancing under the stars, Phuket\u2019s lively atmosphere makes every party unforgettable.",
+      "description": "Andaman blue, cliff clubs, and resort pool decks — Phuket daylife is tropical high season when partners post. International API rows may be older; venues stay listed, upcoming only when truly dated ahead.",
       "count_hint": 102,
       "image": "assets/site/live/city-phuket-13f7fa0ef2.jpg",
       "source": "live-prior-unique"
@@ -167,7 +167,7 @@
       "slug": "southampton",
       "name": "Southampton",
       "live_url": "https://poolparty.com/pp-cities/southampton/",
-      "description": "Discover pool, beach, and yacht parties in Southampton.",
+      "description": "Hamptons-adjacent pool and beach energy — Southampton is a seasonal US East Coast daylife pocket. Preview inventory can be empty outside summer peaks; we won’t invent events. Use the live city link when partners publish.",
       "count_hint": 1,
       "image": "assets/site/live/city-southampton-a156492342.jpg",
       "source": "live-prior-unique"
@@ -177,7 +177,7 @@
       "slug": "spain",
       "name": "Spain",
       "live_url": "https://poolparty.com/pp-cities/spain/",
-      "description": "Spain\u2019s pool parties are a blend of sunny fun and vibrant energy. Enjoy stunning pools, live DJs, and refreshing cocktails at luxury resorts. Whether you\u2019re dancing under the sun or relaxing by the water, Spain offers the perfect atmosphere for an unforgettable experience. With i",
+      "description": "Ibiza Rocks pool days, Marbella decks, and Barcelona sunshine — Spain’s hub covers Mediterranean party capitals. Off-peak weeks can show 0 upcoming in the public feed; venues + live Spain stay available without Vegas backfill.",
       "count_hint": 30,
       "image": "assets/site/live/city-spain-bf24558d24.jpg",
       "source": "live-prior-unique"
@@ -187,10 +187,11 @@
       "slug": "sydney",
       "name": "Sydney",
       "live_url": "https://poolparty.com/pp-cities/sydney/",
-      "description": "Sydney\u2019s pool parties offer a mix of city style and laid-back vibes. Enjoy rooftop pools, live DJs, and refreshing cocktails with stunning views. Whether you're relaxing by the water or dancing the night away, Sydney\u2019s lively atmosphere makes every party special. With its sunny w",
+      "description": "Harbour views, rooftop sun, and laid-back Aussie daylife — Sydney mixes city style with beach energy. Southern-hemisphere seasons differ from US calendars; expect thinner mid-September US-oriented feeds and honest empty upcoming when stock isn’t dated.",
       "count_hint": 10,
       "image": "assets/site/live/city-sydney-df30ed43a1.jpg",
       "source": "live-prior-unique"
     }
-  ]
+  ],
+  "note": "City hubs enriched Sep 16 2026 — honest mid-September blurbs; no invented upcoming inventory."
 }
