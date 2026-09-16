@@ -4,6 +4,7 @@
 
   var TRACKS = [
     { title: 'Overflow', note: 'Pool Party bed', src: 'assets/audio/overflow.mp3' },
+    { title: 'Fuori Orario', note: 'Mixea · Pool Party bed', src: 'assets/audio/fuori-orario.mp3' },
     { title: 'Clear to the Floor', note: 'Sonic Ear Candy', src: 'assets/audio/clear-to-the-floor.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
