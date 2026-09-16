@@ -275,39 +275,36 @@ html body .hero[data-hero-rebuild] .hero-chip-book strong{
   -webkit-text-fill-color:#FFFFFF !important;
 }
 
-/* Headline stack: shared LEFT edge; block centered in panel */
+/* Headline: intentional stagger — Sun's out! left, Who's in? center-right */
 html body .hero[data-hero-rebuild] h1.hero-title{
   display:flex !important;
   flex-direction:column !important;
-  align-items:flex-start !important;
+  align-items:stretch !important;
   justify-content:center !important;
   width:max-content !important;
   max-width:100% !important;
   margin-left:auto !important;
   margin-right:auto !important;
   text-align:left !important;
-  gap:0 !important;
+  gap:0.06em !important;
   letter-spacing:-0.02em !important;
 }
-html body .hero[data-hero-rebuild] h1.hero-title .sun-out,
-html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
+html body .hero[data-hero-rebuild] h1.hero-title .sun-out{
   display:block !important;
-  box-sizing:border-box !important;
-  width:auto !important;
   margin:0 !important;
   padding:0 !important;
-  border:0 !important;
   text-align:left !important;
-  float:none !important;
-  position:relative !important;
-  left:0 !important;
-  right:auto !important;
+  align-self:flex-start !important;
   transform:none !important;
-  inset:auto !important;
 }
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
-  margin-left:0 !important;
+  display:block !important;
+  margin:0 0 0 1.35em !important; /* offset toward center-right */
+  padding:0 !important;
+  text-align:left !important;
+  align-self:flex-start !important;
   color:#FF3864 !important;
+  transform:none !important;
 }
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
   display:inline !important;
@@ -316,7 +313,5 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
   font-style:italic !important;
   color:#FF3864 !important;
   -webkit-text-fill-color:#FF3864 !important;
-  position:static !important;
-  transform:none !important;
 }
 
