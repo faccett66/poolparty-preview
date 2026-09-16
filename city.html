@@ -78,7 +78,7 @@
     <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=41"></script>
+<script src="assets/js/site.js?v=42"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('city-root').innerHTML = `
     <p class="eyebrow">City hub · week of Sep 15, 2026</p>
     <h1>${PP.esc(c.name)}</h1>
-    ${c.image ? `<figure class="city-hub-media"><img src="${PP.esc(c.image)}?v=31" alt="${PP.esc(c.name)}" loading="eager" /><figcaption class="city-hub-scrim" aria-hidden="true"></figcaption></figure>` : ''}
+    ${(() => { const img = (c.image && String(c.image).trim()) ? c.image : 'assets/site/feat-encore-pool.jpg'; return `<figure class="city-hub-media"><img src="${PP.esc(img)}?v=43" alt="${PP.esc(c.name)}" loading="eager" /><figcaption class="city-hub-scrim" aria-hidden="true"></figcaption></figure>`; })()}
     <p class="lead">${PP.esc(c.description||'')}</p>
     <div class="stat-pills">
       <span><strong>${upcoming.length}</strong><small>Upcoming</small></span>
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     </div>
     <div class="hero-actions" style="margin-top:1.25rem">
       <a class="btn btn-primary" href="events.html?city=${encodeURIComponent(c.slug)}">Filter events</a>
-      <a class="btn btn-ghost" href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live city page</a>
+      <a class="btn btn-ghost" href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">${c.live_note ? 'Live venue page' : 'Live city page'}</a>
       <a class="btn btn-ghost" href="cities.html">All cities</a>
     </div>`;
   const when = document.getElementById('city-when');

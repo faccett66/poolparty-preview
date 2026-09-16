@@ -30,3 +30,9 @@
 - Cache bust `site.js?v=41` sitewide
 - Venues remain **190** (untouched)
 
+## QA pass 2 — 2026-09-16 06:25 ET
+- `city.html`: image fallback + `?v=43`; “Live venue page” CTA when hub has no live city URL
+- `events.html` city filter: only cities present in catalog, sorted by upcoming/density with counts
+- `venues.html` city filter: densest-first with venue counts
+- Cache `site.js?v=42` on city/events/venues
+

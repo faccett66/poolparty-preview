@@ -101,7 +101,7 @@
     <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=41"></script>
+<script src="assets/js/site.js?v=42"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -109,9 +109,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const [vn, cities] = await Promise.all([PP.loadJSON('venues'), PP.loadJSON('cities')]);
   const venues = vn.venues || [];
   const citySel = document.getElementById('city');
-  (cities.cities||[]).forEach(c => {
-    const o=document.createElement('option'); o.value=c.slug; o.textContent=c.name; citySel.appendChild(o);
-  });
+  const counts = new Map();
+  venues.forEach(v => counts.set(v.city, (counts.get(v.city)||0)+1));
+  [...counts.entries()]
+    .map(([slug, n]) => ({ slug, n, name: PP.cityName(cities.cities||[], slug) }))
+    .sort((a,b) => (b.n - a.n) || a.name.localeCompare(b.name))
+    .forEach(c => {
+      const o=document.createElement('option');
+      o.value=c.slug;
+      o.textContent=`${c.name} (${c.n})`;
+      citySel.appendChild(o);
+    });
   const stats = document.getElementById('venue-stats');
   if (stats) stats.innerHTML = `<span><strong>${venues.length}</strong><small>Venues</small></span><span><strong>${new Set(venues.map(v=>v.city)).size}</strong><small>Cities</small></span>`;
   PP.bindFilters({

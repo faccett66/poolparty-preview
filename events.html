@@ -102,7 +102,7 @@
     <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=41"></script>
+<script src="assets/js/site.js?v=42"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -110,9 +110,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   const [ev, cities] = await Promise.all([PP.loadJSON('events'), PP.loadJSON('cities')]);
   const events = ev.events || [];
   const citySel = document.getElementById('city');
-  (cities.cities||[]).forEach(c => {
-    const o = document.createElement('option'); o.value=c.slug; o.textContent=c.name; citySel.appendChild(o);
+  const eventCities = new Map();
+  events.forEach(e => {
+    if (!e.city) return;
+    const row = eventCities.get(e.city) || { total: 0, up: 0 };
+    row.total += 1;
+    if (PP.isUpcoming(e)) row.up += 1;
+    eventCities.set(e.city, row);
   });
+  [...eventCities.entries()]
+    .map(([slug, row]) => ({ slug, ...row, name: PP.cityName(cities.cities||[], slug) }))
+    .sort((a,b) => (b.up - a.up) || (b.total - a.total) || a.name.localeCompare(b.name))
+    .forEach(c => {
+      const o = document.createElement('option');
+      o.value = c.slug;
+      o.textContent = c.up ? `${c.name} (${c.up} upcoming)` : `${c.name} (${c.total} catalog)`;
+      citySel.appendChild(o);
+    });
   const up = PP.countUpcoming(events);
   const wk = events.filter(e => PP.isUpcoming(e) && e.date >= '2026-09-16' && e.date <= '2026-09-20').length;
   const stats = document.getElementById('event-stats');
