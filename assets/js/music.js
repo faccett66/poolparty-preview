@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — Overflow + Off The Leash + volume. cache-bust:v6 */
+/*! Pool Party soundtrack layer — Overflow + Off The Leash + volume buttons. cache-bust:v7 */
 (function (global) {
   'use strict';
 
@@ -8,6 +8,7 @@
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
   var DEFAULT_VOL = 0.35;
+  var VOL_STEP = 0.1;
   var KEY_MUTE = 'pp_music_muted';
   var KEY_TRACK = 'pp_music_track';
   var KEY_VOL = 'pp_music_vol';
@@ -19,7 +20,9 @@
   var dock = null;
   var playBtn = null;
   var muteBtn = null;
-  var volSlider = null;
+  var volDownBtn = null;
+  var volUpBtn = null;
+  var volPctEl = null;
   var titleEl = null;
   var ready = false;
 
@@ -76,11 +79,10 @@
   }
 
   function syncVolUI() {
-    if (volSlider) {
-      volSlider.value = String(Math.round(volume * 100));
-      volSlider.setAttribute('aria-valuenow', String(Math.round(volume * 100)));
-      volSlider.setAttribute('aria-valuetext', Math.round(volume * 100) + ' percent');
-    }
+    var pct = Math.round(volume * 100);
+    if (volPctEl) volPctEl.textContent = pct + '%';
+    if (volDownBtn) volDownBtn.disabled = volume <= 0 && muted;
+    if (volUpBtn) volUpBtn.disabled = volume >= 1 && !muted;
   }
 
   function applyMute() {
@@ -102,6 +104,14 @@
     if (fromUser && volume === 0) muted = true;
     persist();
     applyMute();
+  }
+
+  function volDown() {
+    setVolume(volume - VOL_STEP, true);
+  }
+
+  function volUp() {
+    setVolume(volume + VOL_STEP, true);
   }
 
   function loadTrack(i, autoPlay) {
@@ -200,16 +210,17 @@
         '</div>' +
         '<div class="pp-music-dock__vol">' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
-          '<label class="pp-music-dock__vol-label">' +
-            '<span class="visually-hidden">Volume</span>' +
-            '<input type="range" class="pp-music-dock__slider" min="0" max="100" step="1" value="35" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" />' +
-          '</label>' +
+          '<button type="button" class="pp-music-dock__btn pp-music-dock__voldown" aria-label="Volume down">−</button>' +
+          '<span class="pp-music-dock__volpct" aria-live="polite">35%</span>' +
+          '<button type="button" class="pp-music-dock__btn pp-music-dock__volup" aria-label="Volume up">+</button>' +
         '</div>' +
       '</div>';
 
     playBtn = dock.querySelector('.pp-music-dock__play');
     muteBtn = dock.querySelector('.pp-music-dock__mute');
-    volSlider = dock.querySelector('.pp-music-dock__slider');
+    volDownBtn = dock.querySelector('.pp-music-dock__voldown');
+    volUpBtn = dock.querySelector('.pp-music-dock__volup');
+    volPctEl = dock.querySelector('.pp-music-dock__volpct');
     titleEl = dock.querySelector('.pp-music-dock__title');
 
     dock.querySelector('.pp-music-dock__prev').addEventListener('click', function (e) {
@@ -228,11 +239,13 @@
       e.preventDefault();
       toggleMute();
     });
-    volSlider.addEventListener('input', function () {
-      setVolume(parseInt(volSlider.value, 10) / 100, true);
+    volDownBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      volDown();
     });
-    volSlider.addEventListener('change', function () {
-      setVolume(parseInt(volSlider.value, 10) / 100, true);
+    volUpBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      volUp();
     });
 
     document.body.appendChild(dock);
