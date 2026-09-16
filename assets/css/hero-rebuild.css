@@ -275,42 +275,40 @@ html body .hero[data-hero-rebuild] .hero-chip-book strong{
   -webkit-text-fill-color:#FFFFFF !important;
 }
 
-
-/* Headline: both lines same center axis (fix top-left / bottom-right drift) */
+/* Headline stack: same LEFT edge, whole block centered in panel */
 html body .hero[data-hero-rebuild] h1.hero-title,
 html body .hero[data-hero-rebuild] h1{
-  display:grid !important;
-  grid-template-columns:1fr !important;
-  justify-items:center !important;
-  align-items:center !important;
-  text-align:center !important;
-  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important; /* shared left edge */
+  justify-content:center !important;
+  width:max-content !important;
+  max-width:100% !important;
   margin-left:auto !important;
-  margin-right:auto !important;
+  margin-right:auto !important; /* center the stack as one unit */
+  text-align:left !important;
   gap:0.02em !important;
 }
 html body .hero[data-hero-rebuild] h1.hero-title .sun-out,
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in,
 html body .hero[data-hero-rebuild] h1.hero-title em{
   display:block !important;
-  width:max-content !important;
+  width:auto !important;
   max-width:100% !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
+  margin:0 !important;
   padding:0 !important;
-  text-align:center !important;
+  text-align:left !important;
   float:none !important;
   position:static !important;
   left:auto !important;
   right:auto !important;
   transform:none !important;
-  justify-self:center !important;
+  justify-self:auto !important;
 }
-html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
-  color:#FF3864 !important;
-}
+html body .hero[data-hero-rebuild] h1.hero-title .whos-in,
 html body .hero[data-hero-rebuild] h1.hero-title em{
   font-style:italic !important;
   color:#FF3864 !important;
   -webkit-text-fill-color:#FF3864 !important;
 }
+
