@@ -223,10 +223,15 @@ body::before{
     linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/lifestyle-cheers.jpg") center 35%/cover no-repeat;
 }
-.page-hero.contact,.page-hero.advertise{
+.page-hero.contact{
   background:
     linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/vibe-yacht-bay.jpg") center 40%/cover no-repeat;
+}
+.page-hero.advertise{
+  background:
+    linear-gradient(180deg, rgba(7,11,20,.72) 0%, rgba(7,11,20,.62) 55%, rgba(7,11,20,.94) 100%),
+    url("../site/feat-encore-pool.jpg") center 40%/cover no-repeat;
 }
 .page-hero.faqs{
   background:
