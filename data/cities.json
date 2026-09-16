@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T05:29:03Z",
+  "generated": "2026-09-16T05:31:59Z",
   "source": "pp-cities-sitemap 19 cities",
   "cities": [
     {
@@ -9,7 +9,7 @@
       "live_url": "https://poolparty.com/pp-cities/amalfi-coast/",
       "description": "Cliffside daybeds, Amalfi blue, and villa-pool energy — Amalfi’s catalog leans luxury resorts and sea-view decks. Mid-September often sits between peak Italian summer and shoulder season, so this preview may show venues with few or no near-term dated products. Browse venues here, then open the live city page for the freshest Book Now inventory.",
       "count_hint": 136,
-      "image": "assets/site/live/venue-one-fire-beach-amalfi-coast-italy-56d94129c5.jpg",
+      "image": "assets/site/vibe-beach-terrace.jpg",
       "source": "live-prior-unique"
     },
     {
@@ -79,7 +79,7 @@
       "live_url": "https://poolparty.com/pp-cities/fort-lauderdale/",
       "description": "Yacht-adjacent lounges, hotel pools, and Intracoastal vibes — Fort Lauderdale is Miami’s sun-soaked neighbor. Expect beach-bar energy and waterfront decks when dated events post; otherwise browse venues and jump to the live city page.",
       "count_hint": 17,
-      "image": "assets/site/live/venue-the-easton-rooftop-pool-lounge-da6688cd3e.jpg",
+      "image": "assets/site/vibe-garden-day.jpg",
       "source": "live-prior-unique"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T05:30:06Z",
+  "generated": "2026-09-16T05:31:59Z",
   "source": "poolparty.com",
   "note": "Venues from public wp-json venue CPT; city inferred from public copy. Preview images may be local assets or remote https.",
   "venues": [
@@ -295,7 +295,7 @@
       "id": "vn-025",
       "slug": "cafe-del-mar-beach-club-bali",
       "name": "Café del Mar Beach Club Bali",
-      "city": "spain",
+      "city": "bali",
       "city_name": "Spain",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/cafe-del-mar-beach-club-bali/",
@@ -607,7 +607,7 @@
       "id": "vn-051",
       "slug": "savaya-bali",
       "name": "Savaya Bali",
-      "city": "india",
+      "city": "bali",
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/savaya-bali/",
@@ -619,7 +619,7 @@
       "id": "vn-052",
       "slug": "el-kabron-bali-beach-club-with-breathtaking-sunsets-luxuries",
       "name": "El Kabron Bali –Beach Club with Breathtaking Sunsets & Luxuries",
-      "city": "india",
+      "city": "bali",
       "city_name": "India",
       "vibe": "beach",
       "live_url": "https://poolparty.com/venue/el-kabron-bali-beach-club-with-breathtaking-sunsets-luxuries/",
