@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=25" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=27" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=7" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Preview for Frank Accettulli · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav" data-miami-nav style="background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%)!important;border-bottom:2px solid #ffe600!important">
   <div class="wrap nav-inner">
@@ -20,7 +20,7 @@
     <nav class="nav-links" aria-label="Primary"><a class="nav-home" href="index.html" style="color:#ffe600;-webkit-text-fill-color:#ffe600;font-weight:800;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
     <div class="nav-actions">
       <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
-      <a class="nav-cta" href="events.html">Explore events</a>
+      <a class="nav-cta" href="events.html">Book Now</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -30,10 +30,13 @@
   <a href="cart.html">Demo cart</a>
 </div>
 
+<a class="sticky-book" href="events.html">Book Now</a>
+
 <section class="page-hero venues"><div class="wrap">
-  <p class="eyebrow">Venue directory</p>
+  <p class="eyebrow">Venue directory · Sep 2026</p>
   <h1>Where the <em>party</em> lives</h1>
-  <p class="lead">12+ venues from live wp-json + event-card names. Open live listing or jump to city events.</p>
+  <p class="lead">52 venues from the live catalog — Vegas decks, Miami rooms, Dubai beach clubs, Ibiza energy. Jump to city events when the calendar is hot; empty weeks stay honest.</p>
+  <div class="stat-pills" id="venue-stats"></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="filters">
@@ -47,15 +50,23 @@
       <option value="yacht">Yacht</option>
     </select>
   </div>
+  <div class="chip-row">
+    <a class="chip-link" href="venues.html?city=las-vegas">Vegas</a>
+    <a class="chip-link" href="venues.html?city=miami">Miami</a>
+    <a class="chip-link" href="venues.html?city=dubai">Dubai</a>
+    <a class="chip-link" href="venues.html?city=spain">Spain / Ibiza</a>
+    <a class="chip-link" href="venues.html?city=bali">Bali</a>
+  </div>
   <p style="margin-bottom:1rem;font-size:.85rem;color:var(--muted)"><span data-result-count></span></p>
   <div class="card-grid cols-3" id="grid"></div>
 </div></section>
+
 
 <footer class="footer">
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=22" width="210" height="126" alt="Pool Party" style="display:block!important;height:72px!important;width:auto!important;max-width:210px!important;object-fit:contain!important;" /></a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up for mid-September 2026.</p>
     </div>
     <div>
       <h4>Explore</h4>
@@ -81,27 +92,31 @@
   </div>
   <div class="wrap footer-bottom">
     <span>© 2026 Pool Party preview · for Frank Accettulli</span>
-    <span>No CATCH branding · SEC music layer live on preview · Prices never invent as real</span>
+    <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=27"></script>
+<script src="assets/js/site.js?v=28"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   const [vn, cities] = await Promise.all([PP.loadJSON('venues'), PP.loadJSON('cities')]);
+  const venues = vn.venues || [];
   const citySel = document.getElementById('city');
   (cities.cities||[]).forEach(c => {
     const o=document.createElement('option'); o.value=c.slug; o.textContent=c.name; citySel.appendChild(o);
   });
+  const stats = document.getElementById('venue-stats');
+  if (stats) stats.innerHTML = `<span><strong>${venues.length}</strong><small>Venues</small></span><span><strong>${new Set(venues.map(v=>v.city)).size}</strong><small>Cities</small></span>`;
   PP.bindFilters({
     grid: document.getElementById('grid'),
     search: document.getElementById('q'),
     city: citySel,
     vibe: document.getElementById('vibe'),
-    items: vn.venues||[],
+    items: venues,
     render: v => PP.venueCard(v, {cities: cities.cities||[]})
   });
 });
 </script>
+
 </body></html>

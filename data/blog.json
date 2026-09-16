@@ -1,32 +1,125 @@
 {
   "generated": "2026-09-15",
+  "note": "Preview editorial — timely Sep 2026 posts authored for this Miami Electric redesign. Live stubs link to poolparty.com. Not counsel-approved marketing claims.",
   "posts": [
     {
+      "slug": "vegas-this-weekend-sep-2026",
+      "title": "Vegas this weekend (Sep 16–20): passes, Liquid Pool, nightclub access",
+      "date": "2026-09-15",
+      "excerpt": "Mid-September Strip daylife is live — Nightclub Access Passes through the 19th, Liquid Pool names on the calendar, and clear Booketing vs on-site Book Now labels.",
+      "image": "assets/site/vibe-encore-crowd.jpg",
+      "source": "preview",
+      "tags": [
+        "las-vegas",
+        "weekend",
+        "passes"
+      ],
+      "body_html": "\n<p>It’s <strong>Tuesday, September 15, 2026</strong> — and the Vegas preview catalog is stacked for <em>this week</em>, not next season. Nightclub Access Passes land September 16–19, with Liquid Pool talent through the 20th.</p>\n<h2>What’s actually on the calendar</h2>\n<ul>\n<li><strong>Vegas Nightclub Access Pass</strong> — dated nights Sep 16, 17, 18, 19.</li>\n<li><strong>Liquid Pool</strong> — midweek / weekend names (Kid Conrad, Eric Remy and more as listed live).</li>\n<li>Dayclub / beach energy still rotates on the Encore–TAO–LIV axis when headliners post.</li>\n</ul>\n<h2>How Book Now works right now</h2>\n<p>On PoolParty.com, <strong>Book Now</strong> is a handoff — not a mystery checkout:</p>\n<ul>\n<li><strong>Booketing</strong> — opens a Booketing microsite (common for certain venues/passes).</li>\n<li><strong>SquadUp / on-site</strong> — continues on poolparty.com live checkout chrome.</li>\n</ul>\n<p>This Miami Electric preview labels that path on every card. <strong>No invented prices</strong> — amounts stay on the live stack.</p>\n<h2>How to use this preview</h2>\n<p>Filter <a href=\"events.html?city=las-vegas\">Events → Las Vegas</a>, open a detail page, then hit the labeled Book Now. Demo cart is quantity-only chrome for a future POS conversation — it never charges.</p>\n"
+    },
+    {
+      "slug": "miami-daylife-after-summer-2026",
+      "title": "Miami daylife after peak summer: what the catalog shows in mid-September",
+      "date": "2026-09-15",
+      "excerpt": "Honest mid-September read: Miami’s live product feed is lighter than Vegas right now. Here’s how to use the city hub without fake FOMO.",
+      "image": "assets/site/dest-miami-night.jpg",
+      "source": "preview",
+      "tags": [
+        "miami",
+        "season"
+      ],
+      "body_html": "\n<p>Peak South Beach summer is behind us. As of <strong>Sep 15, 2026</strong>, the live PoolParty Miami product feed is thinner than Vegas — lots of winter/early-2026 room posts still in the API.</p>\n<h2>What we won’t do</h2>\n<p>We will <strong>not</strong> backfill empty Miami weekends with old Vegas cards. If the city hub says no upcoming preview events, that’s the truth for this snapshot.</p>\n<h2>What to do instead</h2>\n<ul>\n<li>Open the <a href=\"city.html?id=miami\">Miami hub</a> for venues + any upcoming rows.</li>\n<li>Use <a href=\"https://poolparty.com/pp-cities/miami/\" target=\"_blank\" rel=\"noopener\">live Miami</a> for the freshest listings.</li>\n<li>Watch Strawberry Moon / One Fire Beach style rooms as they reappear on the live calendar.</li>\n</ul>\n<p>Book Now still hands off to Booketing or SquadUp when an event is live — same honesty as Vegas.</p>\n"
+    },
+    {
+      "slug": "how-book-now-booketing-vs-squadup-2026",
+      "title": "Book Now explained (2026): Booketing vs SquadUp handoff",
+      "date": "2026-09-14",
+      "excerpt": "Why some buttons say Booketing and others say live checkout — and why this preview never invents ticket prices.",
+      "image": "assets/site/lifestyle-cheers.jpg",
+      "source": "preview",
+      "tags": [
+        "booking",
+        "product"
+      ],
+      "body_html": "\n<p>Shoppers should never wonder where a click goes. Mid-2026 PoolParty booking is still a <strong>handoff model</strong>:</p>\n<h2>Booketing</h2>\n<p>When an event page embeds or links out to <strong>booketing.com</strong>, Book Now opens that microsite. Deposits, refunds, and ticket prices live there.</p>\n<h2>SquadUp / on-site checkout</h2>\n<p>Other products continue on <strong>poolparty.com</strong> with SquadUp-powered checkout (overlay or on-page). This preview deep-links to the live URL — it does <em>not</em> embed SquadUp.</p>\n<h2>What the demo cart is</h2>\n<p>A quantity-only shell so stakeholders can feel first-party POS chrome. <strong>No prices. No charges. No inventory claims.</strong></p>\n"
+    },
+    {
+      "slug": "dubai-ibiza-offseason-reality-check",
+      "title": "Dubai & Ibiza mid-September: off-season honesty check",
+      "date": "2026-09-14",
+      "excerpt": "International daylife doesn’t fake a weekend. Here’s how city hubs behave when the live catalog is between seasons.",
+      "image": "assets/site/dest-ibiza-obeach.jpg",
+      "source": "preview",
+      "tags": [
+        "dubai",
+        "spain",
+        "season"
+      ],
+      "body_html": "\n<p>Dubai’s Bla Bla / Friday pool series and Ibiza Rocks pool days dominate older API rows. Mid-September often means <strong>fewer near-term dated products</strong> in the public feed.</p>\n<h2>City hub rules in this preview</h2>\n<ul>\n<li>Show real venues when we have them.</li>\n<li>If upcoming events = 0, say so — with a live city link.</li>\n<li>Never dump Vegas heat into Dubai/Ibiza empty states.</li>\n</ul>\n<p>Use <a href=\"cities.html\">Cities</a> to compare which destinations actually have this-week inventory.</p>\n"
+    },
+    {
+      "slug": "pool-party-pass-vs-single-event-2026",
+      "title": "Pool Party Pass vs single event: how to choose this week",
+      "date": "2026-09-13",
+      "excerpt": "Passes assign access across partner rooms; single events name the DJ and deck. Mid-September Vegas is a good lab for both.",
+      "image": "assets/site/feat-encore-cabana.jpg",
+      "source": "preview",
+      "tags": [
+        "passes",
+        "las-vegas"
+      ],
+      "body_html": "\n<p><strong>Passes</strong> (Nightclub Access Pass, Pool Party Pass flavors) are dated access products — great when you want flexibility across partner venues.</p>\n<p><strong>Single events</strong> name the room and talent (e.g. a Liquid Pool date). Book Now still routes to the live provider labeled on the card.</p>\n<h2>Tip for this weekend</h2>\n<p>Start on <a href=\"events.html?city=las-vegas&vibe=pass\">Vegas · Pass</a>, then compare a specific <a href=\"events.html?city=las-vegas&vibe=pool\">pool</a> or <a href=\"events.html?city=las-vegas&vibe=dayclub\">dayclub</a> row. Read the Book Now label before you click.</p>\n"
+    },
+    {
+      "slug": "fomo-daylife-field-guide-sep-2026",
+      "title": "FOMO daylife field guide — September 2026 edition",
+      "date": "2026-09-12",
+      "excerpt": "Cabana days, beach splash, yacht gold hour — how to browse vibes when the calendar is real and the prices stay live.",
+      "image": "assets/site/vibe-yacht-bay.jpg",
+      "source": "preview",
+      "tags": [
+        "guide",
+        "vibes"
+      ],
+      "body_html": "\n<p>Daylife shopping is vibe-first: <strong>dayclub</strong> production, <strong>beach</strong> sand decks, <strong>pool</strong> resort energy, <strong>yacht</strong> waterfront flex, <strong>pass</strong> multi-room access.</p>\n<h2>This preview’s job</h2>\n<p>Make discovery feel like Miami Electric summer — lemon, pool, sunset — while ticketing stays honest. 21+ unless noted. Refunds and deposits follow the live Booketing/SquadUp terms, not this static site.</p>\n<p>Ready? <a href=\"events.html\">Browse this week’s heat →</a></p>\n"
+    },
+    {
       "slug": "splash-house-2026",
-      "title": "Splash House 2026 \u2013 The Ultimate Palm Springs Pool Party Festival",
+      "title": "Splash House 2026 – Palm Springs pool festival weekends",
       "live_url": "https://poolparty.com/splash-house-2026/",
       "date": "2026-08-04",
-      "excerpt": "Splash House 2026 \u2013 The Ultimate Palm Springs Pool Party Festival Get ready for Splash House 2026, one of the most exciting pool party festivals in Palm Springs. Taking place across two unforgettable weekends \u2013 August 7\u20139 and August 14\u201316, ",
+      "excerpt": "Two Palm Springs weekends — Aug 7–9 and Aug 14–16 — covered on the live editorial site.",
       "image": "assets/site/feat-encore-pool.jpg",
-      "source": "live"
+      "source": "live",
+      "tags": [
+        "california"
+      ],
+      "body_html": "<p>Full article lives on poolparty.com. This card mirrors the public post for the preview index.</p>"
     },
     {
       "slug": "nyc-summer-club-guide",
       "title": "NYC Summer Club Guide",
       "live_url": "https://poolparty.com/nyc-summer-club-guide/",
       "date": "2026-07-13",
-      "excerpt": "NYC Summer Club Guide: Your Ultimate Rooftop Pool Party Destination Looking for the ultimate rooftop pool party in New York City? NYC Summer Club delivers an unforgettable daylife experience with rooftop views, live DJs, luxury cabanas, ref",
-      "image": "assets/site/feat-encore-pool.jpg",
-      "source": "live"
+      "excerpt": "Rooftop pool days and NYC summer club energy — read the full guide on the live site.",
+      "image": "assets/site/vibe-beach-terrace.jpg",
+      "source": "live",
+      "tags": [
+        "new-york"
+      ],
+      "body_html": "<p>Full article lives on poolparty.com.</p>"
     },
     {
       "slug": "tao",
       "title": "TAO Venues Guide 2026",
       "live_url": "https://poolparty.com/tao/",
       "date": "2026-07-13",
-      "excerpt": "TAO Venues Guide 2026 If you\u2019re searching for unforgettable dining, luxury nightlife, and world-famous dayclubs, TAO is one of the biggest names in hospitality. From iconic restaurants to award-winning beach clubs and nightclubs, TAO offers",
-      "image": "assets/site/feat-encore-pool.jpg",
-      "source": "live"
+      "excerpt": "TAO restaurants, beach clubs, and nightclubs — live editorial guide.",
+      "image": "assets/site/vibe-ayu-energy.jpg",
+      "source": "live",
+      "tags": [
+        "venues"
+      ],
+      "body_html": "<p>Full article lives on poolparty.com.</p>"
     }
   ]
 }

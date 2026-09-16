@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cities — Pool Party</title>
-  <meta name="description" content="19 cities from live PoolParty taxonomy." />
+  <meta name="description" content="19 cities with real upcoming counts for mid-September 2026." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=25" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=27" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=7" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Preview for Frank Accettulli · Book Now goes live. Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav" data-miami-nav style="background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%)!important;border-bottom:2px solid #ffe600!important">
   <div class="wrap nav-inner">
@@ -20,7 +20,7 @@
     <nav class="nav-links" aria-label="Primary"><a class="nav-home" href="index.html" style="color:#ffe600;-webkit-text-fill-color:#ffe600;font-weight:800;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
     <div class="nav-actions">
       <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
-      <a class="nav-cta" href="events.html">Explore events</a>
+      <a class="nav-cta" href="events.html">Book Now</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -30,55 +30,87 @@
   <a href="cart.html">Demo cart</a>
 </div>
 
+<a class="sticky-book" href="events.html">Book Now</a>
+
 <section class="page-hero cities"><div class="wrap">
-  <p class="eyebrow">Destinations</p>
-  <h1>19 cities. <em>One</em> daylife map.</h1>
-  <p class="lead">Tap a city to open its filtered events feed.</p>
+  <p class="eyebrow">Destinations · mid-September 2026</p>
+  <h1>19 cities. <em>Real</em> upcoming counts.</h1>
+  <p class="lead">Tap a hub for events + venues. Featured cities show this-week inventory when the live feed has it — empty calendars say empty (no Vegas dump).</p>
+  <div class="stat-pills" id="city-stats"></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="city-grid" id="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))"></div>
 </div></section>
 
+
 <footer class="footer">
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=22" width="210" height="126" alt="Pool Party" style="display:block!important;height:72px!important;width:auto!important;max-width:210px!important;object-fit:contain!important;" /></a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Ticketing stays on the live PoolParty stack.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up for mid-September 2026.</p>
     </div>
-    <div><h4>Explore</h4>
-      <a href="events.html">Events</a><a href="venues.html">Venues</a>
-      <a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
-    <div><h4>Partners</h4>
-      <a href="advertise.html">Advertise</a><a href="contact.html">Contact</a>
-      <a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
-    <div><h4>Legal</h4>
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-      <a href="cart.html">Demo cart</a><a href="checkout.html">Checkout</a></div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise / list venue</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Pool Party preview · Frank Accettulli</span>
-    <span>No CATCH · No invented ticket prices</span>
+    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=27"></script>
+<script src="assets/js/site.js?v=28"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   const [citiesPack, ev, vn] = await Promise.all([PP.loadJSON('cities'), PP.loadJSON('events'), PP.loadJSON('venues')]);
   const cities = citiesPack.cities||[];
-  const eventSlugs = new Set((ev.events||[]).map(e => e.city));
-  const venueSlugs = new Set((vn.venues||[]).map(v => v.city));
-  document.getElementById('grid').innerHTML = cities.map(c => {
+  const events = ev.events||[];
+  const venues = vn.venues||[];
+  const eventSlugs = new Set(events.map(e => e.city));
+  const venueSlugs = new Set(venues.map(v => v.city));
+  const upTotal = PP.countUpcoming(events);
+  const stats = document.getElementById('city-stats');
+  if (stats) stats.innerHTML = `<span><strong>${cities.length}</strong><small>Cities</small></span><span><strong>${upTotal}</strong><small>Upcoming events</small></span><span><strong>${venues.length}</strong><small>Venues</small></span>`;
+  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california'];
+  const ordered = [
+    ...featured.map(s => cities.find(c => c.slug === s)).filter(Boolean),
+    ...cities.filter(c => !featured.includes(c.slug))
+  ];
+  document.getElementById('grid').innerHTML = ordered.map(c => {
+    const up = PP.countUpcoming(events, c.slug);
+    const vc = venues.filter(v => v.city === c.slug).length;
     const meta = PP.cityTileMeta(c, { eventSlugs, venueSlugs });
-    const hint = c.count_hint != null ? `${c.count_hint} live · ${meta.blurb}` : meta.blurb;
+    let blurb;
+    if (up) blurb = `${up} upcoming · ${vc ? vc + ' venues' : meta.blurb}`;
+    else if (vc) blurb = `0 upcoming · ${vc} venues`;
+    else blurb = 'Open hub · live link';
     return `
     <a class="city-tile" href="${meta.href}" style="display:block;color:inherit" data-city="${PP.esc(c.slug)}">
       <img src="${PP.esc(c.image)}" alt="" loading="lazy" />
       <span>${PP.esc(c.name)}</span>
-      <small>${PP.esc(hint)}</small>
+      <small>${PP.esc(blurb)}</small>
     </a>`;
   }).join('');
 });
 </script>
+
 </body></html>

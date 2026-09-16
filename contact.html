@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Pool Party</title>
-  <meta name="description" content="Contact the Pool Party prototype." />
+  <meta name="description" content="Contact the Pool Party redesign preview." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=25" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=27" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=7" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Preview for Frank Accettulli · Book Now goes live. Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav" data-miami-nav style="background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%)!important;border-bottom:2px solid #ffe600!important">
   <div class="wrap nav-inner">
@@ -20,7 +20,7 @@
     <nav class="nav-links" aria-label="Primary"><a class="nav-home" href="index.html" style="color:#ffe600;-webkit-text-fill-color:#ffe600;font-weight:800;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
     <div class="nav-actions">
       <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
-      <a class="nav-cta" href="events.html">Explore events</a>
+      <a class="nav-cta" href="events.html">Book Now</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -30,45 +30,91 @@
   <a href="cart.html">Demo cart</a>
 </div>
 
+<a class="sticky-book" href="events.html">Book Now</a>
+
 <section class="page-hero contact"><div class="wrap">
-  <p class="eyebrow">Contact</p>
+  <p class="eyebrow">Contact · redesign review</p>
   <h1>Talk to <em>us</em></h1>
-  <p class="lead">Prototype form opens your email client to faccett66@gmail.com. Live support remains info@poolparty.com.</p>
+  <p class="lead">Opens your email client to <strong>faccett66@gmail.com</strong> — no fake Contact Form 7. Live guest support remains info@poolparty.com.</p>
 </div></section>
-<section style="padding-top:0"><div class="wrap"><div class="form-card" style="max-width:560px">
-  <form data-mailto="faccett66@gmail.com" data-subject="PoolParty Contact">
-    <div class="field"><label>Name</label><input name="name" required /></div>
-    <div class="field"><label>Email</label><input type="email" name="email" required /></div>
-    <div class="field"><label>Topic</label>
-      <select name="topic"><option>General</option><option>Booking question</option><option>Venue / advertise</option><option>Affiliate / promoter</option><option>SEC music pilot</option><option>Partnership / POS</option></select>
-    </div>
-    <div class="field"><label>Message</label><textarea name="message" required></textarea></div>
-    <button class="btn btn-primary" type="submit">Send message</button>
-    <p class="form-note" data-form-status hidden></p>
-  </form>
-</div></div></section>
+<section style="padding-top:0"><div class="wrap">
+  <div class="chip-row" id="presets">
+    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Vegas%20this%20weekend">Vegas this weekend</a>
+    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Booking%20path%20question">Booking path question</a>
+    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Venue%20%2F%20advertise">Venue / advertise</a>
+    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20SEC%20music%20pilot">SEC music pilot</a>
+    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Partnership%20%2F%20POS">Partnership / POS</a>
+  </div>
+  <div class="form-card" style="max-width:560px">
+    <form data-mailto="faccett66@gmail.com" data-subject="PoolParty Contact">
+      <div class="field"><label>Name</label><input name="name" required /></div>
+      <div class="field"><label>Email</label><input type="email" name="email" required /></div>
+      <div class="field"><label>Topic</label>
+        <select name="topic" id="topic">
+          <option>General</option>
+          <option>Vegas this weekend</option>
+          <option>Booking question (Booketing / SquadUp)</option>
+          <option>Venue / advertise</option>
+          <option>Affiliate / promoter</option>
+          <option>SEC music pilot</option>
+          <option>Partnership / POS</option>
+        </select>
+      </div>
+      <div class="field"><label>Message</label><textarea name="message" required placeholder="What should Frank know about this redesign?"></textarea></div>
+      <button class="btn btn-primary" type="submit">Open email draft</button>
+      <p class="form-note" data-form-status hidden></p>
+      <p class="form-note">Mailto only — nothing is stored on this static preview.</p>
+    </form>
+  </div>
+</div></section>
+
 
 <footer class="footer">
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=22" width="210" height="126" alt="Pool Party" style="display:block!important;height:72px!important;width:auto!important;max-width:210px!important;object-fit:contain!important;" /></a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Ticketing stays on the live PoolParty stack.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up for mid-September 2026.</p>
     </div>
-    <div><h4>Explore</h4>
-      <a href="events.html">Events</a><a href="venues.html">Venues</a>
-      <a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
-    <div><h4>Partners</h4>
-      <a href="advertise.html">Advertise</a><a href="contact.html">Contact</a>
-      <a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
-    <div><h4>Legal</h4>
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-      <a href="cart.html">Demo cart</a><a href="checkout.html">Checkout</a></div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise / list venue</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Pool Party preview · Frank Accettulli</span>
-    <span>No CATCH · No invented ticket prices</span>
+    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=27"></script>
+<script src="assets/js/site.js?v=28"></script>
 <script src="assets/js/music.js?v=11"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form[data-mailto]');
+  const topic = document.getElementById('topic');
+  if (form && topic) {
+    topic.addEventListener('change', () => {
+      form.dataset.subject = 'PoolParty — ' + topic.value;
+    });
+  }
+});
+</script>
+
 </body></html>

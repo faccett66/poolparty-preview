@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>City — Pool Party</title>
-  <meta name="description" content="City hub" />
+  <meta name="description" content="City hub with upcoming counts and honest empty states." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=25" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=27" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=7" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Preview for Frank Accettulli · Book Now goes live. Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav" data-miami-nav style="background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%)!important;border-bottom:2px solid #ffe600!important">
   <div class="wrap nav-inner">
@@ -20,7 +20,7 @@
     <nav class="nav-links" aria-label="Primary"><a class="nav-home" href="index.html" style="color:#ffe600;-webkit-text-fill-color:#ffe600;font-weight:800;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
     <div class="nav-actions">
       <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
-      <a class="nav-cta" href="events.html">Explore events</a>
+      <a class="nav-cta" href="events.html">Book Now</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -30,36 +30,54 @@
   <a href="cart.html">Demo cart</a>
 </div>
 
+<a class="sticky-book" href="events.html">Book Now</a>
+
 <section class="page-hero cities"><div class="wrap" id="city-root"><p>Loading…</p></div></section>
 <section style="padding-top:0"><div class="wrap">
-  <div class="section-head"><h2>Events in this city</h2></div>
+  <div class="when-bar" id="city-when" hidden></div>
+  <div class="section-head"><h2>Upcoming in this city</h2><p style="color:var(--muted);font-size:.9rem">Past catalog stays below when present — never replaced with another city’s heat.</p></div>
   <div class="card-grid cols-3" id="events"></div>
+  <div class="section-head" style="margin-top:2.5rem"><h2>Past catalog (same city)</h2></div>
+  <div class="card-grid cols-3" id="past"></div>
   <div class="section-head" style="margin-top:2.5rem"><h2>Venues</h2></div>
   <div class="card-grid cols-3" id="venues"></div>
 </div></section>
+
 
 <footer class="footer">
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=22" width="210" height="126" alt="Pool Party" style="display:block!important;height:72px!important;width:auto!important;max-width:210px!important;object-fit:contain!important;" /></a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Ticketing stays on the live PoolParty stack.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up for mid-September 2026.</p>
     </div>
-    <div><h4>Explore</h4>
-      <a href="events.html">Events</a><a href="venues.html">Venues</a>
-      <a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
-    <div><h4>Partners</h4>
-      <a href="advertise.html">Advertise</a><a href="contact.html">Contact</a>
-      <a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
-    <div><h4>Legal</h4>
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-      <a href="cart.html">Demo cart</a><a href="checkout.html">Checkout</a></div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise / list venue</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Pool Party preview · Frank Accettulli</span>
-    <span>No CATCH · No invented ticket prices</span>
+    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=27"></script>
+<script src="assets/js/site.js?v=28"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -69,23 +87,42 @@ document.addEventListener('DOMContentLoaded', async () => {
   const c = (cities.cities||[]).find(x=>x.slug===id) || (cities.cities||[])[0];
   PP.setCity(c.slug);
   document.title = c.name + ' — Pool Party';
+  const all = (ev.events||[]).filter(e=>e.city===c.slug);
+  const upcoming = PP.sortEventsUpcomingFirst(all.filter(e => PP.isUpcoming(e)));
+  const past = PP.sortEventsUpcomingFirst(all.filter(e => !PP.isUpcoming(e)));
+  const venues = (vn.venues||[]).filter(v=>v.city===c.slug);
   document.getElementById('city-root').innerHTML = `
-    <p class="eyebrow">City hub</p>
+    <p class="eyebrow">City hub · week of Sep 15, 2026</p>
     <h1>${PP.esc(c.name)}</h1>
     <p class="lead">${PP.esc(c.description||'')}</p>
+    <div class="stat-pills">
+      <span><strong>${upcoming.length}</strong><small>Upcoming</small></span>
+      <span><strong>${past.length}</strong><small>Past catalog</small></span>
+      <span><strong>${venues.length}</strong><small>Venues</small></span>
+    </div>
     <div class="hero-actions" style="margin-top:1.25rem">
-      <a class="btn btn-primary" href="events.html?city=${encodeURIComponent(c.slug)}">Filter all events</a>
+      <a class="btn btn-primary" href="events.html?city=${encodeURIComponent(c.slug)}">Filter events</a>
       <a class="btn btn-ghost" href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live city page</a>
       <a class="btn btn-ghost" href="cities.html">All cities</a>
     </div>`;
-  const events = (ev.events||[]).filter(e=>e.city===c.slug);
-  const venues = (vn.venues||[]).filter(v=>v.city===c.slug);
-  document.getElementById('events').innerHTML = events.length
-    ? events.map(e=>PP.eventCard(e,{cities:cities.cities})).join('')
-    : `<div class="empty-state">No preview events for ${PP.esc(c.name)} in the prototype JSON — <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">browse live</a>.</div>`;
+  const when = document.getElementById('city-when');
+  if (!upcoming.length) {
+    when.hidden = false;
+    when.innerHTML = `<strong>No upcoming preview events for ${PP.esc(c.name)} this week.</strong> We are not backfilling with Vegas. ${venues.length ? `See venues below or ` : ''}<a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">browse live</a>.`;
+  } else {
+    when.hidden = false;
+    when.innerHTML = `<strong>${upcoming.length} upcoming</strong> in the preview snapshot — Book Now labels Booketing vs SquadUp handoff.`;
+  }
+  document.getElementById('events').innerHTML = upcoming.length
+    ? upcoming.map(e=>PP.eventCard(e,{cities:cities.cities})).join('')
+    : `<div class="empty-state">Empty upcoming calendar for ${PP.esc(c.name)}. <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live listings</a>${venues.length ? ` · <a href="venues.html?city=${encodeURIComponent(c.slug)}">Venues</a>` : ''}.</div>`;
+  document.getElementById('past').innerHTML = past.length
+    ? past.map(e=>PP.eventCard(e,{cities:cities.cities})).join('')
+    : `<div class="empty-state">No past-catalog rows for ${PP.esc(c.name)} in this preview.</div>`;
   document.getElementById('venues').innerHTML = venues.length
     ? venues.map(v=>PP.venueCard(v,{cities:cities.cities})).join('')
-    : `<div class="empty-state">No preview venues yet — <a href="venues.html?city=${encodeURIComponent(c.slug)}">venue directory</a> · <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">live city</a>.</div>`;
+    : `<div class="empty-state">No preview venues yet — <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">live city</a>.</div>`;
 });
 </script>
+
 </body></html>

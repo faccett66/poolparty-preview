@@ -2,6 +2,7 @@
 (function () {
   const CART_KEY = 'pp_demo_cart_v1';
   const CITY_KEY = 'pp_selected_city';
+  const PREVIEW_TODAY = '2026-09-15'; // mid-Sep 2026 preview "now"
 
   const PP = {
     dataRoot: (document.body.dataset.dataRoot || 'data').replace(/\/$/, ''),
@@ -97,8 +98,19 @@
       else if (provider) noteProvider = ev.book_provider;
       return { label, noteProvider, provider };
     },
+    previewToday() { return PREVIEW_TODAY; },
+    isUpcoming(ev) {
+      const d = (ev && ev.date) || '';
+      return !!d && d >= PREVIEW_TODAY;
+    },
+    upcomingOnly(items) {
+      return (items || []).filter(e => this.isUpcoming(e));
+    },
+    countUpcoming(items, citySlug) {
+      return (items || []).filter(e => this.isUpcoming(e) && (!citySlug || e.city === citySlug)).length;
+    },
     sortEventsUpcomingFirst(items) {
-      const today = '2026-09-15';
+      const today = PREVIEW_TODAY;
       return [...items].sort((a, b) => {
         const da = a.date || '';
         const db = b.date || '';
@@ -127,7 +139,7 @@
           <img src="${this.esc(ev.image)}" alt="${this.esc(ev.title)}" loading="lazy" />
           <div class="badge-row">
             <span class="tag">${this.esc((ev.vibe || 'pool').toUpperCase())}</span>
-            <span class="tag live">LIVE LINK</span>
+            ${this.isUpcoming(ev) ? '<span class="tag live">THIS WEEK</span>' : '<span class="tag demo">PAST CATALOG</span>'}
           </div>
         </div>
         <div class="card-body">
@@ -262,42 +274,57 @@
       });
     },
 
-    bindFilters({ grid, search, city, vibe, items, render }) {
+    bindFilters({ grid, search, city, vibe, items, render, upcomingToggle, emptyCityMessage }) {
+      const isEventish = !!(items && items[0] && items[0].date !== undefined);
       const apply = () => {
         const q = (search?.value || '').toLowerCase().trim();
         const c = city?.value || '';
         const v = vibe?.value || '';
+        const wantUpcoming = isEventish && upcomingToggle ? !!upcomingToggle.checked : (isEventish ? true : false);
         let filtered = items.filter(it => {
           if (c && it.city !== c) return false;
           if (v && it.vibe !== v) return false;
+          if (isEventish && wantUpcoming && !this.isUpcoming(it)) return false;
           if (q) {
             const hay = `${it.title || it.name || ''} ${it.venue || ''} ${it.city || ''} ${it.excerpt || ''}`.toLowerCase();
             if (!hay.includes(q)) return false;
           }
           return true;
         });
-        // Events with dates: upcoming-first
-        if (filtered.length && filtered[0] && filtered[0].date !== undefined) {
-          filtered = this.sortEventsUpcomingFirst(filtered);
+        if (isEventish) filtered = this.sortEventsUpcomingFirst(filtered);
+        if (!filtered.length) {
+          const cityLabel = c ? this.cityName(null, c) : '';
+          const msg = (c && emptyCityMessage)
+            ? emptyCityMessage(c, cityLabel, wantUpcoming)
+            : (c && isEventish && wantUpcoming
+              ? `No upcoming preview events for ${cityLabel || c} this week. Try another city, or show past catalog.`
+              : 'No matches. Try another city or vibe.');
+          grid.innerHTML = `<div class="empty-state">${msg}</div>`;
+        } else {
+          grid.innerHTML = filtered.map(render).join('');
         }
-        grid.innerHTML = filtered.length
-          ? filtered.map(render).join('')
-          : `<div class="empty-state">No matches. Try another city or vibe.</div>`;
         const count = document.querySelector('[data-result-count]');
-        if (count) count.textContent = `${filtered.length} result${filtered.length === 1 ? '' : 's'}`;
+        if (count) {
+          if (isEventish && wantUpcoming) {
+            count.textContent = `${filtered.length} upcoming`;
+          } else {
+            count.textContent = `${filtered.length} result${filtered.length === 1 ? '' : 's'}`;
+          }
+        }
       };
-      [search, city, vibe].forEach(el => el && el.addEventListener('input', apply));
-      [search, city, vibe].forEach(el => el && el.addEventListener('change', apply));
-      // URL / stored city
-      const urlCity = this.qs('city') || this.getCity();
+      [search, city, vibe, upcomingToggle].forEach(el => el && el.addEventListener('input', apply));
+      [search, city, vibe, upcomingToggle].forEach(el => el && el.addEventListener('change', apply));
+      // URL city wins; don't force stored city onto All Cities when browsing fresh
+      const urlCity = this.qs('city');
       if (urlCity && city) {
         city.value = urlCity;
-        if (urlCity) this.setCity(urlCity);
+        this.setCity(urlCity);
       }
       const urlVibe = this.qs('vibe');
       if (urlVibe && vibe) vibe.value = urlVibe;
       const urlQ = this.qs('q');
       if (urlQ && search) search.value = urlQ;
+      if (upcomingToggle && this.qs('past') === '1') upcomingToggle.checked = false;
       apply();
       return apply;
     }

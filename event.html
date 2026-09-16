@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=25" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=27" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=7" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Preview for Frank Accettulli · Book Now goes live. Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav" data-miami-nav style="background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%)!important;border-bottom:2px solid #ffe600!important">
   <div class="wrap nav-inner">
@@ -20,7 +20,7 @@
     <nav class="nav-links" aria-label="Primary"><a class="nav-home" href="index.html" style="color:#ffe600;-webkit-text-fill-color:#ffe600;font-weight:800;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,2px 0 0 #000,-2px 0 0 #000,0 2px 0 #000,0 -2px 0 #000">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Advertise</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
     <div class="nav-actions">
       <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
-      <a class="nav-cta" href="events.html">Explore events</a>
+      <a class="nav-cta" href="events.html">Book Now</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -30,37 +30,54 @@
   <a href="cart.html">Demo cart</a>
 </div>
 
+<a class="sticky-book" href="events.html">Book Now</a>
+
 <section class="page-hero events" style="padding-bottom:1rem"><div class="wrap" id="event-root">
   <p class="eyebrow">Event detail</p>
   <p style="color:var(--muted)">Loading…</p>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
-  <div class="demo-callout"><strong>Book Now</strong> is a live handoff to Booketing or poolparty.com (SquadUp). This prototype is not the point-of-sale. Demo cart below is quantity-only layout — no prices.</div>
+  <div class="demo-callout"><strong>Book Now</strong> is a live handoff to Booketing or poolparty.com (SquadUp). This prototype is not the point-of-sale. Demo cart below is quantity-only — no prices.</div>
   <div id="tiers" class="panel" style="margin-top:1rem"></div>
+  <div class="related-head section-head"><p class="eyebrow">More like this</p><h2>Related in preview</h2></div>
+  <div class="card-grid cols-3" id="related"></div>
 </div></section>
+
 
 <footer class="footer">
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=22" width="210" height="126" alt="Pool Party" style="display:block!important;height:72px!important;width:auto!important;max-width:210px!important;object-fit:contain!important;" /></a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Ticketing stays on the live PoolParty stack.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up for mid-September 2026.</p>
     </div>
-    <div><h4>Explore</h4>
-      <a href="events.html">Events</a><a href="venues.html">Venues</a>
-      <a href="cities.html">Cities</a><a href="blog.html">Blog</a></div>
-    <div><h4>Partners</h4>
-      <a href="advertise.html">Advertise</a><a href="contact.html">Contact</a>
-      <a href="faqs.html">FAQs</a><a href="account.html">Account</a></div>
-    <div><h4>Legal</h4>
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-      <a href="cart.html">Demo cart</a><a href="checkout.html">Checkout</a></div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise / list venue</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Pool Party preview · Frank Accettulli</span>
-    <span>No CATCH · No invented ticket prices</span>
+    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=27"></script>
+<script src="assets/js/site.js?v=28"></script>
 <script src="assets/js/music.js?v=11"></script>
 
 <script>
@@ -69,13 +86,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   const root = document.getElementById('event-root');
   const tiers = document.getElementById('tiers');
   const [ev, cities] = await Promise.all([PP.loadJSON('events'), PP.loadJSON('cities')]);
-  const e = (ev.events||[]).find(x => x.slug === id) || (ev.events||[])[0];
+  const all = ev.events || [];
+  const e = all.find(x => x.slug === id) || all.find(x => PP.isUpcoming(x)) || all[0];
   if (!e) { root.innerHTML = '<p>Event not found. <a href="events.html">Back to events</a></p>'; return; }
   document.title = e.title + ' — Pool Party';
   const book = e.book_url || e.live_url;
   const meta = PP.bookMeta(e);
+  const when = PP.isUpcoming(e) ? 'Upcoming · this week' : 'Past catalog · for reference';
   root.innerHTML = `
-    <p class="eyebrow">${PP.esc(PP.formatDate(e.date))} · ${PP.esc(PP.cityName(cities.cities, e.city))}</p>
+    <p class="eyebrow">${PP.esc(when)} · ${PP.esc(PP.formatDate(e.date))} · ${PP.esc(PP.cityName(cities.cities, e.city))}</p>
     <h1>${PP.esc(e.title)}</h1>
     <p class="lead">${PP.esc(e.venue||'')} · ${PP.esc((e.vibe||'').toUpperCase())}</p>
     <div style="margin:1.5rem 0;border-radius:var(--radius);overflow:hidden;max-height:420px;border:1px solid rgba(238,248,248,.1)">
@@ -84,10 +103,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     <div class="hero-actions" style="margin-bottom:0">
       <a class="btn btn-primary" href="${PP.esc(book)}" target="_blank" rel="noopener">${PP.esc(meta.label)}</a>
       <a class="btn btn-ghost" href="${PP.esc(e.live_url)}" target="_blank" rel="noopener">Open on poolparty.com</a>
-      <a class="btn btn-ghost" href="events.html">← All events</a>
+      <a class="btn btn-ghost" href="events.html?city=${encodeURIComponent(e.city)}">← City events</a>
     </div>
-    <p class="handoff-note" style="margin-top:1rem;max-width:40rem">${PP.esc(meta.label)} → <strong>${PP.esc(meta.noteProvider)}</strong>. Checkout stays on the live stack — this page mirrors discovery UX only.</p>
+    <p class="handoff-note" style="margin-top:1rem;max-width:40rem">${PP.esc(meta.label)} → <strong>${PP.esc(meta.noteProvider)}</strong>. Checkout stays on the live stack — this page mirrors discovery UX only. No ticket prices invented here.</p>
   `;
+  const sticky = document.querySelector('.sticky-book');
+  if (sticky) { sticky.href = book; sticky.target = '_blank'; sticky.rel = 'noopener'; sticky.textContent = meta.label; }
   const tierBtns = (e.ticket_tiers||[]).map(t => `
     <div class="cart-line" style="border:none">
       <div style="flex:1">
@@ -101,6 +122,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   tiers.innerHTML = `<h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:.5rem">Demo ticket tiers</h3>
     <p style="color:var(--mist);font-weight:300;font-size:.9rem;margin-bottom:1rem">Optional UX for a future first-party POS. Today’s real purchase path is the Book Now button above.</p>${tierBtns}
     <a class="btn btn-aqua btn-sm" style="margin-top:1rem" href="cart.html">View demo cart</a>`;
+  const related = all.filter(x => x.slug !== e.slug && (x.city === e.city || x.vibe === e.vibe));
+  const ranked = PP.sortEventsUpcomingFirst(related).slice(0, 6);
+  const relEl = document.getElementById('related');
+  relEl.innerHTML = ranked.length
+    ? ranked.map(x => PP.eventCard(x, {cities: cities.cities})).join('')
+    : `<div class="empty-state">No related rows — <a href="events.html">browse all upcoming</a>.</div>`;
 });
 </script>
+
 </body></html>
