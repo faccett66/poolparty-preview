@@ -1033,22 +1033,33 @@ a, a:link, a:visited {
   position:relative;
   z-index:2;
   max-width:58rem !important;
+  width:min(58rem, calc(100% - 2rem)) !important;
+  margin-inline:auto !important;
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
+  align-items:center !important; /* center the glass again */
   gap:1.1rem;
   padding-bottom:1.25rem !important;
+  text-align:center;
 }
 .hero .hero-content{
   /* text-only glass panel — CTAs are siblings outside */
   max-width:42rem !important;
   width:100%;
+  margin-inline:auto !important;
+  text-align:center;
+}
+.hero .hero-content .hero-lead{
+  margin-inline:auto !important;
+}
+.hero .hero-glass{
+  justify-content:center !important;
 }
 .hero .hero-actions{
   position:relative;
   z-index:6;
   isolation:isolate;
-  /* sit clear of any parent backdrop-filter */
+  justify-content:center !important;
   filter:none !important;
   opacity:1 !important;
   mix-blend-mode:normal !important;
