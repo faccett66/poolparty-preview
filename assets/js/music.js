@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — Overflow + Off The Leash + volume buttons. cache-bust:v7 */
+/*! Pool Party soundtrack layer — Overflow + Off The Leash + volume buttons. cache-bust:v8 */
 (function (global) {
   'use strict';
 
@@ -206,7 +206,7 @@
         '<button type="button" class="pp-music-dock__btn pp-music-dock__next" aria-label="Next track">' + iconNext() + '</button>' +
         '<div class="pp-music-dock__meta">' +
           '<span class="pp-music-dock__title"></span>' +
-          '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Sonic Ear Candy · Frank Accettulli">SEC</a>' +
+          '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Sonic Ear Candy · Frank Accettulli">Sonic Ear Candy</a>' +
         '</div>' +
         '<div class="pp-music-dock__vol">' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
