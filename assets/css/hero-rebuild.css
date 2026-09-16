@@ -305,9 +305,8 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
   transform:none !important;
   inset:auto !important;
 }
-/* Italic sidebearing makes Who's in look ~0.08–0.12em right — pull flush */
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
-  margin-left:-0.1em !important;
+  margin-left:0 !important;
   color:#FF3864 !important;
 }
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
