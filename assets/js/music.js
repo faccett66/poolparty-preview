@@ -1,10 +1,10 @@
-/*! Pool Party soundtrack layer — Overflow + Off The Leash + volume buttons. cache-bust:v11 */
+/*! Pool Party soundtrack layer — Overflow + Clear to the Floor + volume buttons. cache-bust:v12 */
 (function (global) {
   'use strict';
 
   var TRACKS = [
     { title: 'Overflow', note: 'Pool Party bed', src: 'assets/audio/overflow.mp3' },
-    { title: 'Off The Leash', note: 'Demo', src: 'https://sonicearcandy.com/assets/tracks/off-the-leash.mp3' }
+    { title: 'Clear to the Floor', note: 'Sonic Ear Candy', src: 'assets/audio/clear-to-the-floor.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
   var DEFAULT_VOL = 0.35;
