@@ -309,6 +309,37 @@
         show();
         window.addEventListener('scroll', show, { passive: true });
       }
+
+      this.initAdStream();
+    },
+
+
+    initAdStream() {
+      const path = (location.pathname.split('/').pop() || 'index.html').split('?')[0];
+      if (path === 'advertise.html') return;
+      if (document.querySelector('.ad-stream')) return;
+      const piece = [
+        '<span class="ad-stream-pulse">Advertise here</span>',
+        '<span class="ad-stream-sep">·</span>',
+        '<span>Free offer</span>',
+        '<span class="ad-stream-sep">·</span>',
+        '<span class="ad-stream-pitch">Your events. Our audience.</span>',
+        '<span class="ad-stream-sep">·</span>'
+      ].join('');
+      // Duplicate chunks so the loop is seamless
+      const chunks = Array.from({ length: 8 }, () => `<span class="ad-stream-chunk">${piece}</span>`).join('');
+      const a = document.createElement('a');
+      a.className = 'ad-stream';
+      a.href = 'advertise.html';
+      a.id = 'freeOffer';
+      a.setAttribute('aria-label', 'Advertise here — free offer. Your events. Our audience.');
+      a.innerHTML = `<span class="ad-stream-track">${chunks}${chunks}</span>`;
+      const anchor = document.querySelector('[data-nav-drawer]') || document.querySelector('header.nav');
+      if (anchor && anchor.parentNode) {
+        anchor.parentNode.insertBefore(a, anchor.nextSibling);
+      } else {
+        document.body.prepend(a);
+      }
     },
 
     initReveal() {

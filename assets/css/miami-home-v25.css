@@ -1053,3 +1053,54 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
 .free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem}
 .free-offer-copy{color:var(--pp-text-dim,#B7C2D0);font-weight:300}
 
+/* Streaming Advertise here banner */
+.ad-stream{
+  display:block;
+  overflow:hidden;
+  position:relative;
+  z-index:40;
+  border-bottom:1px solid rgba(0,229,232,.28);
+  background:linear-gradient(90deg, rgba(255,56,100,.18), rgba(0,229,232,.14), rgba(232,200,114,.12));
+  text-decoration:none;
+  color:var(--pp-text,#F4F7FA);
+  cursor:pointer;
+}
+.ad-stream:hover{background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.22), rgba(232,200,114,.2))}
+.ad-stream-track{
+  display:flex;
+  width:max-content;
+  gap:0;
+  animation:ad-stream-scroll 28s linear infinite;
+  will-change:transform;
+}
+.ad-stream:hover .ad-stream-track{animation-play-state:paused}
+.ad-stream-chunk{
+  display:inline-flex;
+  align-items:center;
+  gap:.85rem;
+  white-space:nowrap;
+  padding:.55rem 1.5rem;
+  font-size:.82rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.ad-stream-chunk .ad-stream-pulse{
+  color:var(--pp-gold,#E8C872);
+  font-weight:800;
+}
+.ad-stream-chunk .ad-stream-pitch{
+  color:var(--pp-cyan,#00E5E8);
+  font-weight:500;
+  text-transform:none;
+  letter-spacing:0;
+}
+.ad-stream-sep{opacity:.45;color:var(--pp-cyan,#00E5E8)}
+@keyframes ad-stream-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media (prefers-reduced-motion: reduce){
+  .ad-stream-track{animation:none;justify-content:center;width:100%}
+}
+
