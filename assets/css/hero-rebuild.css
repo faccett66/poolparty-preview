@@ -367,7 +367,7 @@ html body img.logo-img{
   display:block !important;
   height:44px !important;
   width:auto !important;
-  max-width:170px !important;
+  max-width:240px !important;
   max-height:44px !important;
   object-fit:contain !important;
   margin:0 !important;
@@ -379,6 +379,6 @@ html body img.logo-img{
   html body img.logo-img{
     height:36px !important;
     max-height:36px !important;
-    max-width:130px !important;
+    max-width:180px !important;
   }
 }
