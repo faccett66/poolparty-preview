@@ -62,14 +62,19 @@
 
 .hero[data-hero-rebuild] .hero-kicker{
   margin:0 0 .85rem !important;
-  font-size:clamp(.9rem, 2vw, 1.05rem) !important;
-  font-weight:700 !important;
+  font-size:clamp(1rem, 2.2vw, 1.2rem) !important;
+  font-weight:800 !important;
   letter-spacing:.14em !important;
   text-transform:uppercase !important;
-  color:#00E5E8 !important;
-  -webkit-text-fill-color:#00E5E8 !important;
-  -webkit-text-stroke:0 !important;
-  text-shadow:0 2px 14px rgba(0,0,0,.7) !important;
+  /* Frank: yellow letters + thicker black outline (Sun's out! untouched) */
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1.55px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:
+    1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,
+    1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000,
+    0 3px 12px rgba(0,0,0,.55) !important;
 }
 
 .hero[data-hero-rebuild] h1{
@@ -313,5 +318,25 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
   font-style:italic !important;
   color:#FF3864 !important;
   -webkit-text-fill-color:#FF3864 !important;
+}
+
+/* Home nav: yellow letters + black outline + yellow underline */
+html body .nav .nav-links a.nav-home,
+html body .nav .nav-links a[href="index.html"],
+html body .nav-drawer a.nav-home,
+html body .nav-drawer a[href="index.html"]{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1.15px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000 !important;
+}
+html body .nav .nav-links a.nav-home.active::after,
+html body .nav .nav-links a.nav-home:hover::after,
+html body .nav .nav-links a[href="index.html"].active::after,
+html body .nav .nav-links a[href="index.html"]:hover::after{
+  background:#ffe600 !important;
+  box-shadow:0 0 0 1px #000, 0 1px 0 #000, 0 -1px 0 #000 !important;
+  height:3px !important;
 }
 
