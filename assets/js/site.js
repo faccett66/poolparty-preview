@@ -7,8 +7,36 @@
   const PREVIEW_TODAY = '2026-09-15'; // mid-Sep 2026 preview "now"
 
   const PP = {
-    dataRoot: (document.body.dataset.dataRoot || 'data').replace(/\/$/, ''),
-    assetRoot: (document.body.dataset.assetRoot || '').replace(/\/$/, ''),
+    dataRoot: (document.body && document.body.dataset.dataRoot || 'data').replace(/\/$/, ''),
+    assetRoot: (document.body && document.body.dataset.assetRoot || '').replace(/\/$/, ''),
+
+    _bootAbort: null,
+    _pageAbort: null,
+    _themeObserver: null,
+
+    /** Abort listeners/observers from the previous soft-nav page visit. */
+    beginPageScope() {
+      if (this._pageAbort) {
+        try { this._pageAbort.abort(); } catch (_) { /* ignore */ }
+      }
+      if (this._themeObserver) {
+        try { this._themeObserver.disconnect(); } catch (_) { /* ignore */ }
+        this._themeObserver = null;
+      }
+      this._pageAbort = new AbortController();
+      return this._pageAbort.signal;
+    },
+
+    pageSignal() {
+      if (!this._pageAbort) this.beginPageScope();
+      return this._pageAbort.signal;
+    },
+
+    refreshRootsFromBody() {
+      if (!document.body) return;
+      this.dataRoot = (document.body.dataset.dataRoot || 'data').replace(/\/$/, '');
+      this.assetRoot = (document.body.dataset.assetRoot || '').replace(/\/$/, '');
+    },
 
     async loadJSON(name) {
       const url = `${this.dataRoot}/${name}.json?v=${IMG_BUST}`;
@@ -210,6 +238,7 @@
     initPageTheme() {
       const body = document.body;
       if (!body || body.classList.contains('page-checkout')) return;
+      const signal = this.pageSignal();
 
       const path = (location.pathname.split('/').pop() || '').toLowerCase();
       const cityQ = (this.qs('city') || this.qs('id') || '').toLowerCase();
@@ -222,6 +251,9 @@
       };
       const isYacht = (s) => String(s || '').toLowerCase() === 'yacht';
 
+      // Reset theme classes from prior soft-nav (keep page-checkout if present)
+      body.classList.remove('page-la', 'page-yacht');
+
       let la = false;
       let yacht = false;
 
@@ -231,12 +263,10 @@
         if (isYacht(vibeQ)) yacht = true;
       }
       if (path === 'event.html') {
-        // event detail may set data-city / data-vibe on body after load; also URL hints
         if (isYacht(vibeQ)) yacht = true;
         if (isLA(cityQ)) la = true;
       }
 
-      // Prefer yacht when both (yacht vibe pages)
       if (yacht) {
         body.classList.add('page-yacht');
         body.classList.remove('page-la');
@@ -245,7 +275,6 @@
         body.classList.remove('page-yacht');
       }
 
-      // Observe late-bound event detail attributes
       if (path === 'event.html') {
         const applyFromDataset = () => {
           if (isYacht(body.dataset.vibe)) {
@@ -257,11 +286,18 @@
           }
         };
         applyFromDataset();
+        if (this._themeObserver) {
+          try { this._themeObserver.disconnect(); } catch (_) { /* ignore */ }
+        }
         const mo = new MutationObserver(applyFromDataset);
         mo.observe(body, { attributes: true, attributeFilter: ['data-city', 'data-vibe'] });
+        this._themeObserver = mo;
+        signal.addEventListener('abort', () => {
+          try { mo.disconnect(); } catch (_) { /* ignore */ }
+          if (this._themeObserver === mo) this._themeObserver = null;
+        });
       }
 
-      // React to filter changes on events/venues
       if (path === 'events.html' || path === 'venues.html') {
         const citySel = document.querySelector('#city, [name="city"], select[data-filter="city"]');
         const vibeSel = document.querySelector('#vibe, [name="vibe"], select[data-filter="vibe"]');
@@ -271,15 +307,16 @@
           body.classList.toggle('page-yacht', isYacht(v));
           body.classList.toggle('page-la', !isYacht(v) && isLA(c));
         };
-        [citySel, vibeSel].forEach(el => el && el.addEventListener('change', sync));
+        [citySel, vibeSel].forEach(el => el && el.addEventListener('change', sync, { signal }));
       }
     },
 
     initNav() {
+      const signal = this.pageSignal();
       const nav = document.querySelector('.nav');
       const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 24);
       onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('scroll', onScroll, { passive: true, signal });
 
       const toggle = document.querySelector('[data-nav-toggle]');
       const drawer = document.querySelector('[data-nav-drawer]');
@@ -288,15 +325,16 @@
           const open = drawer.classList.toggle('open');
           toggle.setAttribute('aria-expanded', open);
           document.body.style.overflow = open ? 'hidden' : '';
-        });
+        }, { signal });
         drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
           drawer.classList.remove('open');
           document.body.style.overflow = '';
-        }));
+        }, { signal }));
       }
 
       const path = location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('.nav-links a, [data-nav-drawer] a').forEach(a => {
+        a.classList.remove('active');
         const href = (a.getAttribute('href') || '').split('?')[0];
         if (href === path || (path === '' && href === 'index.html')) a.classList.add('active');
       });
@@ -307,7 +345,7 @@
       if (sticky) {
         const show = () => sticky.classList.toggle('show', window.scrollY > 420);
         show();
-        window.addEventListener('scroll', show, { passive: true });
+        window.addEventListener('scroll', show, { passive: true, signal });
       }
 
       this.initAdStream();
@@ -316,8 +354,12 @@
 
     initAdStream() {
       const path = (location.pathname.split('/').pop() || 'index.html').split('?')[0];
+      document.querySelectorAll('.ad-stream').forEach(el => el.remove());
+      document.body.classList.remove('has-ad-stream');
+      document.documentElement.style.removeProperty('--ad-stream-offset');
       if (path === 'advertise.html') return;
-      if (document.querySelector('.ad-stream')) return;
+
+      const signal = this.pageSignal();
       const piece = [
         '<span class="ad-stream-pulse">Advertise here</span>',
         '<span class="ad-stream-sep">·</span>',
@@ -333,7 +375,6 @@
       a.id = 'freeOffer';
       a.setAttribute('aria-label', 'Advertise here — free offer. Your events. Our audience.');
       a.innerHTML = `<span class="ad-stream-track">${chunks}${chunks}</span>`;
-      // Fixed just under the measured nav bottom so the ticker is never covered
       Object.assign(a.style, {
         position: 'fixed',
         left: '0',
@@ -341,6 +382,7 @@
         zIndex: '79'
       });
       const place = () => {
+        if (!a.isConnected) return;
         const nav = document.querySelector('header.nav');
         const top = nav ? Math.round(nav.getBoundingClientRect().bottom) : 0;
         a.style.top = `${top}px`;
@@ -350,20 +392,27 @@
       document.body.classList.add('has-ad-stream');
       place();
       requestAnimationFrame(place);
-      window.addEventListener('resize', place, { passive: true });
-      window.addEventListener('scroll', place, { passive: true });
+      window.addEventListener('resize', place, { passive: true, signal });
+      window.addEventListener('scroll', place, { passive: true, signal });
+      signal.addEventListener('abort', () => {
+        try { a.remove(); } catch (_) { /* ignore */ }
+        document.body.classList.remove('has-ad-stream');
+      });
     },
 
     initReveal() {
       const els = document.querySelectorAll('.reveal');
       if (!els.length) return;
+      const signal = this.pageSignal();
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { threshold: 0.12 });
       els.forEach(el => io.observe(el));
+      signal.addEventListener('abort', () => io.disconnect());
     },
 
     initDemoCartButtons() {
+      const signal = this.pageSignal();
       document.body.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-add-demo]');
         if (!btn) return;
@@ -379,10 +428,11 @@
         });
         btn.textContent = 'Added ✓';
         setTimeout(() => { btn.textContent = '+ Demo cart'; }, 1400);
-      });
+      }, { signal });
     },
 
     initMailtoForms() {
+      const signal = this.pageSignal();
       document.querySelectorAll('form[data-mailto]').forEach(form => {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
@@ -399,11 +449,12 @@
             note.hidden = false;
             note.textContent = 'Opening your email client (demo). No backend — message goes via mailto.';
           }
-        });
+        }, { signal });
       });
     },
 
     bindFilters({ grid, search, city, vibe, items, render, upcomingToggle, emptyCityMessage }) {
+      const signal = this.pageSignal();
       const isEventish = !!(items && items[0] && items[0].date !== undefined);
       const apply = () => {
         const q = (search?.value || '').toLowerCase().trim();
@@ -441,9 +492,8 @@
           }
         }
       };
-      [search, city, vibe, upcomingToggle].forEach(el => el && el.addEventListener('input', apply));
-      [search, city, vibe, upcomingToggle].forEach(el => el && el.addEventListener('change', apply));
-      // URL city wins; don't force stored city onto All Cities when browsing fresh
+      [search, city, vibe, upcomingToggle].forEach(el => el && el.addEventListener('input', apply, { signal }));
+      [search, city, vibe, upcomingToggle].forEach(el => el && el.addEventListener('change', apply, { signal }));
       const urlCity = this.qs('city');
       if (urlCity && city) {
         city.value = urlCity;
@@ -456,15 +506,25 @@
       if (upcomingToggle && this.qs('past') === '1') upcomingToggle.checked = false;
       apply();
       return apply;
+    },
+
+    /** Shared boot — safe to call again after soft navigation. */
+    bootPage() {
+      this.refreshRootsFromBody();
+      this.beginPageScope();
+      this.initPageTheme();
+      this.initNav();
+      this.initReveal();
+      this.initDemoCartButtons();
+      this.initMailtoForms();
     }
   };
 
   window.PP = PP;
-  document.addEventListener('DOMContentLoaded', () => {
-    PP.initPageTheme();
-    PP.initNav();
-    PP.initReveal();
-    PP.initDemoCartButtons();
-    PP.initMailtoForms();
-  });
+  const start = () => PP.bootPage();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 })();

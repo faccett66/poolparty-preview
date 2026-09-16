@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — Overflow + Clear to the Floor + volume buttons. cache-bust:v12 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v13 */
 (function (global) {
   'use strict';
 
@@ -7,11 +7,14 @@
     { title: 'Clear to the Floor', note: 'Sonic Ear Candy', src: 'assets/audio/clear-to-the-floor.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
-  var DEFAULT_VOL = 0.35;
+  var DEFAULT_VOL = 0.5;
   var VOL_STEP = 0.1;
   var KEY_MUTE = 'pp_music_muted';
   var KEY_TRACK = 'pp_music_track';
   var KEY_VOL = 'pp_music_vol';
+  var KEY_TIME = 'pp_music_time';
+  var KEY_PLAYING = 'pp_music_playing';
+  var KEY_TOUCHED = 'pp_music_touched';
 
   var audio = null;
   var index = 0;
@@ -25,6 +28,12 @@
   var volPctEl = null;
   var titleEl = null;
   var ready = false;
+  var navigating = false;
+  var gestureArmed = false;
+  var gestureUnbind = null;
+  var sessionTouched = false;
+  var resumeTime = 0;
+  var wantPlaying = false;
 
   function trackUrl(i) {
     return TRACKS[i].src;
@@ -40,13 +49,27 @@
     return Math.min(1, Math.max(0, n));
   }
 
+  function ssGet(k) {
+    try { return sessionStorage.getItem(k); } catch (e) { return null; }
+  }
+  function ssSet(k, v) {
+    try { sessionStorage.setItem(k, v); } catch (e) { /* ignore */ }
+  }
+
   function loadPersisted() {
     try {
-      var t = parseInt(localStorage.getItem(KEY_TRACK), 10);
+      var t = parseInt(ssGet(KEY_TRACK) || localStorage.getItem(KEY_TRACK), 10);
       if (!isNaN(t)) index = clampIndex(t);
-      muted = localStorage.getItem(KEY_MUTE) === '1';
-      var v = parseFloat(localStorage.getItem(KEY_VOL));
+      var muteRaw = ssGet(KEY_MUTE);
+      if (muteRaw === null) muteRaw = localStorage.getItem(KEY_MUTE);
+      muted = muteRaw === '1';
+      var v = parseFloat(ssGet(KEY_VOL) || localStorage.getItem(KEY_VOL));
       if (!isNaN(v)) volume = clampVol(v);
+      else volume = DEFAULT_VOL;
+      var tm = parseFloat(ssGet(KEY_TIME));
+      if (!isNaN(tm) && tm > 0) resumeTime = tm;
+      wantPlaying = ssGet(KEY_PLAYING) === '1';
+      sessionTouched = ssGet(KEY_TOUCHED) === '1';
     } catch (e) { /* ignore */ }
   }
 
@@ -56,6 +79,24 @@
       localStorage.setItem(KEY_MUTE, muted ? '1' : '0');
       localStorage.setItem(KEY_VOL, String(volume));
     } catch (e) { /* ignore */ }
+    ssSet(KEY_TRACK, String(index));
+    ssSet(KEY_MUTE, muted ? '1' : '0');
+    ssSet(KEY_VOL, String(volume));
+    persistSessionPlayback();
+  }
+
+  function persistSessionPlayback() {
+    if (!audio) {
+      ssSet(KEY_PLAYING, wantPlaying ? '1' : '0');
+      if (sessionTouched) ssSet(KEY_TOUCHED, '1');
+      return;
+    }
+    try {
+      if (!isNaN(audio.currentTime)) ssSet(KEY_TIME, String(audio.currentTime));
+    } catch (e) { /* ignore */ }
+    var playing = !!(audio && !audio.paused && !audio.ended);
+    ssSet(KEY_PLAYING, playing ? '1' : '0');
+    if (sessionTouched) ssSet(KEY_TOUCHED, '1');
   }
 
   function setPlayingUI(on) {
@@ -130,13 +171,24 @@
 
   function play() {
     if (!audio) return;
+    sessionTouched = true;
+    ssSet(KEY_TOUCHED, '1');
     if (!audio.src) loadTrack(index, false);
     applyMute();
     var p = audio.play();
     if (p && p.then) {
-      p.then(function () { setPlayingUI(true); }).catch(function () { setPlayingUI(false); });
+      p.then(function () {
+        setPlayingUI(true);
+        wantPlaying = true;
+        persistSessionPlayback();
+      }).catch(function () {
+        setPlayingUI(false);
+        armGestureUnlock();
+      });
     } else {
       setPlayingUI(true);
+      wantPlaying = true;
+      persistSessionPlayback();
     }
   }
 
@@ -144,6 +196,9 @@
     if (!audio) return;
     audio.pause();
     setPlayingUI(false);
+    wantPlaying = false;
+    ssSet(KEY_PLAYING, '0');
+    persistSessionPlayback();
   }
 
   function toggle() {
@@ -153,6 +208,7 @@
 
   function next() {
     var was = audio && !audio.paused;
+    resumeTime = 0;
     loadTrack(index + 1, was);
     if (was) setPlayingUI(true);
   }
@@ -163,6 +219,7 @@
       audio.currentTime = 0;
       return;
     }
+    resumeTime = 0;
     loadTrack(index - 1, was);
     if (was) setPlayingUI(true);
   }
@@ -194,10 +251,21 @@
   }
 
   function buildDock() {
+    if (document.querySelector('.pp-music-dock')) {
+      dock = document.querySelector('.pp-music-dock');
+      playBtn = dock.querySelector('.pp-music-dock__play');
+      muteBtn = dock.querySelector('.pp-music-dock__mute');
+      volDownBtn = dock.querySelector('.pp-music-dock__voldown');
+      volUpBtn = dock.querySelector('.pp-music-dock__volup');
+      volPctEl = dock.querySelector('.pp-music-dock__volpct');
+      titleEl = dock.querySelector('.pp-music-dock__title');
+      return;
+    }
     dock = document.createElement('div');
     dock.className = 'pp-music-dock';
     dock.setAttribute('role', 'region');
     dock.setAttribute('aria-label', 'Pool Party soundtrack');
+    dock.setAttribute('data-pp-persist', 'music');
 
     dock.innerHTML =
       '<div class="pp-music-dock__inner">' +
@@ -211,7 +279,7 @@
         '<div class="pp-music-dock__vol">' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__voldown" aria-label="Volume down">−</button>' +
-          '<span class="pp-music-dock__volpct" aria-live="polite">35%</span>' +
+          '<span class="pp-music-dock__volpct" aria-live="polite">50%</span>' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__volup" aria-label="Volume up">+</button>' +
         '</div>' +
       '</div>';
@@ -260,18 +328,342 @@
     });
   }
 
+  function disarmGestureUnlock() {
+    if (typeof gestureUnbind === 'function') {
+      try { gestureUnbind(); } catch (e) { /* ignore */ }
+    }
+    gestureUnbind = null;
+    gestureArmed = false;
+  }
+
+  function armGestureUnlock() {
+    if (gestureArmed) return;
+    gestureArmed = true;
+    var evts = ['click', 'keydown', 'touchstart', 'pointerdown'];
+    // Bubble phase so dock play/toggle handlers run first; only start if still paused.
+    var unlock = function () {
+      disarmGestureUnlock();
+      if (audio && audio.paused) play();
+    };
+    evts.forEach(function (t) {
+      document.addEventListener(t, unlock, false);
+    });
+    gestureUnbind = function () {
+      evts.forEach(function (t) {
+        document.removeEventListener(t, unlock, false);
+      });
+    };
+  }
+
+  /** Unmuted autoplay attempt — never uses muted-unlock hack. */
+  function tryAutoplay() {
+    if (!audio) return;
+    applyMute();
+    var p = audio.play();
+    if (p && p.then) {
+      p.then(function () {
+        setPlayingUI(true);
+        wantPlaying = true;
+        sessionTouched = true;
+        ssSet(KEY_TOUCHED, '1');
+        persistSessionPlayback();
+      }).catch(function () {
+        setPlayingUI(false);
+        armGestureUnlock();
+      });
+    } else {
+      setPlayingUI(true);
+    }
+  }
+
   function initAudio() {
+    if (audio && audio.isConnected) return;
+    if (audio) {
+      document.body.appendChild(audio);
+      return;
+    }
     audio = document.createElement('audio');
-    audio.preload = 'none';
+    audio.preload = 'auto';
     audio.setAttribute('playsinline', '');
     audio.setAttribute('title', 'Pool Party soundtrack');
-    audio.volume = volume;
-    audio.addEventListener('play', function () { setPlayingUI(true); });
-    audio.addEventListener('pause', function () { setPlayingUI(false); });
-    audio.addEventListener('ended', function () { next(); play(); });
+    audio.setAttribute('data-pp-persist', 'music');
+    audio.volume = muted ? 0 : volume;
+    audio.addEventListener('play', function () {
+      setPlayingUI(true);
+      wantPlaying = true;
+      persistSessionPlayback();
+    });
+    audio.addEventListener('pause', function () {
+      setPlayingUI(false);
+      persistSessionPlayback();
+    });
+    audio.addEventListener('ended', function () {
+      next();
+      play();
+    });
+    audio.addEventListener('timeupdate', function () {
+      if (!audio || audio.paused) return;
+      if (Math.floor(audio.currentTime) % 2 === 0) persistSessionPlayback();
+    });
     document.body.appendChild(audio);
     loadTrack(index, false);
+    if (resumeTime > 0) {
+      var seekOnce = function () {
+        try {
+          if (resumeTime > 0 && audio.duration && resumeTime < audio.duration) {
+            audio.currentTime = resumeTime;
+          }
+        } catch (e) { /* ignore */ }
+        audio.removeEventListener('loadedmetadata', seekOnce);
+      };
+      audio.addEventListener('loadedmetadata', seekOnce);
+    }
     applyMute();
+  }
+
+  /* ---------- Soft navigation (keep audio + dock alive) ---------- */
+
+  function shouldSoftNav(anchor, evt) {
+    if (!anchor || !ready) return false;
+    if (evt.defaultPrevented) return false;
+    if (evt.button !== 0) return false;
+    if (evt.metaKey || evt.ctrlKey || evt.shiftKey || evt.altKey) return false;
+    if (anchor.hasAttribute('download')) return false;
+    var target = (anchor.getAttribute('target') || '').toLowerCase();
+    if (target && target !== '_self') return false;
+    var hrefAttr = anchor.getAttribute('href');
+    if (!hrefAttr || hrefAttr.charAt(0) === '#') return false;
+    if (/^(mailto:|tel:|javascript:)/i.test(hrefAttr)) return false;
+    var url;
+    try { url = new URL(anchor.href, location.href); } catch (e) { return false; }
+    if (url.origin !== location.origin) return false;
+    // Same document hash scroll — let the browser handle it
+    if (url.pathname === location.pathname && url.search === location.search && url.hash) return false;
+    // Only same preview site paths
+    var path = url.pathname;
+    var base = location.pathname.replace(/\/[^/]*$/, '/');
+    if (path.indexOf(base) !== 0 && path.indexOf('/poolparty-preview/') !== 0) {
+      // still allow relative html under same directory tree
+      if (!/\.html?$/i.test(path) && !/\/$/.test(path)) return false;
+    }
+    return true;
+  }
+
+  function detachPersistents() {
+    var nodes = [];
+    if (audio) {
+      try { audio.remove(); } catch (e) { /* ignore */ }
+      nodes.push(audio);
+    }
+    if (dock) {
+      try { dock.remove(); } catch (e) { /* ignore */ }
+      nodes.push(dock);
+    }
+    // Strip any stray duplicates
+    document.querySelectorAll('[data-pp-persist="music"], .pp-music-dock').forEach(function (el) {
+      if (el !== audio && el !== dock) {
+        try { el.remove(); } catch (e2) { /* ignore */ }
+      }
+    });
+    return nodes;
+  }
+
+  function reattachPersistents(nodes) {
+    nodes.forEach(function (el) {
+      if (el && !el.isConnected) document.body.appendChild(el);
+    });
+  }
+
+  function copyBodyAttributes(fromBody) {
+    var body = document.body;
+    var keep = {};
+    Array.prototype.forEach.call(body.attributes, function (attr) {
+      keep[attr.name] = true;
+    });
+    Array.prototype.forEach.call(fromBody.attributes, function (attr) {
+      body.setAttribute(attr.name, attr.value);
+      delete keep[attr.name];
+    });
+    Object.keys(keep).forEach(function (name) {
+      body.removeAttribute(name);
+    });
+  }
+
+  function syncHeadAssets(doc) {
+    // Ensure stylesheets referenced by the new page exist (same set usually).
+    var seen = {};
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(function (l) {
+      seen[l.href] = true;
+    });
+    doc.querySelectorAll('link[rel="stylesheet"]').forEach(function (l) {
+      try {
+        var abs = new URL(l.getAttribute('href'), location.href).href;
+        if (!seen[abs]) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = l.getAttribute('href');
+          document.head.appendChild(link);
+        }
+      } catch (e) { /* ignore */ }
+    });
+  }
+
+  function runInlineScripts(doc) {
+    var scripts = Array.prototype.slice.call(doc.querySelectorAll('script'));
+    var signal = (global.PP && typeof global.PP.pageSignal === 'function')
+      ? global.PP.pageSignal()
+      : null;
+
+    scripts.forEach(function (old) {
+      var src = old.getAttribute('src');
+      if (src) {
+        // Never reload music.js / site.js — already live
+        if (/\/assets\/js\/(music|site)\.js/i.test(src) || /(^|\/)(music|site)\.js/i.test(src)) return;
+        // Other external scripts: inject once if needed
+        var abs;
+        try { abs = new URL(src, location.href).href; } catch (e) { return; }
+        var exists = Array.prototype.some.call(document.scripts, function (s) {
+          return s.src === abs;
+        });
+        if (exists) return;
+        var s = document.createElement('script');
+        s.src = src;
+        if (old.type) s.type = old.type;
+        document.body.appendChild(s);
+        return;
+      }
+
+      var code = old.textContent || '';
+      if (!code.trim()) return;
+
+      // Patch addEventListener so DOMContentLoaded handlers run immediately,
+      // and wire AbortSignal so soft-nav can drop prior page listeners.
+      var targets = [document, global];
+      var restorers = [];
+      targets.forEach(function (target) {
+        if (!target || !target.addEventListener) return;
+        var orig = target.addEventListener.bind(target);
+        target.addEventListener = function (type, listener, options) {
+          if (type === 'DOMContentLoaded') {
+            Promise.resolve().then(function () {
+              try { listener.call(document, new Event('DOMContentLoaded')); } catch (err) {
+                console.error('[PPMusic] page boot error', err);
+              }
+            });
+            return;
+          }
+          var opts = options;
+          if (signal) {
+            if (opts === true || opts === false) opts = { capture: !!opts };
+            if (!opts || typeof opts !== 'object') opts = {};
+            else opts = Object.assign({}, opts);
+            if (!opts.signal) opts.signal = signal;
+          }
+          return orig(type, listener, opts);
+        };
+        restorers.push(function () { target.addEventListener = orig; });
+      });
+
+      try {
+        // Indirect eval keeps scope global
+        (0, eval)(code);
+      } catch (err) {
+        console.error('[PPMusic] inline script error', err);
+      } finally {
+        restorers.forEach(function (r) { try { r(); } catch (e2) { /* ignore */ } });
+      }
+    });
+  }
+
+  function softNavigate(url, opts) {
+    opts = opts || {};
+    if (navigating) return Promise.resolve();
+    navigating = true;
+    persistSessionPlayback();
+
+    var absUrl;
+    try { absUrl = new URL(url, location.href).href; } catch (e) {
+      navigating = false;
+      location.href = url;
+      return Promise.resolve();
+    }
+
+    return fetch(absUrl, { credentials: 'same-origin', cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('soft-nav ' + res.status);
+        return res.text();
+      })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        if (!doc.body) throw new Error('no body');
+
+        var kept = detachPersistents();
+
+        // Drop prior page listeners before swapping DOM
+        if (global.PP && typeof global.PP.beginPageScope === 'function') {
+          global.PP.beginPageScope();
+        }
+
+        syncHeadAssets(doc);
+        copyBodyAttributes(doc.body);
+
+        // Assign markup without executing scripts
+        document.body.innerHTML = doc.body.innerHTML;
+        document.body.querySelectorAll('script').forEach(function (s) { s.remove(); });
+        // Remove any dock/audio clones that came from the fetched HTML (none expected)
+        document.body.querySelectorAll('.pp-music-dock, audio[data-pp-persist="music"]').forEach(function (el) {
+          el.remove();
+        });
+
+        reattachPersistents(kept);
+        // Re-bind dock refs in case inner nodes somehow changed (they shouldn't)
+        if (dock) {
+          playBtn = dock.querySelector('.pp-music-dock__play');
+          muteBtn = dock.querySelector('.pp-music-dock__mute');
+          volDownBtn = dock.querySelector('.pp-music-dock__voldown');
+          volUpBtn = dock.querySelector('.pp-music-dock__volup');
+          volPctEl = dock.querySelector('.pp-music-dock__volpct');
+          titleEl = dock.querySelector('.pp-music-dock__title');
+        }
+
+        document.title = doc.title || document.title;
+
+        if (opts.replace) history.replaceState({ ppSoft: 1 }, '', absUrl);
+        else history.pushState({ ppSoft: 1 }, '', absUrl);
+
+        window.scrollTo(0, 0);
+        document.body.style.overflow = '';
+
+        if (global.PP && typeof global.PP.bootPage === 'function') {
+          global.PP.bootPage();
+        }
+
+        runInlineScripts(doc);
+
+        setPlayingUI(audio && !audio.paused);
+        updateTitle();
+        applyMute();
+      })
+      .catch(function (err) {
+        console.warn('[PPMusic] soft-nav fallback', err);
+        location.href = absUrl;
+      })
+      .then(function () {
+        navigating = false;
+      });
+  }
+
+  function bindSoftNav() {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!shouldSoftNav(a, e)) return;
+      e.preventDefault();
+      softNavigate(a.href, { replace: false });
+    }, true);
+
+    window.addEventListener('popstate', function () {
+      softNavigate(location.href, { replace: true });
+    });
   }
 
   function init() {
@@ -281,8 +673,16 @@
     buildDock();
     initAudio();
     bindTriggers();
+    bindSoftNav();
     updateTitle();
-    setPlayingUI(false);
+    syncVolUI();
+    setPlayingUI(audio && !audio.paused);
+
+    window.addEventListener('pagehide', persistSessionPlayback);
+    window.addEventListener('beforeunload', persistSessionPlayback);
+
+    // Unmuted autoplay (or resume after hard refresh). Gesture unlock if blocked.
+    tryAutoplay();
   }
 
   if (document.readyState === 'loading') {
@@ -297,6 +697,7 @@
     toggle: toggle,
     next: next,
     prev: prev,
-    setVolume: function (v) { setVolume(v, true); }
+    setVolume: function (v) { setVolume(v, true); },
+    softNavigate: softNavigate
   };
 })(typeof window !== 'undefined' ? window : this);
