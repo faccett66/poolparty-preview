@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Pool Party</title>
-  <meta name="description" content="Contact the Pool Party redesign preview." />
+  <meta name="description" content="Contact Pool Party — same public Google Forms and Jotform embeds as live poolparty.com." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=49" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=50" />
   <link rel="stylesheet" href="assets/css/hero-rebuild.css?v=16" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=11" />
   <link rel="stylesheet" href="assets/css/pp-tokens.css?v=9" />
 </head>
 <body data-data-root="data" data-asset-root="">
-<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp/Spiagge). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
 
 <header class="nav" data-miami-nav>
   <div class="wrap nav-inner">
@@ -35,38 +35,55 @@
 <a class="sticky-book" href="events.html">Book Now</a>
 
 <section class="page-hero contact"><div class="wrap">
-  <p class="eyebrow">Contact · redesign review</p>
+  <p class="eyebrow">Contact · live lead forms</p>
   <h1>Talk to <em>us</em></h1>
-  <p class="lead">Redesign review path for Frank — opens your email client to <strong>faccett66@gmail.com</strong> (no fake Contact Form 7). Use presets for Vegas weekend questions, Booketing/SquadUp paths, or the <a href="advertise.html">Advertise · Free offer</a> partner pitch. Live guest support on production remains <strong>info@poolparty.com</strong>.</p>
+  <p class="lead">Same public forms as <strong>poolparty.com</strong> — Google Forms + Jotform embeds (not invented CRM). Guest ops also cite <strong>info@poolparty.com</strong>. Partner pitch → <a href="advertise.html">Advertise · Free offer</a>.</p>
 </div></section>
-<section style="padding-top:0"><div class="wrap">
+<section style="padding-top:0"><div class="wrap" style="display:grid;gap:1.25rem;max-width:920px">
+  <p class="lead-honest"><strong>Honest note:</strong> these iframes are the same public embeds used on live poolparty.com/contact/. CF7 + reCAPTCHA still load on WordPress; destinations are owned by Frank’s Google/Jotform accounts — not a preview-side CRM.</p>
+
   <div class="chip-row" id="presets">
-    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Vegas%20this%20weekend">Vegas this weekend</a>
-    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Booking%20path%20question">Booking path question</a>
+    <a class="chip-link" href="#contact-form">Contact form</a>
+    <a class="chip-link" href="#plan-form">Plan a party</a>
+    <a class="chip-link" href="#keep-up">Keep up</a>
     <a class="chip-link" href="advertise.html">Advertise here · Free offer</a>
-    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20SEC%20music%20pilot">SEC music pilot</a>
-    <a class="chip-link" href="mailto:faccett66@gmail.com?subject=PoolParty%20-%20Partnership%20%2F%20POS">Partnership / POS</a>
+    <a class="chip-link" href="mailto:info@poolparty.com">info@poolparty.com</a>
   </div>
-  <div class="form-card" style="max-width:560px">
-    <form data-mailto="faccett66@gmail.com" data-subject="PoolParty Contact">
-      <div class="field"><label>Name</label><input name="name" required /></div>
-      <div class="field"><label>Email</label><input type="email" name="email" required /></div>
-      <div class="field"><label>Topic</label>
-        <select name="topic" id="topic">
-          <option>General</option>
-          <option>Vegas this weekend</option>
-          <option>Booking question (Booketing / SquadUp)</option>
-          <option>Advertise here · Free offer</option>
-          <option>Affiliate / promoter</option>
-          <option>SEC music pilot</option>
-          <option>Partnership / POS</option>
-        </select>
-      </div>
-      <div class="field"><label>Message</label><textarea name="message" required placeholder="What should Frank know about this redesign?"></textarea></div>
-      <button class="btn btn-primary" type="submit">Open email draft</button>
-      <p class="form-note" data-form-status hidden></p>
-      <p class="form-note">Mailto only — nothing is stored on this static preview.</p>
-    </form>
+
+  <div class="lead-embed lead-embed--tall" id="contact-form">
+    <div class="lead-embed__head">
+      <h2>Contact us</h2>
+      <p>Live Popup Maker Google Form (entry = Contact Us) — submits to the same Google Form as production.</p>
+    </div>
+    <div class="lead-embed__frame">
+      <iframe title="Pool Party contact form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdNf5-wJhxJrueOm87oQOa0ZLdb14kOHzAJ03RG-JSWlMiF1Q/viewform?usp=pp_url&amp;entry.1630963306=Contact+Us"
+        loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="lead-embed lead-embed--tall" id="plan-form">
+    <div class="lead-embed__head">
+      <h2>Let’s plan your unforgettable pool, beach, or yacht party</h2>
+      <p>Same Jotform embed as live (<code>251634016415449</code>).</p>
+    </div>
+    <div class="lead-embed__frame">
+      <iframe title="Pool Party party planning form"
+        src="https://form.jotform.com/251634016415449"
+        loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="lead-embed" id="keep-up">
+    <div class="lead-embed__head">
+      <h2>Keep up with PoolParty.com</h2>
+      <p>Same Google Form embed as live contact/advertise pages.</p>
+    </div>
+    <div class="lead-embed__frame">
+      <iframe title="Pool Party keep-up form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScQaIxpRGdZjxuz9bxgflWmfoeBzfB6h1IFXFz_avY0fY1qWw/viewform?embedded=true"
+        loading="lazy" allowfullscreen></iframe>
+    </div>
   </div>
 </div></section>
 
@@ -104,19 +121,7 @@
     <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
   </div>
 </footer>
-<script src="assets/js/site.js?v=43"></script>
+<script src="assets/js/site.js?v=44"></script>
 <script src="assets/js/music.js?v=17"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form[data-mailto]');
-  const topic = document.getElementById('topic');
-  if (form && topic) {
-    topic.addEventListener('change', () => {
-      form.dataset.subject = 'PoolParty — ' + topic.value;
-    });
-  }
-});
-</script>
 
 </body></html>

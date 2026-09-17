@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-16T20:48:53Z",
   "source": "poolparty.com",
-  "note": "Static feature-mirror refreshed 2026-09-16 from public wp-json product + HTML Booketing links; city-tag corrected and semantic-deduped. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing.",
+  "note": "Static feature-mirror refreshed 2026-09-16 from public wp-json product + HTML Booketing links; city-tag corrected and semantic-deduped. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing. | Spiagge.it (One Fire Beach widget): live events index 2026-09-17 had 13 Book Now popups → https://widget.spiagge.it/stabilimenti-balneari/prenotazione/it-sa-84010-one-fire-beach/. Preview curated set updated where slug overlapped: one-fire-beach-the-amalfi-escape-236, one-fire-beach-the-amalfi-escape-240. Other live Spiagge slugs (13 on index, 229–241) not invented into this 98-event feed.",
   "events": [
     {
       "id": "ev-001",
@@ -2771,9 +2771,9 @@
       "image": "https://poolparty.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-23-2025-10_22_06-PM-768x768.webp",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-236/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
+      "book_url": "https://widget.spiagge.it/stabilimenti-balneari/prenotazione/it-sa-84010-one-fire-beach/",
+      "book_provider": "spiagge",
+      "book_label": "Book Now — Spiagge.it",
       "ticket_tiers": [
         {
           "id": "ga",
@@ -2829,9 +2829,9 @@
       "image": "https://poolparty.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-23-2025-10_22_06-PM-768x768.webp",
       "source": "live",
       "demo": false,
-      "book_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-240/",
-      "book_provider": "squadup",
-      "book_label": "Book on Pool Party",
+      "book_url": "https://widget.spiagge.it/stabilimenti-balneari/prenotazione/it-sa-84010-one-fire-beach/",
+      "book_provider": "spiagge",
+      "book_label": "Book Now — Spiagge.it",
       "ticket_tiers": [
         {
           "id": "ga",

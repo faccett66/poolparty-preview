@@ -120,11 +120,13 @@
       const provider = (ev.book_provider || '').toLowerCase();
       const url = String(ev.book_url || ev.live_url || '');
       const onBooketing = provider.includes('booketing') || /booketing\.com/i.test(url);
+      const onSpiagge = provider.includes('spiagge') || /widget\.spiagge\.it/i.test(url);
       const onSquadUpDirect = /squadup\.com/i.test(url);
       const onSiteHandoff = /poolparty\.com/i.test(url);
       let label = ev.book_label;
       if (!label) {
         if (onBooketing) label = 'Book Now — Booketing';
+        else if (onSpiagge) label = 'Book Now — Spiagge.it';
         else if (onSquadUpDirect) label = 'Book Now — SquadUp';
         else if (onSiteHandoff) label = 'Book Now — live site';
         else if (provider.includes('squadup')) label = 'Book Now — live checkout';
@@ -132,6 +134,7 @@
       }
       let noteProvider = 'live';
       if (onBooketing) noteProvider = 'Booketing';
+      else if (onSpiagge) noteProvider = 'Spiagge.it (beach booking widget)';
       else if (onSquadUpDirect) noteProvider = 'SquadUp';
       else if (onSiteHandoff) noteProvider = 'PoolParty.com (SquadUp overlay on live site — not embedded here)';
       else if (provider.includes('squadup')) noteProvider = 'SquadUp / Pool Party checkout';

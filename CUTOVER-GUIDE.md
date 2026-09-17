@@ -3,7 +3,7 @@
 **Status:** planning / behind-the-scenes map — **do not execute DNS or WP theme flip until Phase 3 exit criteria are green.**  
 **Preview (design + IA):** https://faccett66.github.io/poolparty-preview/  
 **Live today:** https://poolparty.com (WordPress + Booketing + SquadUp)  
-**Last updated:** 2026-09-16
+**Last updated:** 2026-09-17 · enriched from `LIVE-CONNECTED.md`
 
 Goal: when we flip, the new front end is **fully functional** with **no holdups** — tickets buy, forms land, inventory stays true, legal pages work, music/dock OK. We keep the **existing money backends**; we do not invent a replacement ticketing stack on cutover day.
 
@@ -37,12 +37,13 @@ Copy answers into `CUTOVER-FILL.md` (create when ready). Without these, Phase 2 
 | WordPress admin | | ☐ none ☐ editor ☐ admin | Theme = `poolparty` |
 | WooCommerce | | ☐ none ☐ view ☐ edit | Cart/checkout chrome |
 | WP Event Manager / product catalog | | ☐ none ☐ view ☐ edit | Events as products |
-| **SquadUp** (overlay checkout) | | ☐ none ☐ view ☐ admin | `window.squadup` / `#squadup-checkout` |
-| **Booketing** (microsite Book Now) | | ☐ none ☐ view ☐ admin | `booketing.com/microsite/…` |
-| Contact Form 7 / form inbox | | ☐ none ☐ view ☐ edit | Contact + Advertise |
-| CRM / email list (if any) | | ☐ none ☐ view ☐ edit | Tool name: ________ |
-| Google Analytics / GTM | | ☐ none ☐ view ☐ edit | |
-| Hosting / WP Rocket / backups | | ☐ none ☐ view ☐ edit | |
+| **SquadUp** (overlay checkout) | [[FILL]] | ☐ none ☐ view ☐ admin | Public `userId: **3438001**`; `#squadup-checkout`; also `squadup.com/events/{id}` |
+| **Booketing** (microsite Book Now) | [[FILL]] | ☐ none ☐ view ☐ admin | Microsite **`ppl`**: `booketing.com/microsite/ppl/…` |
+| **Spiagge.it** (beach Book Now) | [[FILL]] | ☐ none ☐ view ☐ admin | Third path: `widget.spiagge.it/.../it-sa-84010-one-fire-beach/` |
+| Lead stack (Google Forms + Jotform + CF7) | [[FILL]] | ☐ none ☐ view ☐ edit | Canonical inbox TBD — Forms/Jotform dominate; CF7 scripts still load |
+| CRM / email list (if any) | [[FILL]] | ☐ none ☐ view ☐ edit | Mailchimp-for-Woo present; tool name: [[FILL]] |
+| Google Analytics / GTM | [[FILL]] | ☐ none ☐ view ☐ edit | **GTM-W2K9KB6** · **GA4 G-6RHWC2TFPZ** · tag **GT-PJ72PRK9** |
+| Hosting / WP Rocket / backups | [[FILL]] | ☐ none ☐ view ☐ edit | Cloudflare + **GoDaddy Managed WP / MWC** (`x-gateway`, WPaaS) |
 
 ### 0.2 Credentials & handoff channels (never paste secrets into chat)
 
@@ -57,11 +58,11 @@ Copy answers into `CUTOVER-FILL.md` (create when ready). Without these, Phase 2 
 
 ### 0.3 Business rules to lock (one sentence each)
 
-1. **Money path on day 1:** keep Booketing + SquadUp fulfillment (recommended) / replace with first-party Stripe (NOT recommended for v1).  
-2. **GA / ticket cut:** who gets paid when Booketing vs SquadUp completes? ________  
-3. **Inventory source of truth after cutover:** live WP products / JSON API / hybrid. ________  
-4. **Legal:** privacy + terms must 200 on apex (live currently 404s on common aliases — fix before or at cutover).  
-5. **Advertise / Contact:** where leads must land the minute we flip. ________
+1. **Money path on day 1:** keep **Booketing + SquadUp + Spiagge.it** fulfillment (recommended) / replace with first-party Stripe (NOT recommended for v1 — cart shows GoDaddy Payments chrome only).  
+2. **GA / ticket cut:** who gets paid when Booketing vs SquadUp vs Spiagge completes? [[FILL]]  
+3. **Inventory source of truth after cutover:** live WP products / JSON API / hybrid. Public counts today: venues **190=190**; events preview **98** vs live `product` **2457** (not “active only”). [[FILL]] rule for publish subset.  
+4. **Legal:** `/privacy/` + `/terms/` already **200**. Studio: add **301** from `/privacy-policy/` → `/privacy/` and `/terms-and-conditions/` → `/terms/` when WP unlocked (Frank approve).  
+5. **Advertise / Contact:** lead stack = **Google Forms** (`1FAIpQLScQaIxp…`, popup `1FAIpQLSdNf5…`) + **Jotform** `251634016415449` + CF7 scripts. Canonical inbox: [[FILL]]. Preview Contact/Advertise now embed the same public forms.
 
 ---
 
@@ -70,25 +71,29 @@ Copy answers into `CUTOVER-FILL.md` (create when ready). Without these, Phase 2 
 ### 1.1 Live stack (public dig — confirmed)
 
 ```
-Visitor → Cloudflare → WordPress (theme poolparty)
+Visitor → Cloudflare → GoDaddy Managed WP / WPaaS (theme poolparty)
                       ├─ Beaver Builder pages
-                      ├─ WooCommerce (cart / account chrome)
-                      ├─ WP Event Manager / products (events)
-                      ├─ Book Now → Booketing microsite (off-site)
-                      ├─ Book Now → SquadUp overlay (#squadup-checkout)
-                      └─ CF7 / mailto-style lead forms
+                      ├─ WooCommerce (cart / account chrome; GoDaddy MWC Stripe/Poynt assets on cart)
+                      ├─ Products as events (wp/v2/product ≈ 2457; preview curated 98)
+                      ├─ Book Now → Booketing microsite ppl (off-site)
+                      ├─ Book Now → SquadUp (userId 3438001 + squadup.com/events/{id})
+                      ├─ Book Now → Spiagge.it beach widget (Italy / One Fire Beach)
+                      └─ Leads → Google Forms + Jotform (+ CF7 scripts)
 ```
 
-Preview today: static GitHub Pages mirror with **honest live handoffs** labeled Booketing / SquadUp / live site. Demo cart = quantity only, **no prices**. Contact/Advertise = mailto demos.
+Preview today: static GitHub Pages mirror with **honest live handoffs** labeled Booketing / SquadUp / Spiagge / live site. Demo cart = quantity only, **no prices**. Contact/Advertise = **same public Google Forms + Jotform embeds as live** (not mailto demos).
 
-### 1.2 Book path inventory (preview data snapshot 2026-09-16)
+### 1.2 Book path inventory (preview + live probe 2026-09-17)
 
-| Provider | Events (approx) | Behavior |
-|----------|-----------------|----------|
-| **squadup** | ~63 | Live handoff to poolparty.com event page or squadup.com — SquadUp overlay on live |
-| **booketing** | ~35 | Direct `booketing.com/microsite/...` URL |
+| Provider | Preview `events.json` | Live events index (HTML) | Behavior |
+|----------|----------------------|--------------------------|----------|
+| **squadup** | ~61–63 | 8 popups / 7 unique IDs | Handoff to poolparty.com or `squadup.com/events/{id}`; sitewide `userId` **3438001** |
+| **booketing** | ~35 | 19 unique microsite URLs | Direct `booketing.com/microsite/ppl/...` |
+| **spiagge** | 2 overlap (One Fire Beach 236/240) | **13** popups → 1 widget URL | `widget.spiagge.it/.../it-sa-84010-one-fire-beach/` — see `data/BOOK-PATHS.md` |
 
-**Must stay working after cutover:** every Book Now either (a) opens the same proven Booketing URL, or (b) lands on a page that still mounts SquadUp with the same event IDs.
+**Inventory honesty:** venues **190 = live `wp/v2/venue` 190**. Events: preview **98** curated ≠ live **2457** products.
+
+**Must stay working after cutover:** every Book Now either (a) opens the same proven Booketing/Spiagge URL, or (b) lands on a page that still mounts SquadUp with the same event IDs / `userId` 3438001.
 
 ### 1.3 Integration checklist (prove each row)
 
@@ -98,11 +103,11 @@ Preview today: static GitHub Pages mirror with **honest live handoffs** labeled 
 | B | Venue + city hubs | Live scrape vs `venues.json` / `cities.json` | Page Builder | ☐ map |
 | C | Booketing Book Now | Spot-check 10 URLs → 200 + ticket UI loads | Frank + PB | ☐ |
 | D | SquadUp mount | Spot-check 10 live event pages → overlay opens, cart works | Frank + PB | ☐ |
-| E | Contact form | Submit test → inbox / CRM within 5 min | Frank | ☐ |
-| F | Advertise / partner form | Same as E | Frank | ☐ |
-| G | Privacy / Terms | Apex URLs 200 with real copy | PB + legal | ☐ broken on live aliases |
-| H | Cart / Checkout / Account | Decide: hide Woo chrome **or** keep WP routes | Frank | ☐ decide |
-| I | Analytics (GTM/GA) | Events fire on Book Now + form submit | PB | ☐ |
+| E | Contact form | Submit Google Form / Jotform test → Frank inbox within 5 min | Frank | ☐ prove |
+| F | Advertise / partner form | Same (Advertising entry + Jotform) | Frank | ☐ prove |
+| G | Privacy / Terms | `/privacy/` `/terms/` 200; **301** aliases `/privacy-policy/` `/terms-and-conditions/` | Studio + Frank | ☐ aliases still 404 |
+| H | Cart / Checkout / Account | Decide: hide Woo chrome **or** keep WP routes (`/checkout/`→`/cart/` smell) | Frank | ☐ decide |
+| I | Analytics (GTM/GA) | **GTM-W2K9KB6** + **G-6RHWC2TFPZ** fire on Book Now + form submit | Frank + PB | ☐ |
 | J | Music dock / soft-nav | Preview behavior preserved on host | PB | ☐ |
 | K | SEO / redirects | Old event/city URLs → new equivalents (301 map) | PB | ☐ |
 | L | Backups + rollback | Snapshot WP + DNS TTL plan | Ops | ☐ |
@@ -117,15 +122,16 @@ Preview today: static GitHub Pages mirror with **honest live handoffs** labeled 
 | Booketing URLs | pass-through | **unchanged** |
 | SquadUp overlays | labeled handoff to live | Embed or handoff — decide in Phase 2 |
 | `/cart/`, `/checkout/`, `/my-account/` | demo shells | Hide **or** keep WP |
-| `/privacy-policy/`, `/terms-and-conditions/` | `privacy.html`, `terms.html` | Must 200 |
-| Contact / Advertise | `contact.html`, `advertise.html` | Real POST destination |
+| `/privacy/`, `/terms/` | `privacy.html`, `terms.html` | Keep 200 on apex |
+| `/privacy-policy/`, `/terms-and-conditions/` | → preview privacy/terms | **301** aliases (Studio when WP unlocked) |
+| Contact / Advertise | `contact.html`, `advertise.html` | Same Google Forms + Jotform as live; CF7 TBD |
 
 ### 1.5 What we will **not** do on cutover day
 
-- Replace SquadUp or Booketing contracts  
-- Invent ticket prices or inventory  
+- Replace SquadUp, Booketing, or Spiagge contracts  
+- Invent ticket prices or inventory (or invent Spiagge event rows)  
 - Flip DNS before Phase 3 go/no-go  
-- Ship demo mailto as “production contact”  
+- Invent CRM destinations beyond live public forms  
 - Claim first-party POS if money still settles off-platform  
 
 ---
@@ -284,10 +290,10 @@ Ordered so nothing blocks go-live later:
 1. **Fill Phase 0 tables** (Frank) — access + money rules.  
 2. **Create `CUTOVER-FILL.md`** with answers (no secrets in git; vault links only).  
 3. **Complete integration rows A–L** with evidence links/screenshots.  
-4. **Fix live privacy/terms 404s** early (can ship on current WP).  
+4. **301 legal aliases** `/privacy-policy/`→`/privacy/`, `/terms-and-conditions/`→`/terms/` (Studio when WP unlocked; Frank approve).  
 5. **Decide Option A/B/C** host path.  
 6. **Stand up staging** matching that option.  
-7. **Replace mailto** with real form destinations on staging.  
+7. **Confirm lead inbox** for Google Forms + Jotform (preview already embeds live forms); decide CF7 fate.  
 8. **SquadUp strategy locked** (same-origin plugin vs labeled handoff).  
 9. **Redirect map** old → new slugs.  
 10. **Rollback drill** once on staging (practice revert).  
@@ -303,7 +309,7 @@ Ordered so nothing blocks go-live later:
 | Events / venues / cities | Synced mirror | Live feed or ≤SLA sync |
 | Book Now | Labeled handoff | Proven Booketing + SquadUp |
 | Cart / checkout | Demo shell | Real or hidden |
-| Contact / Advertise | mailto demo | Real delivery |
+| Contact / Advertise | Live Google Forms + Jotform embeds | Proven inbox + decide CF7 fate |
 | Account | localStorage mock | Real auth or hidden |
 | Legal | Present on preview | 200 on apex |
 
@@ -312,7 +318,9 @@ Ordered so nothing blocks go-live later:
 ## Related docs
 
 - `README.md` — prototype honesty labels  
-- `RUN-2026-09-15.md` — public dig (stack, risks, P0/P1)  
+- `LIVE-CONNECTED.md` — public systems map (2026-09-17)  
+- `RUN-2026-09-15.md` — earlier public dig  
+- `data/BOOK-PATHS.md` — Spiagge / Booketing / SquadUp honesty  
 - `OVERNIGHT.md` / `REFRESH.md` — inventory refresh notes  
 - Preview: https://faccett66.github.io/poolparty-preview/
 

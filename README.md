@@ -4,7 +4,7 @@ Summery, light, dayclub **eye candy** (champagne daylight, decluttered whitespac
 **GitHub Pages:** https://faccett66.github.io/poolparty-preview/  
 **Local:** `/workspace/poolparty/index.html`
 
-**Honest:** Book Now = live Booketing/SquadUp handoff. Demo cart has no real prices. No CATCH branding.
+**Honest:** Book Now = live Booketing/SquadUp/Spiagge handoff. Demo cart has no real prices. No CATCH branding.
 
 ## Partnership note — POS / ticket cut
 
@@ -31,13 +31,13 @@ Summery, light, dayclub **eye candy** (champagne daylight, decluttered whitespac
 | Demo cart (localStorage) | **Prototype** | Quantity-only; **no prices** |
 | Checkout shell | **Prototype** | No payments |
 | Account mock login | **Prototype** | localStorage UI only — no auth backend |
-| Advertise + Contact forms | **Prototype** | mailto `faccett66@gmail.com` |
+| Advertise + Contact forms | **Live embeds** | Same public Google Forms + Jotform as poolparty.com |
 | FAQs | **Prototype** | Adapted from live FAQ themes |
 | Blog list + sample articles | **Prototype** | Live wp-json titles + 2 sample posts |
 | SEC music tease | **Prototype** | Soft tease on **home only** |
 | SquadUp / Booketing fulfillment | **Still needs live backend** | Not replaced |
 | Real ticket inventory, pricing, GA cut POS | **Still needs backend / contracts** | Partnership work |
-| CRM, CF7, email confirmations | **Still needs backend** | mailto demo only |
+| CRM, CF7, email confirmations | **Partial** | Live Forms/Jotform wired; CF7 inbox + canonical lead owner still Frank |
 | CATCH / NDAL branding | **Not included** | Per brief |
 
 ### Legend
