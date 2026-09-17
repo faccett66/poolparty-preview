@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T20:50:00Z",
+  "generated": "2026-09-17T13:50:13Z",
   "source": "poolparty.com",
   "note": "Venues from public wp-json venue CPT (190 of live X-WP-Total 190). City inferred from public copy + curated overrides; images from featured media.",
   "venues": [
@@ -2233,7 +2233,7 @@
       "live_url": "https://poolparty.com/venue/floridays-resort/",
       "image": "https://poolparty.com/wp-content/uploads/2025/06/Pool-party-Floridays-Resort-768x461.webp",
       "source": "live",
-      "excerpt": "Discover Relaxation and Fun at Floridays Resort Nestled in the heart of Orlando, Florida, Floridays Resort offers the perfect blend of comfort, convenience, and entertainment. Whether you’re traveling with family or friends, this premier destination guarantees an…"
+      "excerpt": "Discover Relaxation and Fun at Floridays Resort Nestled in the heart of Orlando, Florida, Floridays Resort offers the perfect blend of comfort, convenience, and entertainment."
     },
     {
       "id": "vn-187",
