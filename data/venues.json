@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T13:50:13Z",
+  "generated": "2026-09-17T19:31:45Z",
   "source": "poolparty.com",
   "note": "Venues from public wp-json venue CPT (190 of live X-WP-Total 190). City inferred from public copy + curated overrides; images from featured media.",
   "venues": [
@@ -181,7 +181,7 @@
       "live_url": "https://poolparty.com/venue/azure-day-party-at-the-arlo/",
       "image": "https://poolparty.com/wp-content/uploads/2025/06/Azure-Day-Party-at-Arlo-768x461.webp",
       "source": "live",
-      "excerpt": "Join the ultimate Azure Day Party at Arlo! Music, drinks, and vibes collide for an unforgettable daytime celebration."
+      "excerpt": "Join the ultimate Azure Day Party at Arlo! Music, drinks, and vibes collide for an unforgettable daytime celebration. Don’t miss out!"
     },
     {
       "id": "vn-016",
@@ -937,7 +937,7 @@
       "live_url": "https://poolparty.com/venue/ivy-pool-club-a-chic-oasis-in-the-heart-of-australia/",
       "image": "https://poolparty.com/wp-content/uploads/2025/06/Ivy-Pool-Club-768x461.webp",
       "source": "live",
-      "excerpt": "Experience luxury at Ivy Pool Club on the Gold Coast. Enjoy chic infinity pools, gourmet dining, and a lively yet relaxing atmosphere."
+      "excerpt": "Experience luxury at Ivy Pool Club on the Gold Coast. Enjoy chic infinity pools, gourmet dining, and a lively yet relaxing atmosphere. Book your spot today!"
     },
     {
       "id": "vn-079",
@@ -1705,7 +1705,7 @@
       "live_url": "https://poolparty.com/venue/encore-beach-club/",
       "image": "https://poolparty.com/wp-content/uploads/2024/03/Encore-Beach-Club-Cover-1-768x240.webp",
       "source": "live",
-      "excerpt": "Have a great time at Encore Beach Club in Wynn Las Vegas. Enjoy world-class DJs, luxurious private cabanas, several pools, & top-notch service."
+      "excerpt": "Have a great time at Encore Beach Club in Wynn Las Vegas. Enjoy world-class DJs, luxurious private cabanas, several pools, & top-notch service. Experience Now!"
     },
     {
       "id": "vn-143",

@@ -58,3 +58,4 @@
 ## Refresh stamp
 2026-09-16 16:50:14 EDT — venues 190, events 98 (upcoming 22), changed yes — live WP inventory refresh (images/excerpts); pushed if material.
 2026-09-17 09:52:44 EDT — venues 190, events 98 (upcoming 22), changed yes — full CPT refresh (X-WP-Total 190); city tags preserved; floridays excerpt tightened from live; events catalog 98 unchanged (Spiagge book links retained); no count regression.
+2026-09-17 15:33:35 EDT — venues 190, events 98 (upcoming 21), changed yes — full CPT refresh (X-WP-Total 190); city tags preserved; 3 venue excerpts extended from live; Spiagge book links retained; upcoming 22→21; no count regression.
