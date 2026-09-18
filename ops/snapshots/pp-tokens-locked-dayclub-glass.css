@@ -1,0 +1,1191 @@
+/* LOCK: Dayclub Glass — 2026-09-18T16:51Z commit 326cf12
+   navy shell + cyan/coral/gold · soft frosted glass nav + footer · bright white section letters
+   Restore: copy back over assets/css/ and bump ?v= */
+/* PoolParties dayclub design system — Super Grok / Frank Accettulli
+   Tokens drive live colors. Load AFTER miami-home so CTA/page overlays win. */
+
+:root {
+  /* Core — PoolParties dayclub system */
+  --pp-bg: #070B14;
+  --pp-bg-2: #0E1A2B;
+  --pp-bg-3: #152238;
+  --pp-line: #24344A;
+  --pp-text: #F4F7FA;
+  --pp-text-dim: #B7C2D0;
+  --pp-text-mute: #7E8BA0;
+  --pp-cyan: #00E5E8;
+  --pp-cyan-deep: #00B7C2;
+  --pp-coral: #FF3864;
+  --pp-coral-hover: #FF5A7C;
+  --pp-gold: #E8C872;
+  --pp-gold-deep: #C9A24A;
+
+  /* Semantic token map */
+  --pp-bg-default: var(--pp-bg);
+  --pp-bg-card: var(--pp-bg-2);
+  --pp-bg-checkout: #F4F7FA;
+  --pp-text-default: var(--pp-text);
+  --pp-text-secondary: var(--pp-text-dim);
+  --pp-text-on-light: #102A2E;
+  --pp-action-primary: var(--pp-coral);
+  --pp-action-secondary: var(--pp-cyan);
+  --pp-action-vip: var(--pp-gold);
+  --pp-accent-miami: #00CEC8;
+  --pp-accent-miami-cta: #FF7A59;
+  --pp-accent-la: #FF2D95;
+  --pp-accent-yacht: #D4AF37;
+
+  /* Checkout / legal / account table */
+  --pp-checkout-bg: #F4F7FA;
+  --pp-checkout-header: #070B14;
+  --pp-checkout-header-accent: #00E5E8;
+  --pp-checkout-panel: #FFFFFF;
+  --pp-checkout-border: #D5DEE8;
+  --pp-checkout-label: #5B6B7C;
+  --pp-checkout-body: #102A2E;
+  --pp-checkout-price: #0E7C7B;
+  --pp-checkout-pay: #FF3864;
+  --pp-checkout-pay-hover: #FF5A7C;
+  --pp-checkout-secure: #2EE59D;
+  --pp-checkout-error: #FF4D4D;
+  --pp-checkout-timer: #C9A24A;
+
+  /* Bridge — remap Miami Electric shell vars onto dayclub tokens */
+  --ink: var(--pp-text);
+  --ink-soft: var(--pp-text-dim);
+  --deep: var(--pp-bg);
+  --cream: var(--pp-bg-2);
+  --foam: var(--pp-bg-2);
+  --sky: var(--pp-cyan);
+  --navy: var(--pp-bg-2);
+  --navy-2: var(--pp-cyan);
+  --teal: var(--pp-cyan-deep);
+  --aqua: var(--pp-cyan);
+  --aqua-hot: var(--pp-cyan);
+  --aqua-dim: rgba(0, 229, 232, 0.14);
+  --gold: var(--pp-gold);
+  --gold-hot: var(--pp-gold);
+  --champagne: var(--pp-gold);
+  --champagne-deep: var(--pp-gold-deep);
+  --sunset: var(--pp-coral);
+  --sunset-hot: var(--pp-coral-hover);
+  --coral: var(--pp-coral);
+  --lemon: var(--pp-gold);
+  --pool: var(--pp-cyan);
+  --mist: var(--pp-text-dim);
+  --muted: var(--pp-text-mute);
+  --glass: rgba(14, 26, 43, 0.88);
+  --glass-strong: rgba(21, 34, 56, 0.96);
+  --glass-border: rgba(0, 229, 232, 0.22);
+  --line: var(--pp-line);
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 36px rgba(255, 56, 100, 0.18);
+}
+
+/* ——— CTA utilities (one primary per view) ——— */
+.btn-primary,
+a.btn-primary,
+button.btn-primary {
+  background: var(--pp-coral) !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 10px 28px rgba(255, 56, 100, 0.32) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  font-weight: 800 !important;
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover {
+  background: var(--pp-coral-hover) !important;
+  background-image: none !important;
+  filter: none;
+  box-shadow: 0 14px 34px rgba(255, 56, 100, 0.4) !important;
+}
+
+.btn-vip,
+a.btn-vip,
+button.btn-vip {
+  background: var(--pp-gold) !important;
+  background-image: none !important;
+  color: #1A1406 !important;
+  border: none !important;
+  box-shadow: 0 10px 24px rgba(232, 200, 114, 0.28) !important;
+  font-weight: 800 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+.btn-vip:hover {
+  background: var(--pp-gold-deep) !important;
+  color: #1A1406 !important;
+}
+
+.btn-secondary,
+a.btn-secondary,
+button.btn-secondary {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--pp-cyan) !important;
+  border: 1.5px solid var(--pp-cyan) !important;
+  box-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+.btn-secondary:hover {
+  background: rgba(0, 229, 232, 0.1) !important;
+  color: var(--pp-cyan) !important;
+  border-color: var(--pp-cyan) !important;
+}
+
+/* Primary CTAs sitewide — Book Now / pay / sticky */
+.nav-cta,
+.sticky-book,
+.hero-actions .btn-primary {
+  background: var(--pp-coral) !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 8px 22px rgba(255, 56, 100, 0.35) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+.nav-cta:hover,
+.sticky-book:hover,
+.hero-actions .btn-primary:hover {
+  background: var(--pp-coral-hover) !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  filter: none;
+}
+
+/* Ghost / secondary on dark shell → cyan outline */
+.btn-ghost,
+a.btn-ghost,
+.hero .btn-ghost,
+.hero-cta-secondary {
+  background: transparent !important;
+  color: var(--pp-cyan) !important;
+  border: 1.5px solid var(--pp-cyan) !important;
+  backdrop-filter: none;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  text-shadow: none !important;
+}
+.btn-ghost:hover,
+.hero .btn-ghost:hover,
+.hero-cta-secondary:hover {
+  background: rgba(0, 229, 232, 0.1) !important;
+  border-color: var(--pp-cyan) !important;
+  color: var(--pp-cyan) !important;
+  box-shadow: 0 8px 24px rgba(0, 229, 232, 0.12) !important;
+}
+
+.btn-aqua {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--pp-cyan) !important;
+  border: 1.5px solid var(--pp-cyan) !important;
+  box-shadow: none !important;
+}
+
+/* ——— Default shell shift toward dayclub navy (slightly lifted) ——— */
+body {
+  background: #0A1220 !important;
+  background-image:
+    radial-gradient(ellipse 80% 45% at 0% 0%, rgba(0, 229, 232, 0.16), transparent 55%),
+    radial-gradient(ellipse 70% 40% at 100% 5%, rgba(255, 56, 100, 0.12), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(232, 200, 114, 0.08), transparent 55%),
+    linear-gradient(180deg, #0A1220 0%, #121E32 55%, #0C1524 100%) !important;
+  color: var(--pp-text) !important;
+}
+body::before {
+  background:
+    radial-gradient(circle 280px at 12% 42%, rgba(0, 229, 232, 0.09), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(255, 56, 100, 0.07), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(232, 200, 114, 0.06), transparent 70%) !important;
+}
+
+/* Proto banner + nav → dark dayclub chrome */
+.proto-banner {
+  background: var(--pp-bg-2) !important;
+  color: var(--pp-text-dim) !important;
+  border-bottom: 1px solid var(--pp-line) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  font-weight: 600 !important;
+}
+.proto-banner a {
+  color: var(--pp-cyan) !important;
+  font-weight: 700 !important;
+}
+
+.nav,
+.nav.scrolled {
+  /* Soft frosted glass — same craft as hero .hero-panel under the photo */
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
+  background-image: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
+  border-bottom: 1px solid rgba(0, 229, 232, 0.28) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+.nav-links a {
+  color: #F4F7FA !important;
+  -webkit-text-fill-color: #F4F7FA !important;
+  font-weight: 650 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
+  opacity: 1 !important;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pp-cyan) !important;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  background: var(--pp-cyan) !important;
+  box-shadow: 0 0 8px rgba(0, 229, 232, 0.45) !important;
+}
+.nav .nav-links a:not([href="index.html"]):not(.nav-home),
+.nav .nav-cta,
+.proto-banner {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+.nav .nav-links a.nav-home,
+.nav .nav-links a[href="index.html"],
+.nav-drawer a.nav-home,
+.nav-drawer a[href="index.html"] {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+.nav-cart {
+  background: var(--pp-bg-3) !important;
+  border: 1.5px solid var(--pp-line) !important;
+  color: var(--pp-text) !important;
+}
+.nav-cart .badge {
+  background: var(--pp-coral) !important;
+  color: #fff !important;
+}
+.nav-toggle span {
+  background: var(--pp-cyan) !important;
+}
+.nav-drawer {
+  background: var(--pp-bg-2) !important;
+}
+.nav-drawer a {
+  color: var(--pp-text) !important;
+  border-bottom-color: var(--pp-line) !important;
+}
+.logo {
+  color: var(--pp-text) !important;
+  text-shadow: none !important;
+}
+
+/* Typography / surfaces on dark */
+.section-head h2,
+.card-body h3,
+.step h3,
+.trust strong,
+.footer h4,
+.faq-item summary,
+.page-hero h1,
+.lead {
+  color: var(--pp-text) !important;
+}
+.tag,
+.eyebrow {
+  color: var(--pp-cyan) !important;
+}
+.eyebrow::before {
+  background: linear-gradient(90deg, var(--pp-coral), var(--pp-cyan)) !important;
+}
+.scarcity,
+.text-scarcity,
+[data-scarcity] {
+  color: var(--pp-gold) !important;
+}
+.card,
+.panel,
+.form-card,
+.trust,
+.faq-item,
+.demo-callout {
+  background: var(--pp-bg-2) !important;
+  border-color: var(--pp-line) !important;
+  color: var(--pp-text) !important;
+}
+.card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
+}
+#cities,
+.vibes {
+  background: transparent !important;
+}
+.chip {
+  color: var(--pp-text-dim) !important;
+  border-color: var(--pp-line) !important;
+  background: var(--pp-bg-3) !important;
+}
+.chip:hover,
+.chip.active {
+  border-color: var(--pp-cyan) !important;
+  color: var(--pp-cyan) !important;
+  background: rgba(0, 229, 232, 0.1) !important;
+}
+.field label {
+  color: var(--pp-text-mute) !important;
+}
+.field input,
+.field select,
+.field textarea,
+.search-bar input,
+.when-bar input,
+.when-bar select {
+  background: var(--pp-bg-3) !important;
+  border-color: var(--pp-line) !important;
+  color: var(--pp-text) !important;
+}
+.footer {
+  /* Soft frosted glass — same craft as hero panel / logo nav */
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
+  border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.22) !important;
+}
+.footer h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+.footer a {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
+}
+.footer a:hover {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.footer-bottom,
+.footer-bottom span {
+  color: rgba(244, 247, 250, 0.78) !important;
+}
+.footer p {
+  color: rgba(244, 247, 250, 0.82) !important;
+}
+.empty-state {
+  color: var(--pp-text-dim) !important;
+}
+
+/* Hero: keep photo readable; city/water = cyan; avoid gold-on-cyan */
+.hero .eyebrow {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65) !important;
+}
+.hero h1 {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55) !important;
+}
+.hero h1 em,
+.hero h1 em * {
+  color: var(--pp-coral) !important;
+  -webkit-text-fill-color: var(--pp-coral) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important;
+}
+.hero-lead,
+.hero .hero-cta-secondary {
+  color: var(--pp-text-dim) !important;
+  -webkit-text-fill-color: var(--pp-text-dim) !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+  font-weight: 500 !important;
+}
+.hero-pill {
+  background: rgba(14, 26, 43, 0.72) !important;
+  border: 1px solid var(--pp-line) !important;
+  color: var(--pp-text) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+}
+.hero-pill strong {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+
+/* Miami accent helpers */
+.accent-miami { color: var(--pp-accent-miami) !important; }
+.accent-miami-cta,
+.btn-miami {
+  background: var(--pp-accent-miami-cta) !important;
+  color: #fff !important;
+}
+
+/* ========== LA ROOFTOP ========== */
+.page-la {
+  background: #07070A !important;
+  background-image: none !important;
+  color: #F4F7FA !important;
+}
+.page-la .venue-tag,
+.page-la .tag,
+.page-la .eyebrow {
+  color: #FF2D95 !important;
+}
+.page-la .btn-buy,
+.page-la .btn-primary,
+.page-la .nav-cta,
+.page-la .sticky-book {
+  background: #FF2D95 !important;
+  background-image: none !important;
+  color: #fff !important;
+}
+.page-la .btn-buy:hover,
+.page-la .btn-primary:hover,
+.page-la .nav-cta:hover {
+  background: #ff4aaa !important;
+  color: #fff !important;
+}
+.page-la .btn-vip {
+  background: #E8C872 !important;
+  color: #1A1406 !important;
+}
+.page-la .price {
+  color: #00E5E8 !important;
+}
+.page-la .nav-links a:hover,
+.page-la .nav-links a.active {
+  color: #FF2D95 !important;
+}
+
+/* ========== YACHT ========== */
+.page-yacht {
+  background: #001226 !important;
+  background-image: none !important;
+  color: #F4F7FA !important;
+}
+.page-yacht .venue-tag,
+.page-yacht .tag,
+.page-yacht .eyebrow {
+  color: #D4AF37 !important;
+}
+.page-yacht .btn-buy,
+.page-yacht .btn-primary,
+.page-yacht .nav-cta,
+.page-yacht .sticky-book {
+  background: #FF3864 !important;
+  background-image: none !important;
+  color: #fff !important;
+}
+.page-yacht .btn-vip {
+  background: #D4AF37 !important;
+  color: #1A1406 !important;
+}
+.page-yacht .price {
+  color: #F4F7FA !important;
+}
+.page-yacht .nav-links a:hover,
+.page-yacht .nav-links a.active {
+  color: #D4AF37 !important;
+}
+
+/* ========== CHECKOUT / LEGAL / ACCOUNT ========== */
+.page-checkout {
+  background: #F4F7FA !important;
+  background-image: none !important;
+  color: #102A2E !important;
+}
+.page-checkout::before {
+  display: none !important;
+}
+.page-checkout .header,
+.page-checkout .nav,
+.page-checkout .nav.scrolled {
+  background: #070B14 !important;
+  background-image: none !important;
+  color: #F4F7FA !important;
+  border-bottom: 1px solid var(--pp-line) !important;
+}
+.page-checkout .header-accent,
+.page-checkout .nav-links a:hover,
+.page-checkout .nav-links a.active,
+.page-checkout .nav .nav-links a.nav-home,
+.page-checkout .proto-banner a {
+  color: #00E5E8 !important;
+  -webkit-text-fill-color: #00E5E8 !important;
+}
+.page-checkout .nav-links a {
+  color: #F4F7FA !important;
+}
+.page-checkout .proto-banner {
+  background: #070B14 !important;
+  color: #B7C2D0 !important;
+}
+.page-checkout .panel,
+.page-checkout .form-card,
+.page-checkout .card,
+.page-checkout .demo-callout,
+.page-checkout .faq-item,
+.page-checkout .trust {
+  background: #FFFFFF !important;
+  border: 1px solid #D5DEE8 !important;
+  color: #102A2E !important;
+}
+.page-checkout .label,
+.page-checkout .field label,
+.page-checkout .fee {
+  color: #5B6B7C !important;
+}
+.page-checkout .value,
+.page-checkout .page-hero h1,
+.page-checkout .lead,
+.page-checkout .section-head h2,
+.page-checkout .card-body h3,
+.page-checkout .footer h4,
+.page-checkout strong {
+  color: #102A2E !important;
+}
+.page-checkout .price {
+  color: #0E7C7B !important;
+}
+.page-checkout .btn-pay,
+.page-checkout .btn-primary,
+.page-checkout .nav-cta,
+.page-checkout .sticky-book {
+  background: #FF3864 !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+.page-checkout .btn-pay:hover,
+.page-checkout .btn-primary:hover,
+.page-checkout .nav-cta:hover {
+  background: #FF5A7C !important;
+  color: #FFFFFF !important;
+}
+.page-checkout .btn-back,
+.page-checkout .btn-ghost {
+  background: transparent !important;
+  color: #102A2E !important;
+  border: 1px solid #D5DEE8 !important;
+  -webkit-text-fill-color: #102A2E !important;
+}
+.page-checkout .btn-back:hover,
+.page-checkout .btn-ghost:hover {
+  border-color: #00E5E8 !important;
+  color: #102A2E !important;
+  background: rgba(0, 229, 232, 0.06) !important;
+}
+.page-checkout .secure {
+  color: #2EE59D !important;
+}
+.page-checkout .error {
+  color: #FF4D4D !important;
+}
+.page-checkout .timer {
+  color: #C9A24A !important;
+}
+.page-checkout .eyebrow,
+.page-checkout .tag {
+  color: #00E5E8 !important;
+}
+.page-checkout .footer {
+  background: #F4F7FA !important;
+  border-top: 1px solid #D5DEE8 !important;
+  color: #5B6B7C !important;
+}
+.page-checkout .footer a:hover {
+  color: #00E5E8 !important;
+}
+.page-checkout .field input,
+.page-checkout .field select,
+.page-checkout .field textarea {
+  background: #FFFFFF !important;
+  border-color: #D5DEE8 !important;
+  color: #102A2E !important;
+}
+.page-checkout .empty-state,
+.page-checkout .mist-text {
+  color: #5B6B7C !important;
+}
+.page-checkout .nav-cart {
+  background: #152238 !important;
+  border-color: #24344A !important;
+  color: #F4F7FA !important;
+}
+.page-checkout .nav-drawer {
+  background: #070B14 !important;
+}
+.page-checkout .nav-drawer a {
+  color: #F4F7FA !important;
+  border-bottom-color: #24344A !important;
+}
+
+/* Music dock readable on dark navy (overrides in music-layer also use tokens) */
+.pp-music-dock__inner {
+  background: rgba(7, 11, 20, 0.94) !important;
+  border: 1.5px solid var(--pp-line) !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 229, 232, 0.28),
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(255, 56, 100, 0.12) !important;
+  color: var(--pp-text) !important;
+}
+.pp-music-dock.is-playing .pp-music-dock__inner {
+  box-shadow:
+    0 0 0 1px rgba(0, 229, 232, 0.45),
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(255, 56, 100, 0.22) !important;
+}
+
+
+/* Homepage hero inline-color neutralize */
+.hero .sun-out,
+.hero h1 .sun-out {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* ========== 2026-09-16 photo visibility + type (dayclub) ========== */
+
+/* Kill residual yellow stroke anywhere on dark shell */
+.nav .nav-links a,
+.nav .nav-cta,
+.nav-drawer a,
+.proto-banner,
+.hero .eyebrow,
+.hero h1,
+.hero h1 *,
+.hero-lead,
+.hero-pill,
+.hero-pill strong,
+.stat-pills strong {
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+}
+
+/* ——— Homepage hero: lighter navy wash so faces stay readable ——— */
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(7, 11, 20, 0.48) 0%, rgba(7, 11, 20, 0.12) 38%, rgba(7, 11, 20, 0.28) 62%, rgba(7, 11, 20, 0.72) 100%),
+    linear-gradient(90deg, rgba(7, 11, 20, 0.38) 0%, rgba(7, 11, 20, 0.08) 52%, rgba(7, 11, 20, 0.22) 100%) !important;
+}
+.hero-bg img {
+  object-fit: cover !important;
+  object-position: center 38% !important;
+  filter: brightness(1.06) contrast(1.04) saturate(1.05) !important;
+}
+.hero-content {
+  /* Frosted copy panel ONLY — hero CTAs must stay outside this node */
+  max-width: 42rem !important;
+  padding: 1.25rem 1.35rem 1.35rem !important;
+  border-radius: 1.15rem !important;
+  /* Slightly lighter so the pool shows through more */
+  background: linear-gradient(165deg, rgba(7, 11, 20, 0.62), rgba(14, 26, 43, 0.48)) !important;
+  border: 1px solid rgba(0, 229, 232, 0.28) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+.hero-eyebrow,
+.hero .eyebrow {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75) !important;
+}
+.hero h1 {
+  font-size: clamp(2.75rem, 8vw, 5.1rem) !important;
+  font-weight: 700 !important;
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.55) !important;
+}
+.hero h1 .sun-out,
+.hero .sun-out {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+}
+.hero h1 em,
+.hero h1 em * {
+  /* coral accent on solid scrim panel — not floating on red photo */
+  color: var(--pp-coral) !important;
+  -webkit-text-fill-color: var(--pp-coral) !important;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.7) !important;
+}
+.hero-lead {
+  font-size: 1.08rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--pp-text-dim) !important;
+  -webkit-text-fill-color: var(--pp-text-dim) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
+}
+.hero-pill {
+  background: rgba(7, 11, 20, 0.82) !important;
+  border: 1px solid rgba(0, 229, 232, 0.28) !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.78rem !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.06em !important;
+  text-shadow: none !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35) !important;
+}
+.hero-pill strong {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  font-size: 0.95rem !important;
+  font-weight: 750 !important;
+  text-shadow: none !important;
+}
+
+/* Nav type — brighter white on Events/Venues/…; Home cyan/coral; no yellow */
+.nav .nav-links a {
+  color: #FFFFFF !important;
+  font-size: 0.92rem !important;
+  font-weight: 650 !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45) !important;
+}
+.nav .nav-links a:hover,
+.nav .nav-links a.active {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.nav .nav-links a.nav-home,
+.nav .nav-links a[href="index.html"] {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.nav .nav-links a.nav-home:hover,
+.nav .nav-links a.nav-home.active,
+.nav .nav-links a[href="index.html"]:hover,
+.nav .nav-links a[href="index.html"].active {
+  color: var(--pp-coral) !important;
+  -webkit-text-fill-color: var(--pp-coral) !important;
+}
+.nav .nav-cta {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-weight: 800 !important;
+}
+
+/* Section heads / eyebrows — cyan labels, light titles */
+.eyebrow,
+.section-head .eyebrow,
+.page-hero .eyebrow {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+}
+.section-head h2,
+.page-hero h1 {
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  font-weight: 650 !important;
+}
+.section-head p,
+.page-hero .lead {
+  color: var(--pp-text-dim) !important;
+  font-size: 1.05rem !important;
+  font-weight: 450 !important;
+}
+
+/* Page heroes on photo BGs — heavier navy wash already in miami; lock type */
+.page-hero h1,
+.page-hero .lead,
+.page-hero .eyebrow {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* ——— Photo cards: city / vibe / event badges ——— */
+.city-tile::after {
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.08) 0%, rgba(7, 11, 20, 0.22) 42%, rgba(7, 11, 20, 0.62) 72%, rgba(7, 11, 20, 0.88) 100%) !important;
+}
+.city-tile img {
+  object-fit: cover !important;
+  object-position: center 35% !important;
+  filter: brightness(1.05) contrast(1.04) !important;
+}
+.city-tile span {
+  color: var(--pp-text) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65) !important;
+}
+.city-tile small {
+  /* was tiny white — cyan label on heavy scrim */
+  color: var(--pp-cyan) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55) !important;
+  opacity: 1 !important;
+}
+.city-tile:hover,
+.city-tile.active {
+  border-color: rgba(0, 229, 232, 0.45) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
+}
+
+.vibe-card::after {
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.06) 0%, rgba(7, 11, 20, 0.18) 42%, rgba(7, 11, 20, 0.58) 72%, rgba(7, 11, 20, 0.86) 100%) !important;
+}
+.vibe-card img {
+  object-fit: cover !important;
+  object-position: center 32% !important;
+  filter: brightness(1.06) contrast(1.04) saturate(1.04) !important;
+}
+.vibe-body {
+  padding: 1.15rem 1.25rem 1.3rem !important;
+  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.42) 28%, rgba(7, 11, 20, 0.82)) !important;
+}
+.vibe-body h3 {
+  color: var(--pp-text) !important;
+  font-size: clamp(1.35rem, 2.4vw, 1.65rem) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
+}
+.vibe-body p {
+  /* no tiny white captions — cyan-dim readable */
+  color: var(--pp-text-dim) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
+}
+.vibe-body .tag,
+.card-media .tag,
+.badge-row .tag {
+  background: rgba(7, 11, 20, 0.88) !important;
+  border: 1px solid rgba(0, 229, 232, 0.35) !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.1em !important;
+  backdrop-filter: blur(8px) !important;
+}
+.tag.live {
+  border-color: rgba(0, 229, 232, 0.55) !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.tag.demo {
+  border-color: rgba(232, 200, 114, 0.45) !important;
+  color: var(--pp-gold) !important;
+  -webkit-text-fill-color: var(--pp-gold) !important;
+}
+
+/* Event/venue cards on homepage “this week” */
+.card-media {
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+}
+.card-media img {
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  filter: brightness(1.04) contrast(1.03) !important;
+}
+.card-media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28%;
+  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.35));
+  pointer-events: none;
+  z-index: 1;
+}
+.card-body h3,
+.card-body h3 a {
+  color: var(--pp-text) !important;
+  font-weight: 650 !important;
+}
+.card-meta {
+  color: var(--pp-cyan) !important;
+  font-size: 0.88rem !important;
+  font-weight: 550 !important;
+}
+.handoff-note {
+  font-size: 0.82rem !important;
+  color: var(--pp-text-mute) !important;
+  background: rgba(21, 34, 56, 0.9) !important;
+  border: 1px solid var(--pp-line) !important;
+}
+
+/* City hub photo */
+.city-hub-media {
+  position: relative;
+  margin: 1rem 0 1.25rem;
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 320px;
+  border: 1px solid var(--pp-line);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+.city-hub-media img {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+.city-hub-media .city-hub-scrim,
+.city-hub-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.05), rgba(7, 11, 20, 0.28) 70%, rgba(7, 11, 20, 0.55));
+  pointer-events: none;
+}
+.city-hub-media img {
+  object-position: center 32% !important;
+  filter: brightness(1.05) contrast(1.04) !important;
+}
+.city-hub-media .city-hub-scrim { display: block; }
+
+/* Music band type — cyan eyebrow, light title, dim body (not tiny white) */
+.music-band::before {
+  background: linear-gradient(90deg, rgba(7, 11, 20, 0.94) 0%, rgba(7, 11, 20, 0.78) 48%, rgba(7, 11, 20, 0.5) 100%) !important;
+}
+.music-inner .eyebrow {
+  color: var(--pp-cyan) !important;
+  font-size: 0.85rem !important;
+}
+.music-inner h2 {
+  color: var(--pp-text) !important;
+}
+.music-inner p {
+  color: var(--pp-text-dim) !important;
+  font-size: 1rem !important;
+  font-weight: 450 !important;
+}
+
+/* Stat pills / trust — no yellow stroke; cyan numbers */
+.stat-pills strong {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  text-shadow: none !important;
+}
+.stat-pills small {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+.trust span {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.82rem !important;
+}
+.trust strong {
+  color: var(--pp-text) !important;
+}
+
+/* Secondary links / ghost → cyan (Frank: that blue is nice) */
+a.btn-ghost,
+.btn-ghost,
+.hero-cta-secondary,
+.example-note a,
+.empty-state a {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.chip {
+  color: var(--pp-text-dim) !important;
+}
+.chip:hover,
+.chip.active {
+  color: var(--pp-cyan) !important;
+  border-color: var(--pp-cyan) !important;
+}
+
+/* Scarcity stays gold */
+.scarcity,
+.text-scarcity,
+[data-scarcity] {
+  color: var(--pp-gold) !important;
+  font-weight: 650 !important;
+}
+
+/* Homepage FOMO / example note — not tiny muted white */
+.example-note,
+#city-status {
+  color: var(--pp-text-dim) !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+}
+
+/* Buttons keep coral primary; size readable */
+.btn-sm {
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+}
+
+
+/* kill yellow miami !important link leftovers */
+a, a:link, a:visited {
+  -webkit-text-stroke: 0 !important;
+}
+.nav-links a,
+.nav-drawer a,
+.footer a,
+.chip-link,
+.card-body a,
+.hero-actions a,
+.btn {
+  pointer-events: auto !important;
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+}
+.nav-links a[style*="ffe600"],
+.nav-links a[style*="yellow"] {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+
+/* Hero stack: frosted copy panel + CTAs OUTSIDE the box (Book Now matches nav) */
+.hero-stack{
+  position:relative;
+  z-index:2;
+  max-width:58rem !important;
+  width:min(58rem, calc(100% - 2rem)) !important;
+  margin-inline:auto !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center !important; /* center the glass again */
+  gap:1.1rem;
+  padding-bottom:1.25rem !important;
+  text-align:center;
+}
+.hero .hero-content{
+  /* text-only glass panel — CTAs are siblings outside */
+  max-width:42rem !important;
+  width:100%;
+  margin-inline:auto !important;
+  text-align:center;
+}
+.hero .hero-content .hero-lead{
+  margin-inline:auto !important;
+}
+.hero .hero-glass{
+  justify-content:center !important;
+}
+.hero .hero-actions{
+  position:relative;
+  z-index:6;
+  isolation:isolate;
+  justify-content:center !important;
+  filter:none !important;
+  opacity:1 !important;
+  mix-blend-mode:normal !important;
+}
+
+/* Glass panel Book Now pill = nav coral twin */
+.hero-glass .hero-pill-book,
+.hero .hero-glass .hero-pill-book {
+  background: var(--pp-coral, #FF3864) !important;
+  background-image: none !important;
+  border: none !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  box-shadow: 0 8px 22px rgba(255, 56, 100, 0.35) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+.hero-glass .hero-pill-book strong,
+.hero .hero-glass .hero-pill-book strong {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+
+/* Center the hero glass stack in the viewport */
+.hero{
+  justify-content:center !important;
+}
+.hero > .wrap.hero-stack,
+.hero .hero-stack{
+  margin-left:auto !important;
+  margin-right:auto !important;
+  align-items:center !important;
+}
+
+
+/* Filters / dropdowns — dark navy (Events, Venues, Cities) */
+.filters input,
+.filters select,
+.when-bar {
+  background: var(--pp-bg-3) !important;
+  border: 1px solid var(--pp-line) !important;
+  color: var(--pp-text) !important;
+  box-shadow: none !important;
+}
+.when-bar {
+  background: linear-gradient(105deg, rgba(21, 34, 56, 0.95), rgba(14, 26, 43, 0.98)) !important;
+  border-color: var(--pp-line) !important;
+}
+.when-bar label {
+  color: var(--pp-text) !important;
+}
+.when-bar input[type="checkbox"] {
+  background: transparent !important;
+  border: none !important;
+  accent-color: var(--pp-coral, #FF3864) !important;
+  width: 1.05rem !important;
+  height: 1.05rem !important;
+}
+.filters input::placeholder {
+  color: var(--pp-text-mute) !important;
+}
+.filters input:focus,
+.filters select:focus {
+  border-color: var(--pp-cyan) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.18) !important;
+  outline: none !important;
+}
+.filters select {
+  background-color: var(--pp-bg-3) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300E5E8'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  color: var(--pp-text) !important;
+}
+.filters select option {
+  background: var(--pp-bg-2);
+  color: var(--pp-text);
+}
+
+
+/* ========== FOOTER GLASS LOCK ========== */
+html body .footer {
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
+  border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+html body .footer a,
+html body .footer h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+html body .footer a:hover {
+  color: var(--pp-cyan, #00E5E8) !important;
+  -webkit-text-fill-color: var(--pp-cyan, #00E5E8) !important;
+}
