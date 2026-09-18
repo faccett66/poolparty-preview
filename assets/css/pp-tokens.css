@@ -218,11 +218,12 @@ body::before {
 
 .nav,
 .nav.scrolled {
-  background: rgba(7, 11, 20, 0.92) !important;
-  background-image: none !important;
-  border-bottom: 1px solid var(--pp-line) !important;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: blur(16px) !important;
+  /* Slightly lifted logo row — still dayclub, readable for white logo */
+  background: rgba(22, 36, 58, 0.78) !important;
+  background-image: linear-gradient(180deg, rgba(0, 229, 232, 0.06), transparent 70%) !important;
+  border-bottom: 1px solid rgba(0, 229, 232, 0.18) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22) !important;
+  backdrop-filter: blur(18px) saturate(1.08) !important;
 }
 .nav-links a {
   color: var(--pp-text-dim) !important;
