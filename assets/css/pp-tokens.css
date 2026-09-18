@@ -219,8 +219,8 @@ body::before {
 .nav,
 .nav.scrolled {
   /* Soft frosted glass — same craft as hero .hero-panel under the photo */
-  background: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
-  background-image: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
+  background-image: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
   border-bottom: 1px solid rgba(0, 229, 232, 0.28) !important;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
   backdrop-filter: blur(12px) !important;
@@ -350,7 +350,7 @@ body::before {
 }
 .footer {
   /* Soft frosted glass — same craft as hero panel / logo nav */
-  background: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
   border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
   color: #FFFFFF !important;
   backdrop-filter: blur(12px) !important;
@@ -1172,7 +1172,7 @@ a, a:link, a:visited {
 
 /* ========== FOOTER GLASS LOCK ========== */
 html body .footer {
-  background: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
   border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
