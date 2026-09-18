@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v26 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v27 */
 (function (global) {
   'use strict';
 
@@ -7,7 +7,7 @@
     { title: 'Clear to the Floor', note: 'Sonic Ear Candy · bed', src: 'assets/audio/clear-to-the-floor.mp3' },
     { title: 'Fuori Orario', note: 'Sonic Ear Candy · bed', src: 'assets/audio/fuori-orario.mp3' }
   ];
-  var SEC_URL = 'https://sonicearcandy.com/';
+  var SEC_URL = 'https://sonicearcandy.com/custom-soundtrack-beds.html';
   var DEFAULT_VOL = 0.5;
   var VOL_STEP = 0.1;
   var KEY_MUTE = 'pp_music_muted';
