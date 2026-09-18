@@ -47,12 +47,12 @@
   --pp-checkout-error: #FF4D4D;
   --pp-checkout-timer: #C9A24A;
 
-  /* Bridge — remap Miami Electric shell vars onto dayclub tokens */
-  --ink: var(--pp-text);
-  --ink-soft: var(--pp-text-dim);
+  /* Bridge — Electric wash: dark ink + light foam (dayclub --pp-* stay for nav/hero/CTAs) */
+  --ink: #0a1628;
+  --ink-soft: #142536;
   --deep: var(--pp-bg);
-  --cream: var(--pp-bg-2);
-  --foam: var(--pp-bg-2);
+  --cream: #fff8f0;
+  --foam: rgba(255, 252, 247, 0.94);
   --sky: var(--pp-cyan);
   --navy: var(--pp-bg-2);
   --navy-2: var(--pp-cyan);
@@ -69,25 +69,26 @@
   --coral: var(--pp-coral);
   --lemon: var(--pp-gold);
   --pool: var(--pp-cyan);
-  --mist: var(--pp-text-dim);
-  --muted: var(--pp-text-mute);
-  --glass: rgba(14, 26, 43, 0.88);
-  --glass-strong: rgba(21, 34, 56, 0.96);
-  --glass-border: rgba(0, 229, 232, 0.22);
-  --line: var(--pp-line);
-  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  --mist: rgba(10, 22, 40, 0.72);
+  --muted: rgba(10, 22, 40, 0.55);
+  --glass: rgba(255, 255, 255, 0.88);
+  --glass-strong: rgba(255, 252, 247, 0.96);
+  --glass-border: rgba(0, 144, 224, 0.28);
+  --line: rgba(20, 37, 54, 0.12);
+  --shadow: 0 16px 36px rgba(26, 58, 82, 0.12);
   --shadow-glow: 0 0 36px rgba(255, 56, 100, 0.18);
 }
 
-/* ——— CTA utilities (one primary per view) ——— */
+/* ——— CTA utilities (Electric primary) ——— */
 .btn-primary,
 a.btn-primary,
 button.btn-primary {
-  background: var(--pp-coral) !important;
-  background-image: none !important;
-  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #fff066 0%, #ff6a9a 52%, #ff8ab0 100%) !important;
+  background-image: linear-gradient(135deg, #fff066 0%, #ff6a9a 52%, #ff8ab0 100%) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
   border: none !important;
-  box-shadow: 0 10px 28px rgba(255, 56, 100, 0.32) !important;
+  box-shadow: 0 10px 28px rgba(255, 106, 154, 0.28) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
   font-weight: 800 !important;
@@ -95,10 +96,10 @@ button.btn-primary {
 .btn-primary:hover,
 a.btn-primary:hover,
 button.btn-primary:hover {
-  background: var(--pp-coral-hover) !important;
-  background-image: none !important;
-  filter: none;
-  box-shadow: 0 14px 34px rgba(255, 56, 100, 0.4) !important;
+  background: linear-gradient(135deg, #fff28a 0%, #ff7aaa 52%, #ffa0c0 100%) !important;
+  background-image: linear-gradient(135deg, #fff28a 0%, #ff7aaa 52%, #ffa0c0 100%) !important;
+  filter: brightness(1.04);
+  box-shadow: 0 14px 34px rgba(255, 106, 154, 0.36) !important;
 }
 
 .btn-vip,
@@ -135,25 +136,27 @@ button.btn-secondary {
   border-color: var(--pp-cyan) !important;
 }
 
-/* Primary CTAs sitewide — Book Now / pay / sticky */
+/* Primary CTAs sitewide — Electric Book Now / sticky */
 .nav-cta,
 .sticky-book,
 .hero-actions .btn-primary {
-  background: var(--pp-coral) !important;
-  background-image: none !important;
-  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #fff066 0%, #ff6a9a 52%, #ff8ab0 100%) !important;
+  background-image: linear-gradient(135deg, #fff066 0%, #ff6a9a 52%, #ff8ab0 100%) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
   border: none !important;
-  box-shadow: 0 8px 22px rgba(255, 56, 100, 0.35) !important;
+  box-shadow: 0 8px 22px rgba(255, 106, 154, 0.32) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-cta:hover,
 .sticky-book:hover,
 .hero-actions .btn-primary:hover {
-  background: var(--pp-coral-hover) !important;
-  background-image: none !important;
-  color: #FFFFFF !important;
-  filter: none;
+  background: linear-gradient(135deg, #fff28a 0%, #ff7aaa 52%, #ffa0c0 100%) !important;
+  background-image: linear-gradient(135deg, #fff28a 0%, #ff7aaa 52%, #ffa0c0 100%) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+  filter: brightness(1.04);
 }
 
 /* Ghost / secondary on dark shell → cyan outline */
@@ -185,18 +188,18 @@ a.btn-ghost,
   box-shadow: none !important;
 }
 
-/* ——— Soft Miami Electric shell (must not force near-black over miami-home wash) ——— */
+/* ——— Soft Miami Electric shell (wins over dayclub navy) ——— */
 body {
   background: transparent !important;
   background-image:
-    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
-    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
-    linear-gradient(180deg, #ffe08a 0%, #b8daf0 36%, #88c4e8 72%, #68aed8 100%) !important;
+    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.26), transparent 58%),
+    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.38), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.12), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.28), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.16), transparent 55%),
+    linear-gradient(180deg, #fff3b0 0%, #dff3ff 36%, #b6e4ff 72%, #8fd4ff 100%) !important;
   background-attachment: fixed !important;
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
 }
 body::before {
   display: block !important;
@@ -211,44 +214,50 @@ body::before {
     radial-gradient(circle 240px at 48% 88%, rgba(255,45,106,.16), transparent 70%) !important;
 }
 
-/* Proto banner + nav → dark dayclub chrome */
+/* Proto banner + nav → Soft Miami Electric chrome */
 .proto-banner {
-  background: var(--pp-bg-2) !important;
-  color: var(--pp-text-dim) !important;
-  border-bottom: 1px solid var(--pp-line) !important;
+  background: linear-gradient(90deg, #ff8ab8 0%, #fff5a0 50%, #7ec8f5 100%) !important;
+  color: #0a1628 !important;
+  border-bottom: none !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
-  font-weight: 600 !important;
+  font-weight: 800 !important;
 }
 .proto-banner a {
-  color: var(--pp-cyan) !important;
-  font-weight: 700 !important;
+  color: #0a1628 !important;
+  font-weight: 800 !important;
 }
 
 .nav,
 .nav.scrolled {
-  background: rgba(7, 11, 20, 0.92) !important;
-  background-image: none !important;
-  border-bottom: 1px solid var(--pp-line) !important;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: blur(16px) !important;
+  background: linear-gradient(105deg, #fff5a0 0%, #ffc49a 28%, #ff8ab8 58%, #7ec8f5 100%) !important;
+  background-image: linear-gradient(105deg, #fff5a0 0%, #ffc49a 28%, #ff8ab8 58%, #7ec8f5 100%) !important;
+  border-bottom: 2px solid rgba(255, 230, 0, 0.85) !important;
+  box-shadow: 0 8px 24px rgba(255, 138, 184, 0.22) !important;
+  backdrop-filter: none !important;
+}
+.nav.scrolled {
+  background: linear-gradient(105deg, #7ec8f5 0%, #ff8ab8 45%, #fff5a0 100%) !important;
+  background-image: linear-gradient(105deg, #7ec8f5 0%, #ff8ab8 45%, #fff5a0 100%) !important;
 }
 .nav-links a {
-  color: var(--pp-text-dim) !important;
-  font-weight: 600 !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+  font-weight: 700 !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--pp-cyan) !important;
-  text-shadow: none !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35) !important;
   -webkit-text-stroke: 0 !important;
 }
 .nav-links a.active::after,
 .nav-links a:hover::after {
-  background: var(--pp-cyan) !important;
-  box-shadow: 0 0 8px rgba(0, 229, 232, 0.45) !important;
+  background: #fff !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3) !important;
 }
 .nav .nav-links a:not([href="index.html"]):not(.nav-home),
 .nav .nav-cta,
@@ -260,45 +269,45 @@ body::before {
 .nav .nav-links a[href="index.html"],
 .nav-drawer a.nav-home,
 .nav-drawer a[href="index.html"] {
-  color: var(--pp-cyan) !important;
-  -webkit-text-fill-color: var(--pp-cyan) !important;
+  color: #c9184a !important;
+  -webkit-text-fill-color: #c9184a !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-cart {
-  background: var(--pp-bg-3) !important;
-  border: 1.5px solid var(--pp-line) !important;
-  color: var(--pp-text) !important;
+  background: #fff !important;
+  border: 2px solid #0a1628 !important;
+  color: #0a1628 !important;
 }
 .nav-cart .badge {
-  background: var(--pp-coral) !important;
+  background: #ff6a9a !important;
   color: #fff !important;
 }
 .nav-toggle span {
-  background: var(--pp-cyan) !important;
+  background: #0a1628 !important;
 }
 .nav-drawer {
-  background: var(--pp-bg-2) !important;
+  background: linear-gradient(180deg, #fff066, #ff6a9a, #4db8f0) !important;
 }
 .nav-drawer a {
-  color: var(--pp-text) !important;
-  border-bottom-color: var(--pp-line) !important;
+  color: #0a1628 !important;
+  border-bottom-color: rgba(10, 22, 40, 0.2) !important;
 }
 .logo {
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
   text-shadow: none !important;
+  filter: none !important;
 }
 
-/* Typography / surfaces on dark */
+/* Typography / surfaces on Electric wash — dark ink + light foam */
 .section-head h2,
 .card-body h3,
 .step h3,
 .trust strong,
-.footer h4,
 .faq-item summary,
-.page-hero h1,
 .lead {
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
 }
 .tag,
 .eyebrow {
@@ -317,31 +326,39 @@ body::before {
 .form-card,
 .trust,
 .faq-item,
-.demo-callout {
-  background: var(--pp-bg-2) !important;
-  border-color: var(--pp-line) !important;
-  color: var(--pp-text) !important;
+.demo-callout,
+.lead-embed {
+  background: rgba(255, 252, 247, 0.94) !important;
+  border-color: rgba(20, 37, 54, 0.12) !important;
+  color: #0a1628 !important;
+  box-shadow: 0 10px 28px rgba(26, 58, 82, 0.1) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .card:hover {
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(26, 58, 82, 0.14), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
 }
 #cities,
 .vibes {
   background: transparent !important;
 }
-.chip {
-  color: var(--pp-text-dim) !important;
-  border-color: var(--pp-line) !important;
-  background: var(--pp-bg-3) !important;
+.chip,
+a.chip-link,
+button.chip-link {
+  color: #142536 !important;
+  border-color: rgba(20, 37, 54, 0.14) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
 }
 .chip:hover,
-.chip.active {
+.chip.active,
+a.chip-link:hover,
+button.chip-link:hover {
   border-color: var(--pp-cyan) !important;
-  color: var(--pp-cyan) !important;
-  background: rgba(0, 229, 232, 0.1) !important;
+  color: #0a1628 !important;
+  background: rgba(0, 229, 232, 0.14) !important;
 }
 .field label {
-  color: var(--pp-text-mute) !important;
+  color: #142536 !important;
 }
 .field input,
 .field select,
@@ -349,20 +366,23 @@ body::before {
 .search-bar input,
 .when-bar input,
 .when-bar select {
-  background: var(--pp-bg-3) !important;
-  border-color: var(--pp-line) !important;
-  color: var(--pp-text) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(20, 37, 54, 0.14) !important;
+  color: #0a1628 !important;
 }
 .footer {
   background: var(--pp-bg) !important;
   border-top: 1px solid var(--pp-line) !important;
   color: var(--pp-text-dim) !important;
 }
+.footer h4 {
+  color: var(--pp-text) !important;
+}
 .footer a:hover {
   color: var(--pp-cyan) !important;
 }
 .empty-state {
-  color: var(--pp-text-dim) !important;
+  color: #142536 !important;
 }
 
 /* Hero: keep photo readable; city/water = cyan; avoid gold-on-cyan */
@@ -633,10 +653,9 @@ body::before {
 /* Homepage hero inline-color neutralize */
 .hero .sun-out,
 .hero h1 .sun-out {
-  color: var(--pp-text) !important;
-  -webkit-text-fill-color: var(--pp-text) !important;
-  -webkit-text-stroke: 0 !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55) !important;
+  /* Leave to hero-rebuild Electric yellow + black outline */
+  color: #ffe600 !important;
+  -webkit-text-fill-color: #ffe600 !important;
 }
 
 /* ========== 2026-09-16 photo visibility + type (dayclub) ========== */
@@ -766,9 +785,27 @@ body::before {
   font-weight: 800 !important;
 }
 
-/* Section heads / eyebrows — cyan labels, light titles */
+/* Section heads / eyebrows — cyan labels; dark titles on Electric wash */
 .eyebrow,
-.section-head .eyebrow,
+.section-head .eyebrow {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+}
+.section-head h2 {
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+  font-weight: 650 !important;
+}
+.section-head p {
+  color: #142536 !important;
+  font-size: 1.05rem !important;
+  font-weight: 450 !important;
+}
+
+/* Page heroes on photo + navy overlay — LIGHT type only here */
 .page-hero .eyebrow {
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
@@ -776,24 +813,21 @@ body::before {
   font-weight: 700 !important;
   letter-spacing: 0.14em !important;
 }
-.section-head h2,
 .page-hero h1 {
   color: var(--pp-text) !important;
   -webkit-text-fill-color: var(--pp-text) !important;
   font-weight: 650 !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6) !important;
 }
-.section-head p,
 .page-hero .lead {
   color: var(--pp-text-dim) !important;
+  -webkit-text-fill-color: var(--pp-text-dim) !important;
   font-size: 1.05rem !important;
   font-weight: 450 !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
 }
-
-/* Page heroes on photo BGs — heavier navy wash already in miami; lock type */
-.page-hero h1,
-.page-hero .lead,
 .page-hero .eyebrow {
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
 }
 
 /* ——— Photo cards: city / vibe / event badges ——— */
@@ -895,19 +929,20 @@ body::before {
 }
 .card-body h3,
 .card-body h3 a {
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
   font-weight: 650 !important;
 }
 .card-meta {
-  color: var(--pp-cyan) !important;
+  color: var(--pp-cyan-deep, #00B7C2) !important;
   font-size: 0.88rem !important;
   font-weight: 550 !important;
 }
 .handoff-note {
   font-size: 0.82rem !important;
-  color: var(--pp-text-mute) !important;
-  background: rgba(21, 34, 56, 0.9) !important;
-  border: 1px solid var(--pp-line) !important;
+  color: #142536 !important;
+  background: rgba(255, 252, 247, 0.9) !important;
+  border: 1px solid rgba(20, 37, 54, 0.12) !important;
 }
 
 /* City hub photo */
@@ -964,16 +999,16 @@ body::before {
   text-shadow: none !important;
 }
 .stat-pills small {
-  color: var(--pp-text-dim) !important;
+  color: #142536 !important;
   font-size: 0.75rem !important;
   font-weight: 600 !important;
 }
 .trust span {
-  color: var(--pp-text-dim) !important;
+  color: #142536 !important;
   font-size: 0.82rem !important;
 }
 .trust strong {
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
 }
 
 /* Secondary links / ghost → cyan (Frank: that blue is nice) */
@@ -986,11 +1021,11 @@ a.btn-ghost,
   -webkit-text-fill-color: var(--pp-cyan) !important;
 }
 .chip {
-  color: var(--pp-text-dim) !important;
+  color: #142536 !important;
 }
 .chip:hover,
 .chip.active {
-  color: var(--pp-cyan) !important;
+  color: #0a1628 !important;
   border-color: var(--pp-cyan) !important;
 }
 
@@ -1005,7 +1040,7 @@ a.btn-ghost,
 /* Homepage FOMO / example note — not tiny muted white */
 .example-note,
 #city-status {
-  color: var(--pp-text-dim) !important;
+  color: #142536 !important;
   font-size: 0.88rem !important;
   font-weight: 500 !important;
 }
@@ -1107,21 +1142,21 @@ a, a:link, a:visited {
 }
 
 
-/* Filters / dropdowns — dark navy (Events, Venues, Cities) */
+/* Filters / dropdowns — light foam on Electric wash (Events, Venues, Cities) */
 .filters input,
 .filters select,
 .when-bar {
-  background: var(--pp-bg-3) !important;
-  border: 1px solid var(--pp-line) !important;
-  color: var(--pp-text) !important;
-  box-shadow: none !important;
+  background: rgba(255, 252, 247, 0.94) !important;
+  border: 1px solid rgba(20, 37, 54, 0.14) !important;
+  color: #0a1628 !important;
+  box-shadow: 0 6px 18px rgba(26, 58, 82, 0.08) !important;
 }
 .when-bar {
-  background: linear-gradient(105deg, rgba(21, 34, 56, 0.95), rgba(14, 26, 43, 0.98)) !important;
-  border-color: var(--pp-line) !important;
+  background: linear-gradient(105deg, rgba(255, 252, 247, 0.96), rgba(255, 248, 239, 0.94)) !important;
+  border-color: rgba(20, 37, 54, 0.14) !important;
 }
 .when-bar label {
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
 }
 .when-bar input[type="checkbox"] {
   background: transparent !important;
@@ -1131,22 +1166,199 @@ a, a:link, a:visited {
   height: 1.05rem !important;
 }
 .filters input::placeholder {
-  color: var(--pp-text-mute) !important;
+  color: rgba(10, 22, 40, 0.5) !important;
 }
 .filters input:focus,
 .filters select:focus {
   border-color: var(--pp-cyan) !important;
-  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.22) !important;
   outline: none !important;
 }
 .filters select {
-  background-color: var(--pp-bg-3) !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300E5E8'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
+  background-color: rgba(255, 252, 247, 0.96) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%230a1628'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: right 1rem center !important;
-  color: var(--pp-text) !important;
+  color: #0a1628 !important;
 }
 .filters select option {
-  background: var(--pp-bg-2);
-  color: var(--pp-text);
+  background: #fffaf5;
+  color: #0a1628;
+}
+
+/* ========== ELECTRIC WASH CONTRAST LOCK (wins) ==========
+   Keep Soft Miami Electric sky; body/cards readable dark ink on light foam.
+   Heroes (home + .page-hero photo) stay light type. Coral CTAs untouched. */
+body {
+  color: #0a1628 !important;
+}
+.section-head h2,
+.section-head p,
+.lead,
+.card-body,
+.card-body h3,
+.card-body h3 a,
+.step h3,
+.trust strong,
+.trust span,
+.faq-item summary,
+.faq-item,
+.panel,
+.form-card,
+.demo-callout,
+.lead-embed__head h2,
+.lead-embed__head p,
+.lead-honest,
+.blog-prose,
+.blog-prose h2,
+.blog-prose p,
+.empty-state,
+.example-note,
+#city-status,
+.stat-pills small,
+.filters,
+.when-bar,
+.when-bar label {
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+}
+.section-head p,
+.lead,
+.lead-embed__head p,
+.lead-honest,
+.trust span,
+.stat-pills small,
+.empty-state,
+.example-note,
+#city-status {
+  color: #142536 !important;
+  -webkit-text-fill-color: #142536 !important;
+}
+.card,
+.panel,
+.form-card,
+.trust,
+.faq-item,
+.demo-callout,
+.lead-embed,
+.step,
+.filters input,
+.filters select,
+.when-bar,
+.field input,
+.field select,
+.field textarea {
+  background: rgba(255, 252, 247, 0.94) !important;
+  border-color: rgba(20, 37, 54, 0.12) !important;
+  color: #0a1628 !important;
+}
+.free-offer-card {
+  color: #0a1628 !important;
+  background: linear-gradient(105deg, rgba(255, 252, 247, 0.95), rgba(0, 229, 232, 0.12), rgba(255, 56, 100, 0.1)) !important;
+  border-color: rgba(0, 229, 232, 0.35) !important;
+}
+.free-offer-card strong {
+  color: #0a1628 !important;
+}
+.free-offer-copy {
+  color: #142536 !important;
+}
+.free-offer-kicker {
+  color: var(--pp-coral, #FF3864) !important;
+}
+
+/* .page-hero stays light on navy photo wash */
+.page-hero h1 {
+  color: var(--pp-text, #F4F7FA) !important;
+  -webkit-text-fill-color: var(--pp-text, #F4F7FA) !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6) !important;
+}
+.page-hero .lead {
+  color: var(--pp-text-dim, #B7C2D0) !important;
+  -webkit-text-fill-color: var(--pp-text-dim, #B7C2D0) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
+}
+.page-hero .eyebrow {
+  color: var(--pp-cyan, #00E5E8) !important;
+  -webkit-text-fill-color: var(--pp-cyan, #00E5E8) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Home hero photo — Electric type (hero-rebuild may refine further) */
+.hero h1 {
+  color: #ffe600 !important;
+  -webkit-text-fill-color: #ffe600 !important;
+  text-shadow: 2px 2px 0 #000, 0 4px 14px rgba(0, 0, 0, 0.55) !important;
+}
+.hero-lead,
+.hero .hero-cta-secondary {
+  color: #fff8d0 !important;
+  -webkit-text-fill-color: #fff8d0 !important;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75), 0 3px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Photo tiles keep light labels on dark scrims */
+.city-tile span,
+.vibe-body h3,
+.music-inner h2 {
+  color: var(--pp-text, #F4F7FA) !important;
+  -webkit-text-fill-color: var(--pp-text, #F4F7FA) !important;
+}
+.vibe-body p,
+.music-inner p {
+  color: var(--pp-text-dim, #B7C2D0) !important;
+  -webkit-text-fill-color: var(--pp-text-dim, #B7C2D0) !important;
+}
+
+/* Footer stays deep navy; nav chrome is Electric above */
+.footer,
+.footer h4 {
+  color: var(--pp-text-dim, #B7C2D0) !important;
+  -webkit-text-fill-color: var(--pp-text-dim, #B7C2D0) !important;
+}
+.footer h4 {
+  color: var(--pp-text, #F4F7FA) !important;
+  -webkit-text-fill-color: var(--pp-text, #F4F7FA) !important;
+}
+
+/* ========== ELECTRIC CHROME LOCK (pp-tokens last-wins) ========== */
+html body .proto-banner {
+  background: linear-gradient(90deg, #ff8ab8 0%, #fff5a0 50%, #7ec8f5 100%) !important;
+  color: #0a1628 !important;
+}
+html body .nav,
+html body .nav.scrolled {
+  background: linear-gradient(105deg, #fff5a0 0%, #ffc49a 28%, #ff8ab8 58%, #7ec8f5 100%) !important;
+  background-image: linear-gradient(105deg, #fff5a0 0%, #ffc49a 28%, #ff8ab8 58%, #7ec8f5 100%) !important;
+  border-bottom: 2px solid rgba(255, 230, 0, 0.85) !important;
+}
+html body .nav.scrolled {
+  background: linear-gradient(105deg, #7ec8f5 0%, #ff8ab8 45%, #fff5a0 100%) !important;
+  background-image: linear-gradient(105deg, #7ec8f5 0%, #ff8ab8 45%, #fff5a0 100%) !important;
+}
+html body .nav .nav-cta,
+html body .nav-cta,
+html body .sticky-book,
+html body a.btn-primary,
+html body .btn-primary {
+  background: linear-gradient(135deg, #fff066 0%, #ff6a9a 52%, #ff8ab0 100%) !important;
+  background-image: linear-gradient(135deg, #fff066 0%, #ff6a9a 52%, #ff8ab0 100%) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+}
+html body .nav-links a {
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+}
+html body .nav .nav-links a.nav-home,
+html body .nav .nav-links a[href="index.html"] {
+  color: #c9184a !important;
+  -webkit-text-fill-color: #c9184a !important;
+}
+/* Keep current header logo mark — no redesign, no invert */
+html body .logo img,
+html body .logo-img {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
 }

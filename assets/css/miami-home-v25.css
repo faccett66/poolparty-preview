@@ -1,10 +1,10 @@
 :root {
-  /* Miami Electric shell — remapped onto PoolParties dayclub --pp-* tokens */
-  --ink: var(--pp-text, #F4F7FA);
-  --ink-soft: var(--pp-text-dim, #B7C2D0);
+  /* Miami Electric shell — dark ink + light foam on Soft Electric wash */
+  --ink: #0a1628;
+  --ink-soft: #142536;
   --deep: var(--pp-bg, #070B14);
-  --cream: var(--pp-bg-2, #0E1A2B);
-  --foam: var(--pp-bg-2, #0E1A2B);
+  --cream: #fff8f0;
+  --foam: rgba(255, 252, 247, 0.94);
   --sky: var(--pp-cyan, #00E5E8);
   --navy: var(--pp-bg-2, #0E1A2B);
   --navy-2: var(--pp-cyan, #00E5E8);
@@ -21,15 +21,15 @@
   --coral: var(--pp-coral, #FF3864);
   --lemon: var(--pp-gold, #E8C872);
   --pool: var(--pp-cyan, #00E5E8);
-  --mist: var(--pp-text-dim, #B7C2D0);
-  --muted: var(--pp-text-mute, #7E8BA0);
-  --glass: rgba(14, 26, 43, 0.88);
-  --glass-strong: rgba(21, 34, 56, 0.96);
-  --glass-border: rgba(0, 229, 232, 0.22);
-  --line: var(--pp-line, #24344A);
+  --mist: rgba(10, 22, 40, 0.72);
+  --muted: rgba(10, 22, 40, 0.55);
+  --glass: rgba(255, 255, 255, 0.88);
+  --glass-strong: rgba(255, 252, 247, 0.96);
+  --glass-border: rgba(0, 144, 224, 0.28);
+  --line: rgba(20, 37, 54, 0.12);
   --radius: 1.35rem;
   --radius-sm: 0.85rem;
-  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  --shadow: 0 16px 36px rgba(26, 58, 82, 0.12);
   --shadow-glow: 0 0 36px rgba(255, 56, 100, 0.18);
   --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
@@ -46,12 +46,12 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
-    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
-    linear-gradient(180deg, #ffe08a 0%, #b8daf0 36%, #88c4e8 72%, #68aed8 100%);
+    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.26), transparent 58%),
+    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.38), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.12), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.28), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.16), transparent 55%),
+    linear-gradient(180deg, #fff3b0 0%, #dff3ff 36%, #b6e4ff 72%, #8fd4ff 100%);
   background-attachment:fixed;
   min-height:100vh;
 }
@@ -248,14 +248,16 @@ body::before{
 .page-hero h1{
   font-family:var(--font-display);font-size:clamp(2.4rem,6vw,3.8rem);
   font-weight:650;line-height:1.08;letter-spacing:-.02em;margin-bottom:.85rem;
-  color:var(--ink);
+  color:var(--pp-text,#F4F7FA);
+  text-shadow:0 2px 18px rgba(0,0,0,.55);
 }
+/* page-hero: light type on navy photo overlay */
 .page-hero h1 em{
   font-style:italic;
   background:linear-gradient(120deg,var(--sunset),var(--teal));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.page-hero .lead{color:var(--mist);font-weight:400;font-size:1.05rem;max-width:36rem}
+.page-hero .lead{color:var(--pp-text-dim,#B7C2D0);font-weight:400;font-size:1.05rem;max-width:36rem;text-shadow:0 2px 14px rgba(0,0,0,.5)}
 
 /* ——— HOME HERO ——— */
 .hero{
@@ -515,18 +517,18 @@ section{padding:5.25rem 0;position:relative}
 
 .music-band{
   position:relative;border-radius:var(--radius);overflow:hidden;
-  border:1px solid rgba(212,168,75,.3);min-height:280px;
+  border:1.5px solid rgba(255,106,154,.35);min-height:280px;
   display:flex;align-items:flex-end;
-  box-shadow:0 16px 40px rgba(26,58,82,.12);
+  box-shadow:0 18px 44px rgba(26,58,82,.14), 0 0 0 1px rgba(77,184,240,.18);
 }
 .music-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
 .music-band::before{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(7,11,20,.92) 0%,rgba(7,11,20,.72) 45%,rgba(7,11,20,.45) 100%);
+  background:linear-gradient(105deg,rgba(7,11,20,.88) 0%,rgba(14,26,43,.72) 48%,rgba(7,11,20,.42) 100%);
 }
 .music-inner{position:relative;z-index:2;padding:2rem;max-width:32rem;color:#fff}
-.music-inner .eyebrow{color:var(--champagne)}
-.music-inner .eyebrow::before{background:var(--champagne)}
+.music-inner .eyebrow{color:var(--pp-cyan,#00E5E8)}
+.music-inner .eyebrow::before{background:linear-gradient(90deg,#ff6a9a,#fff066,#4db8f0)}
 .music-inner p{color:rgba(255,255,255,.85)!important}
 .music-inner .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4)}
 .eq{
@@ -664,108 +666,95 @@ section:has(.music-band){
 
 
 /* ========== MIAMI ELECTRIC — FINAL (wins all) ========== */
+/* Soft sky wash + Electric chrome. Dark ink on wash; light type on photo heroes. */
 body{
   background-image:
-    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
-    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
-    linear-gradient(180deg, #ffe08a 0%, #b8daf0 36%, #88c4e8 72%, #68aed8 100%) !important;
+    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(255,106,154,.20), transparent 55%),
+    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(77,184,240,.30), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(255,240,102,.24), transparent 55%),
+    linear-gradient(180deg, #fff3b0 0%, #dff3ff 38%, #b6e4ff 72%, #8fd4ff 100%) !important;
+  color:#0a1628 !important;
 }
 body::before{
   display:block !important;
   content:"";
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(255,230,0,.2), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(0,144,224,.22), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(255,45,106,.16), transparent 70%);
+    radial-gradient(circle 320px at 15% 40%, rgba(255,240,102,.18), transparent 70%),
+    radial-gradient(circle 360px at 85% 55%, rgba(255,106,154,.14), transparent 70%),
+    radial-gradient(circle 280px at 50% 85%, rgba(77,184,240,.16), transparent 70%);
 }
-/* sticky mobile Book Now only — do NOT tint .btn-primary / nav (dayclub coral) */
+.btn-primary,
+.nav-cta,
 .sticky-book{
-  background:var(--pp-coral,#FF3864) !important;
-  background-image:none !important;
-  color:#fff !important;
+  background:linear-gradient(135deg,#fff066 0%,#ff6a9a 52%,#ff8ab0 100%) !important;
+  background-image:linear-gradient(135deg,#fff066 0%,#ff6a9a 52%,#ff8ab0 100%) !important;
+  color:#0a1628 !important;
+  -webkit-text-fill-color:#0a1628 !important;
   border:none !important;
-  box-shadow:0 10px 28px rgba(255,56,100,.35) !important;
+  box-shadow:0 10px 28px rgba(255,106,154,.28) !important;
   font-weight:800 !important;
-  filter:none !important;
 }
-.sticky-book:hover{
-  filter:brightness(1.06) !important;
-  box-shadow:0 14px 36px rgba(255,56,100,.45) !important;
+.btn-primary:hover,.nav-cta:hover,.sticky-book:hover{
+  filter:brightness(1.05) saturate(1.06);
+  box-shadow:0 14px 36px rgba(255,106,154,.36) !important;
 }
 .tag,.eyebrow{
   color:#ff6a9a !important;
 }
-.hero .eyebrow{color:var(--pp-cyan,#00E5E8) !important;text-shadow:0 2px 14px rgba(0,0,0,.7) !important}
-.hero .eyebrow::before{background:linear-gradient(90deg,var(--pp-coral,#FF3864),var(--pp-cyan,#00E5E8)) !important}
+.hero .eyebrow{color:#ffe600 !important;text-shadow:0 1px 8px rgba(0,0,0,.55) !important}
+.hero .eyebrow::before{background:linear-gradient(90deg,#ff6a9a,#fff066,#4db8f0) !important}
 .hero h1{
-  color:var(--pp-text,#F4F7FA) !important;
-  -webkit-text-fill-color:var(--pp-text,#F4F7FA) !important;
-  -webkit-text-stroke:0 !important;
-  paint-order:normal !important;
-  text-shadow:0 4px 28px rgba(0,0,0,.75), 0 2px 8px rgba(0,0,0,.55) !important;
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:2px 2px 0 #000, 0 4px 14px rgba(0,0,0,.55) !important;
 }
 .hero h1 em,.hero h1 em *{
-  color:var(--pp-coral,#FF3864) !important;
-  -webkit-text-fill-color:var(--pp-coral,#FF3864) !important;
+  color:#ff5a00 !important;
+  -webkit-text-fill-color:#ff5a00 !important;
   background:none !important;
   -webkit-background-clip:border-box !important;
-  -webkit-text-stroke:0 !important;
-  paint-order:normal !important;
-  text-shadow:0 4px 22px rgba(0,0,0,.7), 0 2px 8px rgba(0,0,0,.5) !important;
+  -webkit-text-stroke:1.25px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:2px 2px 0 #000, 0 4px 14px rgba(0,0,0,.55) !important;
 }
 .hero-lead,.hero .hero-cta-secondary{
-  color:var(--pp-text-dim,#B7C2D0) !important;
-  -webkit-text-fill-color:var(--pp-text-dim,#B7C2D0) !important;
-  font-weight:500 !important;
-  text-shadow:0 2px 12px rgba(0,0,0,.65) !important;
+  color:#fff8d0 !important;
+  -webkit-text-fill-color:#fff8d0 !important;
+  font-weight:650 !important;
+  text-shadow:1px 1px 0 rgba(0,0,0,.75), 0 3px 10px rgba(0,0,0,.5) !important;
 }
 .hero-pill{
   background:linear-gradient(145deg, rgba(255,240,102,.36), rgba(77,184,240,.22)) !important;
   border:2px solid rgba(255,106,154,.4) !important;
-  color:var(--pp-cyan,#00E5E8) !important;
+  color:#fff8d0 !important;
   box-shadow:0 6px 22px rgba(255,106,154,.18) !important;
 }
-.hero-glass .hero-pill-book,
 .hero-glass .hero-pill:nth-child(2){
-  /* Same solid coral as nav Book Now — not yellow-pink wash */
-  background:var(--pp-coral,#FF3864) !important;
-  background-image:none !important;
-  border:none !important;
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
-  backdrop-filter:none !important;
-  opacity:1 !important;
-}
-.hero-glass .hero-pill-book strong,
-.hero-glass .hero-pill:nth-child(2) strong{
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-  -webkit-text-stroke:0 !important;
-  text-shadow:none !important;
+  background:linear-gradient(145deg, rgba(255,106,154,.28), rgba(255,240,102,.22)) !important;
+  border-color:rgba(255,106,154,.55) !important;
 }
 .hero-pill strong{
   color:#ff5a00 !important;
   -webkit-text-fill-color:#ff5a00 !important;
 }
 #cities{
-  background:linear-gradient(180deg, rgba(255,106,154,.08) 0%, rgba(77,184,240,.12) 50%, rgba(255,240,102,.14) 100%) !important;
+  background:linear-gradient(180deg, rgba(255,106,154,.07) 0%, rgba(77,184,240,.10) 50%, rgba(255,240,102,.12) 100%) !important;
 }
 .vibes{
-  background:linear-gradient(165deg, rgba(255,240,102,.14) 0%, rgba(255,106,154,.08) 100%) !important;
+  background:linear-gradient(165deg, rgba(255,240,102,.12) 0%, rgba(255,106,154,.07) 100%) !important;
 }
 .trust{
-  background:linear-gradient(135deg, rgba(255,240,102,.16), rgba(77,184,240,.12), rgba(255,106,154,.08)) !important;
-  border:1.5px solid rgba(255,106,154,.2) !important;
+  background:linear-gradient(135deg, rgba(255,252,247,.92), rgba(255,240,102,.14), rgba(77,184,240,.10)) !important;
+  border:1.5px solid rgba(255,106,154,.18) !important;
+  color:#0a1628 !important;
 }
 .card:hover{
-  box-shadow:0 16px 36px rgba(255,106,154,.14), 0 0 0 2px rgba(77,184,240,.3) !important;
+  box-shadow:0 16px 36px rgba(255,106,154,.14), 0 0 0 2px rgba(77,184,240,.28) !important;
 }
-.section-head h2{color:var(--ink) !important}
+.section-head h2{color:#0a1628 !important;-webkit-text-fill-color:#0a1628 !important}
 
 
 /* ========== MIAMI ELECTRIC HEADER (light + compact) ========== */
@@ -776,29 +765,33 @@ body::before{
   letter-spacing:.02em !important;
   padding:.4rem 1rem !important;
   font-size:.72rem !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+  border-bottom:none !important;
 }
 .proto-banner a{color:#0a1628 !important;font-weight:800 !important}
 
 .nav{
-  background:rgba(7,11,20,.92) !important;
-  background-image:none !important;
-  border-bottom:1px solid var(--pp-line,#24344A) !important;
+  background:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%) !important;
+  background-image:linear-gradient(105deg,#fff5a0 0%,#ffc49a 28%,#ff8ab8 58%,#7ec8f5 100%) !important;
+  border-bottom:2px solid rgba(255,230,0,.85) !important;
   box-shadow:0 8px 24px rgba(255,138,184,.22) !important;
   backdrop-filter:none !important;
 }
 .nav::before{display:none !important;background:transparent !important}
 .nav.scrolled{
-  background:rgba(7,11,20,.96) !important;
-  background-image:none !important;
-  border-bottom-color:var(--pp-line,#24344A) !important;
+  background:linear-gradient(105deg,#7ec8f5 0%,#ff8ab8 45%,#fff5a0 100%) !important;
+  background-image:linear-gradient(105deg,#7ec8f5 0%,#ff8ab8 45%,#fff5a0 100%) !important;
+  border-bottom-color:rgba(255,230,0,.85) !important;
 }
 .nav.scrolled::before{display:none !important}
 
 .nav-inner{min-height:4.5rem}
 .logo{
   color:#0a1628 !important;
-  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  text-shadow:none;
   font-weight:700 !important;
+  filter:none !important;
 }
 .logo-mark{
   background:conic-gradient(from 180deg,#0a1628,#fff066,#ff6a9a,#4db8f0,#0a1628) !important;
@@ -806,11 +799,15 @@ body::before{
 }
 .nav-links a{
   color:#0a1628 !important;
+  -webkit-text-fill-color:#0a1628 !important;
   font-weight:700 !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
 }
 .nav-links a:hover,
 .nav-links a.active{
   color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
   text-shadow:0 1px 4px rgba(0,0,0,.35);
 }
 .nav-links a.active::after,
@@ -828,19 +825,22 @@ body::before{
   color:#fff !important;
 }
 .nav-cta{
-  background:var(--pp-coral,#FF3864) !important;
-  background-image:none !important;
-  color:#fff !important;
-  border:none !important;
-  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  background:linear-gradient(135deg,#fff066 0%,#ff6a9a 55%,#ff8ab0 100%) !important;
+  background-image:linear-gradient(135deg,#fff066 0%,#ff6a9a 55%,#ff8ab0 100%) !important;
+  color:#0a1628 !important;
+  -webkit-text-fill-color:#0a1628 !important;
+  border:2px solid rgba(10,22,40,.12) !important;
+  box-shadow:0 6px 18px rgba(255,106,154,.32) !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
 }
-.nav-toggle span{background:var(--pp-cyan,#00E5E8) !important}
+.nav-toggle span{background:#0a1628 !important}
 .nav-drawer{
-  background:var(--pp-bg-2,#0E1A2B) !important;
+  background:linear-gradient(180deg,#fff066,#ff6a9a,#4db8f0) !important;
 }
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
 
-/* HEADER TYPE — dayclub (no yellow stroke) */
+/* HEADER TYPE — dark ink on Electric chrome (tasteful, no carnival stroke) */
 .nav .nav-links a:not([href="index.html"]):not(.nav-home),
 .nav .nav-cta,
 .proto-banner{
@@ -850,23 +850,25 @@ body::before{
 }
 .nav .nav-links a:not([href="index.html"]):not(.nav-home):hover,
 .nav .nav-links a:not([href="index.html"]):not(.nav-home).active{
-  color:var(--pp-cyan,#00E5E8) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
   -webkit-text-stroke:0 !important;
-  text-shadow:none !important;
+  text-shadow:0 1px 4px rgba(0,0,0,.35) !important;
 }
 .nav .nav-cta{
-  color:#fff !important;
+  color:#0a1628 !important;
+  -webkit-text-fill-color:#0a1628 !important;
   -webkit-text-stroke:0 !important;
 }
 
-/* Header Home — cyan accent, no outline */
+/* Header Home — coral accent on Electric chrome */
 .nav .nav-links a.nav-home,
 .nav .nav-links a[href="index.html"],
 .nav-drawer a.nav-home,
 .nav-drawer a[href="index.html"]{
-  color:var(--pp-cyan,#00E5E8) !important;
-  -webkit-text-fill-color:var(--pp-cyan,#00E5E8) !important;
-  font-weight:700 !important;
+  color:#c9184a !important;
+  -webkit-text-fill-color:#c9184a !important;
+  font-weight:800 !important;
   -webkit-text-stroke:0 !important;
   paint-order:normal !important;
   text-shadow:none !important;
@@ -875,25 +877,21 @@ body::before{
 .nav .nav-links a.nav-home.active,
 .nav .nav-links a[href="index.html"]:hover,
 .nav .nav-links a[href="index.html"].active{
-  color:var(--pp-coral,#FF3864) !important;
-  -webkit-text-fill-color:var(--pp-coral,#FF3864) !important;
+  color:#ff3864 !important;
+  -webkit-text-fill-color:#ff3864 !important;
   -webkit-text-stroke:0 !important;
 }
 
-/* Header Home underline — cyan */
+/* Header Home underline — coral */
 .nav .nav-links a.nav-home.active::after,
 .nav .nav-links a.nav-home:hover::after,
 .nav .nav-links a[href="index.html"].active::after,
 .nav .nav-links a[href="index.html"]:hover::after{
-  background:var(--pp-cyan,#00E5E8) !important;
-  height:2px !important;
+  background:#ff3864 !important;
+  height:3px !important;
   border:none !important;
-  box-shadow:0 0 8px rgba(0,229,232,.45) !important;
+  box-shadow:0 0 8px rgba(255,56,100,.35) !important;
 }
-
-
-
-
 
 
 /* Header logo — matches light Miami header */
@@ -1168,22 +1166,25 @@ a.btn-glass.free-offer-link:hover{
 .free-offer-card{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem 1.1rem;
   padding:1rem 1.25rem;border-radius:1rem;
-  border:1px solid rgba(0,229,232,.35);
-  background:linear-gradient(105deg,rgba(0,229,232,.12),rgba(255,56,100,.1));
-  color:var(--pp-text,#F4F7FA);text-decoration:none;
+  border:1px solid rgba(255,106,154,.28);
+  background:linear-gradient(105deg,rgba(255,252,247,.94), rgba(255,240,102,.16), rgba(77,184,240,.12));
+  color:#0a1628;text-decoration:none;
+  box-shadow:0 10px 28px rgba(26,58,82,.08);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   transition:border-color .2s, transform .2s, box-shadow .2s;
 }
 .free-offer-card:hover{
-  border-color:var(--pp-cyan,#00E5E8);
+  border-color:rgba(0,229,232,.55);
   transform:translateY(-2px);
-  box-shadow:0 12px 28px rgba(0,229,232,.18);
+  box-shadow:0 14px 32px rgba(255,106,154,.16);
 }
 .free-offer-kicker{
   font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--pp-gold,#E8C872);
+  color:#c9184a;
 }
-.free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem}
-.free-offer-copy{color:var(--pp-text-dim,#B7C2D0);font-weight:300}
+.free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem;color:#0a1628}
+.free-offer-copy{color:#142536;font-weight:450}
 
 /* Streaming Advertise here banner — lives inside fixed .nav */
 .ad-stream{
@@ -1193,9 +1194,9 @@ a.btn-glass.free-offer-link:hover{
   margin:0;
   border-top:1px solid rgba(0,229,232,.35);
   border-bottom:1px solid rgba(0,229,232,.2);
-  background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.2), rgba(232,200,114,.16));
+  background:linear-gradient(90deg, #ff8ab8 0%, #fff5a0 48%, #7ec8f5 100%);
   text-decoration:none;
-  color:var(--pp-text,#F4F7FA);
+  color:#0a1628;
   cursor:pointer;
 }
 /* Extra clearance for hero/page content when ticker is under nav */
@@ -1208,7 +1209,7 @@ body.has-ad-stream .page-hero{
 .ad-stream{
   box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
-.ad-stream:hover{background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.22), rgba(232,200,114,.2))}
+.ad-stream:hover{background:linear-gradient(90deg, #ffa0c4 0%, #fff8b8 48%, #96d4f8 100%)}
 .ad-stream-track{
   display:flex;
   width:max-content;
@@ -1310,4 +1311,47 @@ body.has-ad-stream .page-hero{
   .lead-embed__frame,.lead-embed__frame iframe{min-height:560px;height:620px}
   .lead-embed--tall .lead-embed__frame,
   .lead-embed--tall .lead-embed__frame iframe{min-height:700px;height:760px}
+}
+
+
+/* ========== PRESTIGE ELECTRIC POLISH ========== */
+.card,
+.panel,
+.form-card,
+.faq-item,
+.step,
+.demo-callout,
+.lead-embed {
+  background: rgba(255, 252, 247, 0.92) !important;
+  border: 1px solid rgba(20, 37, 54, 0.1) !important;
+  box-shadow: 0 12px 32px rgba(26, 58, 82, 0.1) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #0a1628 !important;
+}
+.section-head h2,
+.card-body h3,
+.card-body h3 a {
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+}
+.section-head p,
+.card-meta,
+.lead {
+  color: #142536 !important;
+}
+.music-band .btn-primary,
+.music-inner .btn-primary {
+  background: linear-gradient(135deg, #fff066 0%, #ff6a9a 55%, #ff8ab0 100%) !important;
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+  border: none !important;
+  box-shadow: 0 10px 26px rgba(255, 106, 154, 0.3) !important;
+}
+.ad-stream__text,
+.ad-stream span,
+.ad-stream {
+  color: #0a1628 !important;
+  -webkit-text-fill-color: #0a1628 !important;
+  font-weight: 800 !important;
 }

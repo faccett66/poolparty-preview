@@ -150,7 +150,7 @@
   text-shadow:none !important;
 }
 
-/* THE glass Book Now chip — IDENTICAL coral to nav .nav-cta */
+/* THE glass Book Now chip — coral accent on Electric chrome (nav CTA is Electric gradient) */
 .hero[data-hero-rebuild] .hero-chip-book,
 .hero[data-hero-rebuild] a.hero-chip-book{
   background:#FF3864 !important;
@@ -207,7 +207,7 @@
   backdrop-filter:none !important;
 }
 
-/* Primary Book Now button — same coral as nav */
+/* Primary Book Now button — coral accent in hero glass */
 .hero[data-hero-rebuild] .hero-cta-book{
   background:#FF3864 !important;
   background-image:none !important;
@@ -259,10 +259,10 @@ html body .hero[data-hero-rebuild] .hero-center{
   transform:none !important;
   float:none !important;
 }
+/* Hero Book Now stays coral; nav .nav-cta uses Electric gradient from miami/pp-tokens */
 html body .hero[data-hero-rebuild] .hero-chip-book,
 html body .hero[data-hero-rebuild] a.hero-chip-book,
-html body .hero[data-hero-rebuild] .hero-cta-book,
-html body .nav .nav-cta{
+html body .hero[data-hero-rebuild] .hero-cta-book{
   background:#FF3864 !important;
   background-color:#FF3864 !important;
   background-image:none !important;
