@@ -731,12 +731,13 @@ body::before {
   text-shadow: none !important;
 }
 
-/* Nav type — readable on dark; Home cyan/coral; no yellow */
+/* Nav type — brighter white on Events/Venues/…; Home cyan/coral; no yellow */
 .nav .nav-links a {
-  color: var(--pp-text-dim) !important;
+  color: #FFFFFF !important;
   font-size: 0.92rem !important;
-  font-weight: 600 !important;
-  -webkit-text-fill-color: var(--pp-text-dim) !important;
+  font-weight: 650 !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45) !important;
 }
 .nav .nav-links a:hover,
 .nav .nav-links a.active {
