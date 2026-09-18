@@ -1,10 +1,11 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v18 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v26 */
 (function (global) {
   'use strict';
 
   var TRACKS = [
-    { title: 'Overflow', note: 'Pool Party bed', src: 'assets/audio/overflow.mp3' },
-    { title: 'Clear to the Floor', note: 'Sonic Ear Candy', src: 'assets/audio/clear-to-the-floor.mp3' }
+    { title: 'Overflow', note: 'Sonic Ear Candy · bed', src: 'assets/audio/overflow.mp3' },
+    { title: 'Clear to the Floor', note: 'Sonic Ear Candy · bed', src: 'assets/audio/clear-to-the-floor.mp3' },
+    { title: 'Fuori Orario', note: 'Sonic Ear Candy · bed', src: 'assets/audio/fuori-orario.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
   var DEFAULT_VOL = 0.5;
@@ -298,7 +299,7 @@
         '<button type="button" class="pp-music-dock__btn pp-music-dock__next" aria-label="Next track">' + iconNext() + '</button>' +
         '<div class="pp-music-dock__meta">' +
           '<span class="pp-music-dock__title"></span>' +
-          '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Sonic Ear Candy · Frank Accettulli">SonicEarCandy.com</a>' +
+          '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Commission soundtrack beds at Sonic Ear Candy">Get beds · SonicEarCandy.com</a>' +
         '</div>' +
         '<div class="pp-music-dock__vol">' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
