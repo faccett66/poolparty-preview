@@ -1,10 +1,10 @@
 :root {
-  /* Miami Electric shell — dark ink + light foam on Soft Electric wash */
-  --ink: #0a1628;
-  --ink-soft: #142536;
+  /* Miami Electric shell — remapped onto PoolParties dayclub --pp-* tokens */
+  --ink: var(--pp-text, #F4F7FA);
+  --ink-soft: var(--pp-text-dim, #B7C2D0);
   --deep: var(--pp-bg, #070B14);
-  --cream: #fff8f0;
-  --foam: rgba(255, 252, 247, 0.94);
+  --cream: var(--pp-bg-2, #0E1A2B);
+  --foam: var(--pp-bg-2, #0E1A2B);
   --sky: var(--pp-cyan, #00E5E8);
   --navy: var(--pp-bg-2, #0E1A2B);
   --navy-2: var(--pp-cyan, #00E5E8);
@@ -21,15 +21,15 @@
   --coral: var(--pp-coral, #FF3864);
   --lemon: var(--pp-gold, #E8C872);
   --pool: var(--pp-cyan, #00E5E8);
-  --mist: rgba(10, 22, 40, 0.72);
-  --muted: rgba(10, 22, 40, 0.55);
-  --glass: rgba(255, 255, 255, 0.88);
-  --glass-strong: rgba(255, 252, 247, 0.96);
-  --glass-border: rgba(0, 144, 224, 0.28);
-  --line: rgba(20, 37, 54, 0.12);
+  --mist: var(--pp-text-dim, #B7C2D0);
+  --muted: var(--pp-text-mute, #7E8BA0);
+  --glass: rgba(14, 26, 43, 0.88);
+  --glass-strong: rgba(21, 34, 56, 0.96);
+  --glass-border: rgba(0, 229, 232, 0.22);
+  --line: var(--pp-line, #24344A);
   --radius: 1.35rem;
   --radius-sm: 0.85rem;
-  --shadow: 0 16px 36px rgba(26, 58, 82, 0.12);
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
   --shadow-glow: 0 0 36px rgba(255, 56, 100, 0.18);
   --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
@@ -46,12 +46,12 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(90,140,220,.28), transparent 58%),
-    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(122,59,255,.24), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(110,100,210,.14), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(90,140,220,.18), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(130,80,200,.16), transparent 55%),
-    linear-gradient(180deg, #e4ecfc 0%, #d8dff5 36%, #ccc8eb 72%, #c0b4e8 100%);
+    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
+    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
+    linear-gradient(180deg, #fff3b0 0%, #dff3ff 36%, #b6e4ff 72%, #8fd4ff 100%);
   background-attachment:fixed;
   min-height:100vh;
 }
@@ -60,14 +60,14 @@ img{max-width:100%;display:block;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
 ::selection{background:rgba(255,107,61,.28);color:var(--ink)}
 
-/* Soft blue→purple prestige orbs */
+/* Soft Miami Electric color orbs */
 body::before{
   content:"";
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(90,140,220,.22), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(122,59,255,.20), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(110,100,210,.16), transparent 70%);
+    radial-gradient(circle 280px at 12% 42%, rgba(255,230,0,.2), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(0,144,224,.22), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(255,45,106,.16), transparent 70%);
 }
 
 
@@ -200,64 +200,62 @@ body::before{
 .page-hero{
   position:relative;padding:calc(var(--nav-h) + 3.5rem) 0 3rem;overflow:hidden;
   background:
-    linear-gradient(180deg, rgba(7,11,20,.88) 0%, rgba(7,11,20,.78) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.82) 0%, rgba(7,11,20,.72) 55%, rgba(7,11,20,.95) 100%),
     url("../site/vibe-garden-dusk.jpg") center 30%/cover no-repeat;
 }
 .page-hero.events{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/vibe-encore-crowd.jpg") center 35%/cover no-repeat;
 }
 .page-hero.venues{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/feat-encore-cabana.jpg") center 35%/cover no-repeat;
 }
 .page-hero.cities{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/dest-miami-night.jpg") center 35%/cover no-repeat;
 }
 .page-hero.blog{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/lifestyle-cheers.jpg") center 35%/cover no-repeat;
 }
 .page-hero.contact{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/vibe-yacht-bay.jpg") center 40%/cover no-repeat;
 }
 .page-hero.advertise{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/vibe-yacht-bay.jpg") center 40%/cover no-repeat;
 }
 .page-hero.faqs{
   background:
-    linear-gradient(180deg, rgba(7,11,20,.86) 0%, rgba(7,11,20,.76) 55%, rgba(7,11,20,.96) 100%),
+    linear-gradient(180deg, rgba(7,11,20,.78) 0%, rgba(7,11,20,.68) 55%, rgba(7,11,20,.94) 100%),
     url("../site/vibe-beach-terrace.jpg") center 35%/cover no-repeat;
 }
 .page-hero::before{
-  content:"";position:absolute;inset:0;z-index:0;opacity:.42;pointer-events:none;
+  content:"";position:absolute;inset:0;z-index:0;opacity:.35;pointer-events:none;
   background:
-    radial-gradient(ellipse 50% 60% at 85% 20%, rgba(0,229,232,.18), transparent 60%),
-    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(255,56,100,.14), transparent 55%);
+    radial-gradient(ellipse 50% 60% at 85% 20%, rgba(42,212,204,.16), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(255,107,61,.1), transparent 55%);
 }
 .page-hero .wrap{position:relative;z-index:1}
 .page-hero h1{
   font-family:var(--font-display);font-size:clamp(2.4rem,6vw,3.8rem);
   font-weight:650;line-height:1.08;letter-spacing:-.02em;margin-bottom:.85rem;
-  color:var(--pp-text,#F4F7FA);
-  text-shadow:0 2px 18px rgba(0,0,0,.55);
+  color:var(--ink);
 }
-/* page-hero: light type on navy photo overlay */
 .page-hero h1 em{
   font-style:italic;
   background:linear-gradient(120deg,var(--sunset),var(--teal));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.page-hero .lead{color:var(--pp-text-dim,#B7C2D0);font-weight:400;font-size:1.05rem;max-width:36rem;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.page-hero .lead{color:var(--mist);font-weight:400;font-size:1.05rem;max-width:36rem}
 
 /* ——— HOME HERO ——— */
 .hero{
@@ -517,18 +515,18 @@ section{padding:5.25rem 0;position:relative}
 
 .music-band{
   position:relative;border-radius:var(--radius);overflow:hidden;
-  border:1.5px solid rgba(255,106,154,.35);min-height:280px;
+  border:1px solid rgba(212,168,75,.3);min-height:280px;
   display:flex;align-items:flex-end;
-  box-shadow:0 18px 44px rgba(26,58,82,.14), 0 0 0 1px rgba(77,184,240,.18);
+  box-shadow:0 16px 40px rgba(26,58,82,.12);
 }
 .music-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
 .music-band::before{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(105deg,rgba(7,11,20,.88) 0%,rgba(14,26,43,.72) 48%,rgba(7,11,20,.42) 100%);
+  background:linear-gradient(90deg,rgba(7,11,20,.92) 0%,rgba(7,11,20,.72) 45%,rgba(7,11,20,.45) 100%);
 }
 .music-inner{position:relative;z-index:2;padding:2rem;max-width:32rem;color:#fff}
-.music-inner .eyebrow{color:var(--pp-cyan,#00E5E8)}
-.music-inner .eyebrow::before{background:linear-gradient(90deg,#5a8cdc,#7a3bff,#FF3864)}
+.music-inner .eyebrow{color:var(--champagne)}
+.music-inner .eyebrow::before{background:var(--champagne)}
 .music-inner p{color:rgba(255,255,255,.85)!important}
 .music-inner .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4)}
 .eq{
@@ -652,12 +650,12 @@ section{padding:5.25rem 0;position:relative}
 }
 
 
-/* Tasteful section color bands — blue→purple wash */
+/* Tasteful section color bands — Miami Electric */
 #cities{
-  background:linear-gradient(180deg, rgba(90,140,220,.14) 0%, rgba(255,255,255,.3) 45%, rgba(122,59,255,.12) 100%);
+  background:linear-gradient(180deg, rgba(0,144,224,.14) 0%, rgba(255,255,255,.3) 45%, rgba(255,230,0,.14) 100%);
 }
 .vibes{
-  background:linear-gradient(165deg, rgba(90,140,220,.14) 0%, rgba(110,100,210,.08) 50%, rgba(122,59,255,.10) 100%);
+  background:linear-gradient(165deg, rgba(255,230,0,.16) 0%, rgba(0,232,240,.08) 50%, rgba(255,45,106,.1) 100%);
 }
 section:has(.music-band){
   background:transparent;
@@ -665,151 +663,152 @@ section:has(.music-band){
 
 
 
-/* ========== BLUE→PURPLE PRESTIGE WASH — FINAL (wins all) ========== */
-/* Soft blue→violet shell. Dark ink on wash; hero rebuild owns photo hero type. */
+/* ========== MIAMI ELECTRIC — FINAL (wins all) ========== */
 body{
   background-image:
-    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(90,140,220,.26), transparent 55%),
-    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(122,59,255,.22), transparent 52%),
-    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(110,100,210,.20), transparent 55%),
-    linear-gradient(180deg, #e4ecfc 0%, #d8dff5 38%, #ccc8eb 72%, #c0b4e8 100%) !important;
-  color:#0a1628 !important;
+    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(255,106,154,.22), transparent 55%),
+    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(77,184,240,.32), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(255,240,102,.26), transparent 55%),
+    linear-gradient(180deg, #fff6b0 0%, #c8eaff 42%, #a8dcff 100%) !important;
 }
 body::before{
   display:block !important;
   content:"";
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(circle 320px at 15% 40%, rgba(90,140,220,.20), transparent 70%),
-    radial-gradient(circle 360px at 85% 55%, rgba(122,59,255,.16), transparent 70%),
-    radial-gradient(circle 280px at 50% 85%, rgba(110,100,210,.14), transparent 70%);
+    radial-gradient(circle 320px at 15% 40%, rgba(255,240,102,.18), transparent 70%),
+    radial-gradient(circle 360px at 85% 55%, rgba(255,106,154,.14), transparent 70%),
+    radial-gradient(circle 280px at 50% 85%, rgba(77,184,240,.16), transparent 70%);
 }
-.btn-primary,
-.nav-cta,
+/* sticky mobile Book Now only — do NOT tint .btn-primary / nav (dayclub coral) */
 .sticky-book{
-  background:#FF3864 !important;
+  background:var(--pp-coral,#FF3864) !important;
   background-image:none !important;
   color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
   border:none !important;
-  box-shadow:0 10px 28px rgba(255,56,100,.28) !important;
+  box-shadow:0 10px 28px rgba(255,56,100,.35) !important;
   font-weight:800 !important;
+  filter:none !important;
 }
-.btn-primary:hover,.nav-cta:hover,.sticky-book:hover{
-  filter:brightness(1.05) saturate(1.06);
-  background:#FF5A7C !important;
-  box-shadow:0 14px 36px rgba(255,56,100,.36) !important;
+.sticky-book:hover{
+  filter:brightness(1.06) !important;
+  box-shadow:0 14px 36px rgba(255,56,100,.45) !important;
 }
 .tag,.eyebrow{
-  color:#7a3bff !important;
+  color:#ff6a9a !important;
 }
-.hero .eyebrow{color:#ffe600 !important;text-shadow:0 1px 8px rgba(0,0,0,.55) !important}
-.hero .eyebrow::before{background:linear-gradient(90deg,#5a8cdc,#7a3bff,#FF3864) !important}
-/* Legacy hero h1 rules kept soft — hero-rebuild owns Sun's out / Who's in */
+.hero .eyebrow{color:var(--pp-cyan,#00E5E8) !important;text-shadow:0 2px 14px rgba(0,0,0,.7) !important}
+.hero .eyebrow::before{background:linear-gradient(90deg,var(--pp-coral,#FF3864),var(--pp-cyan,#00E5E8)) !important}
 .hero h1{
-  color:#F4F7FA !important;
-  -webkit-text-fill-color:#F4F7FA !important;
+  color:var(--pp-text,#F4F7FA) !important;
+  -webkit-text-fill-color:var(--pp-text,#F4F7FA) !important;
   -webkit-text-stroke:0 !important;
   paint-order:normal !important;
-  text-shadow:0 4px 24px rgba(0,0,0,.55) !important;
+  text-shadow:0 4px 28px rgba(0,0,0,.75), 0 2px 8px rgba(0,0,0,.55) !important;
 }
 .hero h1 em,.hero h1 em *{
-  color:#FF3864 !important;
-  -webkit-text-fill-color:#FF3864 !important;
+  color:var(--pp-coral,#FF3864) !important;
+  -webkit-text-fill-color:var(--pp-coral,#FF3864) !important;
   background:none !important;
   -webkit-background-clip:border-box !important;
   -webkit-text-stroke:0 !important;
   paint-order:normal !important;
-  text-shadow:0 4px 18px rgba(0,0,0,.5) !important;
+  text-shadow:0 4px 22px rgba(0,0,0,.7), 0 2px 8px rgba(0,0,0,.5) !important;
 }
 .hero-lead,.hero .hero-cta-secondary{
-  color:#B7C2D0 !important;
-  -webkit-text-fill-color:#B7C2D0 !important;
-  font-weight:650 !important;
-  text-shadow:0 2px 10px rgba(0,0,0,.45) !important;
+  color:var(--pp-text-dim,#B7C2D0) !important;
+  -webkit-text-fill-color:var(--pp-text-dim,#B7C2D0) !important;
+  font-weight:500 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.65) !important;
 }
 .hero-pill{
-  background:linear-gradient(145deg, rgba(90,140,220,.36), rgba(122,59,255,.22)) !important;
-  border:2px solid rgba(122,59,255,.35) !important;
-  color:#F4F7FA !important;
-  box-shadow:0 6px 22px rgba(90,100,200,.18) !important;
+  background:linear-gradient(145deg, rgba(255,240,102,.36), rgba(77,184,240,.22)) !important;
+  border:2px solid rgba(255,106,154,.4) !important;
+  color:var(--pp-cyan,#00E5E8) !important;
+  box-shadow:0 6px 22px rgba(255,106,154,.18) !important;
 }
+.hero-glass .hero-pill-book,
 .hero-glass .hero-pill:nth-child(2){
-  background:linear-gradient(145deg, rgba(122,59,255,.28), rgba(90,140,220,.22)) !important;
-  border-color:rgba(122,59,255,.45) !important;
+  /* Same solid coral as nav Book Now — not yellow-pink wash */
+  background:var(--pp-coral,#FF3864) !important;
+  background-image:none !important;
+  border:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  backdrop-filter:none !important;
+  opacity:1 !important;
+}
+.hero-glass .hero-pill-book strong,
+.hero-glass .hero-pill:nth-child(2) strong{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
 }
 .hero-pill strong{
-  color:#00E5E8 !important;
-  -webkit-text-fill-color:#00E5E8 !important;
+  color:#ff5a00 !important;
+  -webkit-text-fill-color:#ff5a00 !important;
 }
 #cities{
-  background:linear-gradient(180deg, rgba(90,140,220,.10) 0%, rgba(110,100,210,.08) 50%, rgba(122,59,255,.10) 100%) !important;
+  background:linear-gradient(180deg, rgba(255,106,154,.08) 0%, rgba(77,184,240,.12) 50%, rgba(255,240,102,.14) 100%) !important;
 }
 .vibes{
-  background:linear-gradient(165deg, rgba(90,140,220,.12) 0%, rgba(122,59,255,.08) 100%) !important;
+  background:linear-gradient(165deg, rgba(255,240,102,.14) 0%, rgba(255,106,154,.08) 100%) !important;
 }
 .trust{
-  background:linear-gradient(135deg, rgba(255,252,247,.92), rgba(90,140,220,.12), rgba(122,59,255,.10)) !important;
-  border:1.5px solid rgba(122,59,255,.18) !important;
-  color:#0a1628 !important;
+  background:linear-gradient(135deg, rgba(255,240,102,.16), rgba(77,184,240,.12), rgba(255,106,154,.08)) !important;
+  border:1.5px solid rgba(255,106,154,.2) !important;
 }
 .card:hover{
-  box-shadow:0 16px 36px rgba(90,100,200,.14), 0 0 0 2px rgba(122,59,255,.28) !important;
+  box-shadow:0 16px 36px rgba(255,106,154,.14), 0 0 0 2px rgba(77,184,240,.3) !important;
 }
-.section-head h2{color:#0a1628 !important;-webkit-text-fill-color:#0a1628 !important}
+.section-head h2{color:var(--ink) !important}
 
 
-/* ========== BLUE→PURPLE HEADER (light + compact) ========== */
+/* ========== MIAMI ELECTRIC HEADER (light + compact) ========== */
 .proto-banner{
-  background:linear-gradient(90deg,#8eb4f0 0%,#9a88e0 50%,#7a3bff 100%) !important;
+  background:linear-gradient(90deg,#ff8ab8 0%,#fff5a0 50%,#7ec8f5 100%) !important;
   color:#0a1628 !important;
   font-weight:800 !important;
   letter-spacing:.02em !important;
   padding:.4rem 1rem !important;
   font-size:.72rem !important;
-  -webkit-text-stroke:0 !important;
-  text-shadow:none !important;
-  border-bottom:none !important;
 }
 .proto-banner a{color:#0a1628 !important;font-weight:800 !important}
 
 .nav{
-  background:linear-gradient(105deg,#b8d0f5 0%,#a8b0e8 35%,#9480d8 68%,#7a3bff 100%) !important;
-  background-image:linear-gradient(105deg,#b8d0f5 0%,#a8b0e8 35%,#9480d8 68%,#7a3bff 100%) !important;
-  border-bottom:2px solid rgba(122,59,255,.45) !important;
-  box-shadow:0 8px 24px rgba(90,100,200,.22) !important;
+  background:rgba(7,11,20,.92) !important;
+  background-image:none !important;
+  border-bottom:1px solid var(--pp-line,#24344A) !important;
+  box-shadow:0 8px 24px rgba(255,138,184,.22) !important;
   backdrop-filter:none !important;
 }
 .nav::before{display:none !important;background:transparent !important}
 .nav.scrolled{
-  background:linear-gradient(105deg,#7a3bff 0%,#9480d8 40%,#b8d0f5 100%) !important;
-  background-image:linear-gradient(105deg,#7a3bff 0%,#9480d8 40%,#b8d0f5 100%) !important;
-  border-bottom-color:rgba(90,140,220,.55) !important;
+  background:rgba(7,11,20,.96) !important;
+  background-image:none !important;
+  border-bottom-color:var(--pp-line,#24344A) !important;
 }
 .nav.scrolled::before{display:none !important}
 
 .nav-inner{min-height:4.5rem}
 .logo{
   color:#0a1628 !important;
-  text-shadow:none;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
   font-weight:700 !important;
-  filter:none !important;
 }
 .logo-mark{
-  background:conic-gradient(from 180deg,#0a1628,#5a8cdc,#7a3bff,#FF3864,#0a1628) !important;
-  box-shadow:0 0 0 3px #0a1628, 0 0 20px rgba(122,59,255,.35) !important;
+  background:conic-gradient(from 180deg,#0a1628,#fff066,#ff6a9a,#4db8f0,#0a1628) !important;
+  box-shadow:0 0 0 3px #0a1628, 0 0 20px rgba(255,255,255,.5) !important;
 }
 .nav-links a{
   color:#0a1628 !important;
-  -webkit-text-fill-color:#0a1628 !important;
   font-weight:700 !important;
-  -webkit-text-stroke:0 !important;
-  text-shadow:none !important;
 }
 .nav-links a:hover,
 .nav-links a.active{
   color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
   text-shadow:0 1px 4px rgba(0,0,0,.35);
 }
 .nav-links a.active::after,
@@ -823,26 +822,23 @@ body::before{
   border:2px solid #0a1628 !important;
 }
 .nav-cart .badge{
-  background:#FF3864 !important;
+  background:#ff6a9a !important;
   color:#fff !important;
 }
 .nav-cta{
-  background:#FF3864 !important;
+  background:var(--pp-coral,#FF3864) !important;
   background-image:none !important;
   color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-  border:2px solid rgba(10,22,40,.08) !important;
-  box-shadow:0 6px 18px rgba(255,56,100,.32) !important;
-  -webkit-text-stroke:0 !important;
-  text-shadow:none !important;
+  border:none !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
 }
-.nav-toggle span{background:#0a1628 !important}
+.nav-toggle span{background:var(--pp-cyan,#00E5E8) !important}
 .nav-drawer{
-  background:linear-gradient(180deg,#b8d0f5,#a090e0,#7a3bff) !important;
+  background:var(--pp-bg-2,#0E1A2B) !important;
 }
 .nav-drawer a{color:#0a1628 !important;border-bottom-color:rgba(10,22,40,.2) !important}
 
-/* HEADER TYPE — dark ink on Electric chrome (tasteful, no carnival stroke) */
+/* HEADER TYPE — dayclub (no yellow stroke) */
 .nav .nav-links a:not([href="index.html"]):not(.nav-home),
 .nav .nav-cta,
 .proto-banner{
@@ -852,25 +848,23 @@ body::before{
 }
 .nav .nav-links a:not([href="index.html"]):not(.nav-home):hover,
 .nav .nav-links a:not([href="index.html"]):not(.nav-home).active{
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
+  color:var(--pp-cyan,#00E5E8) !important;
   -webkit-text-stroke:0 !important;
-  text-shadow:0 1px 4px rgba(0,0,0,.35) !important;
+  text-shadow:none !important;
 }
 .nav .nav-cta{
   color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
   -webkit-text-stroke:0 !important;
 }
 
-/* Header Home — coral accent on Electric chrome */
+/* Header Home — cyan accent, no outline */
 .nav .nav-links a.nav-home,
 .nav .nav-links a[href="index.html"],
 .nav-drawer a.nav-home,
 .nav-drawer a[href="index.html"]{
-  color:#c9184a !important;
-  -webkit-text-fill-color:#c9184a !important;
-  font-weight:800 !important;
+  color:var(--pp-cyan,#00E5E8) !important;
+  -webkit-text-fill-color:var(--pp-cyan,#00E5E8) !important;
+  font-weight:700 !important;
   -webkit-text-stroke:0 !important;
   paint-order:normal !important;
   text-shadow:none !important;
@@ -879,21 +873,25 @@ body::before{
 .nav .nav-links a.nav-home.active,
 .nav .nav-links a[href="index.html"]:hover,
 .nav .nav-links a[href="index.html"].active{
-  color:#ff3864 !important;
-  -webkit-text-fill-color:#ff3864 !important;
+  color:var(--pp-coral,#FF3864) !important;
+  -webkit-text-fill-color:var(--pp-coral,#FF3864) !important;
   -webkit-text-stroke:0 !important;
 }
 
-/* Header Home underline — coral */
+/* Header Home underline — cyan */
 .nav .nav-links a.nav-home.active::after,
 .nav .nav-links a.nav-home:hover::after,
 .nav .nav-links a[href="index.html"].active::after,
 .nav .nav-links a[href="index.html"]:hover::after{
-  background:#ff3864 !important;
-  height:3px !important;
+  background:var(--pp-cyan,#00E5E8) !important;
+  height:2px !important;
   border:none !important;
-  box-shadow:0 0 8px rgba(255,56,100,.35) !important;
+  box-shadow:0 0 8px rgba(0,229,232,.45) !important;
 }
+
+
+
+
 
 
 /* Header logo — matches light Miami header */
@@ -1019,8 +1017,8 @@ body::before{
 .when-bar{
   display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;
   margin:0 0 1.25rem;padding:.85rem 1.1rem;border-radius:1rem;
-  background:linear-gradient(105deg,rgba(90,140,220,.16),rgba(122,59,255,.12));
-  border:1px solid rgba(122,59,255,.28);
+  background:linear-gradient(105deg,rgba(255,245,160,.18),rgba(126,200,245,.12));
+  border:1px solid rgba(255,230,0,.35);
 }
 .when-bar label{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;font-weight:600;color:var(--ink);cursor:pointer}
 .when-bar input{accent-color:#ff5a00;width:1.05rem;height:1.05rem}
@@ -1168,43 +1166,34 @@ a.btn-glass.free-offer-link:hover{
 .free-offer-card{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem 1.1rem;
   padding:1rem 1.25rem;border-radius:1rem;
-  border:1px solid rgba(122,59,255,.28);
-  background:linear-gradient(105deg,rgba(255,252,247,.94), rgba(90,140,220,.14), rgba(122,59,255,.12));
-  color:#0a1628;text-decoration:none;
-  box-shadow:0 10px 28px rgba(26,58,82,.08);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(0,229,232,.35);
+  background:linear-gradient(105deg,rgba(0,229,232,.12),rgba(255,56,100,.1));
+  color:var(--pp-text,#F4F7FA);text-decoration:none;
   transition:border-color .2s, transform .2s, box-shadow .2s;
 }
 .free-offer-card:hover{
-  border-color:rgba(122,59,255,.55);
+  border-color:var(--pp-cyan,#00E5E8);
   transform:translateY(-2px);
-  box-shadow:0 14px 32px rgba(90,100,200,.16);
+  box-shadow:0 12px 28px rgba(0,229,232,.18);
 }
 .free-offer-kicker{
   font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:#c9184a;
+  color:var(--pp-gold,#E8C872);
 }
-.free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem;color:#0a1628}
-.free-offer-copy{color:#142536;font-weight:450}
+.free-offer-card strong{font-family:var(--font-display,inherit);font-size:1.15rem}
+.free-offer-copy{color:var(--pp-text-dim,#B7C2D0);font-weight:300}
 
-/* Streaming Advertise here banner — blue→purple wash (SEC Hear craft) */
+/* Streaming Advertise here banner — lives inside fixed .nav */
 .ad-stream{
   display:block;
   overflow:hidden;
   width:100%;
   margin:0;
-  border-top:1px solid rgba(122,59,255,.28);
-  border-bottom:1px solid rgba(90,140,220,.22);
-  background:
-    linear-gradient(145deg,
-      rgba(90, 140, 220, .42) 0%,
-      rgba(110, 100, 210, .38) 42%,
-      rgba(130, 80, 200, .40) 72%,
-      rgba(122, 59, 255, .36) 100%),
-    linear-gradient(90deg, #d4e2f8 0%, #d0c8f0 48%, #c4b0ec 100%);
+  border-top:1px solid rgba(0,229,232,.35);
+  border-bottom:1px solid rgba(0,229,232,.2);
+  background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.2), rgba(232,200,114,.16));
   text-decoration:none;
-  color:#0a1628;
+  color:var(--pp-text,#F4F7FA);
   cursor:pointer;
 }
 /* Extra clearance for hero/page content when ticker is under nav */
@@ -1215,17 +1204,9 @@ body.has-ad-stream .page-hero{
   padding-top:calc(var(--ad-stream-offset, 8.6rem) + 2.5rem) !important;
 }
 .ad-stream{
-  box-shadow:0 8px 20px rgba(90,100,200,.22);
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
-.ad-stream:hover{
-  background:
-    linear-gradient(145deg,
-      rgba(90, 140, 220, .52) 0%,
-      rgba(110, 100, 210, .48) 42%,
-      rgba(130, 80, 200, .50) 72%,
-      rgba(122, 59, 255, .46) 100%),
-    linear-gradient(90deg, #e0eafc 0%, #dcd4f5 48%, #d0c0f2 100%);
-}
+.ad-stream:hover{background:linear-gradient(90deg, rgba(255,56,100,.28), rgba(0,229,232,.22), rgba(232,200,114,.2))}
 .ad-stream-track{
   display:flex;
   width:max-content;
@@ -1246,16 +1227,16 @@ body.has-ad-stream .page-hero{
   text-transform:uppercase;
 }
 .ad-stream-chunk .ad-stream-pulse{
-  color:#7a3bff;
+  color:var(--pp-gold,#E8C872);
   font-weight:800;
 }
 .ad-stream-chunk .ad-stream-pitch{
-  color:#2a5aa8;
+  color:var(--pp-cyan,#00E5E8);
   font-weight:500;
   text-transform:none;
   letter-spacing:0;
 }
-.ad-stream-sep{opacity:.5;color:#7a3bff}
+.ad-stream-sep{opacity:.45;color:var(--pp-cyan,#00E5E8)}
 @keyframes ad-stream-scroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
@@ -1265,7 +1246,7 @@ body.has-ad-stream .page-hero{
 }
 
 
-/* cache bump v63 2026-09-18 blue-purple prestige wash */
+/* cache bump v40 2026-09-16T05:25:16+00:00 */
 
 /* live lead embeds */
 .lead-embed{
@@ -1327,48 +1308,4 @@ body.has-ad-stream .page-hero{
   .lead-embed__frame,.lead-embed__frame iframe{min-height:560px;height:620px}
   .lead-embed--tall .lead-embed__frame,
   .lead-embed--tall .lead-embed__frame iframe{min-height:700px;height:760px}
-}
-
-
-/* ========== PRESTIGE ELECTRIC POLISH ========== */
-.card,
-.panel,
-.form-card,
-.faq-item,
-.step,
-.demo-callout,
-.lead-embed {
-  background: rgba(255, 252, 247, 0.92) !important;
-  border: 1px solid rgba(20, 37, 54, 0.1) !important;
-  box-shadow: 0 12px 32px rgba(26, 58, 82, 0.1) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #0a1628 !important;
-}
-.section-head h2,
-.card-body h3,
-.card-body h3 a {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
-}
-.section-head p,
-.card-meta,
-.lead {
-  color: #142536 !important;
-}
-.music-band .btn-primary,
-.music-inner .btn-primary {
-  background: #FF3864 !important;
-  background-image: none !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  border: none !important;
-  box-shadow: 0 10px 26px rgba(255, 56, 100, 0.3) !important;
-}
-.ad-stream__text,
-.ad-stream span,
-.ad-stream {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
-  font-weight: 800 !important;
 }

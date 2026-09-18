@@ -14,8 +14,6 @@
   --pp-cyan-deep: #00B7C2;
   --pp-coral: #FF3864;
   --pp-coral-hover: #FF5A7C;
-  --pp-violet: #7a3bff;
-  --pp-blue: #5a8cdc;
   --pp-gold: #E8C872;
   --pp-gold-deep: #C9A24A;
 
@@ -49,12 +47,12 @@
   --pp-checkout-error: #FF4D4D;
   --pp-checkout-timer: #C9A24A;
 
-  /* Bridge — Electric wash: dark ink + light foam (dayclub --pp-* stay for nav/hero/CTAs) */
-  --ink: #0a1628;
-  --ink-soft: #142536;
+  /* Bridge — remap Miami Electric shell vars onto dayclub tokens */
+  --ink: var(--pp-text);
+  --ink-soft: var(--pp-text-dim);
   --deep: var(--pp-bg);
-  --cream: #fff8f0;
-  --foam: rgba(255, 252, 247, 0.94);
+  --cream: var(--pp-bg-2);
+  --foam: var(--pp-bg-2);
   --sky: var(--pp-cyan);
   --navy: var(--pp-bg-2);
   --navy-2: var(--pp-cyan);
@@ -71,26 +69,25 @@
   --coral: var(--pp-coral);
   --lemon: var(--pp-gold);
   --pool: var(--pp-cyan);
-  --mist: rgba(10, 22, 40, 0.72);
-  --muted: rgba(10, 22, 40, 0.55);
-  --glass: rgba(255, 255, 255, 0.88);
-  --glass-strong: rgba(255, 252, 247, 0.96);
-  --glass-border: rgba(122, 59, 255, 0.28);
-  --line: rgba(20, 37, 54, 0.12);
-  --shadow: 0 16px 36px rgba(26, 58, 82, 0.12);
+  --mist: var(--pp-text-dim);
+  --muted: var(--pp-text-mute);
+  --glass: rgba(14, 26, 43, 0.88);
+  --glass-strong: rgba(21, 34, 56, 0.96);
+  --glass-border: rgba(0, 229, 232, 0.22);
+  --line: var(--pp-line);
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
   --shadow-glow: 0 0 36px rgba(255, 56, 100, 0.18);
 }
 
-/* ——— CTA utilities (Electric primary) ——— */
+/* ——— CTA utilities (one primary per view) ——— */
 .btn-primary,
 a.btn-primary,
 button.btn-primary {
-  background: #FF3864 !important;
+  background: var(--pp-coral) !important;
   background-image: none !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: #FFFFFF !important;
   border: none !important;
-  box-shadow: 0 10px 28px rgba(255, 56, 100, 0.28) !important;
+  box-shadow: 0 10px 28px rgba(255, 56, 100, 0.32) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
   font-weight: 800 !important;
@@ -98,10 +95,10 @@ button.btn-primary {
 .btn-primary:hover,
 a.btn-primary:hover,
 button.btn-primary:hover {
-  background: #FF5A7C !important;
+  background: var(--pp-coral-hover) !important;
   background-image: none !important;
-  filter: brightness(1.04);
-  box-shadow: 0 14px 34px rgba(255, 56, 100, 0.36) !important;
+  filter: none;
+  box-shadow: 0 14px 34px rgba(255, 56, 100, 0.4) !important;
 }
 
 .btn-vip,
@@ -138,27 +135,25 @@ button.btn-secondary {
   border-color: var(--pp-cyan) !important;
 }
 
-/* Primary CTAs sitewide — coral Book Now / sticky */
+/* Primary CTAs sitewide — Book Now / pay / sticky */
 .nav-cta,
 .sticky-book,
 .hero-actions .btn-primary {
-  background: #FF3864 !important;
+  background: var(--pp-coral) !important;
   background-image: none !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: #FFFFFF !important;
   border: none !important;
-  box-shadow: 0 8px 22px rgba(255, 56, 100, 0.32) !important;
+  box-shadow: 0 8px 22px rgba(255, 56, 100, 0.35) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-cta:hover,
 .sticky-book:hover,
 .hero-actions .btn-primary:hover {
-  background: #FF5A7C !important;
+  background: var(--pp-coral-hover) !important;
   background-image: none !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  filter: brightness(1.04);
+  color: #FFFFFF !important;
+  filter: none;
 }
 
 /* Ghost / secondary on dark shell → cyan outline */
@@ -190,76 +185,61 @@ a.btn-ghost,
   box-shadow: none !important;
 }
 
-/* ——— Soft blue→purple prestige shell (wins over dayclub navy) ——— */
+/* ——— Default shell shift toward dayclub navy ——— */
 body {
-  background: transparent !important;
+  background: var(--pp-bg) !important;
   background-image:
-    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(90,140,220,.28), transparent 58%),
-    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(122,59,255,.24), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(110,100,210,.14), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(90,140,220,.18), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(130,80,200,.16), transparent 55%),
-    linear-gradient(180deg, #e4ecfc 0%, #d8dff5 36%, #ccc8eb 72%, #c0b4e8 100%) !important;
-  background-attachment: fixed !important;
-  color: #0a1628 !important;
+    radial-gradient(ellipse 80% 45% at 0% 0%, rgba(0, 229, 232, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 40% at 100% 5%, rgba(255, 56, 100, 0.1), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(232, 200, 114, 0.06), transparent 55%),
+    linear-gradient(180deg, var(--pp-bg) 0%, var(--pp-bg-2) 55%, var(--pp-bg) 100%) !important;
+  color: var(--pp-text) !important;
 }
 body::before {
-  display: block !important;
-  content: "" !important;
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(90,140,220,.22), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(122,59,255,.20), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(110,100,210,.16), transparent 70%) !important;
+    radial-gradient(circle 280px at 12% 42%, rgba(0, 229, 232, 0.06), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(255, 56, 100, 0.05), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(232, 200, 114, 0.04), transparent 70%) !important;
 }
 
-/* Proto banner + nav → blue→purple chrome */
+/* Proto banner + nav → dark dayclub chrome */
 .proto-banner {
-  background: linear-gradient(90deg, #8eb4f0 0%, #9a88e0 50%, #7a3bff 100%) !important;
-  color: #0a1628 !important;
-  border-bottom: none !important;
+  background: var(--pp-bg-2) !important;
+  color: var(--pp-text-dim) !important;
+  border-bottom: 1px solid var(--pp-line) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
 }
 .proto-banner a {
-  color: #0a1628 !important;
-  font-weight: 800 !important;
+  color: var(--pp-cyan) !important;
+  font-weight: 700 !important;
 }
 
 .nav,
 .nav.scrolled {
-  background: linear-gradient(105deg, #b8d0f5 0%, #a8b0e8 35%, #9480d8 68%, #7a3bff 100%) !important;
-  background-image: linear-gradient(105deg, #b8d0f5 0%, #a8b0e8 35%, #9480d8 68%, #7a3bff 100%) !important;
-  border-bottom: 2px solid rgba(122, 59, 255, 0.45) !important;
-  box-shadow: 0 8px 24px rgba(90, 100, 200, 0.22) !important;
-  backdrop-filter: none !important;
-}
-.nav.scrolled {
-  background: linear-gradient(105deg, #7a3bff 0%, #9480d8 40%, #b8d0f5 100%) !important;
-  background-image: linear-gradient(105deg, #7a3bff 0%, #9480d8 40%, #b8d0f5 100%) !important;
+  background: rgba(7, 11, 20, 0.92) !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--pp-line) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(16px) !important;
 }
 .nav-links a {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
-  font-weight: 700 !important;
+  color: var(--pp-text-dim) !important;
+  font-weight: 600 !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-links a:hover,
 .nav-links a.active {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35) !important;
+  color: var(--pp-cyan) !important;
+  text-shadow: none !important;
   -webkit-text-stroke: 0 !important;
 }
 .nav-links a.active::after,
 .nav-links a:hover::after {
-  background: #fff !important;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3) !important;
+  background: var(--pp-cyan) !important;
+  box-shadow: 0 0 8px rgba(0, 229, 232, 0.45) !important;
 }
 .nav .nav-links a:not([href="index.html"]):not(.nav-home),
 .nav .nav-cta,
@@ -271,52 +251,52 @@ body::before {
 .nav .nav-links a[href="index.html"],
 .nav-drawer a.nav-home,
 .nav-drawer a[href="index.html"] {
-  color: #c9184a !important;
-  -webkit-text-fill-color: #c9184a !important;
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-cart {
-  background: #fff !important;
-  border: 2px solid #0a1628 !important;
-  color: #0a1628 !important;
+  background: var(--pp-bg-3) !important;
+  border: 1.5px solid var(--pp-line) !important;
+  color: var(--pp-text) !important;
 }
 .nav-cart .badge {
-  background: #FF3864 !important;
+  background: var(--pp-coral) !important;
   color: #fff !important;
 }
 .nav-toggle span {
-  background: #0a1628 !important;
+  background: var(--pp-cyan) !important;
 }
 .nav-drawer {
-  background: linear-gradient(180deg, #b8d0f5, #a090e0, #7a3bff) !important;
+  background: var(--pp-bg-2) !important;
 }
 .nav-drawer a {
-  color: #0a1628 !important;
-  border-bottom-color: rgba(10, 22, 40, 0.2) !important;
+  color: var(--pp-text) !important;
+  border-bottom-color: var(--pp-line) !important;
 }
 .logo {
-  color: #0a1628 !important;
+  color: var(--pp-text) !important;
   text-shadow: none !important;
-  filter: none !important;
 }
 
-/* Typography / surfaces on Electric wash — dark ink + light foam */
+/* Typography / surfaces on dark */
 .section-head h2,
 .card-body h3,
 .step h3,
 .trust strong,
+.footer h4,
 .faq-item summary,
+.page-hero h1,
 .lead {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
+  color: var(--pp-text) !important;
 }
 .tag,
 .eyebrow {
-  color: var(--pp-violet, #7a3bff) !important;
+  color: var(--pp-cyan) !important;
 }
 .eyebrow::before {
-  background: linear-gradient(90deg, var(--pp-blue, #5a8cdc), var(--pp-violet, #7a3bff), var(--pp-coral)) !important;
+  background: linear-gradient(90deg, var(--pp-coral), var(--pp-cyan)) !important;
 }
 .scarcity,
 .text-scarcity,
@@ -328,39 +308,31 @@ body::before {
 .form-card,
 .trust,
 .faq-item,
-.demo-callout,
-.lead-embed {
-  background: rgba(255, 252, 247, 0.94) !important;
-  border-color: rgba(20, 37, 54, 0.12) !important;
-  color: #0a1628 !important;
-  box-shadow: 0 10px 28px rgba(26, 58, 82, 0.1) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.demo-callout {
+  background: var(--pp-bg-2) !important;
+  border-color: var(--pp-line) !important;
+  color: var(--pp-text) !important;
 }
 .card:hover {
-  box-shadow: 0 16px 36px rgba(90, 100, 200, 0.14), 0 0 0 1px rgba(122, 59, 255, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
 }
 #cities,
 .vibes {
   background: transparent !important;
 }
-.chip,
-a.chip-link,
-button.chip-link {
-  color: #142536 !important;
-  border-color: rgba(20, 37, 54, 0.14) !important;
-  background: rgba(255, 255, 255, 0.82) !important;
+.chip {
+  color: var(--pp-text-dim) !important;
+  border-color: var(--pp-line) !important;
+  background: var(--pp-bg-3) !important;
 }
 .chip:hover,
-.chip.active,
-a.chip-link:hover,
-button.chip-link:hover {
+.chip.active {
   border-color: var(--pp-cyan) !important;
-  color: #0a1628 !important;
-  background: rgba(0, 229, 232, 0.14) !important;
+  color: var(--pp-cyan) !important;
+  background: rgba(0, 229, 232, 0.1) !important;
 }
 .field label {
-  color: #142536 !important;
+  color: var(--pp-text-mute) !important;
 }
 .field input,
 .field select,
@@ -368,23 +340,20 @@ button.chip-link:hover {
 .search-bar input,
 .when-bar input,
 .when-bar select {
-  background: rgba(255, 255, 255, 0.92) !important;
-  border-color: rgba(20, 37, 54, 0.14) !important;
-  color: #0a1628 !important;
+  background: var(--pp-bg-3) !important;
+  border-color: var(--pp-line) !important;
+  color: var(--pp-text) !important;
 }
 .footer {
   background: var(--pp-bg) !important;
   border-top: 1px solid var(--pp-line) !important;
   color: var(--pp-text-dim) !important;
 }
-.footer h4 {
-  color: var(--pp-text) !important;
-}
 .footer a:hover {
   color: var(--pp-cyan) !important;
 }
 .empty-state {
-  color: #142536 !important;
+  color: var(--pp-text-dim) !important;
 }
 
 /* Hero: keep photo readable; city/water = cyan; avoid gold-on-cyan */
@@ -655,9 +624,10 @@ button.chip-link:hover {
 /* Homepage hero inline-color neutralize */
 .hero .sun-out,
 .hero h1 .sun-out {
-  /* Leave to hero-rebuild Electric yellow + black outline */
-  color: #ffe600 !important;
-  -webkit-text-fill-color: #ffe600 !important;
+  color: var(--pp-text) !important;
+  -webkit-text-fill-color: var(--pp-text) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55) !important;
 }
 
 /* ========== 2026-09-16 photo visibility + type (dayclub) ========== */
@@ -787,27 +757,9 @@ button.chip-link:hover {
   font-weight: 800 !important;
 }
 
-/* Section heads / eyebrows — cyan labels; dark titles on Electric wash */
+/* Section heads / eyebrows — cyan labels, light titles */
 .eyebrow,
-.section-head .eyebrow {
-  color: var(--pp-cyan) !important;
-  -webkit-text-fill-color: var(--pp-cyan) !important;
-  font-size: 0.82rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.14em !important;
-}
-.section-head h2 {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
-  font-weight: 650 !important;
-}
-.section-head p {
-  color: #142536 !important;
-  font-size: 1.05rem !important;
-  font-weight: 450 !important;
-}
-
-/* Page heroes on photo + navy overlay — LIGHT type only here */
+.section-head .eyebrow,
 .page-hero .eyebrow {
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
@@ -815,21 +767,24 @@ button.chip-link:hover {
   font-weight: 700 !important;
   letter-spacing: 0.14em !important;
 }
+.section-head h2,
 .page-hero h1 {
   color: var(--pp-text) !important;
   -webkit-text-fill-color: var(--pp-text) !important;
   font-weight: 650 !important;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6) !important;
 }
+.section-head p,
 .page-hero .lead {
   color: var(--pp-text-dim) !important;
-  -webkit-text-fill-color: var(--pp-text-dim) !important;
   font-size: 1.05rem !important;
   font-weight: 450 !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
 }
+
+/* Page heroes on photo BGs — heavier navy wash already in miami; lock type */
+.page-hero h1,
+.page-hero .lead,
 .page-hero .eyebrow {
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55) !important;
 }
 
 /* ——— Photo cards: city / vibe / event badges ——— */
@@ -931,20 +886,19 @@ button.chip-link:hover {
 }
 .card-body h3,
 .card-body h3 a {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
+  color: var(--pp-text) !important;
   font-weight: 650 !important;
 }
 .card-meta {
-  color: var(--pp-cyan-deep, #00B7C2) !important;
+  color: var(--pp-cyan) !important;
   font-size: 0.88rem !important;
   font-weight: 550 !important;
 }
 .handoff-note {
   font-size: 0.82rem !important;
-  color: #142536 !important;
-  background: rgba(255, 252, 247, 0.9) !important;
-  border: 1px solid rgba(20, 37, 54, 0.12) !important;
+  color: var(--pp-text-mute) !important;
+  background: rgba(21, 34, 56, 0.9) !important;
+  border: 1px solid var(--pp-line) !important;
 }
 
 /* City hub photo */
@@ -1001,16 +955,16 @@ button.chip-link:hover {
   text-shadow: none !important;
 }
 .stat-pills small {
-  color: #142536 !important;
+  color: var(--pp-text-dim) !important;
   font-size: 0.75rem !important;
   font-weight: 600 !important;
 }
 .trust span {
-  color: #142536 !important;
+  color: var(--pp-text-dim) !important;
   font-size: 0.82rem !important;
 }
 .trust strong {
-  color: #0a1628 !important;
+  color: var(--pp-text) !important;
 }
 
 /* Secondary links / ghost → cyan (Frank: that blue is nice) */
@@ -1023,11 +977,11 @@ a.btn-ghost,
   -webkit-text-fill-color: var(--pp-cyan) !important;
 }
 .chip {
-  color: #142536 !important;
+  color: var(--pp-text-dim) !important;
 }
 .chip:hover,
 .chip.active {
-  color: #0a1628 !important;
+  color: var(--pp-cyan) !important;
   border-color: var(--pp-cyan) !important;
 }
 
@@ -1042,7 +996,7 @@ a.btn-ghost,
 /* Homepage FOMO / example note — not tiny muted white */
 .example-note,
 #city-status {
-  color: #142536 !important;
+  color: var(--pp-text-dim) !important;
   font-size: 0.88rem !important;
   font-weight: 500 !important;
 }
@@ -1144,21 +1098,21 @@ a, a:link, a:visited {
 }
 
 
-/* Filters / dropdowns — light foam on Electric wash (Events, Venues, Cities) */
+/* Filters / dropdowns — dark navy (Events, Venues, Cities) */
 .filters input,
 .filters select,
 .when-bar {
-  background: rgba(255, 252, 247, 0.94) !important;
-  border: 1px solid rgba(20, 37, 54, 0.14) !important;
-  color: #0a1628 !important;
-  box-shadow: 0 6px 18px rgba(26, 58, 82, 0.08) !important;
+  background: var(--pp-bg-3) !important;
+  border: 1px solid var(--pp-line) !important;
+  color: var(--pp-text) !important;
+  box-shadow: none !important;
 }
 .when-bar {
-  background: linear-gradient(105deg, rgba(255, 252, 247, 0.96), rgba(255, 248, 239, 0.94)) !important;
-  border-color: rgba(20, 37, 54, 0.14) !important;
+  background: linear-gradient(105deg, rgba(21, 34, 56, 0.95), rgba(14, 26, 43, 0.98)) !important;
+  border-color: var(--pp-line) !important;
 }
 .when-bar label {
-  color: #0a1628 !important;
+  color: var(--pp-text) !important;
 }
 .when-bar input[type="checkbox"] {
   background: transparent !important;
@@ -1168,233 +1122,22 @@ a, a:link, a:visited {
   height: 1.05rem !important;
 }
 .filters input::placeholder {
-  color: rgba(10, 22, 40, 0.5) !important;
+  color: var(--pp-text-mute) !important;
 }
 .filters input:focus,
 .filters select:focus {
   border-color: var(--pp-cyan) !important;
-  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.22) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.18) !important;
   outline: none !important;
 }
 .filters select {
-  background-color: rgba(255, 252, 247, 0.96) !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%230a1628'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
+  background-color: var(--pp-bg-3) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300E5E8'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: right 1rem center !important;
-  color: #0a1628 !important;
+  color: var(--pp-text) !important;
 }
 .filters select option {
-  background: #fffaf5;
-  color: #0a1628;
-}
-
-/* ========== ELECTRIC WASH CONTRAST LOCK (wins) ==========
-   Keep Soft Miami Electric sky; body/cards readable dark ink on light foam.
-   Heroes (home + .page-hero photo) stay light type. Coral CTAs untouched. */
-body {
-  color: #0a1628 !important;
-}
-.section-head h2,
-.section-head p,
-.lead,
-.card-body,
-.card-body h3,
-.card-body h3 a,
-.step h3,
-.trust strong,
-.trust span,
-.faq-item summary,
-.faq-item,
-.panel,
-.form-card,
-.demo-callout,
-.lead-embed__head h2,
-.lead-embed__head p,
-.lead-honest,
-.blog-prose,
-.blog-prose h2,
-.blog-prose p,
-.empty-state,
-.example-note,
-#city-status,
-.stat-pills small,
-.filters,
-.when-bar,
-.when-bar label {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
-}
-.section-head p,
-.lead,
-.lead-embed__head p,
-.lead-honest,
-.trust span,
-.stat-pills small,
-.empty-state,
-.example-note,
-#city-status {
-  color: #142536 !important;
-  -webkit-text-fill-color: #142536 !important;
-}
-.card,
-.panel,
-.form-card,
-.trust,
-.faq-item,
-.demo-callout,
-.lead-embed,
-.step,
-.filters input,
-.filters select,
-.when-bar,
-.field input,
-.field select,
-.field textarea {
-  background: rgba(255, 252, 247, 0.94) !important;
-  border-color: rgba(20, 37, 54, 0.12) !important;
-  color: #0a1628 !important;
-}
-.free-offer-card {
-  color: #0a1628 !important;
-  background: linear-gradient(105deg, rgba(255, 252, 247, 0.95), rgba(0, 229, 232, 0.12), rgba(255, 56, 100, 0.1)) !important;
-  border-color: rgba(0, 229, 232, 0.35) !important;
-}
-.free-offer-card strong {
-  color: #0a1628 !important;
-}
-.free-offer-copy {
-  color: #142536 !important;
-}
-.free-offer-kicker {
-  color: var(--pp-coral, #FF3864) !important;
-}
-
-/* .page-hero stays light on navy photo wash */
-.page-hero h1 {
-  color: var(--pp-text, #F4F7FA) !important;
-  -webkit-text-fill-color: var(--pp-text, #F4F7FA) !important;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6) !important;
-}
-.page-hero .lead {
-  color: var(--pp-text-dim, #B7C2D0) !important;
-  -webkit-text-fill-color: var(--pp-text-dim, #B7C2D0) !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
-}
-.page-hero .eyebrow {
-  color: var(--pp-violet, #7a3bff) !important;
-  -webkit-text-fill-color: var(--pp-violet, #7a3bff) !important;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
-}
-
-/* Home hero photo — let hero-rebuild own Sun's out / Who's in; soft fallbacks only */
-.hero h1 {
-  color: #F4F7FA !important;
-  -webkit-text-fill-color: #F4F7FA !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55) !important;
-}
-.hero-lead,
-.hero .hero-cta-secondary {
-  color: #B7C2D0 !important;
-  -webkit-text-fill-color: #B7C2D0 !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
-}
-
-/* Photo tiles keep light labels on dark scrims */
-.city-tile span,
-.vibe-body h3,
-.music-inner h2 {
-  color: var(--pp-text, #F4F7FA) !important;
-  -webkit-text-fill-color: var(--pp-text, #F4F7FA) !important;
-}
-.vibe-body p,
-.music-inner p {
-  color: var(--pp-text-dim, #B7C2D0) !important;
-  -webkit-text-fill-color: var(--pp-text-dim, #B7C2D0) !important;
-}
-
-/* Footer stays deep navy; nav chrome is Electric above */
-.footer,
-.footer h4 {
-  color: var(--pp-text-dim, #B7C2D0) !important;
-  -webkit-text-fill-color: var(--pp-text-dim, #B7C2D0) !important;
-}
-.footer h4 {
-  color: var(--pp-text, #F4F7FA) !important;
-  -webkit-text-fill-color: var(--pp-text, #F4F7FA) !important;
-}
-
-/* ========== BLUE→PURPLE CHROME LOCK (pp-tokens last-wins) ========== */
-html body .proto-banner {
-  background: linear-gradient(90deg, #8eb4f0 0%, #9a88e0 50%, #7a3bff 100%) !important;
-  color: #0a1628 !important;
-}
-html body .nav,
-html body .nav.scrolled {
-  background: linear-gradient(105deg, #b8d0f5 0%, #a8b0e8 35%, #9480d8 68%, #7a3bff 100%) !important;
-  background-image: linear-gradient(105deg, #b8d0f5 0%, #a8b0e8 35%, #9480d8 68%, #7a3bff 100%) !important;
-  border-bottom: 2px solid rgba(122, 59, 255, 0.45) !important;
-}
-html body .nav.scrolled {
-  background: linear-gradient(105deg, #7a3bff 0%, #9480d8 40%, #b8d0f5 100%) !important;
-  background-image: linear-gradient(105deg, #7a3bff 0%, #9480d8 40%, #b8d0f5 100%) !important;
-}
-html body .nav .nav-cta,
-html body .nav-cta,
-html body .sticky-book,
-html body a.btn-primary,
-html body .btn-primary {
-  background: #FF3864 !important;
-  background-image: none !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-html body .nav-links a {
-  color: #0a1628 !important;
-  -webkit-text-fill-color: #0a1628 !important;
-}
-html body .nav .nav-links a.nav-home,
-html body .nav .nav-links a[href="index.html"] {
-  color: #c9184a !important;
-  -webkit-text-fill-color: #c9184a !important;
-}
-/* Keep current header logo mark — no redesign, no invert */
-html body .logo img,
-html body .logo-img {
-  filter: none !important;
-  mix-blend-mode: normal !important;
-  opacity: 1 !important;
-}
-
-/* ——— Advertise stream — blue→purple wash (wins) ——— */
-.ad-stream {
-  border-top: 1px solid rgba(122, 59, 255, 0.28) !important;
-  border-bottom: 1px solid rgba(90, 140, 220, 0.22) !important;
-  background:
-    linear-gradient(145deg,
-      rgba(90, 140, 220, 0.42) 0%,
-      rgba(110, 100, 210, 0.38) 42%,
-      rgba(130, 80, 200, 0.40) 72%,
-      rgba(122, 59, 255, 0.36) 100%),
-    linear-gradient(90deg, #d4e2f8 0%, #d0c8f0 48%, #c4b0ec 100%) !important;
-  color: #0a1628 !important;
-  box-shadow: 0 8px 20px rgba(90, 100, 200, 0.22) !important;
-}
-.ad-stream:hover {
-  background:
-    linear-gradient(145deg,
-      rgba(90, 140, 220, 0.52) 0%,
-      rgba(110, 100, 210, 0.48) 42%,
-      rgba(130, 80, 200, 0.50) 72%,
-      rgba(122, 59, 255, 0.46) 100%),
-    linear-gradient(90deg, #e0eafc 0%, #dcd4f5 48%, #d0c0f2 100%) !important;
-}
-.ad-stream-chunk .ad-stream-pulse {
-  color: #7a3bff !important;
-}
-.ad-stream-chunk .ad-stream-pitch {
-  color: #2a5aa8 !important;
-}
-.ad-stream-sep {
-  color: #7a3bff !important;
-  opacity: 0.5;
+  background: var(--pp-bg-2);
+  color: var(--pp-text);
 }
