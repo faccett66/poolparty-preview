@@ -1,11 +1,10 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v15 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v18 */
 (function (global) {
   'use strict';
 
   var TRACKS = [
     { title: 'Overflow', note: 'Pool Party bed', src: 'assets/audio/overflow.mp3' },
-    { title: 'Clear to the Floor', note: 'Sonic Ear Candy', src: 'assets/audio/clear-to-the-floor.mp3' },
-    { title: 'Fuori Orario', note: 'Mixea · Pool Party bed', src: 'assets/audio/fuori-orario.mp3' }
+    { title: 'Clear to the Floor', note: 'Sonic Ear Candy', src: 'assets/audio/clear-to-the-floor.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/';
   var DEFAULT_VOL = 0.5;
@@ -217,6 +216,8 @@
 
   function pause() {
     if (!audio) return;
+    sessionTouched = true;
+    ssSet(KEY_TOUCHED, '1');
     audio.pause();
     setPlayingUI(false);
     wantPlaying = false;
@@ -449,13 +450,25 @@
     return Promise.resolve();
   }
 
-  /** Try unmuted autoplay; if blocked, show chip + capture-phase gesture unlock. */
+  /** Try unmuted autoplay; if blocked, show chip + capture-phase gesture unlock.
+   *  Respects an intentional stop: if the visitor paused this session, stay off. */
   function tryAutoplay() {
     if (!audio) return;
     // Fresh visits should land at ~50% unless user set a volume before
     if (!localStorage.getItem(KEY_VOL)) {
       volume = DEFAULT_VOL;
     }
+
+    // User stopped the player this session — do not restart on hard refresh / new page
+    if (sessionTouched && !wantPlaying) {
+      muted = false;
+      applyMute();
+      setPlayingUI(false);
+      hideStartChip();
+      disarmGestureUnlock();
+      return;
+    }
+
     muted = false;
     // Cold start / first play intent: Overflow. Mid-session resume keeps index.
     if (!wantPlaying) {
@@ -465,6 +478,11 @@
     applyMute();
 
     var run = function () {
+      // Re-check in case user paused while we waited for canplay
+      if (sessionTouched && !wantPlaying) {
+        setPlayingUI(false);
+        return;
+      }
       attemptPlayPromise().catch(function () {
         setPlayingUI(false);
         armGestureUnlock();
@@ -484,7 +502,7 @@
       try { audio.load(); } catch (e) { /* ignore */ }
       // Fallback if events never fire
       setTimeout(function () {
-        if (audio && audio.paused && !gestureArmed) run();
+        if (audio && audio.paused && !gestureArmed && !(sessionTouched && !wantPlaying)) run();
       }, 800);
     }
   }
@@ -771,14 +789,25 @@
       var a = e.target.closest && e.target.closest('a[href]');
       if (!shouldSoftNav(a, e)) return;
       e.preventDefault();
-      // Same user gesture: start audio if autoplay was blocked, then hop
-      if (audio && audio.paused) {
+      // Same user gesture: unlock/resume ONLY if they still want music.
+      // If they paused this session, leave it off across pages.
+      if (audio && audio.paused && !(sessionTouched && !wantPlaying)) {
         muted = false;
-        ensureOverflowStart();
+        if (!wantPlaying) ensureOverflowStart();
         applyMute();
         var p = audio.play();
-        if (p && p.catch) p.catch(function () { /* still blocked */ });
-        else setPlayingUI(true);
+        if (p && p.then) {
+          p.then(function () {
+            setPlayingUI(true);
+            wantPlaying = true;
+            sessionTouched = true;
+            ssSet(KEY_TOUCHED, '1');
+            persistSessionPlayback();
+          }).catch(function () { /* still blocked */ });
+        } else {
+          setPlayingUI(true);
+          wantPlaying = true;
+        }
         hideStartChip();
         disarmGestureUnlock();
       }
