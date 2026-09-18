@@ -46,12 +46,12 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   background-image:
-    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,56,100,.22), transparent 58%),
-    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,229,232,.18), transparent 55%),
-    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,183,194,.12), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(232,200,114,.14), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,56,100,.12), transparent 55%),
-    linear-gradient(180deg, #070B14 0%, #0E1A2B 36%, #152238 72%, #0A1220 100%);
+    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
+    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
+    linear-gradient(180deg, #ffe08a 0%, #b8daf0 36%, #88c4e8 72%, #68aed8 100%);
   background-attachment:fixed;
   min-height:100vh;
 }
@@ -60,14 +60,14 @@ img{max-width:100%;display:block;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
 ::selection{background:rgba(255,107,61,.28);color:var(--ink)}
 
-/* Rich dark Miami dayclub color orbs */
+/* Soft Miami Electric color orbs */
 body::before{
   content:"";
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(232,200,114,.10), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(0,229,232,.12), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(255,56,100,.10), transparent 70%);
+    radial-gradient(circle 280px at 12% 42%, rgba(255,230,0,.2), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(0,144,224,.22), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(255,45,106,.16), transparent 70%);
 }
 
 
@@ -666,19 +666,21 @@ section:has(.music-band){
 /* ========== MIAMI ELECTRIC — FINAL (wins all) ========== */
 body{
   background-image:
-    radial-gradient(ellipse 90% 55% at 5% 0%, rgba(255,106,154,.22), transparent 55%),
-    radial-gradient(ellipse 75% 50% at 100% 8%, rgba(77,184,240,.32), transparent 52%),
-    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(255,240,102,.26), transparent 55%),
-    linear-gradient(180deg, #fff6b0 0%, #c8eaff 42%, #a8dcff 100%) !important;
+    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
+    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
+    linear-gradient(180deg, #ffe08a 0%, #b8daf0 36%, #88c4e8 72%, #68aed8 100%) !important;
 }
 body::before{
   display:block !important;
   content:"";
   position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(circle 320px at 15% 40%, rgba(255,240,102,.18), transparent 70%),
-    radial-gradient(circle 360px at 85% 55%, rgba(255,106,154,.14), transparent 70%),
-    radial-gradient(circle 280px at 50% 85%, rgba(77,184,240,.16), transparent 70%);
+    radial-gradient(circle 280px at 12% 42%, rgba(255,230,0,.2), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(0,144,224,.22), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(255,45,106,.16), transparent 70%);
 }
 /* sticky mobile Book Now only — do NOT tint .btn-primary / nav (dayclub coral) */
 .sticky-book{

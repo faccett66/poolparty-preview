@@ -185,21 +185,30 @@ a.btn-ghost,
   box-shadow: none !important;
 }
 
-/* ——— Default shell shift toward dayclub navy ——— */
+/* ——— Soft Miami Electric shell (must not force near-black over miami-home wash) ——— */
 body {
-  background: var(--pp-bg) !important;
+  background: transparent !important;
   background-image:
-    radial-gradient(ellipse 80% 45% at 0% 0%, rgba(0, 229, 232, 0.12), transparent 55%),
-    radial-gradient(ellipse 70% 40% at 100% 5%, rgba(255, 56, 100, 0.1), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(232, 200, 114, 0.06), transparent 55%),
-    linear-gradient(180deg, var(--pp-bg) 0%, var(--pp-bg-2) 55%, var(--pp-bg) 100%) !important;
+    radial-gradient(ellipse 85% 50% at 0% 8%, rgba(255,45,106,.28), transparent 58%),
+    radial-gradient(ellipse 70% 48% at 100% 5%, rgba(0,144,224,.42), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 70% 35%, rgba(0,232,240,.14), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 20% 70%, rgba(255,230,0,.30), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 95% 85%, rgba(255,77,26,.18), transparent 55%),
+    linear-gradient(180deg, #ffe08a 0%, #b8daf0 36%, #88c4e8 72%, #68aed8 100%) !important;
+  background-attachment: fixed !important;
   color: var(--pp-text) !important;
 }
 body::before {
+  display: block !important;
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(0, 229, 232, 0.06), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(255, 56, 100, 0.05), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(232, 200, 114, 0.04), transparent 70%) !important;
+    radial-gradient(circle 280px at 12% 42%, rgba(255,230,0,.2), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(0,144,224,.22), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(255,45,106,.16), transparent 70%) !important;
 }
 
 /* Proto banner + nav → dark dayclub chrome */
