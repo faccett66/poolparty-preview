@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-17T19:32:28Z",
+  "generated": "2026-09-18T13:48:23Z",
   "source": "poolparty.com",
-  "note": "Static feature-mirror refreshed 2026-09-16 from public wp-json product + HTML Booketing links; city-tag corrected and semantic-deduped. Upcoming-first. Book Now is a live handoff (Booketing or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing. | Spiagge.it (One Fire Beach widget): live events index 2026-09-17 had 13 Book Now popups → https://widget.spiagge.it/stabilimenti-balneari/prenotazione/it-sa-84010-one-fire-beach/. Preview curated set updated where slug overlapped: one-fire-beach-the-amalfi-escape-236, one-fire-beach-the-amalfi-escape-240. Other live Spiagge slugs (13 on index, 229–241) not invented into this 98-event feed.",
+  "note": "Static feature-mirror refreshed 2026-09-18 from public wp-json product + HTML Booketing links; city-tag corrected and semantic-deduped. Upcoming-first. Book Now is a live handoff (Booketing, Spiagge.it, or SquadUp/on-site). No invented prices. Not a replacement for SquadUp/Booketing. | Spiagge.it (One Fire Beach widget): live events index 2026-09-17 had 13 Book Now popups → https://widget.spiagge.it/stabilimenti-balneari/prenotazione/it-sa-84010-one-fire-beach/. Preview curated set updated where slug overlapped: one-fire-beach-the-amalfi-escape-236, one-fire-beach-the-amalfi-escape-241. Other live Spiagge slugs (13 on index, 229–241) not invented into this 99-event feed.",
   "events": [
     {
       "id": "ev-001",
@@ -2325,6 +2325,35 @@
     },
     {
       "id": "ev-081",
+      "slug": "dj-five-labor-day-weekend-at-palm-tree-beach-club",
+      "title": "DJ Five Labor Day Weekend at Palm Tree Beach Club",
+      "city": "las-vegas",
+      "venue": "Palm Tree Beach Club",
+      "vibe": "beach",
+      "date": "2026-09-04",
+      "booketing": "https://booketing.com/microsite/ppl/event/61/1117/dj-five-good-life-fridays-labor-day-weekend?eventcode=EVE111700020260904",
+      "live_url": "https://poolparty.com/event/dj-five-labor-day-weekend-at-palm-tree-beach-club/",
+      "image": "https://poolparty.com/wp-content/uploads/2026/08/401037129062.jpeg",
+      "source": "live",
+      "demo": false,
+      "book_url": "https://booketing.com/microsite/ppl/event/61/1117/dj-five-good-life-fridays-labor-day-weekend?eventcode=EVE111700020260904",
+      "book_provider": "booketing",
+      "book_label": "Book Now — Booketing",
+      "ticket_tiers": [
+        {
+          "id": "ga",
+          "label": "General Admission (DEMO layout)",
+          "demo": true
+        },
+        {
+          "id": "cabana",
+          "label": "Cabana / VIP interest (DEMO layout)",
+          "demo": true
+        }
+      ]
+    },
+    {
+      "id": "ev-082",
       "slug": "dj-que-labor-day-weekend-at-liquid-pool",
       "title": "DJ Que – Labor Day Weekend at Liquid Pool",
       "city": "las-vegas",
@@ -2353,7 +2382,7 @@
       ]
     },
     {
-      "id": "ev-082",
+      "id": "ev-083",
       "slug": "kid-conrad-labor-day-weekend-at-liquid-pool",
       "title": "Kid Conrad – Labor Day Weekend at Liquid Pool",
       "city": "las-vegas",
@@ -2382,7 +2411,7 @@
       ]
     },
     {
-      "id": "ev-083",
+      "id": "ev-084",
       "slug": "martin-garrix-w-justin-mylo-labor-day-weekend-at-palm-tree-beach-club",
       "title": "Martin Garrix w/ Justin Mylo – Labor Day Weekend at Palm Tree Beach Club",
       "city": "las-vegas",
@@ -2411,7 +2440,7 @@
       ]
     },
     {
-      "id": "ev-084",
+      "id": "ev-085",
       "slug": "blondish-labor-day-weekend-at-palm-tree-beach-club",
       "title": "BLOND:ISH – Labor Day Weekend at Palm Tree Beach Club",
       "city": "las-vegas",
@@ -2440,7 +2469,7 @@
       ]
     },
     {
-      "id": "ev-085",
+      "id": "ev-086",
       "slug": "eric-remy-labor-day-weekend-at-liquid-pool",
       "title": "Eric Remy – Labor Day Weekend at Liquid Pool",
       "city": "las-vegas",
@@ -2469,7 +2498,7 @@
       ]
     },
     {
-      "id": "ev-086",
+      "id": "ev-087",
       "slug": "baja-beach-fest-at-palm-tree-beach-club",
       "title": "Baja Beach Fest at Palm Tree Beach Club",
       "city": "las-vegas",
@@ -2498,7 +2527,7 @@
       ]
     },
     {
-      "id": "ev-087",
+      "id": "ev-088",
       "slug": "mikey-francis-mexican-independence-weekend",
       "title": "Mikey Francis – Mexican Independence Weekend",
       "city": "las-vegas",
@@ -2527,7 +2556,7 @@
       ]
     },
     {
-      "id": "ev-088",
+      "id": "ev-089",
       "slug": "dj-sourmilk-mexican-independence-weekend",
       "title": "DJ Sourmilk – Mexican Independence Weekend",
       "city": "las-vegas",
@@ -2556,7 +2585,7 @@
       ]
     },
     {
-      "id": "ev-089",
+      "id": "ev-090",
       "slug": "lavern-mexican-independence-weekend-at-tao-beach",
       "title": "Lavern – Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
@@ -2585,7 +2614,7 @@
       ]
     },
     {
-      "id": "ev-090",
+      "id": "ev-091",
       "slug": "roz-baja-beach-fest-at-omnia-dayclub",
       "title": "RØZ – Baja Beach Fest at OMNIA Dayclub",
       "city": "las-vegas",
@@ -2614,7 +2643,7 @@
       ]
     },
     {
-      "id": "ev-091",
+      "id": "ev-092",
       "slug": "kygo-mexican-independence-weekend",
       "title": "Kygo – Mexican Independence Weekend",
       "city": "las-vegas",
@@ -2643,7 +2672,7 @@
       ]
     },
     {
-      "id": "ev-092",
+      "id": "ev-093",
       "slug": "martin-garrix-w-justin-mylo-mexican-independence-weekend",
       "title": "Martin Garrix w/ Justin Mylo – Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
@@ -2672,7 +2701,7 @@
       ]
     },
     {
-      "id": "ev-093",
+      "id": "ev-094",
       "slug": "tiesto-mexican-independence-day-weekend-at-omnia-dayclub",
       "title": "Tiësto – Mexican Independence Day Weekend at OMNIA Dayclub",
       "city": "las-vegas",
@@ -2701,7 +2730,7 @@
       ]
     },
     {
-      "id": "ev-094",
+      "id": "ev-095",
       "slug": "justin-credible-mexican-independence-weekend-at-tao-beach",
       "title": "Justin Credible – Mexican Independence Weekend at TAO Beach",
       "city": "las-vegas",
@@ -2730,7 +2759,7 @@
       ]
     },
     {
-      "id": "ev-095",
+      "id": "ev-096",
       "slug": "sala-de-despecho-at-omnia-dayclub-september-13",
       "title": "Sala de Despecho at OMNIA Dayclub – September 13",
       "city": "las-vegas",
@@ -2759,7 +2788,7 @@
       ]
     },
     {
-      "id": "ev-096",
+      "id": "ev-097",
       "slug": "one-fire-beach-the-amalfi-escape-236",
       "title": "One Fire Beach: The Amalfi Escape.",
       "city": "amalfi-coast",
@@ -2788,7 +2817,7 @@
       ]
     },
     {
-      "id": "ev-097",
+      "id": "ev-098",
       "slug": "all-seasons-stay-lucknow",
       "title": "All Seasons Stay Lucknow – Rooftop Pool, Hotel & Dining Experience",
       "city": "india",
@@ -2817,15 +2846,15 @@
       ]
     },
     {
-      "id": "ev-098",
-      "slug": "one-fire-beach-the-amalfi-escape-240",
+      "id": "ev-099",
+      "slug": "one-fire-beach-the-amalfi-escape-241",
       "title": "One Fire Beach: The Amalfi Escape.",
       "city": "amalfi-coast",
       "venue": "One Fire Beach",
       "vibe": "beach",
       "date": "2026-09-15",
       "booketing": null,
-      "live_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-240/",
+      "live_url": "https://poolparty.com/event/one-fire-beach-the-amalfi-escape-241/",
       "image": "https://poolparty.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-23-2025-10_22_06-PM-768x768.webp",
       "source": "live",
       "demo": false,
