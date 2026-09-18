@@ -227,10 +227,12 @@ body::before {
   -webkit-backdrop-filter: blur(12px) !important;
 }
 .nav-links a {
-  color: var(--pp-text-dim) !important;
-  font-weight: 600 !important;
+  color: #F4F7FA !important;
+  -webkit-text-fill-color: #F4F7FA !important;
+  font-weight: 650 !important;
   -webkit-text-stroke: 0 !important;
-  text-shadow: none !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
+  opacity: 1 !important;
 }
 .nav-links a:hover,
 .nav-links a.active {
