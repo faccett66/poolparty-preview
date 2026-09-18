@@ -218,12 +218,13 @@ body::before {
 
 .nav,
 .nav.scrolled {
-  /* Slightly lifted logo row — still dayclub, readable for white logo */
-  background: rgba(22, 36, 58, 0.78) !important;
-  background-image: linear-gradient(180deg, rgba(0, 229, 232, 0.06), transparent 70%) !important;
-  border-bottom: 1px solid rgba(0, 229, 232, 0.18) !important;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22) !important;
-  backdrop-filter: blur(18px) saturate(1.08) !important;
+  /* Soft frosted glass — same craft as hero .hero-panel under the photo */
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  background-image: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  border-bottom: 1px solid rgba(0, 229, 232, 0.28) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 .nav-links a {
   color: var(--pp-text-dim) !important;
