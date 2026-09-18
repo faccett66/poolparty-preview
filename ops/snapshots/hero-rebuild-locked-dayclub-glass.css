@@ -94,8 +94,8 @@
 }
 .hero[data-hero-rebuild] h1 em{
   font-style:italic !important;
-  color:#FF3864 !important;
-  -webkit-text-fill-color:#FF3864 !important;
+  color:#D41E52 !important;
+  -webkit-text-fill-color:#D41E52 !important;
   text-shadow:0 4px 22px rgba(0,0,0,.65) !important;
 }
 
@@ -153,13 +153,13 @@
 /* THE glass Book Now chip — IDENTICAL coral to nav .nav-cta */
 .hero[data-hero-rebuild] .hero-chip-book,
 .hero[data-hero-rebuild] a.hero-chip-book{
-  background:#FF3864 !important;
-  background-color:#FF3864 !important;
+  background:#D41E52 !important;
+  background-color:#D41E52 !important;
   background-image:none !important;
   border:none !important;
   color:#FFFFFF !important;
   -webkit-text-fill-color:#FFFFFF !important;
-  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  box-shadow:0 8px 22px rgba(212,30,82,.35) !important;
   backdrop-filter:none !important;
   -webkit-backdrop-filter:none !important;
   opacity:1 !important;
@@ -209,11 +209,11 @@
 
 /* Primary Book Now button — same coral as nav */
 .hero[data-hero-rebuild] .hero-cta-book{
-  background:#FF3864 !important;
+  background:#D41E52 !important;
   background-image:none !important;
   color:#FFFFFF !important;
   border:none !important;
-  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  box-shadow:0 8px 22px rgba(212,30,82,.35) !important;
 }
 .hero[data-hero-rebuild] .hero-cta-book:hover{
   filter:brightness(1.06) !important;
@@ -263,8 +263,8 @@ html body .hero[data-hero-rebuild] .hero-chip-book,
 html body .hero[data-hero-rebuild] a.hero-chip-book,
 html body .hero[data-hero-rebuild] .hero-cta-book,
 html body .nav .nav-cta{
-  background:#FF3864 !important;
-  background-color:#FF3864 !important;
+  background:#D41E52 !important;
+  background-color:#D41E52 !important;
   background-image:none !important;
   color:#FFFFFF !important;
   -webkit-text-fill-color:#FFFFFF !important;
@@ -308,7 +308,7 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
   padding:0 !important;
   text-align:left !important;
   align-self:flex-start !important;
-  color:#FF3864 !important;
+  color:#D41E52 !important;
   transform:none !important;
 }
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
@@ -316,8 +316,8 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
   margin:0 !important;
   padding:0 !important;
   font-style:italic !important;
-  color:#FF3864 !important;
-  -webkit-text-fill-color:#FF3864 !important;
+  color:#D41E52 !important;
+  -webkit-text-fill-color:#D41E52 !important;
 }
 
 /* Home nav: yellow letters + black outline + yellow underline */

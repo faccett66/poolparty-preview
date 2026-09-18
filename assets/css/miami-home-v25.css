@@ -16,9 +16,9 @@
   --gold-hot: var(--pp-gold, #E8C872);
   --champagne: var(--pp-gold, #E8C872);
   --champagne-deep: var(--pp-gold-deep, #C9A24A);
-  --sunset: var(--pp-coral, #FF3864);
+  --sunset: var(--pp-coral, #D41E52);
   --sunset-hot: var(--pp-coral-hover, #FF5A7C);
-  --coral: var(--pp-coral, #FF3864);
+  --coral: var(--pp-coral, #D41E52);
   --lemon: var(--pp-gold, #E8C872);
   --pool: var(--pp-cyan, #00E5E8);
   --mist: var(--pp-text-dim, #B7C2D0);
@@ -174,7 +174,7 @@ body::before{
 }
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{
-  background:var(--pp-coral,#FF3864);
+  background:var(--pp-coral,#D41E52);
   color:#0a1628;border:none;box-shadow:0 10px 28px rgba(255,45,106,.35);
 }
 .btn-primary:hover{box-shadow:0 14px 34px rgba(255,107,61,.4)}
@@ -682,7 +682,7 @@ body::before{
 }
 /* sticky mobile Book Now only — do NOT tint .btn-primary / nav (dayclub coral) */
 .sticky-book{
-  background:var(--pp-coral,#FF3864) !important;
+  background:var(--pp-coral,#D41E52) !important;
   background-image:none !important;
   color:#fff !important;
   border:none !important;
@@ -698,7 +698,7 @@ body::before{
   color:#ff6a9a !important;
 }
 .hero .eyebrow{color:var(--pp-cyan,#00E5E8) !important;text-shadow:0 2px 14px rgba(0,0,0,.7) !important}
-.hero .eyebrow::before{background:linear-gradient(90deg,var(--pp-coral,#FF3864),var(--pp-cyan,#00E5E8)) !important}
+.hero .eyebrow::before{background:linear-gradient(90deg,var(--pp-coral,#D41E52),var(--pp-cyan,#00E5E8)) !important}
 .hero h1{
   color:var(--pp-text,#F4F7FA) !important;
   -webkit-text-fill-color:var(--pp-text,#F4F7FA) !important;
@@ -707,8 +707,8 @@ body::before{
   text-shadow:0 4px 28px rgba(0,0,0,.75), 0 2px 8px rgba(0,0,0,.55) !important;
 }
 .hero h1 em,.hero h1 em *{
-  color:var(--pp-coral,#FF3864) !important;
-  -webkit-text-fill-color:var(--pp-coral,#FF3864) !important;
+  color:var(--pp-coral,#D41E52) !important;
+  -webkit-text-fill-color:var(--pp-coral,#D41E52) !important;
   background:none !important;
   -webkit-background-clip:border-box !important;
   -webkit-text-stroke:0 !important;
@@ -730,7 +730,7 @@ body::before{
 .hero-glass .hero-pill-book,
 .hero-glass .hero-pill:nth-child(2){
   /* Same solid coral as nav Book Now — not yellow-pink wash */
-  background:var(--pp-coral,#FF3864) !important;
+  background:var(--pp-coral,#D41E52) !important;
   background-image:none !important;
   border:none !important;
   color:#fff !important;
@@ -826,7 +826,7 @@ body::before{
   color:#fff !important;
 }
 .nav-cta{
-  background:var(--pp-coral,#FF3864) !important;
+  background:var(--pp-coral,#D41E52) !important;
   background-image:none !important;
   color:#fff !important;
   border:none !important;
@@ -873,8 +873,8 @@ body::before{
 .nav .nav-links a.nav-home.active,
 .nav .nav-links a[href="index.html"]:hover,
 .nav .nav-links a[href="index.html"].active{
-  color:var(--pp-coral,#FF3864) !important;
-  -webkit-text-fill-color:var(--pp-coral,#FF3864) !important;
+  color:var(--pp-coral,#D41E52) !important;
+  -webkit-text-fill-color:var(--pp-coral,#D41E52) !important;
   -webkit-text-stroke:0 !important;
 }
 
@@ -1077,8 +1077,8 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
   mix-blend-mode:normal !important;
   opacity:1 !important;
   color:#fff !important;
-  background:var(--pp-coral,#FF3864) !important;
-  background-color:var(--pp-coral,#FF3864) !important;
+  background:var(--pp-coral,#D41E52) !important;
+  background-color:var(--pp-coral,#D41E52) !important;
   background-image:none !important;
   border:none !important;
   box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
@@ -1089,8 +1089,8 @@ a.chip-link:hover,button.chip-link:hover{border-color:var(--pp-cyan,#00E5E8);bac
   filter:none !important;
 }
 .hero-actions .btn-primary:hover{
-  background:var(--pp-coral,#FF3864) !important;
-  background-color:var(--pp-coral,#FF3864) !important;
+  background:var(--pp-coral,#D41E52) !important;
+  background-color:var(--pp-coral,#D41E52) !important;
   background-image:none !important;
   filter:brightness(1.06) !important;
   border:none !important;
