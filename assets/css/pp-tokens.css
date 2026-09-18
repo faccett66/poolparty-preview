@@ -349,12 +349,34 @@ body::before {
   color: var(--pp-text) !important;
 }
 .footer {
-  background: var(--pp-bg) !important;
-  border-top: 1px solid var(--pp-line) !important;
-  color: var(--pp-text-dim) !important;
+  /* Soft frosted glass — same craft as hero panel / logo nav */
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.22) !important;
+}
+.footer h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+.footer a {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
 }
 .footer a:hover {
   color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.footer-bottom,
+.footer-bottom span {
+  color: rgba(244, 247, 250, 0.78) !important;
+}
+.footer p {
+  color: rgba(244, 247, 250, 0.82) !important;
 }
 .empty-state {
   color: var(--pp-text-dim) !important;
@@ -1145,4 +1167,22 @@ a, a:link, a:visited {
 .filters select option {
   background: var(--pp-bg-2);
   color: var(--pp-text);
+}
+
+
+/* ========== FOOTER GLASS LOCK ========== */
+html body .footer {
+  background: linear-gradient(165deg, rgba(14, 26, 43, 0.55), rgba(7, 11, 20, 0.42)) !important;
+  border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+html body .footer a,
+html body .footer h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+html body .footer a:hover {
+  color: var(--pp-cyan, #00E5E8) !important;
+  -webkit-text-fill-color: var(--pp-cyan, #00E5E8) !important;
 }
