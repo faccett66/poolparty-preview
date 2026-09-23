@@ -2,52 +2,57 @@
    Tokens drive live colors. Load AFTER miami-home so CTA/page overlays win. */
 
 :root {
-  /* Core — PoolParties dayclub system */
-  --pp-bg: #070B14;
-  --pp-bg-2: #0E1A2B;
-  --pp-bg-3: #152238;
-  --pp-line: #24344A;
-  --pp-text: #F4F7FA;
-  --pp-text-dim: #B7C2D0;
-  --pp-text-mute: #7E8BA0;
-  --pp-cyan: #00E5E8;
-  --pp-cyan-deep: #00B7C2;
-  --pp-coral: #D41E52;
-  --pp-coral-hover: #E8325E;
-  --pp-gold: #E8C872;
-  --pp-gold-deep: #C9A24A;
+  /* Core — PREVIEW palette trial (navy / aqua / coral / sand / gold) */
+  --pp-bg: #0A1628;
+  --pp-bg-2: #0F283E;
+  --pp-bg-3: #16324A;
+  --pp-line: #2A4560;
+  --pp-text: #FFFFFF;
+  --pp-text-dim: #D6E0EA;
+  --pp-text-mute: #8FA0B3;
+  --pp-cyan: #00B4D8;
+  --pp-cyan-deep: #48CAE4;
+  --pp-coral: #FF6B6B;
+  --pp-coral-hover: #E35F90;
+  --pp-gold: #D4AF37;
+  --pp-gold-deep: #C9A227;
+  /* Warm sand main canvas (content sits on sand; navy = chrome) */
+  --pp-sand: #F8F4F0;
+  --pp-sand-2: #F5F5F4;
+  --pp-page-bg: var(--pp-sand);
+  --pp-text-on-sand: #0A1628;
 
   /* Semantic token map */
   --pp-bg-default: var(--pp-bg);
-  --pp-bg-card: var(--pp-bg-2);
-  --pp-bg-checkout: #F4F7FA;
+  --pp-bg-card: #FFFFFF;
+  --pp-bg-checkout: #F8F4F0;
   --pp-text-default: var(--pp-text);
   --pp-text-secondary: var(--pp-text-dim);
-  --pp-text-on-light: #102A2E;
-  --pp-action-primary: var(--pp-coral);
-  --pp-action-secondary: var(--pp-cyan);
+  --pp-text-on-light: #0A1628;
+  --pp-action-primary: var(--pp-cyan);
+  --pp-action-secondary: var(--pp-cyan-deep);
   --pp-action-vip: var(--pp-gold);
-  --pp-accent-miami: #00CEC8;
-  --pp-accent-miami-cta: #FF7A59;
+  --pp-accent-miami: #00B4D8;
+  --pp-accent-miami-cta: #FF6B6B;
   --pp-accent-la: #FF2D95;
   --pp-accent-yacht: #D4AF37;
 
   /* Checkout / legal / account table */
-  --pp-checkout-bg: #F4F7FA;
-  --pp-checkout-header: #070B14;
-  --pp-checkout-header-accent: #00E5E8;
+  --pp-checkout-bg: #F8F4F0;
+  --pp-checkout-header: #0A1628;
+  --pp-checkout-header-accent: #00B4D8;
   --pp-checkout-panel: #FFFFFF;
   --pp-checkout-border: #D5DEE8;
   --pp-checkout-label: #5B6B7C;
-  --pp-checkout-body: #102A2E;
+  --pp-checkout-body: #0A1628;
   --pp-checkout-price: #0E7C7B;
-  --pp-checkout-pay: #D41E52;
-  --pp-checkout-pay-hover: #FF5A7C;
+  --pp-checkout-pay: #FF6B6B;
+  --pp-checkout-pay-hover: #E35F90;
   --pp-checkout-secure: #2EE59D;
   --pp-checkout-error: #FF4D4D;
-  --pp-checkout-timer: #C9A24A;
+  --pp-checkout-timer: #C9A227;
 
-  /* Bridge — remap Miami Electric shell vars onto dayclub tokens */
+  /* Bridge — remap Miami Electric shell vars onto preview tokens */
   --ink: var(--pp-text);
   --ink-soft: var(--pp-text-dim);
   --deep: var(--pp-bg);
@@ -58,8 +63,8 @@
   --navy-2: var(--pp-cyan);
   --teal: var(--pp-cyan-deep);
   --aqua: var(--pp-cyan);
-  --aqua-hot: var(--pp-cyan);
-  --aqua-dim: rgba(0, 229, 232, 0.14);
+  --aqua-hot: var(--pp-cyan-deep);
+  --aqua-dim: rgba(0, 180, 216, 0.14);
   --gold: var(--pp-gold);
   --gold-hot: var(--pp-gold);
   --champagne: var(--pp-gold);
@@ -71,23 +76,23 @@
   --pool: var(--pp-cyan);
   --mist: var(--pp-text-dim);
   --muted: var(--pp-text-mute);
-  --glass: rgba(14, 26, 43, 0.88);
-  --glass-strong: rgba(21, 34, 56, 0.96);
-  --glass-border: rgba(0, 229, 232, 0.22);
+  --glass: rgba(15, 40, 62, 0.88);
+  --glass-strong: rgba(22, 50, 74, 0.96);
+  --glass-border: rgba(0, 180, 216, 0.22);
   --line: var(--pp-line);
-  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 36px rgba(212, 30, 82, 0.18);
+  --shadow: 0 16px 36px rgba(10, 22, 40, 0.18);
+  --shadow-glow: 0 0 36px rgba(255, 107, 107, 0.18);
 }
 
 /* ——— CTA utilities (one primary per view) ——— */
 .btn-primary,
 a.btn-primary,
 button.btn-primary {
-  background: var(--pp-coral) !important;
+  background: var(--pp-cyan) !important;
   background-image: none !important;
   color: #FFFFFF !important;
-  border: none !important;
-  box-shadow: 0 10px 28px rgba(212, 30, 82, 0.32) !important;
+  border: 1.5px solid var(--pp-gold) !important;
+  box-shadow: 0 10px 28px rgba(0, 180, 216, 0.28) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
   font-weight: 800 !important;
@@ -95,10 +100,11 @@ button.btn-primary {
 .btn-primary:hover,
 a.btn-primary:hover,
 button.btn-primary:hover {
-  background: var(--pp-coral-hover) !important;
+  background: var(--pp-coral) !important;
   background-image: none !important;
+  border-color: var(--pp-gold) !important;
   filter: none;
-  box-shadow: 0 14px 34px rgba(212, 30, 82, 0.4) !important;
+  box-shadow: 0 14px 34px rgba(255, 107, 107, 0.35) !important;
 }
 
 .btn-vip,
@@ -108,7 +114,7 @@ button.btn-vip {
   background-image: none !important;
   color: #1A1406 !important;
   border: none !important;
-  box-shadow: 0 10px 24px rgba(232, 200, 114, 0.28) !important;
+  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.28) !important;
   font-weight: 800 !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
@@ -130,7 +136,7 @@ button.btn-secondary {
   text-shadow: none !important;
 }
 .btn-secondary:hover {
-  background: rgba(0, 229, 232, 0.1) !important;
+  background: rgba(0, 180, 216, 0.1) !important;
   color: var(--pp-cyan) !important;
   border-color: var(--pp-cyan) !important;
 }
@@ -139,19 +145,20 @@ button.btn-secondary {
 .nav-cta,
 .sticky-book,
 .hero-actions .btn-primary {
-  background: var(--pp-coral) !important;
+  background: var(--pp-cyan) !important;
   background-image: none !important;
   color: #FFFFFF !important;
-  border: none !important;
-  box-shadow: 0 8px 22px rgba(212, 30, 82, 0.35) !important;
+  border: 1.5px solid var(--pp-gold) !important;
+  box-shadow: 0 8px 22px rgba(0, 180, 216, 0.32) !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
 .nav-cta:hover,
 .sticky-book:hover,
 .hero-actions .btn-primary:hover {
-  background: var(--pp-coral-hover) !important;
+  background: var(--pp-coral) !important;
   background-image: none !important;
+  border-color: var(--pp-gold) !important;
   color: #FFFFFF !important;
   filter: none;
 }
@@ -171,10 +178,10 @@ a.btn-ghost,
 .btn-ghost:hover,
 .hero .btn-ghost:hover,
 .hero-cta-secondary:hover {
-  background: rgba(0, 229, 232, 0.1) !important;
+  background: rgba(0, 180, 216, 0.1) !important;
   border-color: var(--pp-cyan) !important;
   color: var(--pp-cyan) !important;
-  box-shadow: 0 8px 24px rgba(0, 229, 232, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(0, 180, 216, 0.12) !important;
 }
 
 .btn-aqua {
@@ -187,19 +194,20 @@ a.btn-ghost,
 
 /* ——— Default shell shift toward dayclub navy (slightly lifted) ——— */
 body {
-  background: #0A1220 !important;
+  /* Warm sand main canvas — navy reserved for header/footer/hero bands */
+  background: var(--pp-sand) !important;
   background-image:
-    radial-gradient(ellipse 80% 45% at 0% 0%, rgba(0, 229, 232, 0.16), transparent 55%),
-    radial-gradient(ellipse 70% 40% at 100% 5%, rgba(212, 30, 82, 0.12), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(232, 200, 114, 0.08), transparent 55%),
-    linear-gradient(180deg, #0A1220 0%, #121E32 55%, #0C1524 100%) !important;
-  color: var(--pp-text) !important;
+    radial-gradient(ellipse 80% 45% at 0% 0%, rgba(0, 180, 216, 0.10), transparent 55%),
+    radial-gradient(ellipse 70% 40% at 100% 5%, rgba(255, 107, 107, 0.08), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(212, 175, 55, 0.06), transparent 55%),
+    linear-gradient(180deg, #F8F4F0 0%, #F5F5F4 55%, #F8F4F0 100%) !important;
+  color: var(--pp-text-on-sand) !important;
 }
 body::before {
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(0, 229, 232, 0.09), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(212, 30, 82, 0.07), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(232, 200, 114, 0.06), transparent 70%) !important;
+    radial-gradient(circle 280px at 12% 42%, rgba(0, 180, 216, 0.09), transparent 70%),
+    radial-gradient(circle 320px at 88% 58%, rgba(255, 107, 107, 0.07), transparent 70%),
+    radial-gradient(circle 240px at 48% 88%, rgba(212, 175, 55, 0.06), transparent 70%) !important;
 }
 
 /* Proto banner + nav → dark dayclub chrome */
@@ -219,16 +227,16 @@ body::before {
 .nav,
 .nav.scrolled {
   /* Soft frosted glass — same craft as hero .hero-panel under the photo */
-  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
-  background-image: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
-  border-bottom: 1px solid rgba(0, 229, 232, 0.28) !important;
+  background: linear-gradient(165deg, rgba(15, 40, 62, 0.72), rgba(10, 22, 40, 0.62)) !important;
+  background-image: linear-gradient(165deg, rgba(15, 40, 62, 0.72), rgba(10, 22, 40, 0.62)) !important;
+  border-bottom: 1px solid rgba(0, 180, 216, 0.28) !important;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
 }
 .nav-links a {
-  color: #F4F7FA !important;
-  -webkit-text-fill-color: #F4F7FA !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
   font-weight: 650 !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
@@ -243,7 +251,7 @@ body::before {
 .nav-links a.active::after,
 .nav-links a:hover::after {
   background: var(--pp-cyan) !important;
-  box-shadow: 0 0 8px rgba(0, 229, 232, 0.45) !important;
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.45) !important;
 }
 .nav .nav-links a:not([href="index.html"]):not(.nav-home),
 .nav .nav-cta,
@@ -289,11 +297,13 @@ body::before {
 .card-body h3,
 .step h3,
 .trust strong,
-.footer h4,
 .faq-item summary,
 .page-hero h1,
 .lead {
-  color: var(--pp-text) !important;
+  color: var(--pp-text-on-sand) !important;
+}
+.footer h4 {
+  color: #FFFFFF !important;
 }
 .tag,
 .eyebrow {
@@ -313,12 +323,19 @@ body::before {
 .trust,
 .faq-item,
 .demo-callout {
-  background: var(--pp-bg-2) !important;
-  border-color: var(--pp-line) !important;
-  color: var(--pp-text) !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 180, 216, 0.35) !important;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.18), 0 10px 28px rgba(10, 22, 40, 0.08) !important;
+  color: var(--pp-text-on-sand) !important;
 }
 .card:hover {
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(10, 22, 40, 0.14), 0 0 0 1px rgba(0, 180, 216, 0.45), 0 0 24px rgba(0, 180, 216, 0.12) !important;
+}
+/* Optional soft glow on night/dark cards (kept for dark bands) */
+.card.night,
+.card[data-night],
+.city-tile {
+  box-shadow: 0 12px 32px rgba(10, 22, 40, 0.35), 0 0 28px rgba(0, 180, 216, 0.14) !important;
 }
 #cities,
 .vibes {
@@ -333,7 +350,7 @@ body::before {
 .chip.active {
   border-color: var(--pp-cyan) !important;
   color: var(--pp-cyan) !important;
-  background: rgba(0, 229, 232, 0.1) !important;
+  background: rgba(0, 180, 216, 0.1) !important;
 }
 .field label {
   color: var(--pp-text-mute) !important;
@@ -350,8 +367,8 @@ body::before {
 }
 .footer {
   /* Soft frosted glass — same craft as hero panel / logo nav */
-  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
-  border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
+  background: linear-gradient(165deg, rgba(15, 40, 62, 0.72), rgba(10, 22, 40, 0.62)) !important;
+  border-top: 1px solid rgba(0, 180, 216, 0.28) !important;
   color: #FFFFFF !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
@@ -410,7 +427,7 @@ body::before {
   font-weight: 500 !important;
 }
 .hero-pill {
-  background: rgba(14, 26, 43, 0.72) !important;
+  background: rgba(15, 40, 62, 0.72) !important;
   border: 1px solid var(--pp-line) !important;
   color: var(--pp-text) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
@@ -454,11 +471,11 @@ body::before {
   color: #fff !important;
 }
 .page-la .btn-vip {
-  background: #E8C872 !important;
+  background: #D4AF37 !important;
   color: #1A1406 !important;
 }
 .page-la .price {
-  color: #00E5E8 !important;
+  color: #00B4D8 !important;
 }
 .page-la .nav-links a:hover,
 .page-la .nav-links a.active {
@@ -480,7 +497,7 @@ body::before {
 .page-yacht .btn-primary,
 .page-yacht .nav-cta,
 .page-yacht .sticky-book {
-  background: #D41E52 !important;
+  background: #FF6B6B !important;
   background-image: none !important;
   color: #fff !important;
 }
@@ -508,7 +525,7 @@ body::before {
 .page-checkout .header,
 .page-checkout .nav,
 .page-checkout .nav.scrolled {
-  background: #070B14 !important;
+  background: #0A1628 !important;
   background-image: none !important;
   color: #F4F7FA !important;
   border-bottom: 1px solid var(--pp-line) !important;
@@ -518,14 +535,14 @@ body::before {
 .page-checkout .nav-links a.active,
 .page-checkout .nav .nav-links a.nav-home,
 .page-checkout .proto-banner a {
-  color: #00E5E8 !important;
-  -webkit-text-fill-color: #00E5E8 !important;
+  color: #00B4D8 !important;
+  -webkit-text-fill-color: #00B4D8 !important;
 }
 .page-checkout .nav-links a {
   color: #F4F7FA !important;
 }
 .page-checkout .proto-banner {
-  background: #070B14 !important;
+  background: #0A1628 !important;
   color: #B7C2D0 !important;
 }
 .page-checkout .panel,
@@ -559,7 +576,7 @@ body::before {
 .page-checkout .btn-primary,
 .page-checkout .nav-cta,
 .page-checkout .sticky-book {
-  background: #D41E52 !important;
+  background: #FF6B6B !important;
   background-image: none !important;
   color: #FFFFFF !important;
   -webkit-text-stroke: 0 !important;
@@ -580,9 +597,9 @@ body::before {
 }
 .page-checkout .btn-back:hover,
 .page-checkout .btn-ghost:hover {
-  border-color: #00E5E8 !important;
+  border-color: #00B4D8 !important;
   color: #102A2E !important;
-  background: rgba(0, 229, 232, 0.06) !important;
+  background: rgba(0, 180, 216, 0.06) !important;
 }
 .page-checkout .secure {
   color: #2EE59D !important;
@@ -591,11 +608,11 @@ body::before {
   color: #FF4D4D !important;
 }
 .page-checkout .timer {
-  color: #C9A24A !important;
+  color: #C9A227 !important;
 }
 .page-checkout .eyebrow,
 .page-checkout .tag {
-  color: #00E5E8 !important;
+  color: #00B4D8 !important;
 }
 .page-checkout .footer {
   background: #F4F7FA !important;
@@ -603,7 +620,7 @@ body::before {
   color: #5B6B7C !important;
 }
 .page-checkout .footer a:hover {
-  color: #00E5E8 !important;
+  color: #00B4D8 !important;
 }
 .page-checkout .field input,
 .page-checkout .field select,
@@ -617,12 +634,12 @@ body::before {
   color: #5B6B7C !important;
 }
 .page-checkout .nav-cart {
-  background: #152238 !important;
+  background: #16324A !important;
   border-color: #24344A !important;
   color: #F4F7FA !important;
 }
 .page-checkout .nav-drawer {
-  background: #070B14 !important;
+  background: #0A1628 !important;
 }
 .page-checkout .nav-drawer a {
   color: #F4F7FA !important;
@@ -631,19 +648,19 @@ body::before {
 
 /* Music dock readable on dark navy (overrides in music-layer also use tokens) */
 .pp-music-dock__inner {
-  background: rgba(7, 11, 20, 0.94) !important;
+  background: rgba(10, 22, 40, 0.94) !important;
   border: 1.5px solid var(--pp-line) !important;
   box-shadow:
-    0 0 0 1px rgba(0, 229, 232, 0.28),
+    0 0 0 1px rgba(0, 180, 216, 0.28),
     0 12px 32px rgba(0, 0, 0, 0.45),
-    0 0 24px rgba(212, 30, 82, 0.12) !important;
+    0 0 24px rgba(255, 107, 107, 0.12) !important;
   color: var(--pp-text) !important;
 }
 .pp-music-dock.is-playing .pp-music-dock__inner {
   box-shadow:
-    0 0 0 1px rgba(0, 229, 232, 0.45),
+    0 0 0 1px rgba(0, 180, 216, 0.45),
     0 12px 32px rgba(0, 0, 0, 0.5),
-    0 0 28px rgba(212, 30, 82, 0.22) !important;
+    0 0 28px rgba(255, 107, 107, 0.22) !important;
 }
 
 
@@ -676,9 +693,10 @@ body::before {
 
 /* ——— Homepage hero: lighter navy wash so faces stay readable ——— */
 .hero-overlay {
+  /* Navy-to-aqua hero overlay (preview palette) */
   background:
-    linear-gradient(180deg, rgba(7, 11, 20, 0.48) 0%, rgba(7, 11, 20, 0.12) 38%, rgba(7, 11, 20, 0.28) 62%, rgba(7, 11, 20, 0.72) 100%),
-    linear-gradient(90deg, rgba(7, 11, 20, 0.38) 0%, rgba(7, 11, 20, 0.08) 52%, rgba(7, 11, 20, 0.22) 100%) !important;
+    linear-gradient(180deg, rgba(10, 22, 40, 0.55) 0%, rgba(10, 22, 40, 0.18) 36%, rgba(15, 40, 62, 0.35) 62%, rgba(10, 22, 40, 0.72) 100%),
+    linear-gradient(115deg, rgba(10, 22, 40, 0.45) 0%, rgba(0, 180, 216, 0.18) 48%, rgba(10, 22, 40, 0.28) 100%) !important;
 }
 .hero-bg img {
   object-fit: cover !important;
@@ -691,8 +709,8 @@ body::before {
   padding: 1.25rem 1.35rem 1.35rem !important;
   border-radius: 1.15rem !important;
   /* Slightly lighter so the pool shows through more */
-  background: linear-gradient(165deg, rgba(7, 11, 20, 0.62), rgba(14, 26, 43, 0.48)) !important;
-  border: 1px solid rgba(0, 229, 232, 0.28) !important;
+  background: linear-gradient(165deg, rgba(10, 22, 40, 0.62), rgba(15, 40, 62, 0.48)) !important;
+  border: 1px solid rgba(0, 180, 216, 0.28) !important;
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
@@ -735,8 +753,8 @@ body::before {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55) !important;
 }
 .hero-pill {
-  background: rgba(7, 11, 20, 0.82) !important;
-  border: 1px solid rgba(0, 229, 232, 0.28) !important;
+  background: rgba(10, 22, 40, 0.82) !important;
+  border: 1px solid rgba(0, 180, 216, 0.28) !important;
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
   font-size: 0.78rem !important;
@@ -816,7 +834,7 @@ body::before {
 
 /* ——— Photo cards: city / vibe / event badges ——— */
 .city-tile::after {
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.08) 0%, rgba(7, 11, 20, 0.22) 42%, rgba(7, 11, 20, 0.62) 72%, rgba(7, 11, 20, 0.88) 100%) !important;
+  background: linear-gradient(180deg, rgba(10, 22, 40, 0.08) 0%, rgba(10, 22, 40, 0.22) 42%, rgba(10, 22, 40, 0.62) 72%, rgba(10, 22, 40, 0.88) 100%) !important;
 }
 .city-tile img {
   object-fit: cover !important;
@@ -840,12 +858,12 @@ body::before {
 }
 .city-tile:hover,
 .city-tile.active {
-  border-color: rgba(0, 229, 232, 0.45) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 229, 232, 0.35) !important;
+  border-color: rgba(0, 180, 216, 0.45) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 180, 216, 0.35) !important;
 }
 
 .vibe-card::after {
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.06) 0%, rgba(7, 11, 20, 0.18) 42%, rgba(7, 11, 20, 0.58) 72%, rgba(7, 11, 20, 0.86) 100%) !important;
+  background: linear-gradient(180deg, rgba(10, 22, 40, 0.06) 0%, rgba(10, 22, 40, 0.18) 42%, rgba(10, 22, 40, 0.58) 72%, rgba(10, 22, 40, 0.86) 100%) !important;
 }
 .vibe-card img {
   object-fit: cover !important;
@@ -854,7 +872,7 @@ body::before {
 }
 .vibe-body {
   padding: 1.15rem 1.25rem 1.3rem !important;
-  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.42) 28%, rgba(7, 11, 20, 0.82)) !important;
+  background: linear-gradient(180deg, transparent, rgba(10, 22, 40, 0.42) 28%, rgba(10, 22, 40, 0.82)) !important;
 }
 .vibe-body h3 {
   color: var(--pp-text) !important;
@@ -872,8 +890,8 @@ body::before {
 .vibe-body .tag,
 .card-media .tag,
 .badge-row .tag {
-  background: rgba(7, 11, 20, 0.88) !important;
-  border: 1px solid rgba(0, 229, 232, 0.35) !important;
+  background: rgba(10, 22, 40, 0.88) !important;
+  border: 1px solid rgba(0, 180, 216, 0.35) !important;
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
   font-size: 0.72rem !important;
@@ -882,12 +900,12 @@ body::before {
   backdrop-filter: blur(8px) !important;
 }
 .tag.live {
-  border-color: rgba(0, 229, 232, 0.55) !important;
+  border-color: rgba(0, 180, 216, 0.55) !important;
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
 }
 .tag.demo {
-  border-color: rgba(232, 200, 114, 0.45) !important;
+  border-color: rgba(212, 175, 55, 0.45) !important;
   color: var(--pp-gold) !important;
   -webkit-text-fill-color: var(--pp-gold) !important;
 }
@@ -907,7 +925,7 @@ body::before {
   position: absolute;
   inset: auto 0 0 0;
   height: 28%;
-  background: linear-gradient(180deg, transparent, rgba(7, 11, 20, 0.35));
+  background: linear-gradient(180deg, transparent, rgba(10, 22, 40, 0.35));
   pointer-events: none;
   z-index: 1;
 }
@@ -924,7 +942,7 @@ body::before {
 .handoff-note {
   font-size: 0.82rem !important;
   color: var(--pp-text-mute) !important;
-  background: rgba(21, 34, 56, 0.9) !important;
+  background: rgba(22, 50, 74, 0.9) !important;
   border: 1px solid var(--pp-line) !important;
 }
 
@@ -949,7 +967,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 11, 20, 0.05), rgba(7, 11, 20, 0.28) 70%, rgba(7, 11, 20, 0.55));
+  background: linear-gradient(180deg, rgba(10, 22, 40, 0.05), rgba(10, 22, 40, 0.28) 70%, rgba(10, 22, 40, 0.55));
   pointer-events: none;
 }
 .city-hub-media img {
@@ -960,7 +978,7 @@ body::before {
 
 /* Music band type — cyan eyebrow, light title, dim body (not tiny white) */
 .music-band::before {
-  background: linear-gradient(90deg, rgba(7, 11, 20, 0.94) 0%, rgba(7, 11, 20, 0.78) 48%, rgba(7, 11, 20, 0.5) 100%) !important;
+  background: linear-gradient(90deg, rgba(10, 22, 40, 0.94) 0%, rgba(10, 22, 40, 0.78) 48%, rgba(10, 22, 40, 0.5) 100%) !important;
 }
 .music-inner .eyebrow {
   color: var(--pp-cyan) !important;
@@ -1096,12 +1114,12 @@ a, a:link, a:visited {
 /* Glass panel Book Now pill = nav coral twin */
 .hero-glass .hero-pill-book,
 .hero .hero-glass .hero-pill-book {
-  background: var(--pp-coral, #D41E52) !important;
+  background: var(--pp-coral, #FF6B6B) !important;
   background-image: none !important;
   border: none !important;
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;
-  box-shadow: 0 8px 22px rgba(212, 30, 82, 0.35) !important;
+  box-shadow: 0 8px 22px rgba(255, 107, 107, 0.35) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   opacity: 1 !important;
@@ -1135,7 +1153,7 @@ a, a:link, a:visited {
   box-shadow: none !important;
 }
 .when-bar {
-  background: linear-gradient(105deg, rgba(21, 34, 56, 0.95), rgba(14, 26, 43, 0.98)) !important;
+  background: linear-gradient(105deg, rgba(22, 50, 74, 0.95), rgba(15, 40, 62, 0.98)) !important;
   border-color: var(--pp-line) !important;
 }
 .when-bar label {
@@ -1144,7 +1162,7 @@ a, a:link, a:visited {
 .when-bar input[type="checkbox"] {
   background: transparent !important;
   border: none !important;
-  accent-color: var(--pp-coral, #D41E52) !important;
+  accent-color: var(--pp-coral, #FF6B6B) !important;
   width: 1.05rem !important;
   height: 1.05rem !important;
 }
@@ -1154,12 +1172,12 @@ a, a:link, a:visited {
 .filters input:focus,
 .filters select:focus {
   border-color: var(--pp-cyan) !important;
-  box-shadow: 0 0 0 3px rgba(0, 229, 232, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.18) !important;
   outline: none !important;
 }
 .filters select {
   background-color: var(--pp-bg-3) !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300E5E8'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300B4D8'%3E%3Cpath d='M0 0l6 8 6-8z'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: right 1rem center !important;
   color: var(--pp-text) !important;
@@ -1172,8 +1190,8 @@ a, a:link, a:visited {
 
 /* ========== FOOTER GLASS LOCK ========== */
 html body .footer {
-  background: linear-gradient(165deg, rgba(14, 26, 43, 0.72), rgba(7, 11, 20, 0.62)) !important;
-  border-top: 1px solid rgba(0, 229, 232, 0.28) !important;
+  background: linear-gradient(165deg, rgba(15, 40, 62, 0.72), rgba(10, 22, 40, 0.62)) !important;
+  border-top: 1px solid rgba(0, 180, 216, 0.28) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
 }
@@ -1183,18 +1201,21 @@ html body .footer h4 {
   -webkit-text-fill-color: #FFFFFF !important;
 }
 html body .footer a:hover {
-  color: var(--pp-cyan, #00E5E8) !important;
-  -webkit-text-fill-color: var(--pp-cyan, #00E5E8) !important;
+  color: var(--pp-cyan, #00B4D8) !important;
+  -webkit-text-fill-color: var(--pp-cyan, #00B4D8) !important;
 }
 
 
-/* ========== BOOK NOW DEEP CORAL (Dayclub Glass refine) ========== */
+/* ========== PREVIEW palette CTA lock (aqua + coral hover / gold outline) ========== */
 :root {
-  --pp-coral: #D41E52 !important;
-  --pp-coral-hover: #E8325E !important;
-  --sunset: #D41E52 !important;
-  --sunset-hot: #E8325E !important;
-  --coral: #D41E52 !important;
+  --pp-coral: #FF6B6B !important;
+  --pp-coral-hover: #E35F90 !important;
+  --pp-cyan: #00B4D8 !important;
+  --pp-cyan-deep: #48CAE4 !important;
+  --pp-gold: #D4AF37 !important;
+  --sunset: #FF6B6B !important;
+  --sunset-hot: #E35F90 !important;
+  --coral: #FF6B6B !important;
 }
 html body .nav-cta,
 html body .sticky-book,
@@ -1206,16 +1227,19 @@ html body .hero-pill-book,
 html body .hero[data-hero-rebuild] .hero-chip-book,
 html body .hero[data-hero-rebuild] a.hero-chip-book,
 html body .hero[data-hero-rebuild] .hero-cta-book {
-  background: #D41E52 !important;
-  background-color: #D41E52 !important;
+  background: #00B4D8 !important;
+  background-color: #00B4D8 !important;
   background-image: none !important;
-  box-shadow: 0 8px 22px rgba(212, 30, 82, 0.32) !important;
+  border: 1.5px solid #D4AF37 !important;
+  box-shadow: 0 8px 22px rgba(0, 180, 216, 0.32) !important;
+  color: #FFFFFF !important;
 }
 html body .nav-cta:hover,
 html body .sticky-book:hover,
 html body .btn-primary:hover,
 html body .hero-cta-book:hover,
 html body .hero-chip-book:hover {
-  background: #E8325E !important;
-  background-color: #E8325E !important;
+  background: #FF6B6B !important;
+  background-color: #FF6B6B !important;
+  border-color: #D4AF37 !important;
 }
