@@ -53,8 +53,9 @@
   --pp-checkout-timer: #C9A227;
 
   /* Bridge — remap Miami Electric shell vars onto preview tokens */
-  --ink: var(--pp-text);
-  --ink-soft: var(--pp-text-dim);
+  /* ink = body type on sand (NOT white — white only on navy chrome) */
+  --ink: var(--pp-text-on-sand);
+  --ink-soft: #5B6B7C;
   --deep: var(--pp-bg);
   --cream: var(--pp-bg-2);
   --foam: var(--pp-bg-2);
@@ -802,9 +803,15 @@ body::before {
   font-weight: 800 !important;
 }
 
-/* Section heads / eyebrows — cyan labels, light titles */
+/* Section heads / eyebrows — cyan labels; sand titles = navy; page-hero stays white on photo */
 .eyebrow,
-.section-head .eyebrow,
+.section-head .eyebrow {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+}
 .page-hero .eyebrow {
   color: var(--pp-cyan) !important;
   -webkit-text-fill-color: var(--pp-cyan) !important;
@@ -812,15 +819,25 @@ body::before {
   font-weight: 700 !important;
   letter-spacing: 0.14em !important;
 }
-.section-head h2,
-.page-hero h1 {
-  color: var(--pp-text) !important;
-  -webkit-text-fill-color: var(--pp-text) !important;
+.section-head h2 {
+  color: var(--pp-text-on-sand) !important;
+  -webkit-text-fill-color: var(--pp-text-on-sand) !important;
   font-weight: 650 !important;
 }
-.section-head p,
+.section-head p {
+  color: #5B6B7C !important;
+  -webkit-text-fill-color: #5B6B7C !important;
+  font-size: 1.05rem !important;
+  font-weight: 450 !important;
+}
+.page-hero h1 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-weight: 650 !important;
+}
 .page-hero .lead {
-  color: var(--pp-text-dim) !important;
+  color: #D6E0EA !important;
+  -webkit-text-fill-color: #D6E0EA !important;
   font-size: 1.05rem !important;
   font-weight: 450 !important;
 }
@@ -1242,4 +1259,86 @@ html body .hero-chip-book:hover {
   background: #FF6B6B !important;
   background-color: #FF6B6B !important;
   border-color: #D4AF37 !important;
+}
+
+/* ========== PREVIEW contrast lock (apply everywhere) ==========
+   Sand canvas → navy type. Navy chrome / photo overlays → white.
+   Stops washed white on sand and missed font areas. */
+body,
+.section-head h2,
+.section-head p,
+.card-body,
+.card-body h3,
+.card-body p,
+.step h3,
+.step p,
+.trust strong,
+.trust p,
+.faq-item,
+.faq-item summary,
+.blog-prose,
+.blog-prose h2,
+.blog-prose p,
+.lead-honest,
+.when-bar label,
+.filter-chip,
+.panel,
+.form-card,
+.demo-callout {
+  color: var(--pp-text-on-sand) !important;
+  -webkit-text-fill-color: var(--pp-text-on-sand) !important;
+}
+.section-head p,
+.card-body p,
+.step p,
+.trust p,
+.blog-prose p,
+.lead-honest {
+  color: #5B6B7C !important;
+  -webkit-text-fill-color: #5B6B7C !important;
+}
+
+/* Dark chrome + photo bands keep bright white */
+.nav,
+.nav.scrolled,
+.nav-links a,
+.nav-drawer,
+.nav-drawer a,
+.logo,
+.footer,
+.footer h4,
+.footer a,
+.footer p,
+.proto-banner,
+.hero-panel,
+.hero-panel h1,
+.hero-panel p,
+.hero-kicker,
+.hero-title,
+.hero-copy,
+.hero-chip,
+.page-hero h1,
+.page-hero .lead,
+.vibe-body,
+.vibe-body h3,
+.vibe-body p,
+.city-tile span,
+.music-inner,
+.music-inner h2,
+.music-inner p,
+.sticky-book,
+.nav-cta {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+.nav-links a.nav-home,
+.nav-links a[href="index.html"],
+.nav-drawer a.nav-home,
+.nav-drawer a[href="index.html"] {
+  color: var(--pp-cyan) !important;
+  -webkit-text-fill-color: var(--pp-cyan) !important;
+}
+.vibe-body p {
+  color: #D6E0EA !important;
+  -webkit-text-fill-color: #D6E0EA !important;
 }
