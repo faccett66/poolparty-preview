@@ -289,15 +289,15 @@ html::before {
   background:
     radial-gradient(ellipse 72% 58% at 50% 50%,
       transparent 38%,
-      rgba(0, 229, 232, 0.14) 48%,
-      rgba(167, 139, 250, 0.09) 58%,
+      rgba(0, 229, 232, 0.05) 48%,
+      rgba(167, 139, 250, 0.03) 58%,
       transparent 70%),
     radial-gradient(ellipse 88% 70% at 50% 50%,
       transparent 52%,
-      rgba(0, 229, 232, 0.08) 62%,
-      rgba(167, 139, 250, 0.05) 72%,
+      rgba(0, 229, 232, 0.03) 62%,
+      rgba(167, 139, 250, 0.02) 72%,
       transparent 82%);
-  animation: pp-pool-ripple-a 7.5s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
+  animation: pp-pool-ripple-a 9s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
 }
 html::after {
   left: 78%;
@@ -310,29 +310,29 @@ html::after {
   background:
     radial-gradient(ellipse 70% 55% at 50% 50%,
       transparent 36%,
-      rgba(255, 90, 124, 0.13) 46%,
-      rgba(0, 229, 232, 0.08) 56%,
+      rgba(255, 90, 124, 0.045) 46%,
+      rgba(0, 229, 232, 0.03) 56%,
       transparent 68%),
     radial-gradient(ellipse 90% 72% at 50% 50%,
       transparent 50%,
-      rgba(255, 90, 124, 0.06) 60%,
-      rgba(0, 229, 232, 0.05) 70%,
+      rgba(255, 90, 124, 0.025) 60%,
+      rgba(0, 229, 232, 0.02) 70%,
       transparent 82%);
-  animation: pp-pool-ripple-b 9.5s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
+  animation: pp-pool-ripple-b 11s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
   animation-delay: -3.2s !important;
 }
 @keyframes pp-pool-ripple-a {
   0% {
     transform: scaleX(0.32) scaleY(0.26) rotate(-4deg);
-    opacity: 0.52;
+    opacity: 0.28;
     border-radius: 42% 58% 48% 52% / 58% 42% 62% 38%;
   }
   35% {
     border-radius: 55% 45% 60% 40% / 48% 52% 42% 58%;
-    opacity: 0.34;
+    opacity: 0.16;
   }
   55% {
-    opacity: 0.22;
+    opacity: 0.09;
   }
   100% {
     transform: scaleX(2.45) scaleY(1.85) rotate(6deg);
@@ -343,15 +343,15 @@ html::after {
 @keyframes pp-pool-ripple-b {
   0% {
     transform: scaleX(0.26) scaleY(0.22) rotate(5deg);
-    opacity: 0.48;
+    opacity: 0.24;
     border-radius: 55% 45% 52% 48% / 40% 60% 38% 62%;
   }
   40% {
     border-radius: 40% 60% 45% 55% / 58% 42% 55% 45%;
-    opacity: 0.3;
+    opacity: 0.14;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.08;
   }
   100% {
     transform: scaleX(2.6) scaleY(2.05) rotate(-7deg);
