@@ -264,87 +264,99 @@ body::after {
   }
 }
 
-/* Soft expanding pool ripples (blue / coral / purple rings) */
+/* Soft expanding pool ripples — organic elliptical water bands */
 html::before,
 html::after {
   content: "" !important;
   display: block !important;
   position: fixed !important;
-  border-radius: 50% !important;
   pointer-events: none !important;
   z-index: -1 !important;
-  border: 1.5px solid transparent !important;
-  background: transparent !important;
+  border: none !important;
   box-sizing: border-box !important;
-  will-change: transform, opacity, box-shadow;
+  mix-blend-mode: screen;
+  filter: blur(0.7px);
+  will-change: transform, opacity, border-radius;
 }
 html::before {
   left: 18%;
   top: 32%;
-  width: min(42vw, 420px);
-  height: min(42vw, 420px);
-  margin-left: calc(min(42vw, 420px) / -2);
-  margin-top: calc(min(42vw, 420px) / -2);
-  box-shadow:
-    0 0 0 0 rgba(0, 229, 232, 0.40),
-    0 0 0 0 rgba(167, 139, 250, 0.22),
-    inset 0 0 28px rgba(0, 229, 232, 0.12);
+  width: min(58vw, 560px);
+  height: min(22vw, 210px);
+  margin-left: calc(min(58vw, 560px) / -2);
+  margin-top: calc(min(22vw, 210px) / -2);
+  border-radius: 42% 58% 48% 52% / 58% 42% 62% 38%;
+  background:
+    radial-gradient(ellipse 72% 58% at 50% 50%,
+      transparent 38%,
+      rgba(0, 229, 232, 0.22) 48%,
+      rgba(167, 139, 250, 0.14) 58%,
+      transparent 70%),
+    radial-gradient(ellipse 88% 70% at 50% 50%,
+      transparent 52%,
+      rgba(0, 229, 232, 0.12) 62%,
+      rgba(167, 139, 250, 0.08) 72%,
+      transparent 82%);
   animation: pp-pool-ripple-a 7.5s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
 }
 html::after {
   left: 78%;
   top: 68%;
-  width: min(48vw, 520px);
-  height: min(48vw, 520px);
-  margin-left: calc(min(48vw, 520px) / -2);
-  margin-top: calc(min(48vw, 520px) / -2);
-  box-shadow:
-    0 0 0 0 rgba(255, 90, 124, 0.36),
-    0 0 0 0 rgba(0, 229, 232, 0.18),
-    inset 0 0 32px rgba(167, 139, 250, 0.10);
+  width: min(64vw, 640px);
+  height: min(24vw, 240px);
+  margin-left: calc(min(64vw, 640px) / -2);
+  margin-top: calc(min(24vw, 240px) / -2);
+  border-radius: 55% 45% 52% 48% / 40% 60% 38% 62%;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 50%,
+      transparent 36%,
+      rgba(255, 90, 124, 0.20) 46%,
+      rgba(0, 229, 232, 0.12) 56%,
+      transparent 68%),
+    radial-gradient(ellipse 90% 72% at 50% 50%,
+      transparent 50%,
+      rgba(255, 90, 124, 0.10) 60%,
+      rgba(0, 229, 232, 0.08) 70%,
+      transparent 82%);
   animation: pp-pool-ripple-b 9.5s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
   animation-delay: -3.2s !important;
 }
 @keyframes pp-pool-ripple-a {
   0% {
-    transform: scale(0.28);
-    opacity: 0.75;
-    box-shadow:
-      0 0 0 0 rgba(0, 229, 232, 0.45),
-      0 0 0 0 rgba(167, 139, 250, 0.28),
-      inset 0 0 18px rgba(0, 229, 232, 0.16);
+    transform: scaleX(0.32) scaleY(0.26) rotate(-4deg);
+    opacity: 0.7;
+    border-radius: 42% 58% 48% 52% / 58% 42% 62% 38%;
+  }
+  35% {
+    border-radius: 55% 45% 60% 40% / 48% 52% 42% 58%;
+    opacity: 0.48;
   }
   55% {
-    opacity: 0.4;
+    opacity: 0.32;
   }
   100% {
-    transform: scale(2.35);
+    transform: scaleX(2.45) scaleY(1.85) rotate(6deg);
     opacity: 0;
-    box-shadow:
-      0 0 0 36px rgba(0, 229, 232, 0),
-      0 0 0 72px rgba(167, 139, 250, 0),
-      inset 0 0 40px rgba(0, 229, 232, 0);
+    border-radius: 48% 52% 42% 58% / 55% 45% 58% 42%;
   }
 }
 @keyframes pp-pool-ripple-b {
   0% {
-    transform: scale(0.22);
-    opacity: 0.7;
-    box-shadow:
-      0 0 0 0 rgba(255, 90, 124, 0.42),
-      0 0 0 0 rgba(0, 229, 232, 0.22),
-      inset 0 0 20px rgba(167, 139, 250, 0.14);
+    transform: scaleX(0.26) scaleY(0.22) rotate(5deg);
+    opacity: 0.65;
+    border-radius: 55% 45% 52% 48% / 40% 60% 38% 62%;
+  }
+  40% {
+    border-radius: 40% 60% 45% 55% / 58% 42% 55% 45%;
+    opacity: 0.42;
   }
   50% {
-    opacity: 0.38;
+    opacity: 0.3;
   }
   100% {
-    transform: scale(2.55);
+    transform: scaleX(2.6) scaleY(2.05) rotate(-7deg);
     opacity: 0;
-    box-shadow:
-      0 0 0 42px rgba(255, 90, 124, 0),
-      0 0 0 84px rgba(0, 229, 232, 0),
-      inset 0 0 48px rgba(167, 139, 250, 0);
+    border-radius: 52% 48% 58% 42% / 45% 55% 40% 60%;
   }
 }
 
