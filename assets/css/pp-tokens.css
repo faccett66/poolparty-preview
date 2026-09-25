@@ -249,11 +249,102 @@ body::after {
 }
 @media (prefers-reduced-motion: reduce) {
   body::before,
-  body::after {
+  body::after,
+  html::before,
+  html::after {
     animation: none !important;
   }
   body::after {
     opacity: 0.55;
+  }
+  html::before,
+  html::after {
+    opacity: 0.25 !important;
+    transform: scale(1.2) !important;
+  }
+}
+
+/* Soft expanding pool ripples (blue / coral / purple rings) */
+html::before,
+html::after {
+  content: "" !important;
+  display: block !important;
+  position: fixed !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+  border: 1.5px solid transparent !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  will-change: transform, opacity, box-shadow;
+}
+html::before {
+  left: 18%;
+  top: 32%;
+  width: min(42vw, 420px);
+  height: min(42vw, 420px);
+  margin-left: calc(min(42vw, 420px) / -2);
+  margin-top: calc(min(42vw, 420px) / -2);
+  box-shadow:
+    0 0 0 0 rgba(0, 229, 232, 0.40),
+    0 0 0 0 rgba(167, 139, 250, 0.22),
+    inset 0 0 28px rgba(0, 229, 232, 0.12);
+  animation: pp-pool-ripple-a 7.5s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
+}
+html::after {
+  left: 78%;
+  top: 68%;
+  width: min(48vw, 520px);
+  height: min(48vw, 520px);
+  margin-left: calc(min(48vw, 520px) / -2);
+  margin-top: calc(min(48vw, 520px) / -2);
+  box-shadow:
+    0 0 0 0 rgba(255, 90, 124, 0.36),
+    0 0 0 0 rgba(0, 229, 232, 0.18),
+    inset 0 0 32px rgba(167, 139, 250, 0.10);
+  animation: pp-pool-ripple-b 9.5s cubic-bezier(0.15, 0.55, 0.25, 1) infinite !important;
+  animation-delay: -3.2s !important;
+}
+@keyframes pp-pool-ripple-a {
+  0% {
+    transform: scale(0.28);
+    opacity: 0.75;
+    box-shadow:
+      0 0 0 0 rgba(0, 229, 232, 0.45),
+      0 0 0 0 rgba(167, 139, 250, 0.28),
+      inset 0 0 18px rgba(0, 229, 232, 0.16);
+  }
+  55% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.35);
+    opacity: 0;
+    box-shadow:
+      0 0 0 36px rgba(0, 229, 232, 0),
+      0 0 0 72px rgba(167, 139, 250, 0),
+      inset 0 0 40px rgba(0, 229, 232, 0);
+  }
+}
+@keyframes pp-pool-ripple-b {
+  0% {
+    transform: scale(0.22);
+    opacity: 0.7;
+    box-shadow:
+      0 0 0 0 rgba(255, 90, 124, 0.42),
+      0 0 0 0 rgba(0, 229, 232, 0.22),
+      inset 0 0 20px rgba(167, 139, 250, 0.14);
+  }
+  50% {
+    opacity: 0.38;
+  }
+  100% {
+    transform: scale(2.55);
+    opacity: 0;
+    box-shadow:
+      0 0 0 42px rgba(255, 90, 124, 0),
+      0 0 0 84px rgba(0, 229, 232, 0),
+      inset 0 0 48px rgba(167, 139, 250, 0);
   }
 }
 
