@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pool Party — Pool, Beach & Yacht Parties Worldwide</title>
+  <meta name="description" content="Find the hottest pool, beach, and yacht parties — Vegas, Miami, Dubai, Ibiza, LA & more. Book Now goes live." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/miami-home-v25.css?v=43" />
+  <link rel="stylesheet" href="assets/css/music-layer.css?v=28" />
+  <link rel="stylesheet" href="assets/css/pp-tokens.css?v=43" />
+  <link rel="stylesheet" href="assets/css/hero-rebuild.css?v=18" />
+</head>
+<body data-data-root="data" data-asset-root="">
+<div class="proto-banner">Preview · week of Sep 15, 2026 · Book Now goes live (Booketing/SquadUp). Demo cart has no prices. <a href="https://poolparty.com/" target="_blank" rel="noopener">Live site</a></div>
+
+<header class="nav" data-miami-nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=29" width="178" height="44" alt="Pool Party" style="display:block!important;height:44px!important;width:auto!important;max-width:240px!important;max-height:44px!important;margin:0!important;object-fit:contain!important;" /></a>
+    <nav class="nav-links" aria-label="Primary"><a class="nav-home" href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Free offer</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+    <div class="nav-actions">
+      <a class="nav-cart" href="cart.html" aria-label="Demo cart">🛒<span class="badge" data-cart-count hidden>0</span></a>
+      <a class="nav-cta" href="events.html">Book Now</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-drawer" data-nav-drawer><a class="nav-home" href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Free offer</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="account.html">Account</a>
+  <a href="cart.html">Demo cart</a>
+</div>
+
+<a class="sticky-book" href="events.html">Book Now</a>
+<section class="hero" data-hero-rebuild>
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/site/hero-montage-poster.jpg?v=2">
+      <source src="assets/site/hero-montage-1080.mp4?v=2" type="video/mp4" />
+    </video>
+    <img class="hero-poster-fallback" src="assets/site/hero-montage-poster.jpg?v=2" alt="" width="1920" height="1080" />
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-center">
+    <div class="hero-panel">
+      <p class="hero-kicker">It’s a party · Pool · Beach · Yacht</p>
+      <h1 class="hero-title"><span class="sun-out">Sun’s out!</span><span class="whos-in"><em>Who’s in?</em></span></h1>
+      <p class="hero-copy">This weekend’s Vegas heat is live — Cedric, Don Diablo, Steve Aoki, Liquid Pool, Nightclub Access Passes. Pick your city, find the vibe, then Book Now.</p>
+      <div class="hero-meta">
+        <span class="hero-chip">This week<strong>Vegas Sep 16–20</strong></span>
+        <a class="hero-chip hero-chip-book" href="events.html">Book Now<strong>Booketing / SquadUp</strong></a>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a class="hero-cta hero-cta-book" href="events.html">Book Now</a>
+      <a class="hero-cta hero-cta-cities" href="#cities">Browse cities</a>
+      <a class="hero-cta hero-cta-offer" href="advertise.html" id="freeOffer">Advertise here · Free offer</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="wrap" style="padding-top:2.5rem;padding-bottom:0">
+  <div class="trust reveal">
+    <div><strong>21+ only</strong><span>Legal drinking age unless noted</span></div>
+    <div><strong>Book Now live</strong><span>Booketing / SquadUp handoff</span></div>
+    <div><strong>Dayclub energy</strong><span>Pools · beaches · yachts</span></div>
+    <div><strong>No fake prices</strong><span>Real inventory, honest cart</span></div>
+  </div>
+</section>
+
+
+
+<section id="cities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">City picker · densest hubs</p>
+      <h2>Where’s the weekend?</h2>
+      <p>Vegas is stacked Sep 16–20. Miami/Dubai/Ibiza may read empty upcoming — we won’t fake it. Tap a city hub for real counts + venues.</p>
+    </div>
+    <div class="city-grid" id="home-cities"></div>
+    <p class="example-note" style="margin-top:1rem;font-size:.78rem;color:var(--muted)"><button type="button" class="chip" id="clear-city">Clear city filter</button> <span id="city-status"></span></p>
+  </div>
+</section>
+
+<section class="vibes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pick your energy</p>
+      <h2>Cabana days. Beach splash. Yacht gold hour.</h2>
+      <p>Encore-level decks, TAO Beach sand, Ayu heat, bay escapes — scroll the vibes, then Book Now.</p>
+    </div>
+    <div class="vibe-grid">
+      <a class="vibe-card reveal" href="events.html?vibe=dayclub"><img src="assets/site/vibe-encore-crowd.jpg?v=31" alt="Encore Beach Club dayclub crowd"/><div class="vibe-body"><span class="tag">Dayclub</span><h3>Dayclub main stage</h3><p>Crowds, DJs, cabana FOMO.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=beach"><img src="assets/site/vibe-beach-terrace.jpg?v=31" alt="Beach club terrace party"/><div class="vibe-body"><span class="tag">Beach</span><h3>Beach club days</h3><p>Sand, terrace, golden hour.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-2" href="events.html?vibe=pool"><img src="assets/site/vibe-garden-day.jpg?v=31" alt="Garden of the Gods pool deck"/><div class="vibe-body"><span class="tag">Pool</span><h3>Pool deck heat</h3><p>Splash, floats, midweek dips.</p></div></a>
+      <a class="vibe-card reveal" href="events.html?vibe=yacht"><img src="assets/site/vibe-yacht-bay.jpg?v=31" alt="Yacht Social Club on the water"/><div class="vibe-body"><span class="tag">Yacht</span><h3>Yacht energy</h3><p>Waterfront flex, sunset sets.</p></div></a>
+      <a class="vibe-card reveal reveal-delay-1" href="events.html?vibe=pass"><img src="assets/site/feat-encore-cabana.jpg?v=31" alt="Dayclub cabana Pool Party Pass vibes"/><div class="vibe-body"><span class="tag">Pass</span><h3>Pool Party Pass</h3><p>Assigned dayclub access — live booking path.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="on-calendar">
+  <div class="wrap">
+    <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;max-width:none">
+      <div>
+        <p class="eyebrow">On the calendar · Sep 15–20</p>
+        <h2>This week’s heat</h2>
+        <p>Live-sampled Sep 15, 2026 — upcoming-first. Book Now opens Booketing or SquadUp. <span data-result-count></span></p>
+      </div>
+      <a class="btn btn-ghost" href="events.html">All events →</a>
+    </div>
+    <div class="card-grid cols-3" id="home-events"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2>Find it. Feel it. Book it.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><h3>Pick city &amp; vibe</h3><p>Nineteen destinations. This week’s densest upcoming inventory is Vegas — other hubs stay honest when empty.</p></div>
+      <div class="step reveal reveal-delay-1"><div class="step-num">02</div><h3>Open the event</h3><p>Venue, date, and a clear Book Now — no mystery checkout.</p></div>
+      <div class="step reveal reveal-delay-2"><div class="step-num">03</div><h3>Book for real</h3><p>Continues on Booketing or PoolParty SquadUp. This preview doesn’t replace ticketing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="music-band reveal">
+      <img src="assets/site/music-ayu-stage.jpg?v=31" alt="AYU Dayclub main stage" />
+      <div class="music-inner">
+        <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <p class="eyebrow">Sonic Ear Candy · three beds</p>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.6rem">Soundtrack the party.</h2>
+        <p style="color:var(--mist);font-weight:300;margin-bottom:1rem">Three Sonic Ear Candy beds on this preview — Overflow, Clear to the Floor, Fuori Orario. Want custom beds for your venue or brand? Commission them at Sonic Ear Candy.</p>
+        <div class="music-actions">
+          <button type="button" class="btn btn-primary btn-sm" data-pp-music-play>Play soundtrack</button>
+          <a class="btn btn-ghost btn-sm" href="https://sonicearcandy.com/custom-soundtrack-beds.html" target="_blank" rel="noopener noreferrer">Get beds · SonicEarCandy.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=29" width="178" height="44" alt="Pool Party" style="display:block!important;height:44px!important;width:auto!important;max-width:240px!important;max-height:44px!important;margin:0!important;object-fit:contain!important;" /></a>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="cities.html">Cities</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div>
+      <h4>Partners</h4>
+      <a href="advertise.html">Advertise here · Free offer</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="account.html">My account (mock)</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cart.html">Demo cart</a>
+      <a href="checkout.html">Checkout shell</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
+    <span>No CATCH branding · SEC music layer live on preview · Prices never invent as real</span>
+  </div>
+</footer>
+<script src="assets/js/site.js?v=50"></script>
+<script src="assets/js/music.js?v=29"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const [ev, cities] = await Promise.all([PP.loadJSON('events'), PP.loadJSON('cities')]);
+  const events = ev.events || [];
+  const cityList = cities.cities || [];
+  const eventSlugs = new Set(events.map(e => e.city));
+  const venuesData = await PP.loadJSON('venues');
+  const venueList = venuesData.venues || [];
+  const venueSlugs = new Set(venueList.map(v => v.city));
+  // Front-load functional destinations (have preview data or are flagship)
+  const featured = ['las-vegas','miami','dubai','spain','los-angeles','new-york','bali','california','florida','australia','phuket'];
+  const density = (c) => {
+    const v = venueList.filter(x => x.city === c.slug).length;
+    const u = PP.countUpcoming(events, c.slug);
+    const a = events.filter(x => x.city === c.slug).length;
+    return (u * 1000) + (v * 10) + a;
+  };
+  const rest = cityList.filter(c => !featured.includes(c.slug)).sort((a,b) => density(b) - density(a));
+  // Home shows flagships + densest hubs (keeps grid honest, not a 35-tile dump)
+  const ordered = [
+    ...featured.map(s => cityList.find(c => c.slug === s)).filter(Boolean),
+    ...rest
+  ].filter((c, i, arr) => c && arr.findIndex(x => x.slug === c.slug) === i)
+   .filter(c => venueSlugs.has(c.slug) || eventSlugs.has(c.slug))
+   .slice(0, 16);
+  const grid = document.getElementById('home-cities');
+  grid.innerHTML = ordered.map(c => {
+    const meta = PP.cityTileMeta(c, { eventSlugs, venueSlugs });
+    const up = PP.countUpcoming(events, c.slug);
+    const vc = venueList.filter(x => x.city === c.slug).length;
+    const blurb = up ? `${up} upcoming` : (vc ? `0 upcoming · ${vc} venues` : meta.blurb);
+    const img = (c.image && String(c.image).trim()) ? c.image : 'assets/site/feat-encore-pool.jpg';
+    return `
+    <a class="city-tile" href="${meta.href}" data-city="${PP.esc(c.slug)}">
+      <img src="${PP.esc(img)}?v=43" alt="${PP.esc(c.name)}" loading="lazy" />
+      <span>${PP.esc(c.name)}</span>
+      <small>${PP.esc(blurb)}</small>
+    </a>`;
+  }).join('');
+
+  const status = document.getElementById('city-status');
+  const eventsEl = document.getElementById('home-events');
+  function renderHome() {
+    const city = PP.getCity();
+    grid.querySelectorAll('.city-tile').forEach(tile => {
+      tile.classList.toggle('active', tile.dataset.city === city);
+    });
+    const upAll = PP.countUpcoming(events);
+    if (status) status.textContent = city
+      ? `Calendar: ${PP.cityName(cityList, city)} · ${PP.countUpcoming(events, city)} upcoming`
+      : `${upAll} upcoming in this preview · ${events.length} total rows`;
+    let list = events.filter(e => PP.isUpcoming(e));
+    if (city) list = list.filter(e => e.city === city);
+    list = PP.sortEventsUpcomingFirst(list).slice(0, 12);
+    if (!list.length && city) {
+      const c = cityList.find(x => x.slug === city);
+      const hasV = venueSlugs.has(city);
+      eventsEl.innerHTML = `<div class="empty-state">No upcoming preview events for ${PP.esc(PP.cityName(cityList, city))} this week — not backfilling with Vegas.
+        ${hasV ? ` <a href="venues.html?city=${encodeURIComponent(city)}">See venues</a> ·` : ''}
+        <a href="${PP.esc(PP.cityHubHref(city))}">City hub</a>
+        ${c && c.live_url ? ` · <a href="${PP.esc(c.live_url)}" target="_blank" rel="noopener">Live listings</a>` : ''}
+      </div>`;
+    } else {
+      eventsEl.innerHTML = list.map(e => PP.eventCard(e, {cities: cityList})).join('');
+    }
+    const count = document.querySelector('[data-result-count]');
+    if (count) count.textContent = city
+      ? (list.length ? `${list.length} upcoming · ${PP.cityName(cityList, city)}` : `${PP.cityName(cityList, city)} · empty upcoming`)
+      : `${upAll} upcoming · showing ${list.length}`;
+  }
+  grid.addEventListener('click', e => {
+    const tile = e.target.closest('[data-city]');
+    if (!tile) return;
+    PP.setCity(tile.dataset.city);
+    // Let the <a> navigate to city hub — don't stay on home filter-only
+  });
+  const clear = document.getElementById('clear-city');
+  if (clear) clear.addEventListener('click', () => { PP.setCity(''); renderHome(); });
+  window.addEventListener('pp:city', renderHome);
+  const urlCity = PP.qs('city');
+  if (urlCity) PP.setCity(urlCity);
+  renderHome();
+  if (urlCity) {
+    const cal = document.getElementById('home-events');
+    if (cal) setTimeout(() => cal.scrollIntoView({behavior:'smooth', block:'start'}), 80);
+  }
+});
+</script>
+</body></html>

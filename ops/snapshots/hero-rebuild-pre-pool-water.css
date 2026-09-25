@@ -1,0 +1,397 @@
+/* ============================================================
+   Homepage hero REBUILD (loads last) — single source of truth
+   Centered glass panel + Book Now chip twin of nav .nav-cta
+   ============================================================ */
+
+.hero[data-hero-rebuild]{
+  position:relative !important;
+  min-height:92vh !important;
+  min-height:92dvh !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important; /* CENTER the whole stack */
+  padding:10rem 1rem 1.75rem !important; /* glass lower — more video above */
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+}
+
+.hero[data-hero-rebuild] .hero-bg{
+  position:absolute !important; inset:0 !important; z-index:0 !important;
+  background:#070B14 !important;
+}
+.hero[data-hero-rebuild] .hero-bg img,
+.hero[data-hero-rebuild] .hero-bg .hero-video,
+.hero[data-hero-rebuild] .hero-bg .hero-poster-fallback{
+  width:100% !important; height:100% !important;
+  object-fit:cover !important; object-position:center 40% !important;
+  display:block !important; filter:none !important;
+}
+.hero[data-hero-rebuild] .hero-bg .hero-video{
+  position:absolute !important; inset:0 !important;
+  z-index:1 !important;
+}
+.hero[data-hero-rebuild] .hero-bg .hero-poster-fallback{
+  position:absolute !important; inset:0 !important;
+  z-index:0 !important;
+}
+@media (prefers-reduced-motion: reduce){
+  .hero[data-hero-rebuild] .hero-bg .hero-video{ display:none !important; }
+}
+
+.hero[data-hero-rebuild] .hero-overlay{
+  position:absolute !important; inset:0 !important; z-index:1 !important;
+  pointer-events:none !important;
+  background:
+    linear-gradient(180deg, rgba(7,11,20,.55) 0%, rgba(7,11,20,.18) 40%, rgba(7,11,20,.35) 70%, rgba(7,11,20,.62) 100%),
+    linear-gradient(90deg, rgba(7,11,20,.28) 0%, rgba(7,11,20,.08) 50%, rgba(7,11,20,.2) 100%) !important;
+}
+
+/* Center column */
+.hero[data-hero-rebuild] .hero-center{
+  position:relative !important;
+  z-index:2 !important;
+  width:min(42rem, calc(100% - 1.5rem)) !important;
+  margin:0 auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:1.15rem !important;
+  text-align:center !important;
+}
+
+/* Frosted glass — light, centered */
+.hero[data-hero-rebuild] .hero-panel{
+  width:100% !important;
+  box-sizing:border-box !important;
+  padding:1.35rem 1.5rem 1.4rem !important;
+  border-radius:1.15rem !important;
+  background:linear-gradient(165deg, rgba(14,26,43,.55), rgba(7,11,20,.42)) !important;
+  border:1px solid rgba(0,229,232,.28) !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.4) !important;
+  backdrop-filter:blur(12px) !important;
+  -webkit-backdrop-filter:blur(12px) !important;
+  text-align:center !important;
+}
+
+.hero[data-hero-rebuild] .hero-kicker{
+  margin:0 0 .85rem !important;
+  font-size:clamp(1rem, 2.2vw, 1.2rem) !important;
+  font-weight:800 !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase !important;
+  /* Frank: yellow letters + thicker black outline (Sun's out! untouched) */
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1.55px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:
+    1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,
+    1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000,
+    0 3px 12px rgba(0,0,0,.55) !important;
+}
+
+.hero[data-hero-rebuild] h1{
+  margin:0 0 .85rem !important;
+  font-family:var(--font-display, Fraunces, Georgia, serif) !important;
+  font-size:clamp(2.6rem, 8vw, 4.8rem) !important;
+  font-weight:700 !important;
+  line-height:1.05 !important;
+  color:#F4F7FA !important;
+  -webkit-text-fill-color:#F4F7FA !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:0 4px 28px rgba(0,0,0,.7) !important;
+}
+.hero[data-hero-rebuild] h1 .sun-out{
+  color:#F4F7FA !important;
+  -webkit-text-fill-color:#F4F7FA !important;
+}
+.hero[data-hero-rebuild] h1 em{
+  font-style:italic !important;
+  color:#FF3864 !important;
+  -webkit-text-fill-color:#FF3864 !important;
+  text-shadow:0 4px 22px rgba(0,0,0,.65) !important;
+}
+
+.hero[data-hero-rebuild] .hero-copy{
+  margin:0 auto 1.15rem !important;
+  max-width:34rem !important;
+  font-size:1.05rem !important;
+  font-weight:500 !important;
+  line-height:1.5 !important;
+  color:#B7C2D0 !important;
+  -webkit-text-fill-color:#B7C2D0 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.5) !important;
+}
+
+.hero[data-hero-rebuild] .hero-meta{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:.65rem !important;
+  justify-content:center !important;
+  align-items:stretch !important;
+}
+
+.hero[data-hero-rebuild] .hero-chip{
+  display:inline-flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  text-align:left !important;
+  padding:.7rem 1.05rem !important;
+  border-radius:.95rem !important;
+  background:rgba(7,11,20,.75) !important;
+  border:1px solid rgba(0,229,232,.28) !important;
+  color:#00E5E8 !important;
+  -webkit-text-fill-color:#00E5E8 !important;
+  font-size:.72rem !important;
+  font-weight:650 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+  text-decoration:none !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.3) !important;
+}
+.hero[data-hero-rebuild] .hero-chip strong{
+  display:block !important;
+  margin-top:.2rem !important;
+  font-size:.92rem !important;
+  font-weight:750 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  color:#F4F7FA !important;
+  -webkit-text-fill-color:#F4F7FA !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+}
+
+/* THE glass Book Now chip — IDENTICAL coral to nav .nav-cta */
+.hero[data-hero-rebuild] .hero-chip-book,
+.hero[data-hero-rebuild] a.hero-chip-book{
+  background:#FF3864 !important;
+  background-color:#FF3864 !important;
+  background-image:none !important;
+  border:none !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  cursor:pointer !important;
+}
+.hero[data-hero-rebuild] .hero-chip-book strong{
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+}
+.hero[data-hero-rebuild] a.hero-chip-book:hover{
+  filter:brightness(1.06) !important;
+  color:#fff !important;
+}
+
+/* CTAs under glass — centered, matching pills */
+.hero[data-hero-rebuild] .hero-ctas{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:.85rem !important;
+  width:100% !important;
+}
+
+.hero[data-hero-rebuild] .hero-cta{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:3.1rem !important;
+  padding:0 1.55rem !important;
+  border-radius:999px !important;
+  font-size:1.05rem !important;
+  font-weight:700 !important;
+  letter-spacing:.02em !important;
+  text-decoration:none !important;
+  line-height:1 !important;
+  box-sizing:border-box !important;
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  backdrop-filter:none !important;
+}
+
+/* Primary Book Now button — same coral as nav */
+.hero[data-hero-rebuild] .hero-cta-book{
+  background:#FF3864 !important;
+  background-image:none !important;
+  color:#FFFFFF !important;
+  border:none !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
+}
+.hero[data-hero-rebuild] .hero-cta-book:hover{
+  filter:brightness(1.06) !important;
+  color:#fff !important;
+}
+
+.hero[data-hero-rebuild] .hero-cta-cities{
+  background:rgba(7,11,20,.72) !important;
+  color:#F4F7FA !important;
+  border:1.5px solid rgba(244,247,250,.35) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.35) !important;
+}
+.hero[data-hero-rebuild] .hero-cta-cities:hover{
+  border-color:rgba(0,229,232,.65) !important;
+}
+
+.hero[data-hero-rebuild] .hero-cta-offer{
+  background:rgba(7,11,20,.78) !important;
+  color:#F4F7FA !important;
+  border:1.5px solid rgba(0,229,232,.7) !important;
+  box-shadow:0 0 14px rgba(0,229,232,.28), 0 8px 22px rgba(0,0,0,.35) !important;
+  animation:hero-offer-glow 2.4s ease-in-out infinite !important;
+}
+@keyframes hero-offer-glow{
+  0%,100%{ box-shadow:0 0 10px rgba(0,229,232,.22), 0 8px 22px rgba(0,0,0,.35); }
+  50%{ box-shadow:0 0 18px rgba(0,229,232,.4), 0 8px 22px rgba(0,0,0,.35); }
+}
+@media (prefers-reduced-motion:reduce){
+  .hero[data-hero-rebuild] .hero-cta-offer{ animation:none !important; }
+}
+
+
+/* Boilerplate lock — final overrides */
+html body .hero[data-hero-rebuild]{
+  justify-content:center !important;
+  align-items:flex-end !important;
+}
+html body .hero[data-hero-rebuild] .hero-center{
+  margin-left:auto !important;
+  margin-right:auto !important;
+  left:auto !important;
+  right:auto !important;
+  transform:none !important;
+  float:none !important;
+}
+html body .hero[data-hero-rebuild] .hero-chip-book,
+html body .hero[data-hero-rebuild] a.hero-chip-book,
+html body .hero[data-hero-rebuild] .hero-cta-book,
+html body .nav .nav-cta{
+  background:#FF3864 !important;
+  background-color:#FF3864 !important;
+  background-image:none !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  border:none !important;
+  filter:none !important;
+  opacity:1 !important;
+  mix-blend-mode:normal !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+html body .hero[data-hero-rebuild] .hero-chip-book strong{
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+}
+
+/* Headline: intentional stagger — Sun's out! left, Who's in? center-right */
+html body .hero[data-hero-rebuild] h1.hero-title{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  justify-content:center !important;
+  width:max-content !important;
+  max-width:100% !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:left !important;
+  gap:0.06em !important;
+  letter-spacing:-0.02em !important;
+}
+html body .hero[data-hero-rebuild] h1.hero-title .sun-out{
+  display:block !important;
+  margin:0 !important;
+  padding:0 !important;
+  text-align:left !important;
+  align-self:flex-start !important;
+  transform:none !important;
+}
+html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
+  display:block !important;
+  margin:0 0 0 1.35em !important; /* offset toward center-right */
+  padding:0 !important;
+  text-align:left !important;
+  align-self:flex-start !important;
+  color:#FF3864 !important;
+  transform:none !important;
+}
+html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
+  display:inline !important;
+  margin:0 !important;
+  padding:0 !important;
+  font-style:italic !important;
+  color:#FF3864 !important;
+  -webkit-text-fill-color:#FF3864 !important;
+}
+
+/* Home nav: yellow letters + black outline + yellow underline */
+html body .nav .nav-links a.nav-home,
+html body .nav .nav-links a[href="index.html"],
+html body .nav-drawer a.nav-home,
+html body .nav-drawer a[href="index.html"]{
+  color:#ffe600 !important;
+  -webkit-text-fill-color:#ffe600 !important;
+  -webkit-text-stroke:1.15px #000 !important;
+  paint-order:stroke fill !important;
+  text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000 !important;
+}
+html body .nav .nav-links a.nav-home.active::after,
+html body .nav .nav-links a.nav-home:hover::after,
+html body .nav .nav-links a[href="index.html"].active::after,
+html body .nav .nav-links a[href="index.html"]:hover::after{
+  background:#ffe600 !important;
+  box-shadow:0 0 0 1px #000, 0 1px 0 #000, 0 -1px 0 #000 !important;
+  height:3px !important;
+}
+
+/* Header logo — navy on transparent, fits inside 4.5rem bar */
+html body .nav{
+  overflow:visible !important;
+}
+html body .nav .nav-inner,
+html body .nav-inner{
+  min-height:4.5rem !important;
+  height:4.5rem !important;
+  max-height:4.5rem !important;
+  align-items:center !important;
+  overflow:visible !important;
+}
+html body .nav .logo,
+html body a.logo{
+  display:inline-flex !important;
+  align-items:center !important;
+  line-height:0 !important;
+  align-self:center !important;
+  max-height:4.5rem !important;
+  overflow:visible !important;
+}
+html body .nav .logo-img,
+html body a.logo .logo-img,
+html body img.logo-img{
+  display:block !important;
+  height:44px !important;
+  width:auto !important;
+  max-width:240px !important;
+  max-height:44px !important;
+  object-fit:contain !important;
+  margin:0 !important;
+  filter:none !important;
+}
+@media (max-width:720px){
+  html body .nav .logo-img,
+  html body a.logo .logo-img,
+  html body img.logo-img{
+    height:36px !important;
+    max-height:36px !important;
+    max-width:180px !important;
+  }
+}
