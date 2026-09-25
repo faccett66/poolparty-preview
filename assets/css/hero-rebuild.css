@@ -5,12 +5,12 @@
 
 .hero[data-hero-rebuild]{
   position:relative !important;
-  min-height:84vh !important;
-  min-height:84dvh !important;
+  min-height:92vh !important;
+  min-height:92dvh !important;
   display:flex !important;
   align-items:flex-end !important;
   justify-content:center !important; /* CENTER the whole stack */
-  padding:9rem 1rem 4.5rem !important;
+  padding:10rem 1rem 1.75rem !important; /* glass lower — more video above */
   overflow:hidden !important;
   box-sizing:border-box !important;
 }
@@ -19,10 +19,23 @@
   position:absolute !important; inset:0 !important; z-index:0 !important;
   background:#070B14 !important;
 }
-.hero[data-hero-rebuild] .hero-bg img{
+.hero[data-hero-rebuild] .hero-bg img,
+.hero[data-hero-rebuild] .hero-bg .hero-video,
+.hero[data-hero-rebuild] .hero-bg .hero-poster-fallback{
   width:100% !important; height:100% !important;
   object-fit:cover !important; object-position:center 40% !important;
   display:block !important; filter:none !important;
+}
+.hero[data-hero-rebuild] .hero-bg .hero-video{
+  position:absolute !important; inset:0 !important;
+  z-index:1 !important;
+}
+.hero[data-hero-rebuild] .hero-bg .hero-poster-fallback{
+  position:absolute !important; inset:0 !important;
+  z-index:0 !important;
+}
+@media (prefers-reduced-motion: reduce){
+  .hero[data-hero-rebuild] .hero-bg .hero-video{ display:none !important; }
 }
 
 .hero[data-hero-rebuild] .hero-overlay{
@@ -94,8 +107,8 @@
 }
 .hero[data-hero-rebuild] h1 em{
   font-style:italic !important;
-  color:#D41E52 !important;
-  -webkit-text-fill-color:#D41E52 !important;
+  color:#FF3864 !important;
+  -webkit-text-fill-color:#FF3864 !important;
   text-shadow:0 4px 22px rgba(0,0,0,.65) !important;
 }
 
@@ -153,13 +166,13 @@
 /* THE glass Book Now chip — IDENTICAL coral to nav .nav-cta */
 .hero[data-hero-rebuild] .hero-chip-book,
 .hero[data-hero-rebuild] a.hero-chip-book{
-  background:#D41E52 !important;
-  background-color:#D41E52 !important;
+  background:#FF3864 !important;
+  background-color:#FF3864 !important;
   background-image:none !important;
   border:none !important;
   color:#FFFFFF !important;
   -webkit-text-fill-color:#FFFFFF !important;
-  box-shadow:0 8px 22px rgba(212,30,82,.35) !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
   backdrop-filter:none !important;
   -webkit-backdrop-filter:none !important;
   opacity:1 !important;
@@ -209,11 +222,11 @@
 
 /* Primary Book Now button — same coral as nav */
 .hero[data-hero-rebuild] .hero-cta-book{
-  background:#D41E52 !important;
+  background:#FF3864 !important;
   background-image:none !important;
   color:#FFFFFF !important;
   border:none !important;
-  box-shadow:0 8px 22px rgba(212,30,82,.35) !important;
+  box-shadow:0 8px 22px rgba(255,56,100,.35) !important;
 }
 .hero[data-hero-rebuild] .hero-cta-book:hover{
   filter:brightness(1.06) !important;
@@ -263,8 +276,8 @@ html body .hero[data-hero-rebuild] .hero-chip-book,
 html body .hero[data-hero-rebuild] a.hero-chip-book,
 html body .hero[data-hero-rebuild] .hero-cta-book,
 html body .nav .nav-cta{
-  background:#D41E52 !important;
-  background-color:#D41E52 !important;
+  background:#FF3864 !important;
+  background-color:#FF3864 !important;
   background-image:none !important;
   color:#FFFFFF !important;
   -webkit-text-fill-color:#FFFFFF !important;
@@ -308,7 +321,7 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in{
   padding:0 !important;
   text-align:left !important;
   align-self:flex-start !important;
-  color:#D41E52 !important;
+  color:#FF3864 !important;
   transform:none !important;
 }
 html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
@@ -316,8 +329,8 @@ html body .hero[data-hero-rebuild] h1.hero-title .whos-in em{
   margin:0 !important;
   padding:0 !important;
   font-style:italic !important;
-  color:#D41E52 !important;
-  -webkit-text-fill-color:#D41E52 !important;
+  color:#FF3864 !important;
+  -webkit-text-fill-color:#FF3864 !important;
 }
 
 /* Home nav: yellow letters + black outline + yellow underline */
