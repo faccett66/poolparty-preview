@@ -185,21 +185,76 @@ a.btn-ghost,
   box-shadow: none !important;
 }
 
-/* ——— Default shell shift toward dayclub navy (slightly lifted) ——— */
+/* ——— Dayclub navy shell + pool-water wash (blue / coral / purple) — lightened ——— */
 body {
-  background: #0A1220 !important;
+  background: #15263A !important;
   background-image:
-    radial-gradient(ellipse 80% 45% at 0% 0%, rgba(0, 229, 232, 0.16), transparent 55%),
-    radial-gradient(ellipse 70% 40% at 100% 5%, rgba(212, 30, 82, 0.12), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(232, 200, 114, 0.08), transparent 55%),
-    linear-gradient(180deg, #0A1220 0%, #121E32 55%, #0C1524 100%) !important;
+    radial-gradient(ellipse 90% 52% at 0% 0%, rgba(0, 229, 232, 0.38), transparent 60%),
+    radial-gradient(ellipse 78% 46% at 100% 4%, rgba(255, 90, 124, 0.30), transparent 55%),
+    radial-gradient(ellipse 65% 44% at 55% 100%, rgba(167, 139, 250, 0.28), transparent 60%),
+    radial-gradient(ellipse 50% 34% at 70% 40%, rgba(0, 210, 220, 0.18), transparent 62%),
+    linear-gradient(180deg, #183048 0%, #1A2E44 50%, #142536 100%) !important;
+  background-attachment: fixed !important;
   color: var(--pp-text) !important;
 }
+/* Slow-drifting color orbs — brighter pool depth */
 body::before {
+  content: "" !important;
+  display: block !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  pointer-events: none !important;
   background:
-    radial-gradient(circle 280px at 12% 42%, rgba(0, 229, 232, 0.09), transparent 70%),
-    radial-gradient(circle 320px at 88% 58%, rgba(212, 30, 82, 0.07), transparent 70%),
-    radial-gradient(circle 240px at 48% 88%, rgba(232, 200, 114, 0.06), transparent 70%) !important;
+    radial-gradient(circle 380px at 14% 38%, rgba(0, 229, 232, 0.32), transparent 68%),
+    radial-gradient(circle 420px at 86% 52%, rgba(255, 90, 124, 0.26), transparent 70%),
+    radial-gradient(circle 340px at 48% 86%, rgba(167, 139, 250, 0.28), transparent 68%),
+    radial-gradient(circle 300px at 62% 22%, rgba(0, 210, 220, 0.18), transparent 72%) !important;
+  background-size: 140% 140% !important;
+  background-position: 0% 0% !important;
+  animation: pp-pool-drift 22s ease-in-out infinite alternate !important;
+  will-change: background-position;
+}
+/* Caustic shimmer — brighter sunlight through water */
+body::after {
+  content: "" !important;
+  display: block !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  opacity: 0.78;
+  mix-blend-mode: screen;
+  background-image:
+    radial-gradient(ellipse 110px 42px at 18% 28%, rgba(0, 245, 255, 0.55), transparent 72%),
+    radial-gradient(ellipse 130px 48px at 42% 58%, rgba(196, 168, 255, 0.45), transparent 70%),
+    radial-gradient(ellipse 120px 40px at 72% 36%, rgba(255, 120, 150, 0.42), transparent 72%),
+    radial-gradient(ellipse 100px 36px at 58% 78%, rgba(0, 245, 255, 0.38), transparent 70%),
+    radial-gradient(ellipse 90px 34px at 88% 68%, rgba(255, 90, 124, 0.36), transparent 72%),
+    radial-gradient(ellipse 115px 38px at 28% 82%, rgba(167, 139, 250, 0.36), transparent 70%) !important;
+  background-size: 180% 180% !important;
+  background-position: 10% 20% !important;
+  animation: pp-pool-caustics 14s ease-in-out infinite alternate !important;
+  will-change: background-position, opacity;
+}
+@keyframes pp-pool-drift {
+  0%   { background-position: 0% 10%, 100% 0%, 40% 100%, 80% 30%; }
+  50%  { background-position: 30% 40%, 70% 35%, 55% 70%, 40% 55%; }
+  100% { background-position: 12% 55%, 85% 60%, 30% 40%, 65% 15%; }
+}
+@keyframes pp-pool-caustics {
+  0%   { background-position: 8% 18%, 40% 55%, 70% 30%, 55% 75%, 90% 65%, 25% 80%; opacity: 0.65; }
+  50%  { background-position: 28% 40%, 55% 35%, 60% 55%, 40% 60%, 75% 45%, 45% 70%; opacity: 0.88; }
+  100% { background-position: 15% 55%, 35% 70%, 80% 45%, 65% 40%, 85% 75%, 35% 55%; opacity: 0.72; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none !important;
+  }
+  body::after {
+    opacity: 0.55;
+  }
 }
 
 /* Proto banner + nav → dark dayclub chrome */
