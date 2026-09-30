@@ -230,3 +230,9 @@
 @media (max-width: 520px) {
   .pp-music-dock__sec-pre { display: none; }
 }
+/* v30: dock grows to fit its content so buttons never hang off the page */
+.pp-music-dock { max-width: calc(100vw - 1.5rem); }
+.pp-music-dock__inner { max-width: 100%; }
+@media (max-width: 520px) {
+  .pp-music-dock__meta { flex: 1 1 auto; min-width: 0; }
+}

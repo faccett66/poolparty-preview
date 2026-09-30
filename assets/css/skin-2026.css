@@ -629,3 +629,19 @@ body.page-yacht .eyebrow,body.page-yacht .tag{color:#D4AF37}
 @media(max-width:720px){
   .hero-copy,.page-hero .lead{padding:.7rem .85rem;border-radius:12px}
 }
+
+/* v8: brighter Sonic Ear Candy band + light glass behind its small text */
+.music-band::before{background:linear-gradient(90deg,rgba(7,11,20,.55) 0%,rgba(7,11,20,.28) 50%,rgba(7,11,20,.05) 100%),linear-gradient(0deg,rgba(7,11,20,.35),transparent 55%)}
+.music-band>img{filter:saturate(1.1) brightness(1.08)}
+.music-inner h2{text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.music-inner>p:not(.eyebrow){
+  width:fit-content;max-width:34rem;padding:.8rem 1.05rem;border-radius:14px;
+  background:rgba(7,11,20,.34);border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);
+  box-shadow:0 8px 28px rgba(0,0,0,.18);color:#eef3fb!important;
+}
+.music-inner .eyebrow{
+  width:fit-content;padding:.38rem .8rem;border-radius:999px;
+  background:rgba(7,11,20,.34);border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
