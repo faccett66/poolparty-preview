@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/skin-2026.css?v=8" />
   <link rel="stylesheet" href="assets/css/skin-hybrid.css?v=2" />
+  <link rel="stylesheet" href="assets/css/ux-pass.css?v=1" />
   <link rel="stylesheet" href="assets/css/music-layer.css?v=30" />
 </head>
 <body data-data-root="data" data-asset-root="">
@@ -29,21 +30,20 @@
 </header>
 <div class="nav-drawer" data-nav-drawer><a class="nav-home" href="index.html">Home</a><a href="events.html">Events</a><a href="venues.html">Venues</a><a href="cities.html">Cities</a><a href="advertise.html">Free offer</a><a href="faqs.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
   <a href="account.html">Account</a>
-  <a href="cart.html">Demo cart</a>
 </div>
 
 <a class="sticky-book" href="events.html">Book Now</a>
 
 <section class="page-hero events"><div class="wrap">
-  <p class="eyebrow">Preview catalog · Sep 16, 2026 refresh</p>
+  <p class="eyebrow">This week · Sep 16–20</p>
   <h1>Upcoming <em>daylife</em></h1>
-  <p class="lead"><strong>99</strong> preview events · <strong>22 upcoming</strong> this week (all Vegas heat — Cedric, Don Diablo, Steve Aoki, Liquid Pool, Nightclub Access Passes). Other cities stay honest with past-catalog rows. Book Now opens live Booketing or SquadUp. No invented prices.</p>
+  <p class="lead"><strong>22 parties</strong> this week, including Cedric, Don Diablo and Steve Aoki in Vegas. Filter by city or vibe, then tap Get tickets.</p>
   <div class="stat-pills" id="event-stats"></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap">
   <div class="when-bar">
-    <label><input type="checkbox" id="upcoming-only" checked /> Show upcoming only (hide past catalog)</label>
-    <span style="font-size:.8rem;color:var(--muted)">Empty cities stay empty — we don’t backfill with Vegas.</span>
+    <label><input type="checkbox" id="upcoming-only" checked /> Upcoming only</label>
+    
   </div>
   <div class="filters">
     <input type="search" id="q" placeholder="Search events, DJs, venues…" />
@@ -63,9 +63,9 @@
     <a class="chip-link" href="events.html?city=las-vegas&amp;vibe=pass">Passes</a>
     <a class="chip-link" href="events.html?city=miami">Miami</a>
     <a class="chip-link" href="events.html?city=dubai">Dubai</a>
-    <a class="chip-link" href="events.html?past=1">Include past catalog</a>
+    <a class="chip-link" href="events.html?past=1">Past events</a>
   </div>
-  <p style="margin-bottom:1rem;font-size:.85rem;color:var(--muted)"><span data-result-count></span> · Live-sampled from poolparty.com · Sep 15, 2026</p>
+  <p style="margin-bottom:1rem;font-size:.85rem;color:var(--muted)"><span data-result-count></span></p>
   <div class="card-grid cols-3" id="grid"></div>
 </div></section>
 
@@ -74,7 +74,7 @@
   <div class="wrap footer-grid">
     <div>
       <a class="logo" href="index.html" style="display:inline-flex!important;align-items:center!important;line-height:0!important;flex:0 0 auto!important;z-index:50!important;"><img class="logo-img" src="assets/img/pp-logo-header.png?v=29" width="178" height="44" alt="Pool Party" style="display:block!important;height:44px!important;width:auto!important;max-width:240px!important;max-height:44px!important;margin:0!important;object-fit:contain!important;" /></a>
-      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Ticketing stays on the live PoolParty stack — this preview is the discovery glow-up for mid-September 2026.</p>
+      <p style="margin-top:1rem;color:var(--mist);font-weight:300;font-size:.9rem;max-width:22rem">Discover pool, beach, and yacht parties worldwide. Pick a city, find your vibe, and book in a minute.</p>
     </div>
     <div>
       <h4>Explore</h4>
@@ -94,17 +94,17 @@
       <h4>Legal</h4>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
-      <a href="cart.html">Demo cart</a>
-      <a href="checkout.html">Checkout shell</a>
+          <a href="checkout.html">Checkout shell</a>
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Pool Party preview · for Frank Accettulli</span>
-    <span>No CATCH branding · SEC music layer · Prices never invent as real</span>
+    <span>© 2026 Pool Party</span>
+    
   </div>
 </footer>
-<script src="assets/js/site.js?v=50"></script>
+<script src="assets/js/site.js?v=51"></script>
 <script src="assets/js/music.js?v=31"></script>
+<script src="assets/js/ux-pass.js?v=1"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const up = PP.countUpcoming(events);
   const wk = events.filter(e => PP.isUpcoming(e) && e.date >= '2026-09-16' && e.date <= '2026-09-20').length;
   const stats = document.getElementById('event-stats');
-  if (stats) stats.innerHTML = `<span><strong>${up}</strong><small>Upcoming</small></span><span><strong>${wk}</strong><small>Sep 16–20</small></span><span><strong>${events.length}</strong><small>In preview</small></span>`;
+  if (stats) stats.innerHTML = `<span><strong>${up}</strong><small>Upcoming</small></span><span><strong>${wk}</strong><small>Sep 16–20</small></span><span><strong>${events.length}</strong><small>Total events</small></span>`;
   PP.bindFilters({
     grid: document.getElementById('grid'),
     search: document.getElementById('q'),
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     items: events,
     render: e => PP.eventCard(e, {cities: cities.cities||[]}),
     emptyCityMessage: (slug, name, upcoming) => upcoming
-      ? `No upcoming preview events for ${PP.esc(name)} this week. <a href="city.html?id=${encodeURIComponent(slug)}">City hub</a> · <a href="venues.html?city=${encodeURIComponent(slug)}">Venues</a> · or uncheck “upcoming only” for past catalog.`
+      ? `No upcoming events for ${PP.esc(name)} this week. <a href="city.html?id=${encodeURIComponent(slug)}">City hub</a> · <a href="venues.html?city=${encodeURIComponent(slug)}">Venues</a> · or uncheck “upcoming only” for past catalog.`
       : `No catalog matches for ${PP.esc(name)}.`
   });
 });

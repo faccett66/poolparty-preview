@@ -1,0 +1,56 @@
+/* ——— UX pass (loads last) ——— */
+/* 3 · preview notes hidden from visitors */
+.proto-banner,.handoff-note,.example-note #city-status{display:none!important}
+/* 4 · no scrolling ad strip */
+.ad-stream{display:none!important}
+body{--ad-stream-offset:0px}
+.hero-cta-offer{display:none!important}
+/* 2 · one clear action per event card; whole card opens details */
+.card{position:relative}
+.card .card-link::after{content:"";position:absolute;inset:0;z-index:1}
+.card .card-actions{position:relative;z-index:2}
+.card .card-buy{width:100%;justify-content:center;min-height:44px;font-size:.95rem}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(11,31,58,.16)}
+/* 6 · easier to read + bigger tap targets */
+:root{--s-text-3:#4A5A70}
+.chip,.filter-chip,.city-chip,.chips a,.chips button,.chip-row a,.chip-row button{min-height:44px;display:inline-flex;align-items:center;padding-inline:1rem}
+.card-meta,.section-head p,.eyebrow{color:#3E4E63}
+@media (max-width:640px){
+  body{font-size:17px}
+  .section-head p,.card-meta{font-size:1rem;line-height:1.55}
+  .card h3{font-size:1.15rem}
+}
+/* 5 · short hero on phones: headline, one line, Book Now above the fold */
+@media (max-width:640px){
+  .hero .hero-kicker,.hero .hero-meta{display:none!important}
+  .hero .hero-copy{font-size:1rem!important;line-height:1.45!important}
+  .hero .hero-copy .long{display:none}
+  .hero .hero-ctas{margin-top:1rem!important}
+  .hero[data-hero-rebuild]{min-height:auto!important}
+}
+/* 1 · music player: smaller, no floating start chip; phones get a round button */
+.pp-music-dock__start{display:none!important}
+.pp-music-dock.needs-start{box-shadow:none!important}
+.ux-dock-toggle{display:none}
+@media (max-width:640px){
+  .pp-music-dock{left:auto!important;right:.75rem!important;bottom:calc(4.6rem + env(safe-area-inset-bottom))!important;max-width:calc(100vw - 1.5rem)!important}
+  .pp-music-dock:not(.ux-open) .pp-music-dock__inner{display:none!important}
+  .ux-dock-toggle{display:flex;pointer-events:auto;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:50%;border:0;background:var(--dc-ink,#0B1F3A);color:#fff;font-size:1.3rem;box-shadow:0 8px 22px rgba(11,31,58,.35);margin-left:auto}
+  .pp-music-dock.is-playing .ux-dock-toggle{background:var(--dc-turq-deep,#0E8F96)}
+  .pp-music-dock.ux-open .ux-dock-toggle{margin-top:.5rem}
+  .pp-music-dock.ux-open{display:flex;flex-direction:column;align-items:flex-end}
+}
+/* 7 · sticky "Find a party" bar on phones (replaces the plain sticky Book Now) */
+.find-bar{display:none}
+@media (max-width:899px){
+  .sticky-book{display:none!important}
+  .find-bar{position:fixed;left:.6rem;right:.6rem;bottom:calc(.6rem + env(safe-area-inset-bottom));z-index:8990;display:flex;gap:.4rem;padding:.45rem;border-radius:18px;background:rgba(247,244,238,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(11,31,58,.28);border:1px solid rgba(11,31,58,.12)}
+  .find-bar select{flex:1 1 0;min-width:0;min-height:44px;border-radius:12px;border:1px solid rgba(11,31,58,.18);background:#fff;color:#0B1F3A;font:600 .92rem/1 inherit;padding:0 .5rem}
+  .find-bar button{flex:0 0 auto;min-height:44px;border:0;border-radius:12px;background:var(--dc-coral,#FF6F61);color:#fff;font:800 .92rem/1 inherit;padding:0 .9rem}
+  body.has-find-bar{padding-bottom:5rem}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* demo-only bits hidden from visitors */
+.nav-cart,.demo-callout,#tiers,.event-tiers,[data-add-demo]{display:none!important}
+.lead-honest{display:none!important}
+@media (min-width:641px){.hero .hero-meta{display:none!important}}

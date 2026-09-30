@@ -182,27 +182,19 @@
           <img src="${this.esc(bust(ev.image))}" alt="${this.esc(ev.title)}" loading="lazy" />
           <div class="badge-row">
             <span class="tag">${this.esc((ev.vibe || 'pool').toUpperCase())}</span>
-            ${this.isUpcoming(ev) ? '<span class="tag live">THIS WEEK</span>' : '<span class="tag demo">PAST CATALOG</span>'}
+            ${this.isUpcoming(ev) ? '<span class="tag live">THIS WEEK</span>' : '<span class="tag demo">PAST EVENT</span>'}
           </div>
         </div>
         <div class="card-body">
-          <h3><a href="${detailHref}">${this.esc(ev.title)}</a></h3>
+          <h3><a class="card-link" href="${detailHref}">${this.esc(ev.title)}</a></h3>
           <div class="card-meta">
             <span>${this.esc(this.formatDate(ev.date))}</span>
             <span>${this.esc(ev.venue || '')}</span>
             <span>${this.esc(this.cityName(opts.cities, ev.city))}</span>
           </div>
           <div class="card-actions">
-            <a class="btn btn-primary btn-sm" href="${this.esc(book)}" target="_blank" rel="noopener">${this.esc(meta.label)}</a>
-            <a class="btn btn-ghost btn-sm" href="${detailHref}">Details</a>
-            <button type="button" class="btn btn-ghost btn-sm" data-add-demo
-              data-event-id="${this.esc(ev.slug)}"
-              data-title="${this.esc(ev.title)}"
-              data-image="${this.esc(ev.image)}"
-              data-tier-id="ga"
-              data-tier-label="General Admission (DEMO)">+ Demo cart</button>
+            <a class="btn btn-primary btn-sm card-buy" href="${this.esc(book)}" target="_blank" rel="noopener">Get tickets</a>
           </div>
-          <p class="handoff-note">${this.esc(meta.label)} opens ${this.esc(meta.noteProvider)} — live PoolParty.com ticket stack unchanged. Prototype cart is DEMO quantity-only (no prices).</p>
         </div>
       </article>`;
     },
@@ -360,7 +352,7 @@
       document.querySelectorAll('.ad-stream').forEach(el => el.remove());
       document.body.classList.remove('has-ad-stream');
       document.documentElement.style.removeProperty('--ad-stream-offset');
-      if (path === 'advertise.html') return;
+      if (path === 'advertise.html' || document.body.classList.contains('ux-calm')) return;
 
       const signal = this.pageSignal();
       const piece = [
