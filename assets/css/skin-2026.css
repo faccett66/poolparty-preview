@@ -234,8 +234,8 @@ section{padding:4.5rem 0}
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
     /* v4: no full-frame darkening — thin top band for the nav + a soft scrim ONLY behind the bottom-left text column */
-    linear-gradient(180deg,rgba(7,11,20,.38) 0%,transparent 16%),
-    radial-gradient(ellipse 62% 70% at 0% 100%,rgba(7,11,20,.62) 0%,rgba(7,11,20,.34) 45%,transparent 75%),
+    linear-gradient(180deg,rgba(7,11,20,.28) 0%,transparent 14%),
+    radial-gradient(ellipse 58% 62% at 0% 100%,rgba(7,11,20,.46) 0%,rgba(7,11,20,.22) 45%,transparent 72%),
     radial-gradient(55% 45% at 85% 100%,rgba(0,229,232,.08),transparent 70%);
 }
 .hero-center{position:relative;z-index:2;width:min(1240px,calc(100% - 2.5rem));margin:0 auto;display:grid;gap:1.75rem;text-align:left}
@@ -289,21 +289,21 @@ body.has-ad-stream .hero{padding-top:calc(var(--ad-stream-offset,7rem) + 2rem)}
 }
 .page-hero::before{
   content:"";position:absolute;inset:0;z-index:-2;
-  background:url("../site/vibe-garden-dusk.jpg") center 35%/cover no-repeat;opacity:.9;
-  -webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%);
+  background:url("../site/vibe-garden-dusk.jpg") center 35%/cover no-repeat;opacity:1;
+  -webkit-mask-image:linear-gradient(180deg,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,#000 86%,transparent 100%);
 }
 .page-hero::after{
   content:"";position:absolute;inset:0;z-index:-1;
   background:
-    /* v4: photo stays bright; scrim only behind the left text column + thin nav band */
-    linear-gradient(180deg,rgba(7,11,20,.4) 0%,transparent 22%),
-    linear-gradient(90deg,rgba(7,11,20,.72) 0%,rgba(7,11,20,.56) 36%,rgba(7,11,20,.18) 60%,transparent 78%),
+    /* v5: photo stays bright; scrim only behind the left text column + thin nav band */
+    linear-gradient(180deg,rgba(7,11,20,.3) 0%,transparent 20%),
+    linear-gradient(90deg,rgba(7,11,20,.55) 0%,rgba(7,11,20,.38) 36%,rgba(7,11,20,.08) 58%,transparent 70%),
     radial-gradient(ellipse 50% 60% at 85% 20%,rgba(0,229,232,.08),transparent 60%),
     radial-gradient(ellipse 40% 50% at 10% 80%,rgba(212,30,82,.06),transparent 55%);
 }
 .page-hero.events::before{background-image:url("../site/vibe-encore-crowd.jpg")}
 .page-hero.venues::before{background-image:url("../site/feat-encore-cabana.jpg")}
-.page-hero.cities::before{background-image:url("../site/dest-miami-night.jpg")}
+.page-hero.cities::before{background-image:url("../site/feat-encore-pool.jpg");background-position:center 55%}
 .page-hero.blog::before{background-image:url("../site/lifestyle-cheers.jpg")}
 .page-hero.contact::before,.page-hero.advertise::before{background-image:url("../site/vibe-yacht-bay.jpg")}
 .page-hero.faqs::before{background-image:url("../site/vibe-beach-terrace.jpg")}
@@ -569,11 +569,11 @@ body.page-yacht .eyebrow,body.page-yacht .tag{color:#D4AF37}
 /* ——— Mobile ——— */
 @media(max-width:720px){
   .hero-overlay{background:
-    linear-gradient(180deg,rgba(7,11,20,.38) 0%,transparent 14%),
-    linear-gradient(0deg,rgba(7,11,20,.66) 0%,rgba(7,11,20,.42) 42%,rgba(7,11,20,.08) 66%,transparent 78%)}
+    linear-gradient(180deg,rgba(7,11,20,.28) 0%,transparent 12%),
+    linear-gradient(0deg,rgba(7,11,20,.5) 0%,rgba(7,11,20,.3) 40%,rgba(7,11,20,.04) 62%,transparent 74%)}
   .page-hero::after{background:
-    linear-gradient(180deg,rgba(7,11,20,.4) 0%,transparent 22%),
-    linear-gradient(0deg,rgba(7,11,20,.6) 0%,rgba(7,11,20,.52) 60%,rgba(7,11,20,.22) 100%)}
+    linear-gradient(180deg,rgba(7,11,20,.3) 0%,transparent 20%),
+    linear-gradient(0deg,rgba(7,11,20,.46) 0%,rgba(7,11,20,.34) 60%,rgba(7,11,20,.1) 100%)}
   section{padding:3.75rem 0}
   .wrap,.hero-center{width:calc(100% - 2rem)}
   .logo-img{height:34px!important;max-height:34px!important}
