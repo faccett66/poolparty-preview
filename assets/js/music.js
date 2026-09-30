@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v29 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v30 */
 (function (global) {
   'use strict';
 
@@ -8,7 +8,8 @@
     { title: 'Fuori Orario', note: 'Sonic Ear Candy · bed', src: 'assets/audio/fuori-orario.mp3' }
   ];
   var SEC_URL = 'https://sonicearcandy.com/custom-soundtrack-beds.html';
-  var DEFAULT_VOL = 0.5;
+  var DEFAULT_VOL = 0.2;
+  var silentStart = false; // autoplaying muted until first tap/key
   var VOL_STEP = 0.1;
   var KEY_MUTE = 'pp_music_muted';
   var KEY_TRACK = 'pp_music_track';
@@ -64,7 +65,7 @@
       var muteRaw = ssGet(KEY_MUTE);
       if (muteRaw === null) muteRaw = localStorage.getItem(KEY_MUTE);
       muted = muteRaw === '1';
-      var v = parseFloat(ssGet(KEY_VOL) || localStorage.getItem(KEY_VOL));
+      var v = parseFloat(ssGet(KEY_VOL));
       if (!isNaN(v)) volume = clampVol(v);
       else volume = DEFAULT_VOL;
       wantPlaying = ssGet(KEY_PLAYING) === '1';
@@ -151,6 +152,7 @@
 
   function applyMute() {
     if (!audio) return;
+    if (!muted) silentStart = false;
     audio.muted = muted;
     audio.volume = muted ? 0 : volume;
     if (muteBtn) {
@@ -304,7 +306,7 @@
         '<div class="pp-music-dock__vol">' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__voldown" aria-label="Volume down">−</button>' +
-          '<span class="pp-music-dock__volpct" aria-live="polite">50%</span>' +
+          '<span class="pp-music-dock__volpct" aria-live="polite">20%</span>' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__volup" aria-label="Volume up">+</button>' +
         '</div>' +
       '</div>';
@@ -368,6 +370,7 @@
           e.stopPropagation();
           hideStartChip();
           disarmGestureUnlock();
+          if (liftSilentStart()) return;
           muted = false;
           if (volume < 0.05) volume = DEFAULT_VOL;
           ensureOverflowStart();
@@ -397,10 +400,22 @@
     gestureArmed = false;
   }
 
+  function liftSilentStart() {
+    if (!silentStart || !audio) return false;
+    silentStart = false;
+    muted = false;
+    if (volume < 0.05) volume = DEFAULT_VOL;
+    persist();
+    applyMute();
+    if (audio.paused) play();
+    return true;
+  }
+
   function unlockAndPlay() {
     disarmGestureUnlock();
     hideStartChip();
     if (!audio) return;
+    if (liftSilentStart()) return;
     muted = false;
     if (volume < 0.05) volume = DEFAULT_VOL;
     ensureOverflowStart();
@@ -455,8 +470,8 @@
    *  Respects an intentional stop: if the visitor paused this session, stay off. */
   function tryAutoplay() {
     if (!audio) return;
-    // Fresh visits should land at ~50% unless user set a volume before
-    if (!localStorage.getItem(KEY_VOL)) {
+    // Every new visit starts at 20%; volume changes carry page-to-page in the tab
+    if (!ssGet(KEY_VOL)) {
       volume = DEFAULT_VOL;
     }
 
@@ -485,8 +500,28 @@
         return;
       }
       attemptPlayPromise().catch(function () {
-        setPlayingUI(false);
-        armGestureUnlock();
+        // Browser blocked sound: start playing silently right away,
+        // then turn sound on at the first tap / click / key press.
+        muted = true;
+        applyMute();
+        silentStart = true;
+        var q = audio.play();
+        var fallback = function () {
+          muted = false;
+          applyMute();
+          setPlayingUI(false);
+          armGestureUnlock();
+        };
+        if (q && q.then) {
+          q.then(function () {
+            setPlayingUI(true);
+            wantPlaying = true;
+            persistSessionPlayback();
+            armGestureUnlock();
+            var c = dock && dock.querySelector('.pp-music-dock__start');
+            if (c) c.textContent = 'Playing \u2014 tap anywhere for sound';
+          }).catch(fallback);
+        } else { fallback(); }
       });
     };
 
