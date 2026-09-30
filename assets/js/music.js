@@ -1,4 +1,4 @@
-/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v30 */
+/*! Pool Party soundtrack layer — soft-nav continuous play + unmuted autoplay. cache-bust:v31 */
 (function (global) {
   'use strict';
 
@@ -301,7 +301,7 @@
         '<button type="button" class="pp-music-dock__btn pp-music-dock__next" aria-label="Next track">' + iconNext() + '</button>' +
         '<div class="pp-music-dock__meta">' +
           '<span class="pp-music-dock__title"></span>' +
-          '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Commission soundtrack beds at Sonic Ear Candy">Get beds · SonicEarCandy.com</a>' +
+          '<a class="pp-music-dock__sec" href="' + SEC_URL + '" target="_blank" rel="noopener noreferrer" title="Commission soundtrack beds at Sonic Ear Candy"><span class="pp-music-dock__sec-pre">Get beds · </span>SonicEarCandy.com</a>' +
         '</div>' +
         '<div class="pp-music-dock__vol">' +
           '<button type="button" class="pp-music-dock__btn pp-music-dock__mute" aria-label="Mute soundtrack" data-state="unmuted">' + iconVolume() + '</button>' +

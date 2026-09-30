@@ -222,3 +222,11 @@
   z-index:5;
 }
 .pp-music-dock__start:hover{ filter:brightness(1.06); }
+
+/* v29: keep the SonicEarCandy link fully visible and clickable (was sliding under the volume buttons) */
+.pp-music-dock__meta { flex: 0 0 auto; min-width: max-content; }
+.pp-music-dock__sec { position: relative; z-index: 2; display: inline-block; padding: 0.1rem 0; cursor: pointer; }
+.pp-music-dock__sec:hover { text-decoration: underline; }
+@media (max-width: 520px) {
+  .pp-music-dock__sec-pre { display: none; }
+}
