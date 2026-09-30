@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Pool Party — DAY-CLUB palette (light) · loads AFTER skin-2026.css
+   Turquoise #2ECFCA · Sand #F9F3DE · Sun gold #F8DF77 · Coral #FF4E62 · White
+   Photo areas (heroes, music band, city/vibe tiles, player) keep white type.
+   ========================================================================== */
+:root,body{
+  --dc-turq:#2ECFCA; --dc-turq-deep:#0E9C98; --dc-sand:#F9F3DE; --dc-sand-2:#F3E9CC;
+  --dc-gold:#F8DF77; --dc-gold-deep:#E2BE3A; --dc-coral:#FF4E62; --dc-coral-hover:#F2384D;
+  --dc-ink:#0F2E35; --dc-ink-2:#35555C; --dc-ink-3:#63797E; --dc-deep:#0B3A40;
+
+  --s-bg:var(--dc-sand); --s-bg-deep:var(--dc-sand); --s-bg-2:#FFFFFF;
+  --s-surface:#FFFFFF; --s-surface-2:#FFFDF6;
+  --s-line:rgba(15,46,53,.12); --s-line-2:rgba(46,207,202,.45);
+  --s-ivory:var(--dc-ink); --s-text-2:var(--dc-ink-2); --s-text-3:var(--dc-ink-3);
+  --s-sun-1:var(--dc-coral); --s-sun-1-hover:var(--dc-coral-hover);
+  --s-sun-2:var(--dc-coral); --s-sun-2-hover:var(--dc-coral-hover);
+  --s-lagoon:var(--dc-turq-deep); --s-lagoon-deep:var(--dc-turq-deep);
+  --s-yellow:var(--dc-gold); --s-gold:var(--dc-gold-deep); --s-gold-deep:#C9A227;
+  --s-glass:rgba(255,255,255,.86);
+  --s-duo:linear-gradient(90deg,var(--dc-coral),var(--dc-turq));
+  --s-shadow:0 14px 34px rgba(15,46,53,.10),0 0 0 1px rgba(15,46,53,.06);
+  --s-glow:0 8px 22px rgba(255,78,98,.32);
+}
+/* Photo areas: flip back to white type + bright turquoise accents */
+.hero,.page-hero,.music-band,.city-tile,.vibe-card,.pp-music-dock,.footer,.nav-drawer{
+  --s-ivory:#FFFFFF; --s-text-2:#E9F4F4; --s-text-3:#C5D8DA;
+  --s-lagoon:var(--dc-turq); --s-line:rgba(255,255,255,.18);
+  --ink:#fff; --mist:#E9F4F4; --muted:#C5D8DA;
+}
+
+body{background:var(--dc-sand);background-image:linear-gradient(180deg,#FBF7E9 0%,var(--dc-sand) 50%,#F6EDD2 100%);color:var(--dc-ink)}
+body::before{background:
+  radial-gradient(ellipse 80% 45% at 0% 0%,rgba(46,207,202,.14),transparent 55%),
+  radial-gradient(ellipse 70% 40% at 100% 5%,rgba(255,78,98,.08),transparent 50%),
+  radial-gradient(ellipse 50% 35% at 50% 100%,rgba(248,223,119,.18),transparent 55%)}
+body::after{background:none}
+::selection{background:rgba(46,207,202,.35);color:var(--dc-ink)}
+code{background:rgba(15,46,53,.06)}
+
+/* Top strip + nav: white glass */
+.proto-banner{background:var(--dc-deep);color:#E9F4F4;border-bottom-color:transparent}
+.proto-banner a{color:var(--dc-gold)}
+.nav,.nav.scrolled{background:rgba(255,255,255,.88);border-bottom:1px solid rgba(46,207,202,.35);box-shadow:0 6px 24px rgba(15,46,53,.08)}
+.nav-links{background:rgba(249,243,222,.7);border-color:rgba(15,46,53,.08)}
+.nav-links a{color:var(--dc-ink-2)}
+.nav-links a:hover{color:var(--dc-turq-deep);background:rgba(46,207,202,.12)}
+.nav-links a.active{color:var(--dc-deep);background:rgba(46,207,202,.22)}
+.nav-links a.active::after{background:var(--dc-coral);box-shadow:none}
+.nav-drawer{background:radial-gradient(80% 50% at 100% 0%,rgba(46,207,202,.25),transparent 70%),rgba(11,58,64,.98)}
+
+/* Ad ticker: soft sun strip */
+.ad-stream{background:linear-gradient(90deg,rgba(255,78,98,.12),rgba(46,207,202,.16),rgba(248,223,119,.35)),#FFFDF6;border-top-color:rgba(46,207,202,.35);border-bottom-color:rgba(15,46,53,.08)}
+
+/* Buttons */
+.btn-primary,.btn-pay,.nav-cta,.hero-cta-book,.hero-chip-book,.sticky-book{background:var(--dc-coral)!important;color:#fff!important;box-shadow:0 10px 26px rgba(255,78,98,.30)}
+.btn-primary:hover,.btn-pay:hover,.nav-cta:hover,.hero-cta-book:hover{background:var(--dc-coral-hover)!important}
+.btn-ghost,.btn-secondary{color:var(--dc-turq-deep);border-color:var(--dc-turq)}
+.btn-ghost:hover,.btn-secondary:hover{background:rgba(46,207,202,.12)}
+.btn-aqua{color:#06393C;background:var(--dc-turq)}
+.btn-vip{color:#3A2E05;background:var(--dc-gold)}
+.hero .btn-ghost,.page-hero .btn-ghost,.music-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.75);background:rgba(11,58,64,.25)}
+
+/* Cards, panels, chips, inputs on sand */
+.card,.step,.panel,.form-card,.faq-item,.lead-embed,.empty-state,.lead-honest{background:#fff;border-color:rgba(15,46,53,.10);box-shadow:0 10px 28px rgba(15,46,53,.07)}
+.card{border-top:3px solid var(--dc-turq)}
+body.page-yacht .card{border-top-color:var(--dc-gold-deep)}
+.card-media{background:var(--dc-sand-2)}
+.card-media::after{background:linear-gradient(0deg,rgba(11,58,64,.45),transparent)}
+.tag{color:#fff;background:rgba(11,58,64,.72);border-color:rgba(46,207,202,.55)}
+.chip,a.chip-link,button.chip-link{background:#fff;color:var(--dc-ink);border-color:rgba(15,46,53,.14)}
+.chip:hover,.chip.active,a.chip-link:hover,button.chip-link:hover{color:var(--dc-deep);border-color:var(--dc-turq);background:rgba(46,207,202,.14)}
+.filters input,.filters select,input,select,textarea{background:#fff;color:var(--dc-ink);border-color:rgba(15,46,53,.16)}
+.filters select option{background:#fff;color:var(--dc-ink)}
+.faq-item summary::after{background:rgba(46,207,202,.18);color:var(--dc-deep)}
+.faq-item[open] summary::after{background:var(--dc-coral);color:#fff}
+.step-num,.step .num{background:linear-gradient(135deg,var(--dc-coral),var(--dc-turq))}
+.qty button{background:rgba(15,46,53,.06)}
+.demo-callout{background:linear-gradient(100deg,rgba(255,78,98,.08),rgba(46,207,202,.10)),#fff;color:var(--dc-ink-2)}
+.eyebrow{color:var(--dc-turq-deep)}
+.hero .eyebrow,.page-hero .eyebrow,.music-band .eyebrow{color:var(--dc-turq)}
+.stat-pills span{background:#fff;border-color:rgba(46,207,202,.4)}
+.page-hero .stat-pills span{background:rgba(11,58,64,.45)}
+h1 em,h2 em,.grad,.accent{color:var(--dc-coral)}
+
+/* Photo overlays: warm turquoise-teal instead of midnight */
+.city-tile::after{background:linear-gradient(0deg,rgba(11,58,64,.85) 0%,rgba(11,58,64,.25) 55%,transparent 100%)}
+.vibe-card::after{background:linear-gradient(0deg,rgba(11,58,64,.82) 0%,rgba(11,58,64,.2) 55%,transparent 100%)}
+.hero-copy,.page-hero .lead,.music-inner>p:not(.eyebrow),.page-hero .eyebrow,.music-inner .eyebrow{background:rgba(11,58,64,.32)}
+.hero-kicker{background:rgba(11,58,64,.6);border-color:rgba(248,223,119,.5)}
+.hero-cta-cities{background:rgba(11,58,64,.45);border-color:rgba(255,255,255,.55)}
+
+/* Footer: deep lagoon with gold rule */
+.footer{background:linear-gradient(165deg,#0E4A50,var(--dc-deep));border-top:0;box-shadow:none}
+.footer::before{background:linear-gradient(90deg,var(--dc-gold),var(--dc-coral),var(--dc-turq));height:3px}
+.footer h4{color:var(--dc-gold)}
+.footer a:hover{color:var(--dc-turq)}
+
+/* Player: deep lagoon pill */
+.pp-music-dock__inner{background:rgba(11,58,64,.95)!important;border-color:rgba(46,207,202,.45)!important;box-shadow:0 12px 32px rgba(15,46,53,.28)!important}
+.pp-music-dock__play,.pp-music-dock__start{background:var(--dc-coral)!important}
+.pp-music-dock__play[data-state="playing"]{background:var(--dc-gold)!important;color:#3A2E05!important}
+.pp-music-dock__sec,.pp-music-dock__volpct{color:var(--dc-turq)!important}
+
+/* Header logo: dark-lettered version on the white nav (footer keeps the white one) */
+.nav .logo-img{content:url("../img/pp-logo-header-day.png")}
