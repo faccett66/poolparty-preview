@@ -305,7 +305,8 @@ body.has-ad-stream .hero{padding-top:calc(var(--ad-stream-offset,7rem) + 2rem)}
 .page-hero.venues::before{background-image:url("../site/feat-encore-cabana.jpg")}
 .page-hero.cities::before{background-image:url("../site/feat-encore-pool.jpg");background-position:center 55%}
 .page-hero.blog::before{background-image:url("../site/lifestyle-cheers.jpg")}
-.page-hero.contact::before,.page-hero.advertise::before{background-image:url("../site/vibe-yacht-bay.jpg")}
+.page-hero.advertise::before{background-image:url("../site/vibe-yacht-bay.jpg")}
+.page-hero.contact::before{background-image:url("../site/hero-people-4.jpg");background-position:center 30%}
 .page-hero.faqs::before{background-image:url("../site/vibe-encore-umbrellas.jpg");background-position:center 45%}
 .page-hero .wrap{position:relative}
 .page-hero h1{text-shadow:0 2px 6px rgba(0,0,0,.35),0 6px 26px rgba(0,0,0,.5)}
