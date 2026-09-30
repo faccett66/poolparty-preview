@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Pool Party — YACHT palette (Capri / Monaco) · loads AFTER skin-2026.css
+   Navy #0B1F3A · White #F7F4EE · Pale gold #D4B46A · Taupe #C4B5A0 · Ice aqua #88C9C3
+   Photo areas (heroes, music band, city/vibe tiles, player) keep white type.
+   ========================================================================== */
+:root,body{
+  --dc-turq:#88C9C3; --dc-turq-deep:#2F6F6A; --dc-sand:#F7F4EE; --dc-sand-2:#ECE5D8;
+  --dc-gold:#D4B46A; --dc-gold-deep:#B8964A; --dc-coral:#0B1F3A; --dc-coral-hover:#162E52;
+  --dc-ink:#0B1F3A; --dc-ink-2:#34445C; --dc-ink-3:#6B7385; --dc-deep:#0B1F3A; --dc-taupe:#C4B5A0;
+
+  --s-bg:var(--dc-sand); --s-bg-deep:var(--dc-sand); --s-bg-2:#FFFFFF;
+  --s-surface:#FFFFFF; --s-surface-2:#FCFAF6;
+  --s-line:rgba(11,31,58,.12); --s-line-2:rgba(212,180,106,.5);
+  --s-ivory:var(--dc-ink); --s-text-2:var(--dc-ink-2); --s-text-3:var(--dc-ink-3);
+  --s-sun-1:var(--dc-coral); --s-sun-1-hover:var(--dc-coral-hover);
+  --s-sun-2:var(--dc-coral); --s-sun-2-hover:var(--dc-coral-hover);
+  --s-lagoon:var(--dc-turq-deep); --s-lagoon-deep:var(--dc-turq-deep);
+  --s-yellow:var(--dc-gold); --s-gold:var(--dc-gold); --s-gold-deep:var(--dc-gold-deep);
+  --s-glass:rgba(255,255,255,.9);
+  --s-duo:linear-gradient(90deg,var(--dc-gold),var(--dc-turq));
+  --s-shadow:0 14px 34px rgba(11,31,58,.10),0 0 0 1px rgba(11,31,58,.06);
+  --s-glow:0 8px 22px rgba(11,31,58,.25);
+}
+/* Photo areas: flip back to white type + bright turquoise accents */
+.hero,.page-hero,.music-band,.city-tile,.vibe-card,.pp-music-dock,.footer,.nav-drawer{
+  --s-ivory:#FFFFFF; --s-text-2:#E9F4F4; --s-text-3:#C5D8DA;
+  --s-lagoon:var(--dc-turq); --s-line:rgba(255,255,255,.18);
+  --ink:#fff; --mist:#E9F4F4; --muted:#C5D8DA;
+}
+
+body{background:var(--dc-sand);background-image:linear-gradient(180deg,#FAF8F3 0%,var(--dc-sand) 50%,#EFE9DD 100%);color:var(--dc-ink)}
+body::before{background:
+  radial-gradient(ellipse 80% 45% at 0% 0%,rgba(136,201,195,.14),transparent 55%),
+  radial-gradient(ellipse 70% 40% at 100% 5%,rgba(11,31,58,.08),transparent 50%),
+  radial-gradient(ellipse 50% 35% at 50% 100%,rgba(212,180,106,.18),transparent 55%)}
+body::after{background:none}
+::selection{background:rgba(136,201,195,.35);color:var(--dc-ink)}
+code{background:rgba(11,31,58,.06)}
+
+/* Top strip + nav: white glass */
+.proto-banner{background:var(--dc-deep);color:#E9F4F4;border-bottom-color:transparent}
+.proto-banner a{color:var(--dc-gold)}
+.nav,.nav.scrolled{background:rgba(255,255,255,.88);border-bottom:1px solid rgba(136,201,195,.35);box-shadow:0 6px 24px rgba(11,31,58,.08)}
+.nav-links{background:rgba(249,243,222,.7);border-color:rgba(11,31,58,.08)}
+.nav-links a{color:var(--dc-ink-2)}
+.nav-links a:hover{color:var(--dc-turq-deep);background:rgba(136,201,195,.12)}
+.nav-links a.active{color:var(--dc-deep);background:rgba(136,201,195,.22)}
+.nav-links a.active::after{background:var(--dc-coral);box-shadow:none}
+.nav-drawer{background:radial-gradient(80% 50% at 100% 0%,rgba(136,201,195,.25),transparent 70%),rgba(11,31,58,.98)}
+
+/* Ad ticker: soft sun strip */
+.ad-stream{background:linear-gradient(90deg,rgba(11,31,58,.12),rgba(136,201,195,.16),rgba(212,180,106,.35)),#FFFDF6;border-top-color:rgba(136,201,195,.35);border-bottom-color:rgba(11,31,58,.08)}
+
+/* Buttons */
+.btn-primary,.btn-pay,.nav-cta,.hero-cta-book,.hero-chip-book,.sticky-book{background:var(--dc-coral)!important;color:#fff!important;box-shadow:0 10px 26px rgba(11,31,58,.30)}
+.btn-primary:hover,.btn-pay:hover,.nav-cta:hover,.hero-cta-book:hover{background:var(--dc-coral-hover)!important}
+.btn-ghost,.btn-secondary{color:var(--dc-turq-deep);border-color:var(--dc-turq)}
+.btn-ghost:hover,.btn-secondary:hover{background:rgba(136,201,195,.12)}
+.btn-aqua{color:#0B1F3A;background:var(--dc-turq)}
+.btn-vip{color:#2A1F05;background:var(--dc-gold)}
+.hero .btn-ghost,.page-hero .btn-ghost,.music-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.75);background:rgba(11,31,58,.25)}
+
+/* Cards, panels, chips, inputs on sand */
+.card,.step,.panel,.form-card,.faq-item,.lead-embed,.empty-state,.lead-honest{background:#fff;border-color:rgba(11,31,58,.10);box-shadow:0 10px 28px rgba(11,31,58,.07)}
+.card{border-top:3px solid var(--dc-turq)}
+body.page-yacht .card{border-top-color:var(--dc-gold-deep)}
+.card-media{background:var(--dc-sand-2)}
+.card-media::after{background:linear-gradient(0deg,rgba(11,31,58,.45),transparent)}
+.tag{color:#fff;background:rgba(11,31,58,.72);border-color:rgba(136,201,195,.55)}
+.chip,a.chip-link,button.chip-link{background:#fff;color:var(--dc-ink);border-color:rgba(11,31,58,.14)}
+.chip:hover,.chip.active,a.chip-link:hover,button.chip-link:hover{color:var(--dc-deep);border-color:var(--dc-turq);background:rgba(136,201,195,.14)}
+.filters input,.filters select,input,select,textarea{background:#fff;color:var(--dc-ink);border-color:rgba(11,31,58,.16)}
+.filters select option{background:#fff;color:var(--dc-ink)}
+.faq-item summary::after{background:rgba(136,201,195,.18);color:var(--dc-deep)}
+.faq-item[open] summary::after{background:var(--dc-coral);color:#fff}
+.step-num,.step .num{background:linear-gradient(135deg,var(--dc-coral),var(--dc-turq))}
+.qty button{background:rgba(11,31,58,.06)}
+.demo-callout{background:linear-gradient(100deg,rgba(11,31,58,.08),rgba(136,201,195,.10)),#fff;color:var(--dc-ink-2)}
+.eyebrow{color:var(--dc-turq-deep)}
+.hero .eyebrow,.page-hero .eyebrow,.music-band .eyebrow{color:var(--dc-turq)}
+.stat-pills span{background:#fff;border-color:rgba(136,201,195,.4)}
+.page-hero .stat-pills span{background:rgba(11,31,58,.45)}
+h1 em,h2 em,.grad,.accent{color:var(--dc-coral)}
+
+/* Photo overlays: warm turquoise-teal instead of midnight */
+.city-tile::after{background:linear-gradient(0deg,rgba(11,31,58,.85) 0%,rgba(11,31,58,.25) 55%,transparent 100%)}
+.vibe-card::after{background:linear-gradient(0deg,rgba(11,31,58,.82) 0%,rgba(11,31,58,.2) 55%,transparent 100%)}
+.hero-copy,.page-hero .lead,.music-inner>p:not(.eyebrow),.page-hero .eyebrow,.music-inner .eyebrow{background:rgba(11,31,58,.32)}
+.hero-kicker{background:rgba(11,31,58,.6);border-color:rgba(212,180,106,.5)}
+.hero-cta-cities{background:rgba(11,31,58,.45);border-color:rgba(255,255,255,.55)}
+
+/* Footer: deep lagoon with gold rule */
+.footer{background:linear-gradient(165deg,#13294A,var(--dc-deep));border-top:0;box-shadow:none}
+.footer::before{background:linear-gradient(90deg,var(--dc-gold),var(--dc-coral),var(--dc-turq));height:3px}
+.footer h4{color:var(--dc-gold)}
+.footer a:hover{color:var(--dc-turq)}
+
+/* Player: deep lagoon pill */
+.pp-music-dock__inner{background:rgba(11,31,58,.95)!important;border-color:rgba(136,201,195,.45)!important;box-shadow:0 12px 32px rgba(11,31,58,.28)!important}
+.pp-music-dock__play,.pp-music-dock__start{background:var(--dc-coral)!important}
+.pp-music-dock__play[data-state="playing"]{background:var(--dc-gold)!important;color:#2A1F05!important}
+.pp-music-dock__sec,.pp-music-dock__volpct{color:var(--dc-turq)!important}
+
+/* Header logo: dark-lettered version on the white nav (footer keeps the white one) */
+.nav .logo-img{content:url("../img/pp-logo-header-yacht.png")}
+
+/* ——— Yacht-specific polish ——— */
+/* Photo areas: gold accents + gold CTAs so buttons read on dark photos */
+.hero,.page-hero,.music-band{
+  --s-sun-1:var(--dc-gold); --s-sun-2:var(--dc-gold);
+  --s-grad:linear-gradient(0deg,var(--dc-gold),var(--dc-gold)); --s-grad-text:linear-gradient(0deg,#E6CD8F,var(--dc-gold));
+  --s-lagoon:var(--dc-turq);
+}
+.hero .hero-cta-book,.hero .hero-chip-book,.page-hero .btn-primary,.music-band .btn-primary{background:var(--dc-gold)!important;color:var(--dc-ink)!important;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.hero .hero-cta-book:hover,.page-hero .btn-primary:hover,.music-band .btn-primary:hover{background:#E0C47E!important}
+.nav-cta{background:var(--dc-ink)!important;color:#fff!important;border:1px solid var(--dc-gold)}
+.nav-cta:hover{background:var(--dc-coral-hover)!important}
+.btn-primary,.btn-pay{letter-spacing:.02em}
+.btn-ghost,.btn-secondary{color:var(--dc-ink);border-color:var(--dc-gold)}
+.btn-ghost:hover,.btn-secondary:hover{background:rgba(212,180,106,.14)}
+/* Gold hairlines + taupe details */
+.card{border-top:2px solid var(--dc-gold)}
+.eyebrow{color:var(--dc-gold-deep)}
+.hero .eyebrow,.page-hero .eyebrow,.music-band .eyebrow{color:var(--dc-gold)}
+.eyebrow::before{background:var(--dc-gold)}
+h1 em,h2 em,.grad,.accent{color:var(--dc-gold-deep)}
+.hero h1 em,.page-hero h1 em,.music-band h2 em{color:var(--dc-gold)}
+.chip:hover,.chip.active,a.chip-link:hover,button.chip-link:hover{color:var(--dc-ink);border-color:var(--dc-gold);background:rgba(212,180,106,.14)}
+.nav-links a.active{color:var(--dc-ink);background:rgba(212,180,106,.22)}
+.nav-links a.active::after{background:var(--dc-gold)}
+.nav-links a:hover{color:var(--dc-ink);background:rgba(196,181,160,.22)}
+.ad-stream{background:linear-gradient(90deg,rgba(212,180,106,.18),rgba(136,201,195,.18),rgba(196,181,160,.22)),#FCFAF6}
+.faq-item[open] summary::after{background:var(--dc-ink);color:var(--dc-gold)}
+.faq-item summary::after{background:rgba(212,180,106,.2);color:var(--dc-ink)}
+.stat-pills span{border-color:rgba(212,180,106,.5)}
+.footer::before{background:linear-gradient(90deg,transparent,var(--dc-gold),transparent);height:1px}
+.pp-music-dock__play,.pp-music-dock__start{background:var(--dc-gold)!important;color:var(--dc-ink)!important}
+.pp-music-dock__play[data-state="playing"]{background:var(--dc-turq)!important;color:var(--dc-ink)!important}
+.pp-music-dock__inner{border-color:rgba(212,180,106,.5)!important}
+.pp-music-dock__sec,.pp-music-dock__volpct{color:var(--dc-gold)!important}
+.sticky-book{background:var(--dc-ink)!important;border:1px solid var(--dc-gold)}
+.proto-banner a{color:var(--dc-gold)}
