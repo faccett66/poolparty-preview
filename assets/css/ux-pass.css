@@ -54,3 +54,11 @@ body{--ad-stream-offset:0px}
 .nav-cart,.demo-callout,#tiers,.event-tiers,[data-add-demo]{display:none!important}
 .lead-honest{display:none!important}
 @media (min-width:641px){.hero .hero-meta{display:none!important}}
+/* 1b · desktop too: compact pill (play + ♪); ♪ opens full controls */
+@media (min-width:641px){
+  .ux-dock-toggle{display:flex;pointer-events:auto;align-items:center;justify-content:center;width:2.6rem;height:2.6rem;border-radius:50%;border:0;background:var(--dc-ink,#0B1F3A);color:#fff;font-size:1.15rem;box-shadow:0 8px 22px rgba(11,31,58,.35);cursor:pointer}
+  .pp-music-dock{display:flex!important;flex-direction:row-reverse;align-items:center;gap:.4rem}
+  .pp-music-dock:not(.ux-open) .pp-music-dock__inner>*:not(.pp-music-dock__play){display:none!important}
+  .pp-music-dock:not(.ux-open) .pp-music-dock__inner{padding:.3rem!important}
+  .pp-music-dock.is-playing .ux-dock-toggle{background:var(--dc-turq-deep,#0E8F96)}
+}
