@@ -306,7 +306,7 @@ body.has-ad-stream .hero{padding-top:calc(var(--ad-stream-offset,7rem) + 2rem)}
 .page-hero.cities::before{background-image:url("../site/feat-encore-pool.jpg");background-position:center 55%}
 .page-hero.blog::before{background-image:url("../site/lifestyle-cheers.jpg")}
 .page-hero.contact::before,.page-hero.advertise::before{background-image:url("../site/vibe-yacht-bay.jpg")}
-.page-hero.faqs::before{background-image:url("../site/vibe-beach-terrace.jpg")}
+.page-hero.faqs::before{background-image:url("../site/vibe-encore-umbrellas.jpg");background-position:center 45%}
 .page-hero .wrap{position:relative}
 .page-hero h1{text-shadow:0 2px 6px rgba(0,0,0,.35),0 6px 26px rgba(0,0,0,.5)}
 .page-hero .lead,.page-hero .eyebrow{text-shadow:0 1px 3px rgba(0,0,0,.65),0 2px 14px rgba(0,0,0,.5)}
@@ -609,3 +609,22 @@ body.page-yacht .eyebrow,body.page-yacht .tag{color:#D4AF37}
 .hero-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
 .nav-cta{white-space:nowrap}
 @media(max-width:420px){.nav-cart{display:none}.nav-actions{gap:.45rem}.nav-cta{padding:.55rem .9rem}}
+
+/* v6: light frosted glass behind small hero text (home + inner pages) */
+.hero-copy,.page-hero .lead{
+  display:block;width:fit-content;max-width:36rem;
+  padding:.8rem 1.05rem;border-radius:14px;
+  background:rgba(7,11,20,.34);
+  border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);
+  box-shadow:0 8px 28px rgba(0,0,0,.18);
+}
+.page-hero .eyebrow{
+  width:fit-content;padding:.38rem .8rem;border-radius:999px;
+  background:rgba(7,11,20,.34);
+  border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+@media(max-width:720px){
+  .hero-copy,.page-hero .lead{padding:.7rem .85rem;border-radius:12px}
+}
