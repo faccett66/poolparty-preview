@@ -1,0 +1,14 @@
+Nightlife 0.3.1 filter patch. Replace these files inside wp-content/plugins/pp-nightlife/ on staging. Do not recreate pages and do not touch live.
+
+- pp-nightlife.php
+- inc/render.php
+- assets/event-filters.js
+- assets/nightlife-native.css
+
+The landing venue control is a select. 0.3.0 never loaded a script for it, and the unused script looked for different attributes. 0.3.1 loads event-filters.js in the footer and filters cards by data-venue. Hidden cards are display:none under body.pp-nightlife.
+
+After copy, reload /nightlife/ (bypass cache). Choose each venue, then Clear.
+
+Expected visible events: All 29, TAO 6, Marquee 6, OMNIA 7, Hakkasan 6, JEWEL 4. Clear returns 29.
+
+Book Now links stay the audited event URLs. Calendar links are unchanged.

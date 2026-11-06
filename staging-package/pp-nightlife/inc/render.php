@@ -89,7 +89,7 @@ function ppn_2026_render($slug) {
         foreach ($venues as $id => $venue) {
             echo '<option value="' . ppn_2026_h($venue['id']) . '">' . ppn_2026_h($venue['name']) . '</option>';
         }
-        echo '</select></label></div></form>';
+        echo '</select></label><button type="reset" class="btn btn-ghost btn-sm lean-filter__clear">Clear</button></div></form>';
     } else {
         $venue = $venues[$slug];
         echo '<p class="lead">' . ppn_2026_h($venue['note']) . ' ' . ppn_2026_h($venue['address']) . '</p>';
@@ -106,6 +106,6 @@ function ppn_2026_render($slug) {
         $shown++;
     }
     echo '</div>';
-    echo '<p class="lean-ev__count">' . (int) $shown . ' upcoming events in this static sample. Not live inventory. No prices are shown here.</p>';
+    echo '<p class="lean-ev__count" data-nl-count>' . (int) $shown . ' upcoming events in this static sample. Not live inventory. No prices are shown here.</p>';
     echo '</div></section>';
 }
