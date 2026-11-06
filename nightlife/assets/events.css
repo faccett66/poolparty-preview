@@ -44,6 +44,7 @@ body.pp-events .preview-footer strong{color:#0B1F3A;font-family:var(--font-displ
 .ev-guides-row{display:flex;flex-wrap:wrap;gap:.5rem}
 .ev-guides-row a{border:1px solid rgba(11,31,58,.16);background:#fff;border-radius:999px;padding:.55rem .9rem;font-size:.85rem;font-weight:700;color:#0B1F3A;text-decoration:none}
 .ev-note{margin-top:1rem;font-size:.82rem;color:#4A5A70;max-width:52rem}
+.ev-license{margin:0 0 1rem;padding:.7rem .9rem;border-radius:14px;background:#fff;border:1px solid rgba(11,31,58,.12);color:#34445C;font-size:.82rem}
 :focus-visible{outline:2px solid #0B1F3A;outline-offset:3px}
 @media(max-width:700px){.ev-wrap{width:calc(100% - 2rem)}.card-meta{font-size:1rem;line-height:1.45}.card-body h3{font-size:1.15rem}}
 @media(max-width:359px){.card-actions{flex-direction:column;align-items:stretch}.card-actions>.btn{width:100%;flex:0 0 auto}}
