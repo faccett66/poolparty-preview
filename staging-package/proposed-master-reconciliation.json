@@ -1,0 +1,78 @@
+{
+  "status": "PROPOSAL ONLY. Do not write the Master from this file. Historical row numbers are not write targets. No sheet was read or changed.",
+  "separation": "Nightlife rows must stay separate from Pool, Beach, and Yacht. Do not turn a dayclub row into a nightclub row. Do not import these as event or product records.",
+  "dayclub_ids_not_to_use": ["1109", "1113", "40911541686"],
+  "venues": [
+    {
+      "proposed_venue_name": "TAO Nightclub",
+      "vertical": "Nightlife",
+      "venue_type": "Nightclub",
+      "city": "Las Vegas",
+      "address": "3377 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "affiliate_code": "ppl",
+      "partner_account": "61",
+      "partner_venue_id": "1112",
+      "partner_calendar": "https://booketing.com/microsite/ppl/events/61/1112/tao-nightclub",
+      "proposed_page_path": "/nightlife/tao-nightclub/",
+      "not_the_same_as": "TAO Beach / venue 1113",
+      "action": "Match the current Master by exact nightclub identity. Add a separate Nightlife row only if that identity is missing."
+    },
+    {
+      "proposed_venue_name": "Marquee Nightclub",
+      "vertical": "Nightlife",
+      "venue_type": "Nightclub",
+      "city": "Las Vegas",
+      "address": "3708 S Las Vegas Blvd, Las Vegas, NV 89109",
+      "affiliate_code": "ppl",
+      "partner_account": "61",
+      "partner_venue_id": "1108",
+      "partner_calendar": "https://booketing.com/microsite/ppl/events/61/1108/marquee-nightclub",
+      "proposed_page_path": "/nightlife/marquee-nightclub/",
+      "not_the_same_as": "Marquee Dayclub / venue 1109",
+      "action": "Match the current Master by exact nightclub identity. Add a separate Nightlife row only if that identity is missing."
+    },
+    {
+      "proposed_venue_name": "OMNIA Nightclub",
+      "vertical": "Nightlife",
+      "venue_type": "Nightclub",
+      "city": "Las Vegas",
+      "address": "3570 Las Vegas Boulevard South, Las Vegas, NV 89109",
+      "affiliate_code": "ppl",
+      "partner_account": "61",
+      "partner_venue_id": "1089",
+      "partner_calendar": "https://booketing.com/microsite/ppl/events/61/1089/omnia",
+      "proposed_page_path": "/nightlife/omnia-nightclub/",
+      "not_the_same_as": "OMNIA Dayclub / venue 40911541686",
+      "licensed_photos": "InvadingInvader / Wikimedia Commons, CC BY 4.0. Nightclub only.",
+      "action": "Match the current Master by exact nightclub identity. Add a separate Nightlife row only if that identity is missing."
+    },
+    {
+      "proposed_venue_name": "Hakkasan Nightclub",
+      "vertical": "Nightlife",
+      "venue_type": "Nightclub",
+      "city": "Las Vegas",
+      "address": "3799 Las Vegas Boulevard South, Las Vegas, NV 89109",
+      "affiliate_code": "ppl",
+      "partner_account": "61",
+      "partner_venue_id": "1085",
+      "partner_calendar": "https://booketing.com/microsite/ppl/events/61/1085/hakkasan-las-vegas",
+      "proposed_page_path": "/nightlife/hakkasan-nightclub/",
+      "photo": "No cleared photo. Do not use the OMNIA photograph.",
+      "action": "Match the current Master by exact nightclub identity. Add a separate Nightlife row only if that identity is missing."
+    },
+    {
+      "proposed_venue_name": "JEWEL Nightclub",
+      "vertical": "Nightlife",
+      "venue_type": "Nightclub",
+      "city": "Las Vegas",
+      "address": "3730 S Las Vegas Blvd, Las Vegas, NV 89158",
+      "affiliate_code": "ppl",
+      "partner_account": "61",
+      "partner_venue_id": "100542",
+      "partner_calendar": "https://booketing.com/microsite/ppl/events/61/100542/jewel-nightclub",
+      "proposed_page_path": "/nightlife/jewel-nightclub/",
+      "photo": "No cleared photo. Do not use the OMNIA photograph. Do not add the five blank JEWEL date shells.",
+      "action": "Match the current Master by exact nightclub identity. Add a separate Nightlife row only if that identity is missing."
+    }
+  ]
+}
