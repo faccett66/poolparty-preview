@@ -1,44 +1,50 @@
-# Nightlife staging package
+# Nightlife staging install
 
-Additive WordPress package for the parent executor. This package does not deploy itself.
+Backup verified 6:33 PM EST is the gate for the parent executor. This package does not connect to staging or live.
 
-## Not done yet
+Current UI to match: theme `poolparty` 1.0.0 and plugin `pp-2026` 0.8.3-leads-captcha. Nightlife uses that plugin's lean header, footer, `page-hero`, and event cards. It does not replace those files and does not call the events/venues hero rotator, so daytime photos stay on daytime pages.
 
-Current staging theme templates and a fresh staging backup were not available here. Do not treat this as a verified native header, hero, or template integration. Do not upload it to staging until that backup is verified. Do not touch live.
+## Install
 
-## What the plugin does
+1. Confirm the verified backup is still the one you can restore.
+2. Copy `pp-nightlife/` to `wp-content/plugins/pp-nightlife/`.
+3. `wp plugin activate pp-nightlife`
+4. `sh staging-package/bin/install-pages.sh` from a checkout on the staging host, or run the same `wp post create` commands. Record every page ID.
+5. Do not add these pages to the venue or product sync. They are ordinary pages, not `venue` or `product` records.
 
-`pp-nightlife/pp-nightlife.php` registers the `[pp_nightlife]` shortcode only. It does not create pages, menus, products, venue records, taxonomies, options, or cron jobs. It does not change Pool, Beach, or Yacht queries. Analytics stay off unless `ppn_2026_enable_analytics` is explicitly enabled later. Nightlife pages are marked noindex.
+Pages:
 
-Suggested pages, created manually after the real template reference is in hand:
+| Path | Slug | Parent |
+| --- | --- | --- |
+| /nightlife/ | nightlife | none |
+| /nightlife/tao-nightclub/ | tao-nightclub | nightlife |
+| /nightlife/marquee-nightclub/ | marquee-nightclub | nightlife |
+| /nightlife/omnia-nightclub/ | omnia-nightclub | nightlife |
+| /nightlife/hakkasan-nightclub/ | hakkasan-nightclub | nightlife |
+| /nightlife/jewel-nightclub/ | jewel-nightclub | nightlife |
 
-- `/nightlife/` with `[pp_nightlife]`
-- `/nightlife/tao-nightclub/` with `[pp_nightlife venue="tao-nightclub"]`
-- `/nightlife/marquee-nightclub/` with `[pp_nightlife venue="marquee-nightclub"]`
-- `/nightlife/omnia-nightclub/` with `[pp_nightlife venue="omnia-nightclub"]`
-- `/nightlife/hakkasan-nightclub/` with `[pp_nightlife venue="hakkasan-nightclub"]`
-- `/nightlife/jewel-nightclub/` with `[pp_nightlife venue="jewel-nightclub"]`
+## After upload
 
-Use the existing theme page template. Do not replace theme files with this package.
+`php -l wp-content/plugins/pp-nightlife/pp-nightlife.php`
 
-## Deploy only after backup
+`wp eval 'echo function_exists("pp2026_lean_open") ? "lean-ok\n" : "lean-missing\n";'`
 
-1. Confirm the fresh staging files and database backup exists, is restorable, and is stored outside the web root.
-2. Copy only `staging-package/pp-nightlife/` to `wp-content/plugins/pp-nightlife/`.
-3. Activate the plugin. Activation does not write content.
-4. Create the six pages above only after the sanitized current template reference is applied. Record each new page ID.
-5. Read the current Master before any sheet edit. `proposed-master-reconciliation.json` is a proposal, not a write. Do not reuse a dayclub row.
+Then request each of the six paths and confirm:
+
+- one h1
+- body class `pp-nightlife`
+- Book Now points at `/microsite/ppl/event/61/...`
+- each guide's calendar button points at its own `/microsite/ppl/events/61/{id}/...` URL
+- OMNIA shows the Commons credit and `CC BY 4.0`
+- TAO, Marquee, Hakkasan, and JEWEL say no cleared photo and do not load the OMNIA file
+- `/events/` still says pool, beach and yacht
+
+Desktop Book Now uses the centered 800×600 `ppbook` window from `booking-popup.js`. Under 768px, and when the popup is blocked, the real link opens in a new tab.
 
 ## Rollback
 
-If no pages were created, remove `wp-content/plugins/pp-nightlife/` and deactivate the plugin. Nothing else was written.
+Deactivate and delete `wp-content/plugins/pp-nightlife/`. Trash only the six recorded page IDs. Do not delete venue or product records. Do not restore the whole database over later edits. If the Master was not written, leave it alone.
 
-If the six pages were created, trash only those recorded page IDs. Do not delete venue or product records, and do not restore a full database over later unrelated edits.
+## Master
 
-If Master cells were written, revert only the cells recorded at write time. If none were written, leave the sheet alone.
-
-Do not use this rollback on live.
-
-## Imagery and links
-
-Only the two CC BY 4.0 OMNIA Nightclub photographs are included. TAO, Marquee, Hakkasan, and JEWEL have no photo. Partner flyers are not in this package. Calendar and event URLs stay on the audited `ppl` paths.
+`proposed-master-reconciliation.json` matches by nightclub name and partner venue id. It is not a sheet write. Do not use an old row number as the target.
