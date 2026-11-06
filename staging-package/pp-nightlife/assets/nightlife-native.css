@@ -1,0 +1,46 @@
+/* Nightlife-only. Does not restyle pages that lack body.pp-nightlife. */
+body.pp-nightlife{
+  background-color:#070b14 !important;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 8% 0%, rgba(216,185,109,.09), transparent 56%),
+    radial-gradient(ellipse 72% 48% at 100% 10%, rgba(126,156,196,.14), transparent 54%),
+    radial-gradient(ellipse 64% 42% at 46% 100%, rgba(54,78,128,.18), transparent 58%),
+    linear-gradient(180deg, #0b1428 0%, #101c34 48%, #080e1c 100%) !important;
+  background-attachment:fixed;
+}
+body.pp-nightlife::before{
+  content:"";
+  display:block !important;
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle 320px at 14% 36%, rgba(216,185,109,.07), transparent 70%),
+    radial-gradient(circle 380px at 86% 58%, rgba(150,176,210,.09), transparent 72%),
+    radial-gradient(circle 260px at 50% 90%, rgba(72,98,150,.10), transparent 70%);
+}
+body.pp-nightlife main .page-hero.nightlife{min-height:var(--pp-hero-mid,620px)}
+body.pp-nightlife .page-hero.nightlife::before{
+  background-image:var(--ppn-hero-image) !important;
+  background-position:center center !important;
+  background-size:cover !important;
+}
+body.pp-nightlife .page-hero.nightlife-plain::before{
+  background-image:none !important;
+  background-color:#0b1428;
+}
+body.pp-nightlife .ppn-credit,
+body.pp-nightlife .ppn-card-credit{font-size:.82rem;line-height:1.45}
+body.pp-nightlife .ppn-card-credit a,
+body.pp-nightlife .ppn-credit a{text-decoration:underline}
+body.pp-nightlife .card-media.ppn-no-photo{display:flex;align-items:flex-end;background:#ece5d8}
+body.pp-nightlife .ppn-no-photo-label{display:block;padding:2.2rem 1rem 1rem;color:#0b1f3a;font-weight:700}
+body.pp-nightlife .lean-sec{position:relative}
+@media (max-width:720px){
+  body.pp-nightlife{background-attachment:scroll}
+  body.pp-nightlife main .page-hero.nightlife{min-height:var(--pp-hero-mid,600px)}
+}
+@media (prefers-reduced-motion:reduce){
+  body.pp-nightlife,body.pp-nightlife::before{animation:none}
+}
