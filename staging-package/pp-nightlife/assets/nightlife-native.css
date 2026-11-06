@@ -36,6 +36,7 @@ body.pp-nightlife .ppn-card-credit a,
 body.pp-nightlife .ppn-credit a{text-decoration:underline}
 body.pp-nightlife .card-media.ppn-no-photo{display:flex;align-items:flex-end;background:#ece5d8}
 body.pp-nightlife .ppn-no-photo-label{display:block;padding:2.2rem 1rem 1rem;color:#0b1f3a;font-weight:700}
+body.pp-nightlife .lean-ev__grid .card[hidden]{display:none !important}
 body.pp-nightlife .lean-sec{position:relative}
 @media (max-width:720px){
   body.pp-nightlife{background-attachment:scroll}

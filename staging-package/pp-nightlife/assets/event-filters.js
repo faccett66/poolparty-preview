@@ -1,27 +1,27 @@
-(function(){
-  var buttons=document.querySelectorAll('[data-ev-filter]');
-  var cards=[].slice.call(document.querySelectorAll('.card-grid .card'));
-  var count=document.querySelector('[data-ev-count]');
-  function apply(id){
-    var shown=0;
-    cards.forEach(function(card){
-      var on=!id||card.getAttribute('data-venue-id')===id;
-      card.hidden=!on;
-      if(on) shown++;
-    });
-    if(count) count.textContent=shown+' upcoming '+ (shown===1?'event':'events')+' in this static sample';
-    buttons.forEach(function(btn){ btn.setAttribute('aria-pressed', btn.getAttribute('data-ev-filter')===(id||'') ? 'true' : 'false'); });
+/* Landing venue <select data-nl-filter>. Cards use data-venue (partner id). */
+(function () {
+  var form = document.querySelector('[data-nl-filter]');
+  var grid = document.querySelector('[data-nl-grid]');
+  if (!form || !grid) return;
+  var select = form.querySelector('select[name="venue"]');
+  var cards = [].slice.call(grid.querySelectorAll('.card'));
+  var count = document.querySelector('[data-nl-count]');
+  function venueOf(card) {
+    return card.getAttribute('data-venue') || card.getAttribute('data-venue-id') || '';
   }
-  buttons.forEach(function(btn){
-    btn.addEventListener('click',function(){ apply(btn.getAttribute('data-ev-filter')); });
-  });
-  document.querySelectorAll('.card-media img').forEach(function(img){
-    img.addEventListener('error',function(){
-      var media=img.closest('.card-media');
-      if(!media||media.classList.contains('is-fallback')) return;
-      media.classList.add('is-fallback');
-      media.textContent='Partner artwork unavailable';
+  function apply() {
+    var id = select ? select.value : '';
+    var shown = 0;
+    cards.forEach(function (card) {
+      var on = !id || venueOf(card) === id;
+      card.hidden = !on;
+      if (on) shown++;
     });
-  });
-  apply('');
+    if (count) {
+      count.textContent = shown + ' upcoming ' + (shown === 1 ? 'event' : 'events') + ' in this static sample. Not live inventory. No prices are shown here.';
+    }
+  }
+  if (select) select.addEventListener('change', apply);
+  form.addEventListener('reset', function () { setTimeout(apply, 0); });
+  apply();
 })();

@@ -35,5 +35,15 @@ expect(strpos($omnia, 'Omnia_Las_Vegas_2025_-_3') !== false, 'omnia hero credit'
 expect(strpos($omnia, 'https://booketing.com/microsite/ppl/events/61/1089/omnia') !== false, 'omnia calendar');
 expect(strpos($home, 'https://booketing.com/microsite/ppl/event/61/1112/dj-phenom?eventcode=EVE111200020261106') !== false, 'event url preserved');
 expect(strpos($home, 'data-pp-book="1"') !== false, 'book attribute');
+expect(strpos($home, 'data-nl-filter') !== false, 'venue filter form');
+expect(strpos($home, 'data-nl-grid') !== false, 'filter grid');
+expect(strpos($home, 'data-nl-count') !== false, 'filter count');
+expect(strpos($home, 'data-venue="1112"') !== false, 'tao venue attribute');
+expect(strpos($home, 'data-venue="1108"') !== false, 'marquee venue attribute');
+expect(strpos($home, 'data-venue="1089"') !== false, 'omnia venue attribute');
+expect(strpos($home, 'data-venue="1085"') !== false, 'hakkasan venue attribute');
+expect(strpos($home, 'data-venue="100542"') !== false, 'jewel venue attribute');
+expect(strpos($home, 'type="reset"') !== false, 'clear control');
+expect(strpos(file_get_contents(dirname(__DIR__) . '/pp-nightlife/pp-nightlife.php'), 'event-filters.js') !== false, 'filter script enqueued');
 if ($fail) exit(1);
 echo "render-test passed\n";
